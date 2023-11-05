@@ -24,17 +24,18 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="记录了的Python学习.">
+        <meta name="description" content="没有对象? new一个不就行了! 接下来是与对象在Python中的初次相遇.(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python进阶">
 <meta property="og:url" content="https://www.wreckloud.com/2023/10/29/Python%E8%BF%9B%E9%98%B6/index.html">
 <meta property="og:site_name" content="狼牙月影">
-<meta property="og:description" content="记录了的Python学习.">
+<meta property="og:description" content="没有对象? new一个不就行了! 接下来是与对象在Python中的初次相遇.(">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-29T07:01:17.000Z">
-<meta property="article:modified_time" content="2023-11-05T02:48:17.427Z">
+<meta property="article:modified_time" content="2023-11-05T08:09:10.460Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="进阶">
 <meta name="twitter:card" content="summary">
     
     
@@ -333,7 +334,7 @@
             
                 
                 
-                <img src="/../img/Python%E5%B0%81%E9%9D%A2.jpg" alt="Python进阶" class="max-w-none"/>
+                <img src="/../img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/Python%E5%B0%81%E9%9D%A2.jfif" alt="Python进阶" class="max-w-none"/>
                 
                 <h1 class="article-title-cover">Python进阶</h1>
             
@@ -362,12 +363,28 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-05 10:48:17</span>
-            <span class="mobile">2023-11-05 10:48:17</span>
+            <span class="desktop">2023-11-05 16:09:10</span>
+            <span class="mobile">2023-11-05 16:09:10</span>
             <span class="hover-info">更新</span>
         </span>
     
 
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -378,6 +395,10 @@
                         <a href="/tags/Python/">Python</a>&nbsp;
                     </li>
                 
+                    <li>
+                        | <a href="/tags/%E8%BF%9B%E9%98%B6/">进阶</a>&nbsp;
+                    </li>
+                
             </ul>
         </span>
     
@@ -385,7 +406,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>669 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>668 字</span>
         </span>
     
     
@@ -411,25 +432,25 @@
 <li>在程序中打印生产表格, 称之为: <strong>创建对象</strong></li>
 <li>在程序中填写表格, 称之为: <strong>对象属性赋值</strong></li>
 </ol>
-<h3 id="类的定义和使用"><a href="#类的定义和使用" class="headerlink" title="类的定义和使用"></a>类的定义和使用</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># classs是关键字, 表示要定义类了</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">类名称</span>:</span><br><span class="line">    <span class="comment"># 类的属性: 定义在类中的变量(成员变量)</span></span><br><span class="line">    name = <span class="literal">None</span> </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类的行为: 定义在类中的函数(成员方法)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;hello world!&quot;</span>)</span><br></pre></td></tr></table></figure></div>
+<h3 id="类的定义和使用"><a href="#类的定义和使用" class="headerlink" title="类的定义和使用"></a>类的定义和使用</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># classs是关键字, 表示要定义类了</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">类名称</span>:</span><br><span class="line">    <span class="comment"># 类的属性: 定义在类中的变量(成员变量)</span></span><br><span class="line">    name = <span class="literal">None</span> </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类的行为: 定义在类中的函数(成员方法)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;hello world!&quot;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>self关键字是成员方法定义时, 必须填写.<br>它用来表示类对象自身的意思.<br>在方法内部, 想要访问类的成员变量, 必须使用self.</p>
 <h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>基于类创建对象的语法: <code>对象名 = 类名称()</code>  </p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    name = <span class="literal">None</span></span><br><span class="line">    age = <span class="literal">None</span></span><br><span class="line">    fur = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">wolf1 = Wolf()</span><br><span class="line">wolf1.name = <span class="string">&quot;沃里克&quot;</span></span><br><span class="line">wolf1.age = <span class="number">31</span></span><br><span class="line">wolf1.fur = <span class="string">&quot;gray&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1.name)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    name = <span class="literal">None</span></span><br><span class="line">    age = <span class="literal">None</span></span><br><span class="line">    fur = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">wolf1 = Wolf()</span><br><span class="line">wolf1.name = <span class="string">&quot;沃里克&quot;</span></span><br><span class="line">wolf1.age = <span class="number">31</span></span><br><span class="line">wolf1.fur = <span class="string">&quot;gray&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1.name)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
 
 <p>Python类也可以使用:  <code>__init__</code> (方法)构造方法  </p>
 <p>能使创建类对象 (构造类) 的时候, 会自动执行.<br>在创建类对象 (构造类) 的时候, 将传入参数自动传递给 <code>__init__</code> 方法使用</p>
 <p>例如:</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age, tel</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.fur = fur</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此构造方法会自动执行&quot;</span>)</span><br><span class="line"></span><br><span class="line">Wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, <span class="number">31</span>, <span class="string">&quot;gray&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1.name)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age, tel</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.fur = fur</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;此构造方法会自动执行&quot;</span>)</span><br><span class="line"></span><br><span class="line">Wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, <span class="number">31</span>, <span class="string">&quot;gray&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1.name)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="常用的类内置方法"><a href="#常用的类内置方法" class="headerlink" title="常用的类内置方法"></a>常用的类内置方法</h3><p>除了 <code>__init__</code> 构造方法外, Python类中还有其他的类内置方法.<br>这些内置的类方法, 各有各自特殊的功能, 这些内置方法我们称之为: <strong>魔术方法</strong></p>
 <h4 id="str-字符串方法"><a href="#str-字符串方法" class="headerlink" title="__str__ 字符串方法"></a><code>__str__</code> 字符串方法</h4><p>当类对象需要被转换为字符串之时: </p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, gray)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(wolf1)) <span class="comment">#输出地址值, 没什么实际作用</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, gray)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(wolf1)) <span class="comment">#输出地址值, 没什么实际作用</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 <p>会输出内存地址.<br>我们可以通过 <code>__str__</code> 方法, 控制类转换为指定的字符串</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;有一只名叫<span class="subst">&#123;self.name&#125;</span>的<span class="subst">&#123;self.fur&#125;</span>毛狼!&quot;</span></span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, gray)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(wolf1)) <span class="comment">#会按照__str__设定的输出.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;有一只名叫<span class="subst">&#123;self.name&#125;</span>的<span class="subst">&#123;self.fur&#125;</span>毛狼!&quot;</span></span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, gray)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(wolf1)) <span class="comment">#会按照__str__设定的输出.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <h4 id="lt-小于大于符号比较方法"><a href="#lt-小于大于符号比较方法" class="headerlink" title="__lt__小于大于符号比较方法"></a><code>__lt__</code>小于大于符号比较方法</h4><p>无法直接对两个对象进行比较.<br>但使用 <code>__lt__</code> 方法, 可以同时完成 大于和小于 的比较.</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__lt__</span>(<span class="params">self, other</span>):</span><br><span class="line">        <span class="keyword">return</span> self.age &lt; other.age</span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, <span class="number">31</span>)</span><br><span class="line">wolf2 = Wolf(<span class="string">&quot;布莱泽&quot;</span>, <span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1 &lt; wolf2) <span class="comment">#返回 false</span></span><br><span class="line"><span class="built_in">print</span>(wolf1 &gt; wolf2) <span class="comment">#返回 true </span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__lt__</span>(<span class="params">self, other</span>):</span><br><span class="line">        <span class="keyword">return</span> self.age &lt; other.age</span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, <span class="number">31</span>)</span><br><span class="line">wolf2 = Wolf(<span class="string">&quot;布莱泽&quot;</span>, <span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1 &lt; wolf2) <span class="comment">#返回 false</span></span><br><span class="line"><span class="built_in">print</span>(wolf1 &gt; wolf2) <span class="comment">#返回 true </span></span><br></pre></td></tr></table></figure></div>
 
 <p>而小于等于大于等于可以使用: <code>__le__</code><br>同理, 判断两个对象是否相等: <code>__eq__</code><br>用法都同 <code>__lt__</code></p>
 <h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1>
@@ -442,6 +463,10 @@
                 
                     <li class="tag-item">
                         <a href="/tags/Python/">#Python</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%BF%9B%E9%98%B6/">#进阶</a>&nbsp;
                     </li>
                 
             </ul>

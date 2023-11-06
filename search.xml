@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PySide6 学习笔记</title>
+    <url>/2023/10/28/PySide6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<blockquote>
+<p>另外吐槽一下这选修课的作业难度, 真是来真的啊, 选修课作业难度达到了毕业设计的高度, 老师你真的是看得起我…<br>课程笔记来源: <a class="link"   href="https://www.bilibili.com/video/BV1c84y1N7iL?p=1&vd_source=b19220b8f372f3a81aa8463fde694a63" >PySide6百炼成真，带你系统性入门Qt <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>啊啊, 总觉得时间老不够呜呜呜.</p>
+</blockquote>
+<h1 id="基础框架"><a href="#基础框架" class="headerlink" title="基础框架"></a>基础框架</h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication, QMainWindow</span><br></pre></td></tr></table></figure></div>
+
+<p><code>QT Widget</code> 之后的框架都来自于此<br><code>QMainWindow</code> 选择的窗体类型(主窗口)</p>
+<p>导入后即可开始写类</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>界面开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Godot游戏引擎入门</title>
     <url>/2023/10/08/Godot%E5%BC%95%E6%93%8E%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="Godot-初识"><a href="#Godot-初识" class="headerlink" title="Godot 初识"></a>Godot 初识</h1><h3 id="Godot-的开发思想————围绕节点"><a href="#Godot-的开发思想————围绕节点" class="headerlink" title="Godot 的开发思想————围绕节点"></a>Godot 的开发思想————围绕节点</h3><ol>
@@ -70,25 +89,6 @@
         <tag>游戏引擎</tag>
         <tag>Godot</tag>
         <tag>基础入门</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PySide6 学习笔记</title>
-    <url>/2023/10/28/PySide6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<blockquote>
-<p>另外吐槽一下这选修课的作业难度, 真是来真的啊, 选修课作业难度达到了毕业设计的高度, 老师你真的是看得起我…<br>课程笔记来源: <a class="link"   href="https://www.bilibili.com/video/BV1c84y1N7iL?p=1&vd_source=b19220b8f372f3a81aa8463fde694a63" >PySide6百炼成真，带你系统性入门Qt <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>啊啊, 总觉得时间老不够呜呜呜.</p>
-</blockquote>
-<h1 id="基础框架"><a href="#基础框架" class="headerlink" title="基础框架"></a>基础框架</h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication, QMainWindow</span><br></pre></td></tr></table></figure></div>
-
-<p><code>QT Widget</code> 之后的框架都来自于此<br><code>QMainWindow</code> 选择的窗体类型(主窗口)</p>
-<p>导入后即可开始写类</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>界面开发</tag>
       </tags>
   </entry>
   <entry>
@@ -703,6 +703,20 @@
       </tags>
   </entry>
   <entry>
+    <title>前端JavaScript入门</title>
+    <url>/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p><a class="link"   href="https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=b19220b8f372f3a81aa8463fde694a63" >笔记视频教程来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在客户端(浏览器)的编程语言, 能实现人机交互的效果t</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hello websites</title>
     <url>/2023/09/17/hello-websites/</url>
     <content><![CDATA[<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><h2 id="Redefine相关"><a href="#Redefine相关" class="headerlink" title="Redefine相关"></a>Redefine相关</h2><p><a class="link"   href="https://redefine-docs.ohevan.com/" >Redefine主题配置指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>不得不说,这个主题真的巨好看又很丰富的自定义,非常不错!</p>
@@ -1097,7 +1111,7 @@ end</pre>
 <li><p>JavaScript（JS）：负责网页的行为；</p>
 </li>
 </ul>
-<p>此篇基础笔记记录了HTML与CSS中的基础属性.</p>
+<p>此篇基础笔记记录了HTML与CSS中的基础属性.它们都属于标记语言.</p>
 <h1 id="HTML-定义"><a href="#HTML-定义" class="headerlink" title="HTML 定义"></a>HTML 定义</h1><p>HTML 超文本标记语言 ———— HyperText Markup Language</p>
 <p>超文本是链接<br>标记也叫标签,带尖括号的文本</p>
 <ol>
@@ -1645,10 +1659,6 @@ end</pre>
 <td>background</td>
 </tr>
 </tbody></table>
-<h3 id="过渡效果"><a href="#过渡效果" class="headerlink" title="过渡效果"></a>过渡效果</h3><p>可以为一个元素在不同状态之前切换的时候添加过度效果.</p>
-<p><code>transation : 过度属性 花费时间(s)</code> </p>
-<h3 id="透明度效果"><a href="#透明度效果" class="headerlink" title="透明度效果"></a>透明度效果</h3><p>设置整个元素的透明度 (包含背景和内容).</p>
-<p>属性名: <code>opacity</code><br>属性值: 0(不透明) - 1(元素不可见)</p>
 <h3 id="光标类型更改"><a href="#光标类型更改" class="headerlink" title="光标类型更改"></a>光标类型更改</h3><p>设置鼠标悬停在元素上的样式</p>
 <p>属性名: cursor</p>
 <table>
@@ -1675,145 +1685,376 @@ end</pre>
 <td>默认效果</td>
 </tr>
 </tbody></table>
+<h3 id="过渡效果"><a href="#过渡效果" class="headerlink" title="过渡效果"></a>过渡效果</h3><p>可以为一个元素在不同状态之前切换的时候添加过度效果.</p>
+<p><code>transation : 过度属性 花费时间(s)</code> </p>
+<h3 id="平面转换效果"><a href="#平面转换效果" class="headerlink" title="平面转换效果"></a>平面转换效果</h3><p><code>transform</code> 一般配合过渡效果使用. 能改变盒子在平面内的形态.</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>translate (X轴距离,Y轴距离)</td>
+<td>位移效果 (百分比取值参照自身取值)</td>
+</tr>
+<tr>
+<td>rotate (旋转角度 $deg$)</td>
+<td>旋转效果</td>
+</tr>
+<tr>
+<td>scale(缩放倍数)<br>scale(X缩放倍数,Y缩放倍数)</td>
+<td>缩放效果, 取值大于1为放大, 反之缩小</td>
+</tr>
+<tr>
+<td>skew (倾斜角度 $deg$)</td>
+<td>倾斜效果</td>
+</tr>
+</tbody></table>
+<h4 id="改变转换原点"><a href="#改变转换原点" class="headerlink" title="改变转换原点"></a>改变转换原点</h4><p>默认情况下, 转换原点是盒子中心点.</p>
+<p><code>transform-Origin : 水平原点位置  垂直原点位置;</code>  </p>
+<p>取值:  </p>
+<ul>
+<li>方位名词(left, top, right, bottom, center)  </li>
+<li>像素单位数值  </li>
+<li>百分比</li>
+</ul>
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><p>渐变是多个颜色逐渐变化的效果, 一般用于设置盒子背景.</p>
+<ul>
+<li>线性渐变</li>
+</ul>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(</span><br><span class="line">    渐变方向(to 方位名词/角度度数 deg),</span><br><span class="line">    颜色<span class="number">1</span> 终点位置(百分比),</span><br><span class="line">    颜色<span class="number">2</span> 终点位置,</span><br><span class="line">    ......</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>径向渐变</li>
+</ul>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">radial-gradient</span>(</span><br><span class="line">    半径 at 圆心位置(像素单位数值/百分比/方位名词),</span><br><span class="line">    (半径两条为椭圆),</span><br><span class="line">    颜色<span class="number">1</span> 终点位置,</span><br><span class="line">    颜色<span class="number">2</span> 终点位置,</span><br><span class="line">    ......</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="透明度效果"><a href="#透明度效果" class="headerlink" title="透明度效果"></a>透明度效果</h3><p>设置整个元素的透明度 (包含背景和内容).</p>
+<p>属性名: <code>opacity</code><br>属性值: 0(不透明) - 1(元素不可见)</p>
+<h1 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h1><p>从坐标轴角度定义了X, Y和Z 三条坐标轴构成了一个立体空间,<br>Z轴方向与视线方向相反.x轴方向向右,y轴向下.</p>
+<p>形式上讲, 动画效果就是加强版的 <code>transation</code>  过度属性.</p>
+<h3 id="视距属性"><a href="#视距属性" class="headerlink" title="视距属性"></a>视距属性</h3><p><code>perspective</code>   </p>
+<p>指定了观察者与 z&#x3D;0 平面的距离, 为元素添加透视效果.<br>属性添加给父级, 取值范围 800-1200.</p>
+<h3 id="空间转换"><a href="#空间转换" class="headerlink" title="空间转换"></a>空间转换</h3><p><code>transform</code><br>能改变盒子在空间内的形态.</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>translate3d (X轴距离,Y轴距离,Z轴距离)<br>translate[X&#x2F;Y&#x2F;Z]</td>
+<td>位移效果 (百分比取值参照自身取值)<br>小括号三个数据必须一个不差, 否则不生效.</td>
+</tr>
+<tr>
+<td>rotate (旋转角度 $deg$)<br>rotate[X&#x2F;Y&#x2F;Z]</td>
+<td>旋转效果</td>
+</tr>
+<tr>
+<td>scale(缩放倍数)<br>scale(X缩放倍数,Y缩放倍数,Z轴距离)<br>scale[X&#x2F;Y&#x2F;Z]</td>
+<td>缩放效果, 取值大于1为放大, 反之缩小</td>
+</tr>
+<tr>
+<td>skew (倾斜角度 $deg$)</td>
+<td>倾斜效果</td>
+</tr>
+</tbody></table>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p><code>animation</code>  </p>
+<p>动画能实现多个状态间的变化过程, 动画过程可控(重复, 最终画面, 是否暂停)</p>
+<h4 id="立体呈现"><a href="#立体呈现" class="headerlink" title="立体呈现"></a>立体呈现</h4><p><code>transform-style</code><br>设置元素的子元素是位于3D空间还是平面.</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flat</td>
+<td>子级处于平面中</td>
+</tr>
+<tr>
+<td>preserve-3d</td>
+<td>子级处于3D空间</td>
+</tr>
+</tbody></table>
+<ol>
+<li>父元素添加 <code>transform-style: preserve-3d</code> </li>
+<li>子级定位</li>
+<li>调整盒子的位置(位移或选择)</li>
+</ol>
 <h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><h2 id="盒子模型的组成"><a href="#盒子模型的组成" class="headerlink" title="盒子模型的组成"></a>盒子模型的组成</h2><ul>
-<li>内容区域- width &amp; heigth</li>
+<li>内容区域 - width &amp; heigth</li>
 <li>内边距  - padding</li>
 <li>边框线 - boder</li>
 <li>外边距 -margin</li>
 </ul>
-<pre class="mermaid">graph LR;
+<h4 id="关于尺寸的计算"><a href="#关于尺寸的计算" class="headerlink" title="关于尺寸的计算"></a>关于尺寸的计算</h4><ul>
+<li><strong>默认情况</strong></li>
+</ul>
+<p>盒子尺寸 &#x3D; 内容尺寸 + border尺寸 + 内边距尺寸 + margin尺寸</p>
+<ul>
+<li><strong>內减模式(box-sizing:border-box)</strong></li>
+</ul>
+<p>设置为自动减去 border&#x2F;padding的尺寸</p>
+<p>盒子尺寸 &#x3D; 内容尺寸 -  border尺寸 - 内边距尺寸 + margin尺寸</p>
+<h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>行内元素添加内外边距, 无法改变元素的垂直位置</p>
+<p>解决方法:<br>添加 line-height 改变垂直位置</p>
+<h3 id="边框线"><a href="#边框线" class="headerlink" title="边框线"></a>边框线</h3><p>属性名: border - (设置方位名词可单独控制)<br>属性值: 边框线粗细 线条样式 颜色(不区分顺序)</p>
+<p>常用线条样式</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>线条样式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>solid</td>
+<td>实线</td>
+</tr>
+<tr>
+<td>dashed</td>
+<td>虚线</td>
+</tr>
+<tr>
+<td>dotted</td>
+<td>点线</td>
+</tr>
+</tbody></table>
+<p>使用属性: border-radius 添加圆角.</p>
+<ul>
+<li><p>正圆<br>给正方形盒子设置属性值为 宽高的一半&#x2F;50%.</p>
+</li>
+<li><p>胶囊形状<br>给长方形盒子设置圆角属性为 盒子高度的一半.</p>
+</li>
+</ul>
+<h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><p>属性名:padding &#x2F; padding-方位名词</p>
+<p><strong>padding 多值写法</strong></p>
+<p>padding: 上 右 下 左 (空格隔开,从上方顺时针应用)<br>padding: 上 左右 下<br>padding: 上下 左右<br>padding: 四个方向相同值</p>
+<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><p>同padding, 作用拉开两个盒子之间的距离.</p>
+<p>在外边距两边设置auto, 能使版心居中.</p>
+<h4 id="外边距合并现象"><a href="#外边距合并现象" class="headerlink" title="外边距合并现象"></a>外边距合并现象</h4><p>若两兄弟元素垂直排列, 上下的margin会合并, 取最大值.</p>
+<h4 id="外边距塌陷问题"><a href="#外边距塌陷问题" class="headerlink" title="外边距塌陷问题"></a>外边距塌陷问题</h4><p>父子级标签中, 若在子级添加上外边距, 会导致父级一起向下移动.</p>
+<p>解决方法:  </p>
+<ul>
+<li>取消子级margin, 父级设置padding</li>
+<li>父级设置overflow: hidden</li>
+<li>父级设置border-top</li>
+</ul>
+<h3 id="清除默认样式"><a href="#清除默认样式" class="headerlink" title="清除默认样式"></a>清除默认样式</h3><ul>
+<li><p>清除默认边距<br>margin: 0;<br>padding: 0;<br>box-sizing: border-box;(内减模式)</p>
+</li>
+<li><p>去掉列表的项目符号<br>list-style: none;</p>
+</li>
+</ul>
+<h3 id="元素溢出解决方法"><a href="#元素溢出解决方法" class="headerlink" title="元素溢出解决方法"></a>元素溢出解决方法</h3><p>属性名: overflow</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hidden</td>
+<td>溢出部分隐藏</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>显示滚动条</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>溢出时才显示滚动条</td>
+</tr>
+</tbody></table>
+<h3 id="盒子阴影-拓展"><a href="#盒子阴影-拓展" class="headerlink" title="盒子阴影(拓展)"></a>盒子阴影(拓展)</h3><p>属性名: box-shadow<br>属性值: X轴偏移 Y轴偏移 模糊半径 扩散半径 颜色 内外阴影</p>
+<p>默认为外阴影, 内阴影需要添加 inset</p>
+<h1 id="标准流和浮动-了解"><a href="#标准流和浮动-了解" class="headerlink" title="标准流和浮动 (了解)"></a>标准流和浮动 (了解)</h1><h3 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h3><p>标准流也称文档流, 是标签在页面中默认的排布规则.</p>
+<h3 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动(float)"></a>浮动(float)</h3><p>浮动能让块元素水平排列, 具备行内块的特点.</p>
+<p>浮动后元素会顶对齐, 并脱离标准流控制, 如果父级元素未设置高度, 脱离后会对网页布局造成影响.</p>
+<h4 id="关于清除浮动带来的影响"><a href="#关于清除浮动带来的影响" class="headerlink" title="关于清除浮动带来的影响:"></a>关于清除浮动带来的影响:</h4><ol>
+<li>额外标签法</li>
+</ol>
+<p>在父元素雷人的最后添加一个块级元素, 将其css属性设置为 clear: both</p>
+<ol start="2">
+<li><p>单伪元素法</p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block:</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>双伪元素法</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-subgraph 外边距-margin
-subgraph 内边距-padding
-内容区域
-end
-end
-
-边框线-boder ---> 内边距-padding
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 关于尺寸的计算</span><br><span class="line"></span><br><span class="line">* **默认情况**</span><br><span class="line"></span><br><span class="line">盒子尺寸 = 内容尺寸 + border尺寸 + 内边距尺寸 + margin尺寸</span><br><span class="line"></span><br><span class="line">* **內减模式(box-sizing:border-box)**</span><br><span class="line"></span><br><span class="line">设置为自动减去 border/padding的尺寸</span><br><span class="line"></span><br><span class="line">盒子尺寸 = 内容尺寸 -  border尺寸 - 内边距尺寸 + margin尺寸</span><br><span class="line"></span><br><span class="line">### 行内元素</span><br><span class="line"></span><br><span class="line">行内元素添加内外边距, 无法改变元素的垂直位置</span><br><span class="line"></span><br><span class="line">解决方法: </span><br><span class="line">添加 line-height 改变垂直位置</span><br><span class="line"></span><br><span class="line">### 边框线</span><br><span class="line"></span><br><span class="line">属性名: border - (设置方位名词可单独控制) </span><br><span class="line">属性值: 边框线粗细 线条样式 颜色(不区分顺序)</span><br><span class="line"></span><br><span class="line">常用线条样式</span><br><span class="line">属性值|线条样式</span><br><span class="line">---|---</span><br><span class="line">solid|实线</span><br><span class="line">dashed|虚线</span><br><span class="line">dotted|点线</span><br><span class="line"></span><br><span class="line">使用属性: border-radius 添加圆角.</span><br><span class="line"></span><br><span class="line">* 正圆  </span><br><span class="line">给正方形盒子设置属性值为 宽高的一半/50%.</span><br><span class="line"></span><br><span class="line">* 胶囊形状  </span><br><span class="line">给长方形盒子设置圆角属性为 盒子高度的一半.</span><br><span class="line"></span><br><span class="line">### 内边距</span><br><span class="line"></span><br><span class="line">属性名:padding / padding-方位名词</span><br><span class="line"></span><br><span class="line">**padding 多值写法**</span><br><span class="line"></span><br><span class="line">padding: 上 右 下 左 (空格隔开,从上方顺时针应用)</span><br><span class="line">padding: 上 左右 下</span><br><span class="line">padding: 上下 左右</span><br><span class="line">padding: 四个方向相同值</span><br><span class="line"></span><br><span class="line">### 外边距</span><br><span class="line"></span><br><span class="line">同padding, 作用拉开两个盒子之间的距离.</span><br><span class="line"></span><br><span class="line">在外边距两边设置auto, 能使版心居中.</span><br><span class="line"></span><br><span class="line">#### 外边距合并现象</span><br><span class="line"></span><br><span class="line">若两兄弟元素垂直排列, 上下的margin会合并, 取最大值.</span><br><span class="line"></span><br><span class="line">#### 外边距塌陷问题</span><br><span class="line"></span><br><span class="line">父子级标签中, 若在子级添加上外边距, 会导致父级一起向下移动.</span><br><span class="line"></span><br><span class="line">解决方法:  </span><br><span class="line">* 取消子级margin, 父级设置padding</span><br><span class="line">* 父级设置overflow: hidden</span><br><span class="line">* 父级设置border-top</span><br><span class="line"></span><br><span class="line">### 清除默认样式</span><br><span class="line"></span><br><span class="line">* 清除默认边距  </span><br><span class="line">margin: 0;  </span><br><span class="line">padding: 0;  </span><br><span class="line">box-sizing: border-box;(内减模式)</span><br><span class="line"></span><br><span class="line">* 去掉列表的项目符号  </span><br><span class="line">list-style: none;</span><br><span class="line"></span><br><span class="line">### 元素溢出解决方法</span><br><span class="line"></span><br><span class="line">属性名: overflow</span><br><span class="line"></span><br><span class="line">属性值|效果</span><br><span class="line">---|---</span><br><span class="line">hidden|溢出部分隐藏</span><br><span class="line">scroll|显示滚动条</span><br><span class="line">auto|溢出时才显示滚动条</span><br><span class="line"></span><br><span class="line">### 盒子阴影(拓展)</span><br><span class="line"></span><br><span class="line">属性名: box-shadow  </span><br><span class="line">属性值: X轴偏移 Y轴偏移 模糊半径 扩散半径 颜色 内外阴影</span><br><span class="line"></span><br><span class="line">默认为外阴影, 内阴影需要添加 inset</span><br><span class="line"></span><br><span class="line"># 标准流和浮动 (了解)</span><br><span class="line"></span><br><span class="line">### 标准流</span><br><span class="line"></span><br><span class="line">标准流也称文档流, 是标签在页面中默认的排布规则.</span><br><span class="line"></span><br><span class="line">### 浮动(float)</span><br><span class="line"></span><br><span class="line">浮动能让块元素水平排列, 具备行内块的特点.</span><br><span class="line"></span><br><span class="line">浮动后元素会顶对齐, 并脱离标准流控制, 如果父级元素未设置高度, 脱离后会对网页布局造成影响.</span><br><span class="line"></span><br><span class="line">#### 关于清除浮动带来的影响:</span><br><span class="line"></span><br><span class="line">1. 额外标签法</span><br><span class="line"></span><br><span class="line">在父元素雷人的最后添加一个块级元素, 将其css属性设置为 clear: both</span><br><span class="line"></span><br><span class="line">2. 单伪元素法</span><br><span class="line">```CSS</span><br><span class="line">.clearfix::after&#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block:</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;&lt;/pre&gt;</span><br><span class="line"></span><br><span class="line">3. 双伪元素法</span><br><span class="line"></span><br><span class="line">```CSS</span><br><span class="line">.clearfix::before,</span><br><span class="line">.clearfix::after&#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix::after&#123;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-4. overflow 溢出隐藏
-
-父元素添加CSS属性 overflow: hidden
-
-# flex 布局
-
-flex 布局也叫弹性布局, 相比浮动, felx更简单灵活.
-
-给父元素设置 `dispaly: felx` ,子元素可以自动挤压或拉伸.
-
-### 主轴对齐方式: 
-
-属性名: `justify-content`  
-
-属性值|效果
----|---
-**center**|弹性盒子沿主轴居中排列
-**space-between**|弹性盒子沿主轴均匀排列, 空白间距均分在盒子**之间**.
-**space-around**|弹性盒子沿主轴均匀排列, 空白间距均分在盒子**两侧**.
-**space-evenly**|弹性盒子沿主轴均匀排列, 盒子与容器之间间距相等.
-felx-start|默认值, 弹性盒子从主轴起点依次排起.
-felx-end|弹性盒子从主轴终点依次排起.
-
-### 侧轴对齐方式
-
-属性名:   
-`align-items` :选 中当前弹性容器内所有弹性盒子的侧轴, 设置对齐方式  
-`slign-self` : 单独控制某个弹性盒子的侧轴
-
-属性值|效果
----|---
-strench|弹性盒子沿着侧轴线被拉伸至铺满容器(默认)
-center|弹性盒子沿侧轴居中排列
-
-### 修改主轴方向 
-
-属性名: `flex-direction`
-
-属性值|效果
----|---
-**column**|垂直方向, 从上到下
-row| 水平方向, 从左向右(默认)
-row-reverse|水平方向, 从右向左
-column-reverse|垂直方向, 从下向上
-
-### 弹性伸缩比
-
-属性名: `flex`  
-控制弹性盒子的主轴方向尺寸.  
-属性值: 整数数字, 表示占用父级剩余尺寸的份数.
-
-### 弹性盒子换行显示
-
-属性名: `flex-wrap`  
-属性值|效果
----|---
-**wrap**|换行
-nowrap|不换行(默认)
-
-### 多行对齐方式 (单行不生效)
-
-属性名: `align-content`
-
-属性值与 `justify-content` 相同.
-
-### 垂直对齐方式
-
-属性名: `vertical-align`
-
-属性值|效果
----|---
-middle|居中对齐
-top|顶部对齐
-bottom|底部对齐
-baseline|基线对齐(默认)
-
-# 定位
-
-能灵活改变盒子在网页中的位置  
-
-第一步: 启用定位模式 `position`  
-第二步: 用边偏移设置盒子位置    
-
-属性值|效果
----|---
-relative|相对定位(一般设置给**子级**)
-absolute|绝对定位(一般设置给**父级**)
-fixed|固定定位(不随网页滚动)
-
-* 定位居中 
-
-设置绝对定位, 并把水平, 垂直边偏移为 50%.  
-然后将子级向左上移动自身尺寸的一半(margin|transform).
-`transform: translate(-50%, -50%)`
-
-### 堆叠层级 z-index  
-
-设置定位元素的层级顺序, 改变定位元素的显示顺序.  
-
-默认效果按照标签书写顺序, 后写居上.  
-`z-index ` 取值是整数, 默认为0. 取值越大越靠上.
-
-### CSS Sprites
-
-CSS 精灵, 是一种网页图片应用处理方式. 把网页中的一些背景图片整合到一张图片文件, 再用`background-position` 精确定位出图片的位置.  
-能减少服务器被请求的次数, 从而减轻服务器压力, 提高访问速度.  
-
-实现步骤:  
-第一步: 创建盒子, 盒子尺寸与小图尺寸相同.   
-第二步: 设置盒子背景图 `background-image` 为精灵图  
-第三步: 添加 `background-position` 属性, 改变背景图位置.  
-
-
+<ol start="4">
+<li>overflow 溢出隐藏</li>
+</ol>
+<p>父元素添加CSS属性 overflow: hidden</p>
+<h1 id="flex-布局"><a href="#flex-布局" class="headerlink" title="flex 布局"></a>flex 布局</h1><p>flex 布局也叫弹性布局, 相比浮动, felx更简单灵活.</p>
+<p>给父元素设置 <code>dispaly: felx</code> ,子元素可以自动挤压或拉伸.</p>
+<h3 id="主轴对齐方式"><a href="#主轴对齐方式" class="headerlink" title="主轴对齐方式:"></a>主轴对齐方式:</h3><p>属性名: <code>justify-content</code>  </p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>center</strong></td>
+<td>弹性盒子沿主轴居中排列</td>
+</tr>
+<tr>
+<td><strong>space-between</strong></td>
+<td>弹性盒子沿主轴均匀排列, 空白间距均分在盒子<strong>之间</strong>.</td>
+</tr>
+<tr>
+<td><strong>space-around</strong></td>
+<td>弹性盒子沿主轴均匀排列, 空白间距均分在盒子<strong>两侧</strong>.</td>
+</tr>
+<tr>
+<td><strong>space-evenly</strong></td>
+<td>弹性盒子沿主轴均匀排列, 盒子与容器之间间距相等.</td>
+</tr>
+<tr>
+<td>felx-start</td>
+<td>默认值, 弹性盒子从主轴起点依次排起.</td>
+</tr>
+<tr>
+<td>felx-end</td>
+<td>弹性盒子从主轴终点依次排起.</td>
+</tr>
+</tbody></table>
+<h3 id="侧轴对齐方式"><a href="#侧轴对齐方式" class="headerlink" title="侧轴对齐方式"></a>侧轴对齐方式</h3><p>属性名:<br><code>align-items</code> :选 中当前弹性容器内所有弹性盒子的侧轴, 设置对齐方式<br><code>slign-self</code> : 单独控制某个弹性盒子的侧轴</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>strench</td>
+<td>弹性盒子沿着侧轴线被拉伸至铺满容器(默认)</td>
+</tr>
+<tr>
+<td>center</td>
+<td>弹性盒子沿侧轴居中排列</td>
+</tr>
+</tbody></table>
+<h3 id="修改主轴方向"><a href="#修改主轴方向" class="headerlink" title="修改主轴方向"></a>修改主轴方向</h3><p>属性名: <code>flex-direction</code></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>column</strong></td>
+<td>垂直方向, 从上到下</td>
+</tr>
+<tr>
+<td>row</td>
+<td>水平方向, 从左向右(默认)</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>水平方向, 从右向左</td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>垂直方向, 从下向上</td>
+</tr>
+</tbody></table>
+<h3 id="弹性伸缩比"><a href="#弹性伸缩比" class="headerlink" title="弹性伸缩比"></a>弹性伸缩比</h3><p>属性名: <code>flex</code><br>控制弹性盒子的主轴方向尺寸.<br>属性值: 整数数字, 表示占用父级剩余尺寸的份数.</p>
+<h3 id="弹性盒子换行显示"><a href="#弹性盒子换行显示" class="headerlink" title="弹性盒子换行显示"></a>弹性盒子换行显示</h3><p>属性名: <code>flex-wrap</code>  </p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>wrap</strong></td>
+<td>换行</td>
+</tr>
+<tr>
+<td>nowrap</td>
+<td>不换行(默认)</td>
+</tr>
+</tbody></table>
+<h3 id="多行对齐方式-单行不生效"><a href="#多行对齐方式-单行不生效" class="headerlink" title="多行对齐方式 (单行不生效)"></a>多行对齐方式 (单行不生效)</h3><p>属性名: <code>align-content</code></p>
+<p>属性值与 <code>justify-content</code> 相同.</p>
+<h3 id="垂直对齐方式"><a href="#垂直对齐方式" class="headerlink" title="垂直对齐方式"></a>垂直对齐方式</h3><p>属性名: <code>vertical-align</code></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>middle</td>
+<td>居中对齐</td>
+</tr>
+<tr>
+<td>top</td>
+<td>顶部对齐</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>底部对齐</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>基线对齐(默认)</td>
+</tr>
+</tbody></table>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>能灵活改变盒子在网页中的位置  </p>
+<p>第一步: 启用定位模式 <code>position</code><br>第二步: 用边偏移设置盒子位置    </p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>relative</td>
+<td>相对定位(一般设置给<strong>子级</strong>)</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位(一般设置给<strong>父级</strong>)</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>固定定位(不随网页滚动)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>定位居中</li>
+</ul>
+<p>设置绝对定位, 并把水平, 垂直边偏移为 50%.<br>然后将子级向左上移动自身尺寸的一半(margin|transform).  </p>
+<p>用平移属性更简洁方便:<br><code>transform: translate(-50%, -50%)</code></p>
+<h3 id="堆叠层级-z-index"><a href="#堆叠层级-z-index" class="headerlink" title="堆叠层级 z-index"></a>堆叠层级 z-index</h3><p>设置定位元素的层级顺序, 改变定位元素的显示顺序.  </p>
+<p>默认效果按照标签书写顺序, 后写居上.<br><code>z-index </code> 取值是整数, 默认为0. 取值越大越靠上.</p>
+<h3 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h3><p>CSS 精灵, 是一种网页图片应用处理方式. 把网页中的一些背景图片整合到一张图片文件, 再用<code>background-position</code> 精确定位出图片的位置.<br>能减少服务器被请求的次数, 从而减轻服务器压力, 提高访问速度.  </p>
+<p>实现步骤:<br>第一步: 创建盒子, 盒子尺寸与小图尺寸相同.<br>第二步: 设置盒子背景图 <code>background-image</code> 为精灵图<br>第三步: 添加 <code>background-position</code> 属性, 改变背景图位置.  </p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>基础入门</tag>
+        <tag>web前端</tag>
         <tag>CSS</tag>
         <tag>HTML</tag>
-        <tag>web前端</tag>
       </tags>
   </entry>
 </search>

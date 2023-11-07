@@ -24,15 +24,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="世上每个人本来就有自己的发展时区.有些人看似走在你得前面, 有些人看似走在你后面.但其实每个人在自己的时区有自己的步程,.">
+        <meta name="description" content="世上每个人本来就有自己的发展时区.有些人看似走在你得前面, 有些人看似走在你后面.但其实每个人在自己的时区有自己的步程.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端JavaScript入门">
 <meta property="og:url" content="https://www.wreckloud.com/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="狼牙月影">
-<meta property="og:description" content="世上每个人本来就有自己的发展时区.有些人看似走在你得前面, 有些人看似走在你后面.但其实每个人在自己的时区有自己的步程,.">
+<meta property="og:description" content="世上每个人本来就有自己的发展时区.有些人看似走在你得前面, 有些人看似走在你后面.但其实每个人在自己的时区有自己的步程.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-06T12:26:32.000Z">
-<meta property="article:modified_time" content="2023-11-06T13:03:26.749Z">
+<meta property="article:modified_time" content="2023-11-07T02:10:38.576Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="web前端">
@@ -370,8 +370,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-06 21:03:26</span>
-            <span class="mobile">2023-11-06 21:03:26</span>
+            <span class="desktop">2023-11-07 10:10:38</span>
+            <span class="mobile">2023-11-07 10:10:38</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -413,7 +413,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>40 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>774 字</span>
         </span>
     
     
@@ -434,7 +434,67 @@
 
         <div class="article-content markdown-body">
             <p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=b19220b8f372f3a81aa8463fde694a63" >笔记视频教程来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在客户端(浏览器)的编程语言, 能实现人机交互的效果t</p>
+<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.</p>
+<p>JavaScript能做:</p>
+<ul>
+<li>网页特效(监听用户的行为, 并作出反馈)</li>
+<li>表单验证(针对表单数据的合法性进行验证)</li>
+<li>数据交互(获取后台的数据, 渲染到前端)</li>
+<li>服务端编程(node.js)</li>
+</ul>
+<p>JavaScipt 又分为:</p>
+<ul>
+<li>ECMAScript(JavaScript语言基础) 和 Web APIs  </li>
+<li>Web APIs 其中又包括 DOM(页面文档对象模型) 和 BOM(浏览器对象模型)</li>
+</ul>
+<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><p>与CSS类似, 同样也有以下三种书写方式:</p>
+<h4 id="行内书写"><a href="#行内书写" class="headerlink" title="行内书写"></a>行内书写</h4><p>代码写在标签内部, 在vue框架会使用这种模式.  </p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;提示文本&#x27;)&quot;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="内部书写"><a href="#内部书写" class="headerlink" title="内部书写"></a>内部书写</h4><p>直接写在html文件里, 用<code>&lt;script src=&quot;文件路径&quot;&gt;&lt;/script&gt;</code>标签包裹住.<br>规范写法是 <strong>写在<code>&lt;/body&gt;</code>的上方</strong> , 通常将其放在HTML页面底部.<br>alert(‘你好, js’)页面弹出警告对话框.</p>
+<h4 id="外部书写"><a href="#外部书写" class="headerlink" title="外部书写"></a>外部书写</h4><p>代码写在以.js结尾的文件里.<br>通过<code>&lt;script src=&quot;文件路径&quot;&gt;&lt;/script&gt;</code>标签, 引入到html页面中.<br>外部js标签中间的代码会被忽略.</p>
+<p>关于在JavaScript的结束符, 对于浏览器可以自动推断语句结束位置, 写不写无所谓.</p>
+<h3 id="输入输出语法"><a href="#输入输出语法" class="headerlink" title="输入输出语法"></a>输入输出语法</h3><h4 id="输出语法"><a href="#输出语法" class="headerlink" title="输出语法"></a>输出语法</h4><ol>
+<li><p>document.write</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;要输出的内容&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+<p>能向body内输出内容.<br>如果输出的内容写的是标签, 也会被解析成网页元素.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&lt;h1&gt;标题示例&lt;/h1&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+<p>可以直接输出标签.</p>
+</li>
+<li><p>alert</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">`要输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
+<p>在页面弹出警告对话框.</p>
+</li>
+<li><p>console.log</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`在控制台输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
+<p>控制台输出语法, 程序员调试使用.</p>
+</li>
+</ol>
+<h4 id="输入语法"><a href="#输入语法" class="headerlink" title="输入语法"></a>输入语法</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">`要求输入内容的提示`</span>)</span><br></pre></td></tr></table></figure></div>
+<p>能显示一个对话框, 对话框中包含提示信息.  </p>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>老朋友了,<strong>字面量</strong>就是等号右边的部分. 用来在计算机中描述客观事物.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> int b = <span class="number">10</span>; <span class="comment">//b为常量，10为字面量</span></span><br><span class="line">string str = “hello world！”; <span class="comment">// str 为变量，hello world！为字面量</span></span><br></pre></td></tr></table></figure></div>
+
+<p>有些数据可以在程序使用之前预先设定并在整个运行过程中没有变化，这称为<strong>常量</strong>。</p>
+<p>有些数据在程序运行中可以变化或者被赋值，这称为<strong>变量</strong>。</p>
+<h4 id="变量的本质"><a href="#变量的本质" class="headerlink" title="变量的本质"></a>变量的本质</h4><p>变量本质是程序在内存中申请的一块用来存放数据的空间.</p>
+<h4 id="变量命名规整"><a href="#变量命名规整" class="headerlink" title="变量命名规整"></a>变量命名规整</h4><p>规则:   </p>
+<ul>
+<li>不能使用关键字</li>
+<li>只能使用 <strong>下划线, 字母, 数字, $</strong> 组成, 不能以数字开头</li>
+<li>字母严格区分大小写</li>
+</ul>
+<p>规范:</p>
+<ul>
+<li>起名有意义</li>
+<li>遵守小驼峰命名法</li>
+</ul>
+<h3 id="变量的基本使用"><a href="#变量的基本使用" class="headerlink" title="变量的基本使用"></a>变量的基本使用</h3><p>要想使用变量, 首先需要创建变量(也称为声明变量或者定义变量).</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> 变量名<span class="number">1</span> = 要赋的值, 变量名<span class="number">2</span> = 要赋的值</span><br><span class="line"></span><br><span class="line">变量名<span class="number">1</span> = 要重新赋的值</span><br></pre></td></tr></table></figure></div>
+
+
+
+
 
         </div>
 
@@ -488,7 +548,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">前端JavaScript入门</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E4%BB%8B%E7%BB%8D"><span class="nav-text">JavaScript 介绍</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E4%BB%8B%E7%BB%8D"><span class="nav-text">JavaScript 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-text">书写位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E6%B3%95"><span class="nav-text">输入输出语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">变量的基本使用</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>

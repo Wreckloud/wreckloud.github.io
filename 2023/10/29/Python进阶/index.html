@@ -32,7 +32,7 @@
 <meta property="og:description" content="没有对象? new一个不就行了! 接下来是与对象在Python中的初次相遇.(">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-29T07:01:17.000Z">
-<meta property="article:modified_time" content="2023-11-05T08:31:12.824Z">
+<meta property="article:modified_time" content="2023-11-09T08:31:37.360Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="进阶">
@@ -370,8 +370,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-05 16:31:12</span>
-            <span class="mobile">2023-11-05 16:31:12</span>
+            <span class="desktop">2023-11-09 16:31:37</span>
+            <span class="mobile">2023-11-09 16:31:37</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -413,7 +413,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>668 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>890 字</span>
         </span>
     
     
@@ -460,7 +460,31 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__lt__</span>(<span class="params">self, other</span>):</span><br><span class="line">        <span class="keyword">return</span> self.age &lt; other.age</span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, <span class="number">31</span>)</span><br><span class="line">wolf2 = Wolf(<span class="string">&quot;布莱泽&quot;</span>, <span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1 &lt; wolf2) <span class="comment">#返回 false</span></span><br><span class="line"><span class="built_in">print</span>(wolf1 &gt; wolf2) <span class="comment">#返回 true </span></span><br></pre></td></tr></table></figure></div>
 
 <p>而小于等于大于等于可以使用: <code>__le__</code><br>同理, 判断两个对象是否相等: <code>__eq__</code><br>用法都同 <code>__lt__</code></p>
-<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1>
+<h1 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h1><p>面向对象编程, 是许多编程语言都支持的一种编程思想.<br>简单理解就是: 基于模板 (类) 去创建实体对象 (对象), 使对象完成功能开发.</p>
+<p>面向对象包含 3 大主要特性:</p>
+<ol>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ol>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装表示将现实世界事物的:</p>
+<ul>
+<li>属性</li>
+<li>行为</li>
+</ul>
+<p>封装到类中, 称为:</p>
+<ul>
+<li>成员变量</li>
+<li>成员方法</li>
+</ul>
+<p>从而完成程序对现实世界事物的描述</p>
+<h3 id="私有成员"><a href="#私有成员" class="headerlink" title="私有成员"></a>私有成员</h3><p>有的属性呵行为不公开, 我没将其称之为私有成员形式, 定义私有成员的方式非常简单, 只要:</p>
+<ul>
+<li>私有成员变量: 变量名以__开头(2个下划线)</li>
+<li>私有成员方法: 方法名以__开头(2个下划线)</li>
+</ul>
+<p>私有成员只能被内部类中的其他成员访问.</p>
+
         </div>
 
         
@@ -528,7 +552,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">Python进阶</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BB%84%E7%BB%87"><span class="nav-text">数据的组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-text">类的定义和使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B1%BB%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-text">常用的类内置方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-text">封装</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BB%84%E7%BB%87"><span class="nav-text">数据的组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-text">类的定义和使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B1%BB%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-text">常用的类内置方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-text">面向对象的三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E6%88%90%E5%91%98"><span class="nav-text">私有成员</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>

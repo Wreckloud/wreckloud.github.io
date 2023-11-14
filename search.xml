@@ -121,7 +121,31 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Wolf</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__lt__</span>(<span class="params">self, other</span>):</span><br><span class="line">        <span class="keyword">return</span> self.age &lt; other.age</span><br><span class="line"></span><br><span class="line">wolf1 = Wolf(<span class="string">&quot;沃里克&quot;</span>, <span class="number">31</span>)</span><br><span class="line">wolf2 = Wolf(<span class="string">&quot;布莱泽&quot;</span>, <span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(wolf1 &lt; wolf2) <span class="comment">#返回 false</span></span><br><span class="line"><span class="built_in">print</span>(wolf1 &gt; wolf2) <span class="comment">#返回 true </span></span><br></pre></td></tr></table></figure></div>
 
 <p>而小于等于大于等于可以使用: <code>__le__</code><br>同理, 判断两个对象是否相等: <code>__eq__</code><br>用法都同 <code>__lt__</code></p>
-<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1>]]></content>
+<h1 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h1><p>面向对象编程, 是许多编程语言都支持的一种编程思想.<br>简单理解就是: 基于模板 (类) 去创建实体对象 (对象), 使对象完成功能开发.</p>
+<p>面向对象包含 3 大主要特性:</p>
+<ol>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ol>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装表示将现实世界事物的:</p>
+<ul>
+<li>属性</li>
+<li>行为</li>
+</ul>
+<p>封装到类中, 称为:</p>
+<ul>
+<li>成员变量</li>
+<li>成员方法</li>
+</ul>
+<p>从而完成程序对现实世界事物的描述</p>
+<h3 id="私有成员"><a href="#私有成员" class="headerlink" title="私有成员"></a>私有成员</h3><p>有的属性呵行为不公开, 我没将其称之为私有成员形式, 定义私有成员的方式非常简单, 只要:</p>
+<ul>
+<li>私有成员变量: 变量名以__开头(2个下划线)</li>
+<li>私有成员方法: 方法名以__开头(2个下划线)</li>
+</ul>
+<p>私有成员只能被内部类中的其他成员访问.</p>
+]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -744,7 +768,7 @@
 </ol>
 <h4 id="输入语法"><a href="#输入语法" class="headerlink" title="输入语法"></a>输入语法</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">`要求输入内容的提示`</span>)</span><br></pre></td></tr></table></figure></div>
 <p>能显示一个对话框, 对话框中包含提示信息.  </p>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>老朋友了,<strong>字面量</strong>就是等号右边的部分. 用来在计算机中描述客观事物.</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>老朋友了,<strong>字面量</strong>就是等号右边的部分. 用来在计算机中描述客观事物.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> int b = <span class="number">10</span>; <span class="comment">//b为常量，10为字面量</span></span><br><span class="line">string str = “hello world！”; <span class="comment">// str 为变量，hello world！为字面量</span></span><br></pre></td></tr></table></figure></div>
 
 <p>有些数据可以在程序使用之前预先设定并在整个运行过程中没有变化，这称为<strong>常量</strong>。</p>
@@ -765,7 +789,24 @@
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> 变量名<span class="number">1</span> = 要赋的值, 变量名<span class="number">2</span> = 要赋的值</span><br><span class="line"></span><br><span class="line">变量名<span class="number">1</span> = 要重新赋的值</span><br></pre></td></tr></table></figure></div>
 
 <p>旧版本的 <code>var</code> 可以先使用, 再声明. 声明过的变量依然可以再声明. 还有变量提升等其他问题.<br>因此不推荐使用 <code>var</code></p>
-]]></content>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> 数组名 = [元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>, ...]</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(数组名[<span class="number">0</span>])</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(数组名.<span class="property">length</span>) <span class="comment">//打印数组长度.</span></span><br></pre></td></tr></table></figure></div>
+<p>数组索引从 0 开始.</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>使用 <code>const</code> 声明的变量称为 “常量”  .<br>当某一个变量<strong>永远不会被改变</strong>的时候, 就可以使用 <code>const</code> 来声明.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 常量名 = 常量的值</span><br></pre></td></tr></table></figure></div>
+
+<p>常量不允许重新赋值, 声明时必须初始化.</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>JS数据类型整体分为两大类: </p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.   </p>
+<p>NaN 表示一个计算错误. 对NaN的任何操作都会返回 NaN.</p>
+<h4 id="String-字符串型"><a href="#String-字符串型" class="headerlink" title="String 字符串型"></a>String 字符串型</h4><p>被 “”(双引号) ‘’(单引号) &#96;&#96;(反引号) 包裹的都是字符串.</p>
+<p><code>+</code>运算符, 可实现字符串拼接.<br>也可以使用模板字符串:  </p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`大家好, 我是<span class="subst">$&#123;name&#125;</span>, 今年<span class="subst">$&#123;age&#125;</span>`</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>模板字符串使用 &#96;&#96;(反引号), 变量用 ${} 包裹.</p>
+<h4 id="boolean-布尔型"><a href="#boolean-布尔型" class="headerlink" title="boolean 布尔型"></a>boolean 布尔型</h4><p>只有两个值: <code>true</code> 和 <code>false</code></p>
+<h4 id="undefined-未定义型"><a href="#undefined-未定义型" class="headerlink" title="undefined 未定义型"></a>undefined 未定义型</h4><p>只声明变量而<strong>不赋值</strong>, 使用未定义型.</p>
+<h4 id="null-空类型"><a href="#null-空类型" class="headerlink" title="null 空类型"></a>null 空类型</h4><p>Javascript 中的null 仅仅是一个代表 “无”, 或 “值未知” 的特殊值.</p>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="object-对象"><a href="#object-对象" class="headerlink" title="object 对象"></a>object 对象</h4>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

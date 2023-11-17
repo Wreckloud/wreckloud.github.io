@@ -2053,4 +2053,72 @@ end</pre>
         <tag>HTML</tag>
       </tags>
   </entry>
+  <entry>
+    <title>C#快速入门</title>
+    <url>/2023/11/16/C-%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>(视频链接)[<a class="link"   href="https://www.bilibili.com/video/BV1sy4y1u7cw/?spm_id_from=333.337.search-card.all.click&vd_source=b19220b8f372f3a81aa8463fde694a63%5D" >https://www.bilibili.com/video/BV1sy4y1u7cw/?spm_id_from=333.337.search-card.all.click&amp;vd_source=b19220b8f372f3a81aa8463fde694a63] <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="C-简介"><a href="#C-简介" class="headerlink" title="C# 简介"></a>C# 简介</h1><p>C# 是 .Net(.Net Framewor) 框架的一部分，且用于编写 .Net 应用程序.<br>与Java类似, C# 也是一种面向对象的编程语言.</p>
+<p>C#中, 程序会从: <strong>Main 函数</strong> 开始执行, 以 <code>;</code> 分号结束语句, 一行可以有多条语句.  </p>
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System; </span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">HelloWorldApplication</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">class</span> <span class="title">HelloWorld</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">         Console.WriteLine(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>C# 文件的后缀为 <code>.cs</code></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>定义变量能让计算机知道, 要在哪里分配多大空间来存储数据.</p>
+<p>变量定义方式:</p>
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line">变量类型 变量名称 = 初始化值;</span><br></pre></td></tr></table></figure></div>
+<table>
+<thead>
+<tr>
+<th>变量类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>有符号整型, 可以是负数</td>
+</tr>
+<tr>
+<td>uint</td>
+<td>无符号整型, 不能表示负数</td>
+</tr>
+<tr>
+<td>float</td>
+<td>精度大约6-9位数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>精度大约15-17位数字</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>取值有true或false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>存储单个字符</td>
+</tr>
+<tr>
+<td>string</td>
+<td>存储字符串, 由多个char组成.</td>
+</tr>
+<tr>
+<td>数组</td>
+<td>数组类型[] 数组名 &#x3D; new 数组类型[数组长度]</td>
+</tr>
+</tbody></table>
+<p>使用 <code>sizeof()</code> 方法, 可以获取指定类型的存储大小.</p>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>C# 中可以使用 自增自减<code>i++</code> <code>i--</code>.</p>
+<p>字符串的常用操作:</p>
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> Str = <span class="string">&quot;Wreckloud&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> len = Str.Length <span class="comment">//计算字符串长度</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> index = Str.IndexOf(<span class="string">&quot;c&quot;</span>) <span class="comment">//查找匹配项, 返回其索引</span></span><br><span class="line"><span class="comment">// index = 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> replace = Str.Replace(<span class="string">&quot;Wreckloud&quot;</span>,<span class="string">&quot;维克罗德&quot;</span>) <span class="comment">//替换指定字符</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> sub = Str.Substring(<span class="number">6</span>, <span class="number">2</span>) <span class="comment">//下标为6开始的长度为2的子字符串</span></span><br><span class="line"><span class="comment">//sub = &quot;ou&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line">返回值类型 函数名(参数列表)&#123;</span><br><span class="line">    函数指令;</span><br><span class="line">    [<span class="meta">return 返回值</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">region</span> 折叠代码名称</span></span><br><span class="line">    折叠代码内容</span><br><span class="line"><span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 无返回值函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintHelloWorld</span>()</span>&#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintHelloWorld</span>()</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 有返回值函数</span></span></span><br><span class="line"><span class="function"><span class="built_in">float</span> <span class="title">MulAdd</span>(<span class="params"><span class="built_in">float</span> val1, <span class="built_in">float</span> val2, <span class="built_in">float</span> addNum</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> val1 * val2 + addNum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">float</span> result = MulAdd(<span class="number">1</span>,<span class="number">2.2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure></div>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>入门基础</tag>
+        <tag>C#</tag>
+      </tags>
+  </entry>
 </search>

@@ -2056,33 +2056,36 @@ end</pre>
   <entry>
     <title>C#快速入门</title>
     <url>/2023/11/13/C-%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<p>(视频链接)[<a class="link"   href="https://www.bilibili.com/video/BV1sy4y1u7cw/?spm_id_from=333.337.search-card.all.click&vd_source=b19220b8f372f3a81aa8463fde694a63%5D" >https://www.bilibili.com/video/BV1sy4y1u7cw/?spm_id_from=333.337.search-card.all.click&amp;vd_source=b19220b8f372f3a81aa8463fde694a63] <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+    <content><![CDATA[<p><a class="link"   href="https://www.bilibili.com/video/BV1sy4y1u7cw/?spm_id_from=333.337.search-card.all.click&vd_source=b19220b8f372f3a81aa8463fde694a63" >视频链接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h1 id="C-简介"><a href="#C-简介" class="headerlink" title="C# 简介"></a>C# 简介</h1><p>C# 是 .Net(.Net Framewor) 框架的一部分，且用于编写 .Net 应用程序.<br>与Java类似, C# 也是一种面向对象的编程语言.</p>
 <p>C#中, 程序会从: <strong>Main 函数</strong> 开始执行, 以 <code>;</code> 分号结束语句, 一行可以有多条语句.  </p>
-<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System; </span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">HelloWorldApplication</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">class</span> <span class="title">HelloWorld</span></span><br><span class="line">   &#123;</span><br><span class="line">      <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">      &#123;</span><br><span class="line">         Console.WriteLine(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>与 Java 不同的是，文件名可以不同于类的名称。</p>
+<h3 id="c-程序结构"><a href="#c-程序结构" class="headerlink" title="c#程序结构"></a>c#程序结构</h3><p>一个 C# 程序主要包括以下部分:  </p>
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//以这个HelloWorld为例, 主要包括:</span></span><br><span class="line"><span class="keyword">using</span> System; </span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">HelloWorldApplication</span> </span><br><span class="line"><span class="comment">//命名空间声明（Namespace declaration）</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">HelloWorld</span> </span><br><span class="line">    <span class="comment">//一个 class(和它的方法, 属性),声明一个类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line"><span class="function">        <span class="comment">// 一个 Main 方法(以及其中的语句（Statements）&amp; 表达式（Expressions）)</span></span></span><br><span class="line">            &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <p>C# 文件的后缀为 <code>.cs</code></p>
-<p><code>Console.WriteLine()</code> 能在控制台输出内容. 相对的, 控制台输入函数是: <code>ReadLine()</code></p>
-<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> num;</span><br><span class="line">num = Convert.ToInt32(Console.ReadLine());</span><br></pre></td></tr></table></figure></div>
+<p><code>Console.WriteLine()</code> 能在控制台输出内容.<br>相对的, 控制台输入函数是: <code>ReadLine()</code></p>
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> num = Convert.ToInt32(Console.ReadLine());</span><br></pre></td></tr></table></figure></div>
 
 <p><code>Console.ReadLine()</code> 只接受字符串格式的数据.</p>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>定义变量能让计算机知道, 要在哪里分配多大空间来存储数据.</p>
-<p>常量用关键字 <code>const</code> 修饰. 不能被修改.</p>
-<p>变量定义方式:</p>
-<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line">变量类型 变量名称 = 初始化值;</span><br></pre></td></tr></table></figure></div>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>常量用关键字 <code>const</code> 修饰. 不能被修改.</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>在 C# 中，变量分为以下几种类型:</p>
+<ul>
+<li>值类型（Value types）</li>
+<li>引用类型（Reference types）</li>
+<li>指针类型（Pointer types）</li>
+</ul>
+<h3 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h3><p>值类型直接包含数据. 其常用值类型有:</p>
 <table>
 <thead>
 <tr>
-<th>变量类型</th>
+<th>类型</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>int</td>
-<td>有符号整型, 可以是负数</td>
-</tr>
-<tr>
-<td>uint</td>
-<td>无符号整型, 不能表示负数</td>
+<td>有符号整型, 可以是负数. (uint无符号整型)</td>
 </tr>
 <tr>
 <td>float</td>
@@ -2100,32 +2103,53 @@ end</pre>
 <td>char</td>
 <td>存储单个字符</td>
 </tr>
-<tr>
-<td>string</td>
-<td>存储字符串, 由多个char组成.</td>
-</tr>
-<tr>
-<td>数组</td>
-<td>数组类型[] 数组名 &#x3D; new 数组类型[数组长度]</td>
-</tr>
 </tbody></table>
 <p>使用 <code>sizeof()</code> 方法, 可以获取指定类型的存储大小.</p>
-<p>除了 <strong>隐式转换</strong> 和 使用强制类型转换符号 <code>(数据类型)要转换的变量</code> <strong>强制转换</strong> 之外.<br>C#还提供了 <strong>类型转换方法</strong>: <code>.To类型()</code> .<br>例如将 <code>int i = 75</code> 转换为字符串:</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>引用类型指的是一个内存位置.</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符串（String）类型</td>
+<td>1. <code>String str = &quot;这是一个字符串&quot;;</code><br>2. <code>@&quot;这是一个字符串&quot;;</code></td>
+<td>字符串是一种特殊的对象,由多个char组成.第二种称为逐字字符串,它不可以使用转义字符.</td>
+</tr>
+<tr>
+<td>对象（Object）类型</td>
+<td>1.装箱(值类型转换为引用类型) :<br><code>int i = 123; object box = i;</code><br>2.拆箱(引用类型转换为值类型)<br><code>int i = (int)box;</code></td>
+<td>对象类型可以被分配任何其他类型,<br>装箱和拆箱能让引用类型和值类型相互转换<br>(但会带来性能上的损失)</td>
+</tr>
+<tr>
+<td>动态（Dynamic）类型</td>
+<td><code>dynamic 变量名 = 值;</code></td>
+<td>可以绕过静态类型检查</td>
+</tr>
+</tbody></table>
+<p>除了上述内置的外, 自定义引用类型有: <strong>class</strong>、<strong>interface</strong> 和 <strong>delegate</strong>.<br>先不急着说.</p>
+<p>变量定义方式:</p>
+<div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line">变量类型 变量名称 = 初始化值;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>除了 <strong>隐式转换</strong> 和 使用强制类型转换符号 <code>(数据类型)要转换的变量</code> <strong>强制转换</strong> 之外.<br>C#还提供了 <strong>类型转换方法</strong>: <code>.To类型()</code> .<br>例如将 <code>int i = 75</code> 转换为字符串:</p>
 <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> i = <span class="number">75</span></span><br><span class="line"></span><br><span class="line">i.ToString()</span><br></pre></td></tr></table></figure></div>
 <p>在转换时, 要注意数据类型的兼容性检查.</p>
 <h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>C# 中可以使用 自增自减<code>i++</code> <code>i--</code>.</p>
 <p>字符串的常用操作:</p>
 <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> Str = <span class="string">&quot;Wreckloud&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> len = Str.Length <span class="comment">//计算字符串长度</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> index = Str.IndexOf(<span class="string">&quot;c&quot;</span>) <span class="comment">//查找匹配项, 返回其索引</span></span><br><span class="line"><span class="comment">// index = 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> replace = Str.Replace(<span class="string">&quot;Wreckloud&quot;</span>,<span class="string">&quot;维克罗德&quot;</span>) <span class="comment">//替换指定字符</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> sub = Str.Substring(<span class="number">6</span>, <span class="number">2</span>) <span class="comment">//下标为6开始的长度为2的子字符串</span></span><br><span class="line"><span class="comment">//sub = &quot;ou&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
-<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><h4 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符:"></a>三目运算符:</h4><p>三目运算符是if-else语句的简化方法.</p>
+<h1 id="C-基本语法"><a href="#C-基本语法" class="headerlink" title="C# 基本语法"></a>C# 基本语法</h1><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符:"></a>三目运算符:</h3><p>三目运算符是if-else语句的简化方法.</p>
 <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line">Exp1 ? Exp2 : Exp3; <span class="comment">//Exp1为True, 计算Exp2; 反之Exp3.</span></span><br></pre></td></tr></table></figure></div>
 <p>需要注意的是: 如果想放入while中使用, 需要放入一个赋值语句中.<br>例如:</p>
 <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">while</span>(num!=<span class="number">0</span>)&#123;</span><br><span class="line">    num = (num%<span class="number">2</span>==<span class="number">0</span>)?(num/=<span class="number">2</span>):(num--);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> count;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<h4 id="if-else-语句"><a href="#if-else-语句" class="headerlink" title="if else 语句"></a>if else 语句</h4><div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式 <span class="number">1</span> )&#123;</span><br><span class="line">   <span class="comment">/* 如果布尔表达式 1 为真将执行的语句 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(布尔表达式 <span class="number">2</span> )&#123;</span><br><span class="line">   <span class="comment">/* 当布尔表达式 2 为真时执行 */</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">/* 如果布尔表达式为假将执行的语句 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="if-else-语句"><a href="#if-else-语句" class="headerlink" title="if else 语句"></a>if else 语句</h3><div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式 <span class="number">1</span> )&#123;</span><br><span class="line">   <span class="comment">/* 如果布尔表达式 1 为真将执行的语句 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(布尔表达式 <span class="number">2</span> )&#123;</span><br><span class="line">   <span class="comment">/* 当布尔表达式 2 为真时执行 */</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">/* 如果布尔表达式为假将执行的语句 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="switch-语句"><a href="#switch-语句" class="headerlink" title="switch 语句"></a>switch 语句</h4><div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(expression)&#123;</span><br><span class="line">    <span class="keyword">case</span> constant-expression  :</span><br><span class="line">       statement(s);</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">    <span class="keyword">case</span> constant-expression  :</span><br><span class="line">       statement(s);</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/* 可以有任意数量的 case 语句 */</span></span><br><span class="line">    <span class="literal">default</span> : <span class="comment">/* 可选的 */</span></span><br><span class="line">       statement(s);</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="switch-语句"><a href="#switch-语句" class="headerlink" title="switch 语句"></a>switch 语句</h3><div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">    <span class="keyword">case</span> 表达式值<span class="number">1</span> :</span><br><span class="line">       要执行的语句;</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">    <span class="keyword">case</span> 表达式值<span class="number">2</span>  :</span><br><span class="line">       要执行的语句;</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/* 可以有任意数量的 case 语句 */</span></span><br><span class="line">    <span class="literal">default</span> : <span class="comment">/* 可选的 */</span></span><br><span class="line">       statement(s);</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>判断与循环类似于其他语言, 因此不赘述.</p>
+
 <h1 id="C-函数"><a href="#C-函数" class="headerlink" title="C# 函数"></a>C# 函数</h1><div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line">返回值类型 函数名(参数列表)&#123;</span><br><span class="line">    函数指令;</span><br><span class="line">    [<span class="meta">return 返回值</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">region</span> 折叠代码名称</span></span><br><span class="line">    折叠代码内容</span><br><span class="line"><span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 无返回值函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintHelloWorld</span>()</span>&#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintHelloWorld</span>()</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 有返回值函数</span></span></span><br><span class="line"><span class="function"><span class="built_in">float</span> <span class="title">MulAdd</span>(<span class="params"><span class="built_in">float</span> val1, <span class="built_in">float</span> val2, <span class="built_in">float</span> addNum</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> val1 * val2 + addNum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">float</span> result = MulAdd(<span class="number">1</span>,<span class="number">2.2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure></div>

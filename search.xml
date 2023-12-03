@@ -1023,13 +1023,6 @@
 <p>不过后来闲老师讲太慢了, 还是自己看文档教学快一些.</p>
 <p><a class="link"   href="https://www.w3school.com.cn/js/js_intro.asp" >教程网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.  </p>
-<p>JavaScript能做:</p>
-<ul>
-<li>网页特效(监听用户的行为, 并作出反馈)</li>
-<li>表单验证(针对表单数据的合法性进行验证)</li>
-<li>数据交互(获取后台的数据, 渲染到前端)</li>
-<li>服务端编程(node.js)</li>
-</ul>
 <p>JavaScipt 又分为:</p>
 <ul>
 <li>ECMAScript(JavaScript语言基础) 和 Web APIs  </li>
@@ -1060,7 +1053,7 @@
 </ol>
 <h4 id="输入语法"><a href="#输入语法" class="headerlink" title="输入语法"></a>输入语法</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">`要求输入内容的提示`</span>)</span><br></pre></td></tr></table></figure></div>
 <p>能显示一个对话框, 对话框中包含提示信息.  </p>
-<h4 id="访问-更改-HTML-元素"><a href="#访问-更改-HTML-元素" class="headerlink" title="访问&#x2F;更改 HTML 元素"></a>访问&#x2F;更改 HTML 元素</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 访问</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更改</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id).<span class="property">innerHTML</span> = 要更改的元素</span><br></pre></td></tr></table></figure></div>
+<h4 id="访问-更改-HTML-元素"><a href="#访问-更改-HTML-元素" class="headerlink" title="访问&#x2F;更改 HTML 元素"></a>访问&#x2F;更改 HTML 元素</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 访问</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更改</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id).<span class="property">innerHTML</span> = 要更改成的元素</span><br></pre></td></tr></table></figure></div>
 
 
 <h2 id="JavaScript-值"><a href="#JavaScript-值" class="headerlink" title="JavaScript 值"></a>JavaScript 值</h2><p>JavaScript 语句定义两种类型的值:</p>
@@ -1089,18 +1082,63 @@
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 常量名 = 常量的值</span><br></pre></td></tr></table></figure></div>
 
 <p>常量不允许重新赋值, 声明时必须初始化.</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>JS数据类型整体分为两大类: </p>
-<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.   </p>
-<p>NaN 表示一个计算错误. 对NaN的任何操作都会返回 NaN.</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.   </p>
+<p>NaN(Not a number, 非数) 表示一个计算错误. 对NaN的任何操作都会返回 NaN.</p>
+<h4 id="boolean-布尔型"><a href="#boolean-布尔型" class="headerlink" title="boolean 布尔型"></a>boolean 布尔型</h4><p>只有两个值: <code>true</code> 和 <code>false</code></p>
 <h4 id="String-字符串型"><a href="#String-字符串型" class="headerlink" title="String 字符串型"></a>String 字符串型</h4><p>被 “”(双引号) ‘’(单引号) &#96;&#96;(反引号) 包裹的都是字符串.</p>
 <p><code>+</code> 运算符, 可实现字符串拼接.<br>也可以使用模板字符串:  </p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`大家好, 我是<span class="subst">$&#123;name&#125;</span>, 今年<span class="subst">$&#123;age&#125;</span>`</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>格式化字符串输出 &#96;&#96;(反引号), 变量用 ${} 包裹.</p>
-<h4 id="boolean-布尔型"><a href="#boolean-布尔型" class="headerlink" title="boolean 布尔型"></a>boolean 布尔型</h4><p>只有两个值: <code>true</code> 和 <code>false</code></p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>JavaScript 数组用方括号书写.<br>数组属于对象.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> cars = [<span class="string">&quot;Porsche&quot;</span>, <span class="string">&quot;Volvo&quot;</span>, <span class="string">&quot;BMW&quot;</span>];</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="object-对象"><a href="#object-对象" class="headerlink" title="object 对象"></a>object 对象</h4><p>对象用花括号来书写</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;<span class="attr">firstName</span>:<span class="string">&quot;Bill&quot;</span>, <span class="attr">lastName</span>:<span class="string">&quot;Gates&quot;</span>, <span class="attr">age</span>:<span class="number">62</span>, <span class="attr">eyeColor</span>:<span class="string">&quot;blue&quot;</span>&#125;;</span><br></pre></td></tr></table></figure></div>
+
 <h4 id="undefined-未定义型"><a href="#undefined-未定义型" class="headerlink" title="undefined 未定义型"></a>undefined 未定义型</h4><p>只声明变量而 <strong>不赋值</strong>, 使用未定义型.</p>
-<h4 id="null-空类型"><a href="#null-空类型" class="headerlink" title="null 空类型"></a>null 空类型</h4><p>Javascript 中的null 仅仅是一个代表 “无”, 或 “值未知” 的特殊值.</p>
-<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="object-对象"><a href="#object-对象" class="headerlink" title="object 对象"></a>object 对象</h4>]]></content>
+<h4 id="null-空类型"><a href="#null-空类型" class="headerlink" title="null 空类型"></a>null 空类型</h4><p>Javascript 中的 null 仅仅是一个代表 “无”, 或 “值未知” 的特殊值.<br><code>Undefined</code> 与 <code>null</code> 的<strong>值</strong>相等，但<strong>类型</strong>不相等.  </p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>              <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>                   <span class="comment">// object</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span>            <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>             <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h4><p>空值与 undefined 不是一回事.</p>
+<p>空的字符串变量既有值也有类型.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="string">&quot;&quot;</span>;                <span class="comment">// 值是 &quot;&quot;，类型是 &quot;string&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<h1 id="JavaScript-函数"><a href="#JavaScript-函数" class="headerlink" title="JavaScript 函数"></a>JavaScript 函数</h1><p>下面是 计算两个数的乘积, 并返回结果函数 的实例:  </p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="title function_">myFunction</span>(<span class="number">7</span>, <span class="number">8</span>);        <span class="comment">// 调用函数，返回值被赋值给 x</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;                <span class="comment">// 函数返回 a 和 b 的乘积</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>定义（创建）一个 JavaScript 对象:</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> wolf = &#123;</span><br><span class="line">  <span class="title class_">Name</span>: <span class="string">&quot;Wreckloud&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">  <span class="attr">howling</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;howl~&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="常见HTML事件"><a href="#常见HTML事件" class="headerlink" title="常见HTML事件"></a>常见HTML事件</h3><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>onchange</code></td>
+<td>HTML元素已被改变</td>
+</tr>
+<tr>
+<td><code>onmouseover</code></td>
+<td>用户把鼠标移动到 HTML 元素上</td>
+</tr>
+<tr>
+<td><code>onmouseout</code></td>
+<td>用户把鼠标移开 HTML 元素</td>
+</tr>
+<tr>
+<td><code>onkeydown</code></td>
+<td>用户按下键盘按键</td>
+</tr>
+<tr>
+<td><code>onload</code></td>
+<td>浏览器已经完成页面加载</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -2408,5 +2446,26 @@ end</pre>
         <tag>CSS</tag>
         <tag>HTML</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Unity入门</title>
+    <url>/2023/12/03/Unity%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="初识-Unity"><a href="#初识-Unity" class="headerlink" title="初识 Unity"></a>初识 Unity</h1><h3 id="基础界面简介"><a href="#基础界面简介" class="headerlink" title="基础界面简介"></a>基础界面简介</h3><p>在新建完成后会在创建的目录下生成相关工程文件:</p>
+<blockquote>
+<p><code>Assets</code>: 资源（场景脚本模型）<br><code>Library</code>: 库（系统）<br><code>Logs</code>: 日志<br><code>Packages</code>: 导入的包<br><code>ProjectSettings</code>: 工程设置<br><code>Temp</code>: 临时文件（文件过大可以删除部分缓存）<br><code>UserSettings</code>: 设置  </p>
+</blockquote>
+<p>接下来打开 Unity 窗口, 会有5个窗口面板:</p>
+<h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><p>工程面板，存放工程的各种资源。包括：声音资源、模型资源、场景文件、材质、脚本等。  </p>
+<h5 id="创建代码"><a href="#创建代码" class="headerlink" title="创建代码"></a>创建代码</h5><p>在 <code>Project(工程面板) &gt; Assets</code> 右键选择 create 创建 C# script ,<br>并重命名为 <code>New Name</code> 右键即可打开  </p>
+<p>Unity支持持的编程语: C#、Mono、JavaScript </p>
+<h4 id="Hierarchy"><a href="#Hierarchy" class="headerlink" title="Hierarchy"></a>Hierarchy</h4><p>层级面板，展示当前打开的场景里面有哪些东西。（里面的东西称为游戏物体）</p>
+<h4 id="Inspector"><a href="#Inspector" class="headerlink" title="Inspector"></a>Inspector</h4><p>检视面板（或属性面板），查看一个游戏物体由哪些组件组成。<br>场景 -&gt; 多个游戏物体 -&gt; 多个组件</p>
+<h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h4><p>场景面板，显示当前场景的样子  </p>
+<h5 id="场景基本操作"><a href="#场景基本操作" class="headerlink" title="场景基本操作"></a>场景基本操作</h5><h4 id="Game"><a href="#Game" class="headerlink" title="Game"></a>Game</h4><p>游戏面板，场景运行的时候的样子</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Unity</category>
+      </categories>
   </entry>
 </search>

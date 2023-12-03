@@ -193,6 +193,166 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL入门学习</title>
+    <url>/2023/11/22/Mysql%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="MySQL-概述"><a href="#MySQL-概述" class="headerlink" title="MySQL 概述"></a>MySQL 概述</h1><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>数据有组织地存储的仓库, 称为 <strong>数据库</strong> (DataBase).<br><strong>数据库管理系统</strong>(DataBase Management System) 是能操作和管理数据库的大型软件. MySQL 就是一个数据库管理系统.</p>
+<p><strong>SQL</strong> (Structured Query Language) 是操作关系型数据库的编程语言, 定义了一套操作关系型数据库统一标准.<br>它不仅仅能操作 MySQL, 其他主流的 关系型数据库管理系统 (如:ORACLE, SQL Server…) 也都统一标准操作.</p>
+<p>安装后使用cmd指令连接客户端:</p>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line">mysql <span class="operator">-</span>u root <span class="operator">-</span>p</span><br></pre></td></tr></table></figure></div>
+
+<p>输入密码, 连接成功.</p>
+<h3 id="MySQL-数据库"><a href="#MySQL-数据库" class="headerlink" title="MySQL 数据库"></a>MySQL 数据库</h3><p>关系型数据库 (RDBMS)</p>
+<p>建立在关系模型基础上, 由多张相互连接的二维表组成的数据库.</p>
+<p>在一个数据库服务器中可以创建多个 <strong>数据库</strong> .<br>在一个 数据库 中 又可以创建多个 <strong>表</strong> .<br>基于 表 进行数据存储的数据库, 我们称之为 <strong>关系型数据库</strong>.</p>
+<h1 id="SQL-通用语法"><a href="#SQL-通用语法" class="headerlink" title="SQL 通用语法"></a>SQL 通用语法</h1><p>SQL语句以分号结尾, 空格缩进和换行都不影响, 也不区分大小写, 不过还是推荐关键字使用大写.</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 单行注释内容</span></span><br><span class="line"></span><br><span class="line"># 单行注释内容 (MySQL独有)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 多行注释内容 */</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DDL (Data Definition Language)</td>
+<td>数据库定义语言, 用来定义数据库对象(数据库, 表, 字段)</td>
+</tr>
+<tr>
+<td>DML (Data Manipulation Language)</td>
+<td>数据库操作语言, 用来对数据库表中的数据增删改查</td>
+</tr>
+<tr>
+<td>DQL (Data Query Language)</td>
+<td>数据查询语言, 用来查询数据库中表的记录</td>
+</tr>
+<tr>
+<td>DCL (Data Control Languag)</td>
+<td>数据控制语言, 用来创建数据库用户, 控制数据库的访问权限</td>
+</tr>
+</tbody></table>
+<h3 id="MySQL-常用数据类型"><a href="#MySQL-常用数据类型" class="headerlink" title="MySQL 常用数据类型"></a>MySQL 常用数据类型</h3><p>主要分为三类: 数值类型, 字符串类型, 日期时间类型.</p>
+<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Binary</code></td>
+<td>二进制串, 固定长度 n.</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td>存储 <code>TRUE</code> 或 <code>FALSE</code> 值</td>
+</tr>
+<tr>
+<td><code>Int</code> 或 <code>IntEger</code></td>
+<td>长整数, 4字节</td>
+</tr>
+<tr>
+<td><code>SmallInt</code></td>
+<td>短整数, 2字节</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>单精度浮点数值</td>
+</tr>
+<tr>
+<td><code>Double</code></td>
+<td>双精度浮点数值</td>
+</tr>
+<tr>
+<td><code>Decimal</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Char(n)</code></td>
+<td>定长字符串, 固定长度 n.</td>
+</tr>
+<tr>
+<td><code>VarChar(n)</code></td>
+<td>变长字符串, 最大长度 n.</td>
+</tr>
+</tbody></table>
+<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>DATE</code></td>
+<td>存储年、月、日的值 (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td><code>TIME</code></td>
+<td>存储小时、分、秒的值 (HH:MM:SS)</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP</code></td>
+<td>存储年、月、日、小时、分、秒的值</td>
+</tr>
+<tr>
+<td><code>INTERVAL</code></td>
+<td>由一些整数字段组成, 代表一段时间, 取决于区间的类型</td>
+</tr>
+</tbody></table>
+<h1 id="DDL-数据库-表-字段-操作语句"><a href="#DDL-数据库-表-字段-操作语句" class="headerlink" title="DDL 数据库&#x2F;表&#x2F;字段 操作语句"></a>DDL 数据库&#x2F;表&#x2F;字段 操作语句</h1><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ol>
+<li>数据库 查询</li>
+</ol>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询所有数据库</span></span><br><span class="line"><span class="keyword">Show</span> DataBases;</span><br><span class="line"></span><br><span class="line"><span class="comment">--查询当前数据库</span></span><br><span class="line"><span class="keyword">Select</span> DataBase();</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>表 查询</li>
+</ol>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询当前数据库所有表</span></span><br><span class="line"><span class="keyword">Show</span> Tables;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询表结构</span></span><br><span class="line"><span class="keyword">Desc</span> 表名称;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询指定表的建表语句</span></span><br><span class="line"><span class="keyword">Show</span> <span class="keyword">Create</span> <span class="keyword">Table</span> 表名称;</span><br></pre></td></tr></table></figure></div>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ol>
+<li>数据库 创建</li>
+</ol>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Create</span> DataBase 数据库名称;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果不存在就创建数据库, 反之不创建. (避免创建相同数据库而报错)</span></span><br><span class="line"><span class="keyword">Create</span> DataBase if <span class="keyword">not</span> <span class="keyword">exists</span> 数据库名称;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>表 创建</li>
+</ol>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">Table</span> 表名称(</span><br><span class="line">    字段<span class="number">1</span> 字段<span class="number">1</span>类型[Comment 字段<span class="number">1</span>注释],</span><br><span class="line">    字段<span class="number">2</span> 字段<span class="number">2</span>类型[Comment 字段<span class="number">2</span>注释],</span><br><span class="line">    ...</span><br><span class="line">    字段n 字段n类型[Comment 字段n注释])[Comment 表注释]</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="删除-修改"><a href="#删除-修改" class="headerlink" title="删除&#x2F;修改"></a>删除&#x2F;修改</h3><ol>
+<li>数据库 删除</li>
+</ol>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Drop</span> database 数据库名称;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 同理的, 如果存在就删除数据库, 反之不删除.</span></span><br><span class="line"><span class="keyword">Drop</span> database if <span class="keyword">exists</span> 数据库名称;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>表 修改</li>
+</ol>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 修改表名称</span></span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">table</span> 表名称 rename <span class="keyword">to</span> 新表名;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除表(同理的if esists)</span></span><br><span class="line"><span class="keyword">Drop</span> <span class="keyword">Table</span> [if <span class="keyword">exists</span>] 表名;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除指定表, 并重新创建该表.</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名称;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li>表中 字段 修改<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 添加字段</span></span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">Table</span> 表名称 <span class="keyword">Add</span> 字段名 类型(长度)[Comment 注释][约束];</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改数据类型</span></span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">Table</span> 表名称 Modify 字段名 新数据类型(长度);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改字段名和字段类型</span></span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">Table</span> 表名称 Change 旧字段名 新字段名 类型(长度)[Comment 注释][约束];</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除字段</span></span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">Table</span> 表名称 <span class="keyword">Drop</span> 字段名;</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line">Use 数据库名称;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>入门基础</tag>
+        <tag>Java</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础</title>
     <url>/2023/09/23/Python%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<blockquote>
@@ -860,7 +1020,9 @@
     <title>前端JavaScript入门</title>
     <url>/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p><a class="link"   href="https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=b19220b8f372f3a81aa8463fde694a63" >笔记视频教程来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.</p>
+<p>不过后来闲老师讲太慢了, 还是自己看文档教学快一些.</p>
+<p><a class="link"   href="https://www.w3school.com.cn/js/js_intro.asp" >教程网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.  </p>
 <p>JavaScript能做:</p>
 <ul>
 <li>网页特效(监听用户的行为, 并作出反馈)</li>
@@ -898,12 +1060,15 @@
 </ol>
 <h4 id="输入语法"><a href="#输入语法" class="headerlink" title="输入语法"></a>输入语法</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">`要求输入内容的提示`</span>)</span><br></pre></td></tr></table></figure></div>
 <p>能显示一个对话框, 对话框中包含提示信息.  </p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>老朋友了,<strong>字面量</strong>就是等号右边的部分. 用来在计算机中描述客观事物.</p>
+<h4 id="访问-更改-HTML-元素"><a href="#访问-更改-HTML-元素" class="headerlink" title="访问&#x2F;更改 HTML 元素"></a>访问&#x2F;更改 HTML 元素</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 访问</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更改</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id).<span class="property">innerHTML</span> = 要更改的元素</span><br></pre></td></tr></table></figure></div>
+
+
+<h2 id="JavaScript-值"><a href="#JavaScript-值" class="headerlink" title="JavaScript 值"></a>JavaScript 值</h2><p>JavaScript 语句定义两种类型的值:</p>
+<p>混合值被称为<strong>字面量（literal）</strong>.<br>变量值被称为<strong>变量</strong>. </p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> int b = <span class="number">10</span>; <span class="comment">//b为常量，10为字面量</span></span><br><span class="line">string str = “hello world！”; <span class="comment">// str 为变量，hello world！为字面量</span></span><br></pre></td></tr></table></figure></div>
 
 <p>有些数据可以在程序使用之前预先设定并在整个运行过程中没有变化，这称为<strong>常量</strong>。</p>
 <p>有些数据在程序运行中可以变化或者被赋值，这称为<strong>变量</strong>。</p>
-<h4 id="变量的本质"><a href="#变量的本质" class="headerlink" title="变量的本质"></a>变量的本质</h4><p>变量本质是程序在内存中申请的一块用来存放数据的空间.</p>
 <h4 id="变量命名规整"><a href="#变量命名规整" class="headerlink" title="变量命名规整"></a>变量命名规整</h4><p>规则:   </p>
 <ul>
 <li>不能使用关键字</li>
@@ -916,11 +1081,10 @@
 <li>遵守小驼峰命名法</li>
 </ul>
 <h3 id="变量的基本使用"><a href="#变量的基本使用" class="headerlink" title="变量的基本使用"></a>变量的基本使用</h3><p>要想使用变量, 首先需要创建变量(也称为声明变量或者定义变量).</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> 变量名<span class="number">1</span> = 要赋的值, 变量名<span class="number">2</span> = 要赋的值</span><br><span class="line"></span><br><span class="line">变量名<span class="number">1</span> = 要重新赋的值</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名<span class="number">1</span> = 要赋的值, 变量名<span class="number">2</span> = 要赋的值</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 变量名<span class="number">1</span> = 要重新赋的值</span><br></pre></td></tr></table></figure></div>
 
-<p>旧版本的 <code>var</code> 可以先使用, 再声明. 声明过的变量依然可以再声明. 还有变量提升等其他问题.<br>因此不推荐使用 <code>var</code></p>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> 数组名 = [元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3</span>, ...]</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(数组名[<span class="number">0</span>])</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(数组名.<span class="property">length</span>) <span class="comment">//打印数组长度.</span></span><br></pre></td></tr></table></figure></div>
-<p>数组索引从 0 开始.</p>
+<p>使用 <code>var</code> 重复声明不会丢失它的值. </p>
+<p>使用 <code>let</code> 关键字重新声明变量可以解决这个问题</p>
 <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>使用 <code>const</code> 声明的变量称为 “常量”  .<br>当某一个变量<strong>永远不会被改变</strong>的时候, 就可以使用 <code>const</code> 来声明.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 常量名 = 常量的值</span><br></pre></td></tr></table></figure></div>
 
@@ -929,12 +1093,12 @@
 <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.   </p>
 <p>NaN 表示一个计算错误. 对NaN的任何操作都会返回 NaN.</p>
 <h4 id="String-字符串型"><a href="#String-字符串型" class="headerlink" title="String 字符串型"></a>String 字符串型</h4><p>被 “”(双引号) ‘’(单引号) &#96;&#96;(反引号) 包裹的都是字符串.</p>
-<p><code>+</code>运算符, 可实现字符串拼接.<br>也可以使用模板字符串:  </p>
+<p><code>+</code> 运算符, 可实现字符串拼接.<br>也可以使用模板字符串:  </p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`大家好, 我是<span class="subst">$&#123;name&#125;</span>, 今年<span class="subst">$&#123;age&#125;</span>`</span>)</span><br></pre></td></tr></table></figure></div>
 
-<p>模板字符串使用 &#96;&#96;(反引号), 变量用 ${} 包裹.</p>
+<p>格式化字符串输出 &#96;&#96;(反引号), 变量用 ${} 包裹.</p>
 <h4 id="boolean-布尔型"><a href="#boolean-布尔型" class="headerlink" title="boolean 布尔型"></a>boolean 布尔型</h4><p>只有两个值: <code>true</code> 和 <code>false</code></p>
-<h4 id="undefined-未定义型"><a href="#undefined-未定义型" class="headerlink" title="undefined 未定义型"></a>undefined 未定义型</h4><p>只声明变量而<strong>不赋值</strong>, 使用未定义型.</p>
+<h4 id="undefined-未定义型"><a href="#undefined-未定义型" class="headerlink" title="undefined 未定义型"></a>undefined 未定义型</h4><p>只声明变量而 <strong>不赋值</strong>, 使用未定义型.</p>
 <h4 id="null-空类型"><a href="#null-空类型" class="headerlink" title="null 空类型"></a>null 空类型</h4><p>Javascript 中的null 仅仅是一个代表 “无”, 或 “值未知” 的特殊值.</p>
 <h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="object-对象"><a href="#object-对象" class="headerlink" title="object 对象"></a>object 对象</h4>]]></content>
       <categories>
@@ -943,6 +1107,347 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构与算法(c语言)</title>
+    <url>/2023/09/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80-c%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<p>上课老师真的好无聊,还是上b站自学吧,听说这门课还挺难学习的?<br>笔记源自于这套课程:<br><a class="link"   href="https://www.bilibili.com/video/BV1W64y1z7jh/?p=2&spm_id_from=pageDriver&vd_source=b19220b8f372f3a81aa8463fde694a63" >C语言描述《数据结构和算法》 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="第零章-C语言基础"><a href="#第零章-C语言基础" class="headerlink" title="第零章 C语言基础"></a>第零章 C语言基础</h1><blockquote>
+<p>补一补c语言有关指针和结构体的基础知识…<br>视频来源: <a class="link"   href="https://www.bilibili.com/video/BV1kV4y1C7z6/?spm_id_from=333.337.search-card.all.click&vd_source=b19220b8f372f3a81aa8463fde694a63" >数据结构所需要的c语言基础 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>类似于 定义int能存放整数, 定义char能存放字符;<br>指针能存放地址. </p>
+<p>地址 可以类比理解成 寝室号.<br>“ * “ 可以类比为 寝室钥匙.</p>
+<p>例如: “ *a “ 可以访问到a的值.</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">12</span>;<span class="comment">//定义一个整型变量</span></span><br><span class="line"><span class="type">int</span>* p;<span class="comment">//定义一个int类型的指针变量</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span>* p = &amp;x;<span class="comment">//将x的地址值赋给指针变量</span></span><br></pre></td></tr></table></figure></div>
+
+<p>知道地址后如何访问地址存的变量值?<br>有以下两种方法:</p>
+<ol>
+<li>“ * “ + 地址</li>
+</ol>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> y = <span class="number">7</span>;</span><br><span class="line"><span class="type">int</span>* q = &amp;y;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*q);<span class="comment">//通过地址访问y的值,然后打印y的值</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>地址 + [  ]</li>
+</ol>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* p = a;<span class="comment">//将数组a第一个数的地址值给指针p</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, p[<span class="number">0</span>])<span class="comment">//通过地址值访问数组a[2]的值</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, p[<span class="number">2</span>]);<span class="comment">//访问数组a[2]的值</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>也可以试试第一种方法:</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, *p);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, *(p+<span class="number">2</span>));</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>还有这几种方式,也能输出相同的结果:</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;%d&quot;</span>, a[<span class="number">0</span>]);<span class="comment">//知道a的地址(首地址),偏移[0]个位置的值.</span></span><br><span class="line">print(<span class="string">&quot;%d&quot;</span>, a[<span class="number">2</span>]);<span class="comment">//知道a的地址(首地址),偏移[2]个位置的值.</span></span><br><span class="line">print(<span class="string">&quot;%d&quot;</span>, *a);<span class="comment">//知道a的地址(首地址),访问a的值.</span></span><br><span class="line">print(<span class="string">&quot;%d&quot;</span>, *(a+<span class="number">2</span>));<span class="comment">//知道a的地址(首地址),访问(a+2)的值.</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>同理的<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;%d&quot;</span>,(a+<span class="number">1</span>)[<span class="number">0</span>]);<span class="comment">//知道首地址(a+1),偏移[0]个位置的值.</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<p>即a[1]的值</p>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>例如管理学生信息. </p>
+<p>若需求存储十个学生的: 姓名 学号 分数.<br>如果没有使用结构体:</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> name[<span class="number">10</span>];</span><br><span class="line"><span class="type">char</span> score[<span class="number">10</span>];</span><br><span class="line"><span class="type">float</span> sno[<span class="number">10</span>];</span><br></pre></td></tr></table></figure></div>
+
+<p>不能以学生为单位查看,较为凌乱.</p>
+<p>试一试结构体定义:</p>
+<ul>
+<li>定义方式一</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> son[<span class="number">20</span>];</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">float</span> score[<span class="number">3</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//若要访问第一个学生的学号:</span></span><br><span class="line">s[<span class="number">0</span>].son;</span><br><span class="line"><span class="comment">//同理,要访问第四个学生的成绩:</span></span><br><span class="line">s[<span class="number">4</span>].score;</span><br></pre></td></tr></table></figure></div>
+
+
+<ul>
+<li>定义方式二(更常用)</li>
+</ul>
+<blockquote>
+<p>typedef 约等于重命名<br>例如: typedef int a, 就是把int重新改名为a.<br>即: int x; 等价于 a x;  </p>
+</blockquote>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> son[<span class="number">20</span>];</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">float</span> score[<span class="number">3</span>];</span><br><span class="line">&#125; stu;</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>同理,此处是将 定义一中的 “struct student{…}” 重命名成 “stu”.</p>
+</blockquote>
+<p>尝试理解以下结构体定义:</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125; LNode,* Linklist;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>逗号相当于分隔符,类似于: int a,b; 是int a; int b;两条语句.</p>
+<p>因此可以这样拆分出两条语句:</p>
+<blockquote>
+<p>typedef struct LNode{…} LNode:<br>将”struct LNode{…}”重命名为 LNode.</p>
+</blockquote>
+<blockquote>
+<p>typedef struct LNode* linklist:<br>将”struct LNode”重命名为 * linklist.</p>
+</blockquote>
+<p>不过用逗号像这样链接容易造成误解, 大家一般不这样写去为难自己.</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">Lnode s;<span class="comment">//创造一个LNode类型的空间叫做s.</span></span><br><span class="line"></span><br><span class="line">Linklist p = &amp;s;<span class="comment">//取这个s空间的地址给p空间存放.</span></span><br></pre></td></tr></table></figure></div>
+
+
+<pre class="mermaid">graph LR;
+
+A1[data1]
+B1[next1]
+A2[data2]
+B2[next2]
+
+subgraph LNode1: s
+A1---B1
+end
+
+subgraph LNode2
+B1--指针-->A2---B2
+end</pre>
+
+<div class="note-large default"><div class="notel-title"><p>的异同</p>
+</div><div class="notel-content"><ul>
+<li>#define 是一个预处理器指令，它在编译之前就对代码进行了文本替换;</li>
+</ul>
+<p>typedef 是一个关键字，它在编译时创建了一个新的类型别名。</p>
+<ul>
+<li>#define 可以用于定义常量、变量、函数或者代码片段的宏。</li>
+</ul>
+<p>typedef 可以用于定义结构体、枚举、联合或者指针等复杂的类型的别名。</p>
+<ul>
+<li>#define 的作用域是从定义处到文件末尾，除非用 #undef 取消。</li>
+</ul>
+<p>typedef 的作用域是从定义处到所在的代码块末尾。</p>
+</div></div>
+
+
+
+<h3 id="结构体指针运算符"><a href="#结构体指针运算符" class="headerlink" title="结构体指针运算符"></a>结构体指针运算符</h3><p><code>-&gt;</code> 是一个结构体指针运算符，它用于通过结构体指针访问结构体的成员。<br>它的一般形式是：</p>
+<blockquote>
+<p><strong>结构体指针-&gt;成员名</strong></p>
+</blockquote>
+<p>例如，如果 L 是一个指向 SqList 类型的结构体的指针，那么 L-&gt;length 就表示访问该结构体的 length 成员，也就是线性表的当前长度。<br>可以把 -&gt; 理解为先解引用指针，再用 . 访问成员，即：</p>
+<p>L-&gt;length 等价于 (*L).length</p>
+<h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><blockquote>
+<p>不得不说我们老师讲的是真不行,说的话总是有很多完全没必要的句子,得不到她要说的重点</p>
+</blockquote>
+<h3 id="基本概念和术语"><a href="#基本概念和术语" class="headerlink" title="基本概念和术语"></a>基本概念和术语</h3><ol>
+<li><p>数据: 所有能输入到计算机中去能用来描述客观事物的符号</p>
+</li>
+<li><p>数据元素: 数据的基本单位, 也称为 <strong>结点</strong> 或 <strong>记录</strong></p>
+</li>
+<li><p>数据项:  有独立含义的 <strong>数据最小单位</strong>, 也称为 <strong>域</strong></p>
+</li>
+<li><p>数据对象: 是性质相同的数据元素的集合, 是数据的一个子级</p>
+</li>
+<li><p>数据结构: 是相互之间存在一种或多种特定关系的数据元素的集合</p>
+</li>
+</ol>
+<h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><blockquote>
+<p><strong>程序设计 &#x3D; 数据结构 + 算法</strong>  </p>
+</blockquote>
+<p>就是数据与元素的<strong>关系集合</strong></p>
+<hr>
+<p>传统上,数据结构分为<strong>逻辑结构</strong>和<strong>存储(物理)结构</strong>。   </p>
+<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p>是数据元素间抽象化的相互关系, 与数据的存储无关, 独立于计算机.    </p>
+<p>逻辑结构又分为:  </p>
+<ol>
+<li>线性结构</li>
+</ol>
+<p>有且仅有一个开始节点和一个终端节点. 且所有节点最多只有一个直接前驱和一个后继.  </p>
+<p>例如: 线性表, 栈, 队列</p>
+<ol start="2">
+<li>非线性结构</li>
+</ol>
+<p>一个节点可能有多个直接前驱和直接后继.</p>
+<p>例如: 树, 图</p>
+<h3 id="存储-物理-结构"><a href="#存储-物理-结构" class="headerlink" title="存储(物理)结构"></a>存储(物理)结构</h3><p>是数据元素及其关系在计算机存储器中的存储方式</p>
+<p>物理结构又分为:</p>
+<ol>
+<li>顺序存储</li>
+</ol>
+<p>借助元素在存储器中的 <strong>相对位置</strong> 来表示数据元素间的逻辑关系.</p>
+<p>例如: 顺序表</p>
+<ol start="2">
+<li>链式存储</li>
+</ol>
+<p>借助指示元素存储地址的 <strong>指针</strong> 表示数据元素间的逻辑关系.</p>
+<p>例如: 链表</p>
+<h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><p>顾名思义,就是计算的技巧和方式。<br>对于给定的问题,是可以由多个算法来解决。  </p>
+<h2 id="算法的基本特征"><a href="#算法的基本特征" class="headerlink" title="算法的基本特征"></a>算法的基本特征</h2><p>算法的基本特征要：<br><strong>输入、输出、有穷性、确定性和可行性</strong>  </p>
+<p>算法设计的要求有：<br><strong>正确性、可读性、健壮性、时间效率高和存储量低</strong></p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>语句频度: 一条语句的重复执行次数.</p>
+<p>算法的执行时间 &#x3D;&#x3D; 该算法中所有语句的频度之和.</p>
+<blockquote>
+<p>$T(n) &#x3D; O(f(n))$ </p>
+</blockquote>
+<p>例如:</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>( i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    <span class="keyword">for</span>( j=<span class="number">0</span>; j&lt;n; j++)</span><br><span class="line">        c[i][j]=a[i][j]+b[i][j]</span><br></pre></td></tr></table></figure></div>
+
+<p>是for循环的嵌套, 每个for循环的语句频度为n.<br>因此, 整体为n*n</p>
+<p>即:   $T(n) &#x3D; O(n^2)$ </p>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法所需存储空间的度量, 记作</p>
+<blockquote>
+<p>$S(n) &#x3D; O(f(n))$</p>
+</blockquote>
+<p>通常,求”复杂度”是指时间复杂度</p>
+<h1 id="第二章-线性表"><a href="#第二章-线性表" class="headerlink" title="第二章 线性表"></a>第二章 线性表</h1><h2 id="线性表的定义"><a href="#线性表的定义" class="headerlink" title="线性表的定义"></a>线性表的定义</h2><p>类型相同的数据元素构成的有限序列</p>
+<p>序列的每一个元素都有唯一的前驱和后继, 除了开头和结尾两个节点 (线性结构的特点)</p>
+<h3 id="线性表的顺序存储"><a href="#线性表的顺序存储" class="headerlink" title="线性表的顺序存储"></a>线性表的顺序存储</h3><p>分配一块 <strong>地址连续的</strong> 存储单元依次去存放这些元素, 将其称之为<strong>顺序标</strong></p>
+<p>例如数组.</p>
+<p><strong>基本操作:</strong></p>
+<ul>
+<li>定义线性表的存储结构</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 100 <span class="comment">//线性表的最大长度</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType; <span class="comment">//假设线性表的元素类型为整型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ElemType data[MAXSIZE]; <span class="comment">//用数组存储元素</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//线性表的当前长度</span></span><br><span class="line">&#125; SqList; <span class="comment">//顺序表类型</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>**InitList(*L)**: 初始化操作,建立一个空的线性表L.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">Status <span class="title function_">InitList</span><span class="params">(SqList *L)</span> &#123;</span><br><span class="line">    L-&gt;length = <span class="number">0</span>; <span class="comment">//将线性表的长度设为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAXSIZE; i++) &#123;</span><br><span class="line">        L-&gt;data[i] = <span class="number">0</span>; <span class="comment">//将所有元素设为0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>初始化操作中，把线性表长度设为0是为了表示线性表是空的，没有任何元素。  </p>
+<p>但是，这并不意味着线性表的 <strong>存储空间</strong> 是空的，因为我们用数组来存储元素，数组是一种静态的数据结构，它在定义时就分配了固定的内存空间。  </p>
+<p>因此，即使线性表长度为0，数组中仍然可能有一些原来的数据或者垃圾数据，这些数据并不属于线性表，但是占用了线性表的存储空间。</p>
+<p>所以将长度设定为0后依旧还得将线性表的存储空间，即所有元素设置为0。</p>
+<ul>
+<li><strong>ListEmpty(L)</strong>: 判断线性表是否为空表,若为空返回true.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListEmpty</span><span class="params">(SqList L)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (L.length == <span class="number">0</span>) &#123; <span class="comment">//如果线性表的长度为0,则为空表</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>**ClearList(*L)**: 清空线性表L.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ClearList</span><span class="params">(SqList *L)</span> &#123;</span><br><span class="line">    L-&gt;length = <span class="number">0</span>; <span class="comment">//将线性表的长度设为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAXSIZE; i++) &#123;</span><br><span class="line">        L-&gt;data[i] = <span class="number">0</span>; <span class="comment">//将所有元素设为0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>与初始化基本类似</p>
+<ul>
+<li>GetElem(L,i,*e): 将线性表L中的第i个位置元素值返回给e.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">GetElem</span><span class="params">(SqList L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    <span class="comment">//判断i是否合法,即1&lt;=i&lt;=L.length</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果不合法,则返回false</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        *e = L.data[i<span class="number">-1</span>]; <span class="comment">//如果合法,则将第i个元素的值赋给e</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//并返回true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>LocateElem(L,e): 在线性表L中查找和e相等的元素,若成功返回表中序号,否则返回0.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">LocateElem</span><span class="params">(SqList L, ElemType e)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++) &#123; <span class="comment">//遍历线性表中的所有元素</span></span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e) &#123; <span class="comment">//如果找到和e相等的元素</span></span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//则返回其在表中的序号(从1开始)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//如果没有找到,则返回0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>ListInsert(*L,i,e): 在线性表L中第i个位置插入新元素e.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListInsert</span><span class="params">(SqList *L, <span class="type">int</span> i, ElemType e)</span> &#123;</span><br><span class="line">    <span class="comment">//判断i是否合法,即1&lt;=i&lt;=L.length+1</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L-&gt;length + <span class="number">1</span>) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果不合法,则返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断线性表是否已满,即L.length==MAXSIZE</span></span><br><span class="line">    <span class="keyword">if</span> (L-&gt;length == MAXSIZE) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果已满,则返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//从最后一个元素开始向前遍历到第i个元素,将每个元素后移一位</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L-&gt;length - <span class="number">1</span>; j &gt;= i - <span class="number">1</span>; j--) &#123; </span><br><span class="line">        L-&gt;data[j+<span class="number">1</span>] = L-&gt;data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;data[i<span class="number">-1</span>] = e; <span class="comment">//将新元素e插入到第i个位置上</span></span><br><span class="line">    L-&gt;length++; <span class="comment">//将线性表的长度加1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示插入成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>ListDelete(*L,i,*e): 删除线性表L中第i个位置元素,并用e返回其值.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListDelete</span><span class="params">(SqList *L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    <span class="comment">//判断i是否合法,即1&lt;=i&lt;=L.length</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L-&gt;length) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果不合法,则返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    *e = L-&gt;data[i<span class="number">-1</span>]; <span class="comment">//将第i个元素的值赋给e</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; L-&gt;length; j++) &#123; <span class="comment">//从第i+1个元素开始向后遍历到最后一个元素,将每个元素前移一位</span></span><br><span class="line">        L-&gt;data[j<span class="number">-1</span>] = L-&gt;data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;length--; <span class="comment">//将线性表的长度减1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示删除成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>ListLength(L): 返回线性表L的元素个数.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ListLength</span><span class="params">(SqList L)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> L.length; <span class="comment">//直接返回线性表的长度属性即可</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="线性表的链式存储"><a href="#线性表的链式存储" class="headerlink" title="线性表的链式存储"></a>线性表的链式存储</h3><p>链式存储结构除了存储其本身的信息外,还存储一个指示其直接后继的存储位置信息.  </p>
+<ul>
+<li><strong>数据域</strong> :存储的元素信息</li>
+<li><strong>指针域</strong> :存储直接后驱的位置信息</li>
+<li><strong>存储映像</strong>:两部分的统称,也称作节点(Node)</li>
+</ul>
+<p>结点链接,成为一个链表,即为线性表的链式存储结构.<br>最后一个节点指针为空.</p>
+<p><strong>单链表的定义</strong></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义单链表结点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> &#123;</span></span><br><span class="line">    ElemType data; <span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">next</span>;</span> <span class="comment">//指针域</span></span><br><span class="line">&#125; LNode, *LinkList; <span class="comment">//LNode为结点类型，LinkList为指向结点的指针类型</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>基本操作</strong></p>
+<ul>
+<li>**InitList(*L)**: 初始化操作，建立一个空的单链表L.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">Status <span class="title function_">InitList</span><span class="params">(LinkList *L)</span> &#123;</span><br><span class="line">    *L = (LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode)); <span class="comment">//申请一个头结点</span></span><br><span class="line">    <span class="keyword">if</span> (*L == <span class="literal">NULL</span>) &#123; <span class="comment">//如果申请失败，返回错误</span></span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    &#125;</span><br><span class="line">    (*L)-&gt;next = <span class="literal">NULL</span>; <span class="comment">//将头结点的指针域置空</span></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>ListEmpty(L)</strong>: 判断单链表是否为空表，若为空返回true.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListEmpty</span><span class="params">(LinkList L)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (L-&gt;next == <span class="literal">NULL</span>) &#123; <span class="comment">//如果头结点的指针域为空，说明没有数据元素</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>**ClearList(*L)**: 清空单链表L.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ClearList</span><span class="params">(LinkList *L)</span> &#123;</span><br><span class="line">    LinkList p, q; <span class="comment">//定义两个临时指针变量</span></span><br><span class="line">    p = (*L)-&gt;next; <span class="comment">//p指向第一个数据结点</span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123; <span class="comment">//循环释放所有数据结点</span></span><br><span class="line">        q = p-&gt;next; <span class="comment">//q保存p的后继结点</span></span><br><span class="line">        <span class="built_in">free</span>(p); <span class="comment">//释放p所指向的结点</span></span><br><span class="line">        p = q; <span class="comment">//p指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    (*L)-&gt;next = <span class="literal">NULL</span>; <span class="comment">//将头结点的指针域置空</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>**GetElem(L,i,*e)**: 将单链表L中的第i个位置元素值返回给e.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">GetElem</span><span class="params">(LinkList L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    LinkList p; <span class="comment">//定义一个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = L; <span class="comment">//p指向头结点</span></span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; j &lt; i) &#123; <span class="comment">//循环遍历到第i个结点或者到达表尾</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">        j++; <span class="comment">//计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p || j &gt; i) &#123; <span class="comment">//如果没有找到第i个结点或者i不合法，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    *e = p-&gt;data; <span class="comment">//如果找到第i个结点，将其数据域赋给e，并返回true</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>LocateElem(L,e)</strong>: 在单链表L中查找和e相等的元素，若成功返回表中序号，否则返回0.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">LocateElem</span><span class="params">(LinkList L, ElemType e)</span> &#123;</span><br><span class="line">    LinkList p; <span class="comment">//定义一个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = L-&gt;next; <span class="comment">//p指向第一个数据结点</span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123; <span class="comment">//循环遍历所有数据结点或者找到和e相等的元素为止</span></span><br><span class="line">        i++; <span class="comment">//计数器加1</span></span><br><span class="line">        <span class="keyword">if</span> (p-&gt;data == e) &#123; <span class="comment">//如果找到和e相等的元素，返回其在表中的序号(从1开始)</span></span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//如果没有找到和e相等的元素，返回0表示失败</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>**ListInsert(*L,i,e)**: 在单链表L中第i个位置插入新元素e.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListInsert</span><span class="params">(LinkList *L, <span class="type">int</span> i, ElemType e)</span> &#123;</span><br><span class="line">    LinkList p, s; <span class="comment">//定义两个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = *L; <span class="comment">//p指向头结点</span></span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; j &lt; i - <span class="number">1</span>) &#123; <span class="comment">//循环遍历到第i-1个结点或者到达表尾</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">        j++; <span class="comment">//计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p || j &gt; i - <span class="number">1</span>) &#123; <span class="comment">//如果没有找到第i-1个结点或者i不合法，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode)); <span class="comment">//申请一个新的结点</span></span><br><span class="line">    <span class="keyword">if</span> (!s) &#123; <span class="comment">//如果申请失败，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s-&gt;data = e; <span class="comment">//将新元素e赋给新结点的数据域</span></span><br><span class="line">    s-&gt;next = p-&gt;next; <span class="comment">//将新结点的指针域指向原来第i个结点</span></span><br><span class="line">    p-&gt;next = s; <span class="comment">//将第i-1个结点的指针域指向新结点</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示插入成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>**ListDelete(*L,i,*e)**: 删除单链表L中第i个位置元素，并用e返回其值.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListDelete</span><span class="params">(LinkList *L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    LinkList p, q; <span class="comment">//定义两个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = *L; <span class="comment">//p指向头结点</span></span><br><span class="line">    <span class="keyword">while</span> (p-&gt;next &amp;&amp; j &lt; i - <span class="number">1</span>) &#123; <span class="comment">//循环遍历到第i-1个结点或者到达表尾的前一个结点</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">        j++; <span class="comment">//计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p-&gt;next || j &gt; i - <span class="number">1</span>) &#123; <span class="comment">//如果没有找到第i-1个结点或者i不合法，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q = p-&gt;next; <span class="comment">//q指向第i个结点</span></span><br><span class="line">    p-&gt;next = q-&gt;next; <span class="comment">//将第i-1个结点的指针域指向第i+1个结点</span></span><br><span class="line">    *e = q-&gt;data; <span class="comment">//将被删除的第i个结点的数据域赋给e</span></span><br><span class="line">    <span class="built_in">free</span>(q); <span class="comment">//释放被删除的第i个结点的空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示删除成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>ListLength(L)</strong>: 返回单链表L的元素个数.</li>
+</ul>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ListLength</span><span class="params">(LinkList L)</span> &#123;</span><br><span class="line">    LinkList p; <span class="comment">//定义一个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> len = <span class="number">0</span>; <span class="comment">//定义一个计数器变量，初始为0</span></span><br><span class="line">    p = L-&gt;next; <span class="comment">//p指向第一个数据结点</span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123; <span class="comment">//循环遍历所有数据结点，直到到达表尾为止</span></span><br><span class="line">        len++; <span class="comment">//计数器加1</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> len; <span class="comment">//返回计数器的值，即为单链表的长度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li>单链表图例 :</li>
+</ol>
+<pre class="mermaid">graph LR;
+    subgraph 头节点
+    A["head| · "]
+    end
+    B["a1| ·"]
+    subgraph 结点
+    C["a2(数据)| ·(指针)"]
+    end
+    D[...]
+    E["an|null"]
+
+    G[·]--头指针-->A-->B-->C-->D-->E</pre>
+
+<ol start="2">
+<li>空链表图例:</li>
+</ol>
+<pre class="mermaid">graph LR;
+    subgraph 头节点
+    A["head| · "]
+    end
+    E["an|null"]
+
+    G[·]--头指针-->A-->E</pre>
+
+<p>头指针: </p>
+<ul>
+<li>是链表指向的<strong>第一个节点</strong>的指针 (若链表存在<strong>头节点</strong>,则指向头节点).</li>
+<li>头指针具有<strong>标识作用</strong>,因此常用头指针冠以链表的名字.</li>
+<li>无论链表是否为空,头指针<strong>均不为空</strong>.</li>
+<li>头指针是链表<strong>必要</strong>元素</li>
+</ul>
+<p>头节点:</p>
+<ul>
+<li>是为了操作的统一和方便而设立. (统一了在第一元素节点前插入删除操作与其他节点)</li>
+<li>头节点 <strong>不一定</strong> 是链表的必要元素.</li>
+</ul>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><h3 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h3><p>只能在表的一端(栈顶)进行插入和删除运算的线性表  </p>
+<p>逻辑结构与线性表相同, 仍为一对一的关系.<br>存储结构以顺序栈更常见, 也可用链栈.</p>
+<p>栈<strong>只能在栈顶</strong>插入, 删除;只能存取<strong>栈顶</strong>的元素</p>
+<p><strong>后进先出</strong></p>
+<p>存出结构:</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    SElemType *base;</span><br><span class="line">    SElemType *top;</span><br><span class="line">    <span class="type">int</span> stacksize;</span><br><span class="line">&#125; SqStack;</span><br></pre></td></tr></table></figure></div>
+
+<p>栈空标志: base &#x3D;&#x3D; top<br>栈满标志: S-&gt;top - S-&gt;base &#x3D;&#x3D; S-&gt;stacksize</p>
+<p>初始化:</p>
+<p>进栈:</p>
+<p>取栈顶元素:</p>
+<p>栈顶判空:</p>
+<p>求栈长度:</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>算法</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -1902,410 +2407,6 @@
         <tag>web前端</tag>
         <tag>CSS</tag>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构与算法(c语言)</title>
-    <url>/2023/09/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80-c%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<p>上课老师真的好无聊,还是上b站自学吧,听说这门课还挺难学习的?<br>笔记源自于这套课程:<br><a class="link"   href="https://www.bilibili.com/video/BV1W64y1z7jh/?p=2&spm_id_from=pageDriver&vd_source=b19220b8f372f3a81aa8463fde694a63" >C语言描述《数据结构和算法》 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="第零章-C语言基础"><a href="#第零章-C语言基础" class="headerlink" title="第零章 C语言基础"></a>第零章 C语言基础</h1><blockquote>
-<p>补一补c语言有关指针和结构体的基础知识…<br>视频来源: <a class="link"   href="https://www.bilibili.com/video/BV1kV4y1C7z6/?spm_id_from=333.337.search-card.all.click&vd_source=b19220b8f372f3a81aa8463fde694a63" >数据结构所需要的c语言基础 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</blockquote>
-<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>类似于 定义int能存放整数, 定义char能存放字符;<br>指针能存放地址. </p>
-<p>地址 可以类比理解成 寝室号.<br>“ * “ 可以类比为 寝室钥匙.</p>
-<p>例如: “ *a “ 可以访问到a的值.</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">12</span>;<span class="comment">//定义一个整型变量</span></span><br><span class="line"><span class="type">int</span>* p;<span class="comment">//定义一个int类型的指针变量</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span>* p = &amp;x;<span class="comment">//将x的地址值赋给指针变量</span></span><br></pre></td></tr></table></figure></div>
-
-<p>知道地址后如何访问地址存的变量值?<br>有以下两种方法:</p>
-<ol>
-<li>“ * “ + 地址</li>
-</ol>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> y = <span class="number">7</span>;</span><br><span class="line"><span class="type">int</span>* q = &amp;y;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*q);<span class="comment">//通过地址访问y的值,然后打印y的值</span></span><br></pre></td></tr></table></figure></div>
-
-<ol start="2">
-<li>地址 + [  ]</li>
-</ol>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* p = a;<span class="comment">//将数组a第一个数的地址值给指针p</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, p[<span class="number">0</span>])<span class="comment">//通过地址值访问数组a[2]的值</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, p[<span class="number">2</span>]);<span class="comment">//访问数组a[2]的值</span></span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>也可以试试第一种方法:</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, *p);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, *(p+<span class="number">2</span>));</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>还有这几种方式,也能输出相同的结果:</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;%d&quot;</span>, a[<span class="number">0</span>]);<span class="comment">//知道a的地址(首地址),偏移[0]个位置的值.</span></span><br><span class="line">print(<span class="string">&quot;%d&quot;</span>, a[<span class="number">2</span>]);<span class="comment">//知道a的地址(首地址),偏移[2]个位置的值.</span></span><br><span class="line">print(<span class="string">&quot;%d&quot;</span>, *a);<span class="comment">//知道a的地址(首地址),访问a的值.</span></span><br><span class="line">print(<span class="string">&quot;%d&quot;</span>, *(a+<span class="number">2</span>));<span class="comment">//知道a的地址(首地址),访问(a+2)的值.</span></span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>同理的<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;%d&quot;</span>,(a+<span class="number">1</span>)[<span class="number">0</span>]);<span class="comment">//知道首地址(a+1),偏移[0]个位置的值.</span></span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<p>即a[1]的值</p>
-<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>例如管理学生信息. </p>
-<p>若需求存储十个学生的: 姓名 学号 分数.<br>如果没有使用结构体:</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> name[<span class="number">10</span>];</span><br><span class="line"><span class="type">char</span> score[<span class="number">10</span>];</span><br><span class="line"><span class="type">float</span> sno[<span class="number">10</span>];</span><br></pre></td></tr></table></figure></div>
-
-<p>不能以学生为单位查看,较为凌乱.</p>
-<p>试一试结构体定义:</p>
-<ul>
-<li>定义方式一</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> son[<span class="number">20</span>];</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">float</span> score[<span class="number">3</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//若要访问第一个学生的学号:</span></span><br><span class="line">s[<span class="number">0</span>].son;</span><br><span class="line"><span class="comment">//同理,要访问第四个学生的成绩:</span></span><br><span class="line">s[<span class="number">4</span>].score;</span><br></pre></td></tr></table></figure></div>
-
-
-<ul>
-<li>定义方式二(更常用)</li>
-</ul>
-<blockquote>
-<p>typedef 约等于重命名<br>例如: typedef int a, 就是把int重新改名为a.<br>即: int x; 等价于 a x;  </p>
-</blockquote>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> son[<span class="number">20</span>];</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">float</span> score[<span class="number">3</span>];</span><br><span class="line">&#125; stu;</span><br></pre></td></tr></table></figure></div>
-<blockquote>
-<p>同理,此处是将 定义一中的 “struct student{…}” 重命名成 “stu”.</p>
-</blockquote>
-<p>尝试理解以下结构体定义:</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125; LNode,* Linklist;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>逗号相当于分隔符,类似于: int a,b; 是int a; int b;两条语句.</p>
-<p>因此可以这样拆分出两条语句:</p>
-<blockquote>
-<p>typedef struct LNode{…} LNode:<br>将”struct LNode{…}”重命名为 LNode.</p>
-</blockquote>
-<blockquote>
-<p>typedef struct LNode* linklist:<br>将”struct LNode”重命名为 * linklist.</p>
-</blockquote>
-<p>不过用逗号像这样链接容易造成误解, 大家一般不这样写去为难自己.</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">Lnode s;<span class="comment">//创造一个LNode类型的空间叫做s.</span></span><br><span class="line"></span><br><span class="line">Linklist p = &amp;s;<span class="comment">//取这个s空间的地址给p空间存放.</span></span><br></pre></td></tr></table></figure></div>
-
-
-<pre class="mermaid">graph LR;
-
-A1[data1]
-B1[next1]
-A2[data2]
-B2[next2]
-
-subgraph LNode1: s
-A1---B1
-end
-
-subgraph LNode2
-B1--指针-->A2---B2
-end</pre>
-
-<div class="note-large default"><div class="notel-title"><p>的异同</p>
-</div><div class="notel-content"><ul>
-<li>#define 是一个预处理器指令，它在编译之前就对代码进行了文本替换;</li>
-</ul>
-<p>typedef 是一个关键字，它在编译时创建了一个新的类型别名。</p>
-<ul>
-<li>#define 可以用于定义常量、变量、函数或者代码片段的宏。</li>
-</ul>
-<p>typedef 可以用于定义结构体、枚举、联合或者指针等复杂的类型的别名。</p>
-<ul>
-<li>#define 的作用域是从定义处到文件末尾，除非用 #undef 取消。</li>
-</ul>
-<p>typedef 的作用域是从定义处到所在的代码块末尾。</p>
-</div></div>
-
-
-
-<h3 id="结构体指针运算符"><a href="#结构体指针运算符" class="headerlink" title="结构体指针运算符"></a>结构体指针运算符</h3><p><code>-&gt;</code> 是一个结构体指针运算符，它用于通过结构体指针访问结构体的成员。<br>它的一般形式是：</p>
-<blockquote>
-<p><strong>结构体指针-&gt;成员名</strong></p>
-</blockquote>
-<p>例如，如果 L 是一个指向 SqList 类型的结构体的指针，那么 L-&gt;length 就表示访问该结构体的 length 成员，也就是线性表的当前长度。<br>可以把 -&gt; 理解为先解引用指针，再用 . 访问成员，即：</p>
-<p>L-&gt;length 等价于 (*L).length</p>
-<h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><blockquote>
-<p>不得不说我们老师讲的是真不行,说的话总是有很多完全没必要的句子,得不到她要说的重点</p>
-</blockquote>
-<h3 id="基本概念和术语"><a href="#基本概念和术语" class="headerlink" title="基本概念和术语"></a>基本概念和术语</h3><ol>
-<li><p>数据: 所有能输入到计算机中去能用来描述客观事物的符号</p>
-</li>
-<li><p>数据元素: 数据的基本单位, 也称为 <strong>结点</strong> 或 <strong>记录</strong></p>
-</li>
-<li><p>数据项:  有独立含义的 <strong>数据最小单位</strong>, 也称为 <strong>域</strong></p>
-</li>
-<li><p>数据对象: 是性质相同的数据元素的集合, 是数据的一个子级</p>
-</li>
-<li><p>数据结构: 是相互之间存在一种或多种特定关系的数据元素的集合</p>
-</li>
-</ol>
-<h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><blockquote>
-<p><strong>程序设计 &#x3D; 数据结构 + 算法</strong>  </p>
-</blockquote>
-<p>就是数据与元素的<strong>关系集合</strong></p>
-<hr>
-<p>传统上,数据结构分为<strong>逻辑结构</strong>和<strong>存储(物理)结构</strong>。   </p>
-<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p>是数据元素间抽象化的相互关系, 与数据的存储无关, 独立于计算机.    </p>
-<p>逻辑结构又分为:  </p>
-<ol>
-<li>线性结构</li>
-</ol>
-<p>有且仅有一个开始节点和一个终端节点. 且所有节点最多只有一个直接前驱和一个后继.  </p>
-<p>例如: 线性表, 栈, 队列</p>
-<ol start="2">
-<li>非线性结构</li>
-</ol>
-<p>一个节点可能有多个直接前驱和直接后继.</p>
-<p>例如: 树, 图</p>
-<h3 id="存储-物理-结构"><a href="#存储-物理-结构" class="headerlink" title="存储(物理)结构"></a>存储(物理)结构</h3><p>是数据元素及其关系在计算机存储器中的存储方式</p>
-<p>物理结构又分为:</p>
-<ol>
-<li>顺序存储</li>
-</ol>
-<p>借助元素在存储器中的 <strong>相对位置</strong> 来表示数据元素间的逻辑关系.</p>
-<p>例如: 顺序表</p>
-<ol start="2">
-<li>链式存储</li>
-</ol>
-<p>借助指示元素存储地址的 <strong>指针</strong> 表示数据元素间的逻辑关系.</p>
-<p>例如: 链表</p>
-<h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><p>顾名思义,就是计算的技巧和方式。<br>对于给定的问题,是可以由多个算法来解决。  </p>
-<h2 id="算法的基本特征"><a href="#算法的基本特征" class="headerlink" title="算法的基本特征"></a>算法的基本特征</h2><p>算法的基本特征要：<br><strong>输入、输出、有穷性、确定性和可行性</strong>  </p>
-<p>算法设计的要求有：<br><strong>正确性、可读性、健壮性、时间效率高和存储量低</strong></p>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>语句频度: 一条语句的重复执行次数.</p>
-<p>算法的执行时间 &#x3D;&#x3D; 该算法中所有语句的频度之和.</p>
-<blockquote>
-<p>$T(n) &#x3D; O(f(n))$ </p>
-</blockquote>
-<p>例如:</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>( i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    <span class="keyword">for</span>( j=<span class="number">0</span>; j&lt;n; j++)</span><br><span class="line">        c[i][j]=a[i][j]+b[i][j]</span><br></pre></td></tr></table></figure></div>
-
-<p>是for循环的嵌套, 每个for循环的语句频度为n.<br>因此, 整体为n*n</p>
-<p>即:   $T(n) &#x3D; O(n^2)$ </p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法所需存储空间的度量, 记作</p>
-<blockquote>
-<p>$S(n) &#x3D; O(f(n))$</p>
-</blockquote>
-<p>通常,求”复杂度”是指时间复杂度</p>
-<h1 id="第二章-线性表"><a href="#第二章-线性表" class="headerlink" title="第二章 线性表"></a>第二章 线性表</h1><h2 id="线性表的定义"><a href="#线性表的定义" class="headerlink" title="线性表的定义"></a>线性表的定义</h2><p>类型相同的数据元素构成的有限序列</p>
-<p>序列的每一个元素都有唯一的前驱和后继, 除了开头和结尾两个节点 (线性结构的特点)</p>
-<h3 id="线性表的顺序存储"><a href="#线性表的顺序存储" class="headerlink" title="线性表的顺序存储"></a>线性表的顺序存储</h3><p>分配一块 <strong>地址连续的</strong> 存储单元依次去存放这些元素, 将其称之为<strong>顺序标</strong></p>
-<p>例如数组.</p>
-<p><strong>基本操作:</strong></p>
-<ul>
-<li>定义线性表的存储结构</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 100 <span class="comment">//线性表的最大长度</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType; <span class="comment">//假设线性表的元素类型为整型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ElemType data[MAXSIZE]; <span class="comment">//用数组存储元素</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//线性表的当前长度</span></span><br><span class="line">&#125; SqList; <span class="comment">//顺序表类型</span></span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>**InitList(*L)**: 初始化操作,建立一个空的线性表L.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">Status <span class="title function_">InitList</span><span class="params">(SqList *L)</span> &#123;</span><br><span class="line">    L-&gt;length = <span class="number">0</span>; <span class="comment">//将线性表的长度设为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAXSIZE; i++) &#123;</span><br><span class="line">        L-&gt;data[i] = <span class="number">0</span>; <span class="comment">//将所有元素设为0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>初始化操作中，把线性表长度设为0是为了表示线性表是空的，没有任何元素。  </p>
-<p>但是，这并不意味着线性表的 <strong>存储空间</strong> 是空的，因为我们用数组来存储元素，数组是一种静态的数据结构，它在定义时就分配了固定的内存空间。  </p>
-<p>因此，即使线性表长度为0，数组中仍然可能有一些原来的数据或者垃圾数据，这些数据并不属于线性表，但是占用了线性表的存储空间。</p>
-<p>所以将长度设定为0后依旧还得将线性表的存储空间，即所有元素设置为0。</p>
-<ul>
-<li><strong>ListEmpty(L)</strong>: 判断线性表是否为空表,若为空返回true.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListEmpty</span><span class="params">(SqList L)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (L.length == <span class="number">0</span>) &#123; <span class="comment">//如果线性表的长度为0,则为空表</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>**ClearList(*L)**: 清空线性表L.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ClearList</span><span class="params">(SqList *L)</span> &#123;</span><br><span class="line">    L-&gt;length = <span class="number">0</span>; <span class="comment">//将线性表的长度设为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAXSIZE; i++) &#123;</span><br><span class="line">        L-&gt;data[i] = <span class="number">0</span>; <span class="comment">//将所有元素设为0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>与初始化基本类似</p>
-<ul>
-<li>GetElem(L,i,*e): 将线性表L中的第i个位置元素值返回给e.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">GetElem</span><span class="params">(SqList L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    <span class="comment">//判断i是否合法,即1&lt;=i&lt;=L.length</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果不合法,则返回false</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        *e = L.data[i<span class="number">-1</span>]; <span class="comment">//如果合法,则将第i个元素的值赋给e</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//并返回true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>LocateElem(L,e): 在线性表L中查找和e相等的元素,若成功返回表中序号,否则返回0.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">LocateElem</span><span class="params">(SqList L, ElemType e)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++) &#123; <span class="comment">//遍历线性表中的所有元素</span></span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e) &#123; <span class="comment">//如果找到和e相等的元素</span></span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//则返回其在表中的序号(从1开始)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//如果没有找到,则返回0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>ListInsert(*L,i,e): 在线性表L中第i个位置插入新元素e.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListInsert</span><span class="params">(SqList *L, <span class="type">int</span> i, ElemType e)</span> &#123;</span><br><span class="line">    <span class="comment">//判断i是否合法,即1&lt;=i&lt;=L.length+1</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L-&gt;length + <span class="number">1</span>) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果不合法,则返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断线性表是否已满,即L.length==MAXSIZE</span></span><br><span class="line">    <span class="keyword">if</span> (L-&gt;length == MAXSIZE) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果已满,则返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//从最后一个元素开始向前遍历到第i个元素,将每个元素后移一位</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L-&gt;length - <span class="number">1</span>; j &gt;= i - <span class="number">1</span>; j--) &#123; </span><br><span class="line">        L-&gt;data[j+<span class="number">1</span>] = L-&gt;data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;data[i<span class="number">-1</span>] = e; <span class="comment">//将新元素e插入到第i个位置上</span></span><br><span class="line">    L-&gt;length++; <span class="comment">//将线性表的长度加1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示插入成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>ListDelete(*L,i,*e): 删除线性表L中第i个位置元素,并用e返回其值.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListDelete</span><span class="params">(SqList *L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    <span class="comment">//判断i是否合法,即1&lt;=i&lt;=L.length</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L-&gt;length) &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//如果不合法,则返回false</span></span><br><span class="line">    &#125;</span><br><span class="line">    *e = L-&gt;data[i<span class="number">-1</span>]; <span class="comment">//将第i个元素的值赋给e</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; L-&gt;length; j++) &#123; <span class="comment">//从第i+1个元素开始向后遍历到最后一个元素,将每个元素前移一位</span></span><br><span class="line">        L-&gt;data[j<span class="number">-1</span>] = L-&gt;data[j];</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;length--; <span class="comment">//将线性表的长度减1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示删除成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>ListLength(L): 返回线性表L的元素个数.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ListLength</span><span class="params">(SqList L)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> L.length; <span class="comment">//直接返回线性表的长度属性即可</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="线性表的链式存储"><a href="#线性表的链式存储" class="headerlink" title="线性表的链式存储"></a>线性表的链式存储</h3><p>链式存储结构除了存储其本身的信息外,还存储一个指示其直接后继的存储位置信息.  </p>
-<ul>
-<li><strong>数据域</strong> :存储的元素信息</li>
-<li><strong>指针域</strong> :存储直接后驱的位置信息</li>
-<li><strong>存储映像</strong>:两部分的统称,也称作节点(Node)</li>
-</ul>
-<p>结点链接,成为一个链表,即为线性表的链式存储结构.<br>最后一个节点指针为空.</p>
-<p><strong>单链表的定义</strong></p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义单链表结点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> &#123;</span></span><br><span class="line">    ElemType data; <span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">next</span>;</span> <span class="comment">//指针域</span></span><br><span class="line">&#125; LNode, *LinkList; <span class="comment">//LNode为结点类型，LinkList为指向结点的指针类型</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>基本操作</strong></p>
-<ul>
-<li>**InitList(*L)**: 初始化操作，建立一个空的单链表L.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line">Status <span class="title function_">InitList</span><span class="params">(LinkList *L)</span> &#123;</span><br><span class="line">    *L = (LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode)); <span class="comment">//申请一个头结点</span></span><br><span class="line">    <span class="keyword">if</span> (*L == <span class="literal">NULL</span>) &#123; <span class="comment">//如果申请失败，返回错误</span></span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    &#125;</span><br><span class="line">    (*L)-&gt;next = <span class="literal">NULL</span>; <span class="comment">//将头结点的指针域置空</span></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li><strong>ListEmpty(L)</strong>: 判断单链表是否为空表，若为空返回true.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListEmpty</span><span class="params">(LinkList L)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (L-&gt;next == <span class="literal">NULL</span>) &#123; <span class="comment">//如果头结点的指针域为空，说明没有数据元素</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>**ClearList(*L)**: 清空单链表L.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ClearList</span><span class="params">(LinkList *L)</span> &#123;</span><br><span class="line">    LinkList p, q; <span class="comment">//定义两个临时指针变量</span></span><br><span class="line">    p = (*L)-&gt;next; <span class="comment">//p指向第一个数据结点</span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123; <span class="comment">//循环释放所有数据结点</span></span><br><span class="line">        q = p-&gt;next; <span class="comment">//q保存p的后继结点</span></span><br><span class="line">        <span class="built_in">free</span>(p); <span class="comment">//释放p所指向的结点</span></span><br><span class="line">        p = q; <span class="comment">//p指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    (*L)-&gt;next = <span class="literal">NULL</span>; <span class="comment">//将头结点的指针域置空</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>**GetElem(L,i,*e)**: 将单链表L中的第i个位置元素值返回给e.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">GetElem</span><span class="params">(LinkList L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    LinkList p; <span class="comment">//定义一个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = L; <span class="comment">//p指向头结点</span></span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; j &lt; i) &#123; <span class="comment">//循环遍历到第i个结点或者到达表尾</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">        j++; <span class="comment">//计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p || j &gt; i) &#123; <span class="comment">//如果没有找到第i个结点或者i不合法，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    *e = p-&gt;data; <span class="comment">//如果找到第i个结点，将其数据域赋给e，并返回true</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li><strong>LocateElem(L,e)</strong>: 在单链表L中查找和e相等的元素，若成功返回表中序号，否则返回0.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">LocateElem</span><span class="params">(LinkList L, ElemType e)</span> &#123;</span><br><span class="line">    LinkList p; <span class="comment">//定义一个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = L-&gt;next; <span class="comment">//p指向第一个数据结点</span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123; <span class="comment">//循环遍历所有数据结点或者找到和e相等的元素为止</span></span><br><span class="line">        i++; <span class="comment">//计数器加1</span></span><br><span class="line">        <span class="keyword">if</span> (p-&gt;data == e) &#123; <span class="comment">//如果找到和e相等的元素，返回其在表中的序号(从1开始)</span></span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//如果没有找到和e相等的元素，返回0表示失败</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>**ListInsert(*L,i,e)**: 在单链表L中第i个位置插入新元素e.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListInsert</span><span class="params">(LinkList *L, <span class="type">int</span> i, ElemType e)</span> &#123;</span><br><span class="line">    LinkList p, s; <span class="comment">//定义两个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = *L; <span class="comment">//p指向头结点</span></span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; j &lt; i - <span class="number">1</span>) &#123; <span class="comment">//循环遍历到第i-1个结点或者到达表尾</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">        j++; <span class="comment">//计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p || j &gt; i - <span class="number">1</span>) &#123; <span class="comment">//如果没有找到第i-1个结点或者i不合法，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode)); <span class="comment">//申请一个新的结点</span></span><br><span class="line">    <span class="keyword">if</span> (!s) &#123; <span class="comment">//如果申请失败，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s-&gt;data = e; <span class="comment">//将新元素e赋给新结点的数据域</span></span><br><span class="line">    s-&gt;next = p-&gt;next; <span class="comment">//将新结点的指针域指向原来第i个结点</span></span><br><span class="line">    p-&gt;next = s; <span class="comment">//将第i-1个结点的指针域指向新结点</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示插入成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>**ListDelete(*L,i,*e)**: 删除单链表L中第i个位置元素，并用e返回其值.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">ListDelete</span><span class="params">(LinkList *L, <span class="type">int</span> i, ElemType *e)</span> &#123;</span><br><span class="line">    LinkList p, q; <span class="comment">//定义两个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>; <span class="comment">//定义一个计数器变量</span></span><br><span class="line">    p = *L; <span class="comment">//p指向头结点</span></span><br><span class="line">    <span class="keyword">while</span> (p-&gt;next &amp;&amp; j &lt; i - <span class="number">1</span>) &#123; <span class="comment">//循环遍历到第i-1个结点或者到达表尾的前一个结点</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">        j++; <span class="comment">//计数器加1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p-&gt;next || j &gt; i - <span class="number">1</span>) &#123; <span class="comment">//如果没有找到第i-1个结点或者i不合法，返回false</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q = p-&gt;next; <span class="comment">//q指向第i个结点</span></span><br><span class="line">    p-&gt;next = q-&gt;next; <span class="comment">//将第i-1个结点的指针域指向第i+1个结点</span></span><br><span class="line">    *e = q-&gt;data; <span class="comment">//将被删除的第i个结点的数据域赋给e</span></span><br><span class="line">    <span class="built_in">free</span>(q); <span class="comment">//释放被删除的第i个结点的空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//返回true表示删除成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li><strong>ListLength(L)</strong>: 返回单链表L的元素个数.</li>
-</ul>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ListLength</span><span class="params">(LinkList L)</span> &#123;</span><br><span class="line">    LinkList p; <span class="comment">//定义一个临时指针变量</span></span><br><span class="line">    <span class="type">int</span> len = <span class="number">0</span>; <span class="comment">//定义一个计数器变量，初始为0</span></span><br><span class="line">    p = L-&gt;next; <span class="comment">//p指向第一个数据结点</span></span><br><span class="line">    <span class="keyword">while</span> (p) &#123; <span class="comment">//循环遍历所有数据结点，直到到达表尾为止</span></span><br><span class="line">        len++; <span class="comment">//计数器加1</span></span><br><span class="line">        p = p-&gt;next; <span class="comment">//p指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> len; <span class="comment">//返回计数器的值，即为单链表的长度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ol>
-<li>单链表图例 :</li>
-</ol>
-<pre class="mermaid">graph LR;
-    subgraph 头节点
-    A["head| · "]
-    end
-    B["a1| ·"]
-    subgraph 结点
-    C["a2(数据)| ·(指针)"]
-    end
-    D[...]
-    E["an|null"]
-
-    G[·]--头指针-->A-->B-->C-->D-->E</pre>
-
-<ol start="2">
-<li>空链表图例:</li>
-</ol>
-<pre class="mermaid">graph LR;
-    subgraph 头节点
-    A["head| · "]
-    end
-    E["an|null"]
-
-    G[·]--头指针-->A-->E</pre>
-
-<p>头指针: </p>
-<ul>
-<li>是链表指向的<strong>第一个节点</strong>的指针 (若链表存在<strong>头节点</strong>,则指向头节点).</li>
-<li>头指针具有<strong>标识作用</strong>,因此常用头指针冠以链表的名字.</li>
-<li>无论链表是否为空,头指针<strong>均不为空</strong>.</li>
-<li>头指针是链表<strong>必要</strong>元素</li>
-</ul>
-<p>头节点:</p>
-<ul>
-<li>是为了操作的统一和方便而设立. (统一了在第一元素节点前插入删除操作与其他节点)</li>
-<li>头节点 <strong>不一定</strong> 是链表的必要元素.</li>
-</ul>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><h3 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h3><p>只能在表的一端(栈顶)进行插入和删除运算的线性表  </p>
-<p>逻辑结构与线性表相同, 仍为一对一的关系.<br>存储结构以顺序栈更常见, 也可用链栈.</p>
-<p>栈<strong>只能在栈顶</strong>插入, 删除;只能存取<strong>栈顶</strong>的元素</p>
-<p><strong>后进先出</strong></p>
-<p>存出结构:</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    SElemType *base;</span><br><span class="line">    SElemType *top;</span><br><span class="line">    <span class="type">int</span> stacksize;</span><br><span class="line">&#125; SqStack;</span><br></pre></td></tr></table></figure></div>
-
-<p>栈空标志: base &#x3D;&#x3D; top<br>栈满标志: S-&gt;top - S-&gt;base &#x3D;&#x3D; S-&gt;stacksize</p>
-<p>初始化:</p>
-<p>进栈:</p>
-<p>取栈顶元素:</p>
-<p>栈顶判空:</p>
-<p>求栈长度:</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL入门学习</title>
-    <url>/2023/11/22/Mysql%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="MySQL-概述"><a href="#MySQL-概述" class="headerlink" title="MySQL 概述"></a>MySQL 概述</h1><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>数据有组织地存储的仓库, 称为 <strong>数据库</strong> (DataBase).<br><strong>数据库管理系统</strong>(DataBase Management System) 是能操作和管理数据库的大型软件. MySQL 就是一个数据库管理系统.</p>
-<p><strong>SQL</strong> (Structured Query Language) 是操作关系型数据库的编程语言, 定义了一套操作关系型数据库统一标准.<br>它不仅仅能操作 MySQL, 其他主流的 关系型数据库管理系统 (如:ORACLE, SQL Server…) 也都统一标准操作.</p>
-<p>安装后使用cmd指令连接客户端:</p>
-<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line">mysql <span class="operator">-</span>u root <span class="operator">-</span>p</span><br></pre></td></tr></table></figure></div>
-
-<p>输入密码, 连接成功.</p>
-<h3 id="MySQL-数据库"><a href="#MySQL-数据库" class="headerlink" title="MySQL 数据库"></a>MySQL 数据库</h3><p>关系型数据库 (RDBMS)</p>
-<p>建立在关系模型基础上, 由多张相互连接的二维表组成的数据库.</p>
-<p>在一个数据库服务器中可以创建多个 <strong>数据库</strong> .<br>在一个 数据库 中 又可以创建多个 <strong>表</strong> .<br>基于 表 进行数据存储的数据库, 我们称之为 <strong>关系型数据库</strong>.</p>
-<h1 id="SQL-通用语法"><a href="#SQL-通用语法" class="headerlink" title="SQL 通用语法"></a>SQL 通用语法</h1><p>SQL语句以分号结尾, 空格缩进和换行都不影响, 也不区分大小写, 不过还是推荐关键字使用大写.</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 单行注释内容</span></span><br><span class="line"></span><br><span class="line"># 单行注释内容 (MySQL独有)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 多行注释内容 */</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DDL (Data Definition Language)</td>
-<td>数据库定义语言, 用来定义数据库对象(数据库, 表, 字段)</td>
-</tr>
-<tr>
-<td>DML (Data Manipulation Language)</td>
-<td>数据库操作语言, 用来对数据库表中的数据增删改查</td>
-</tr>
-<tr>
-<td>DQL (Data Query Language)</td>
-<td>数据查询语言, 用来查询数据库中表的记录</td>
-</tr>
-<tr>
-<td>DCL (Data Control Languag)</td>
-<td>数据控制语言, 用来创建数据库用户, 控制数据库的访问权限</td>
-</tr>
-</tbody></table>
-<h4 id="DDL-数据库操作语句"><a href="#DDL-数据库操作语句" class="headerlink" title="DDL 数据库操作语句"></a>DDL 数据库操作语句</h4><ul>
-<li>查询</li>
-</ul>
-<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询所有数据库</span></span><br><span class="line"><span class="keyword">Show</span> DataBases;</span><br><span class="line"></span><br><span class="line"><span class="comment">--查询当前数据库</span></span><br><span class="line"><span class="keyword">Select</span> DataBase();</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>创建</li>
-</ul>
-<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Create</span> DataBase 数据库名称;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- </span></span><br><span class="line"><span class="keyword">Create</span> DataBase if <span class="keyword">not</span> <span class="keyword">exists</span> 数据库名称;</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>删除</li>
-</ul>
-<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Drop</span> database 数据库名称;</span><br></pre></td></tr></table></figure></div>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>入门基础</tag>
-        <tag>Java</tag>
-        <tag>数据库</tag>
       </tags>
   </entry>
 </search>

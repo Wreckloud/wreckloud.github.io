@@ -32,7 +32,7 @@
 <meta property="og:description" content="世上每个人本来就有自己的发展时区.有些人看似走在你前面, 有些人看似走在你后面.但其实每个人在自己的时区都有自己的步程.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-06T12:26:32.000Z">
-<meta property="article:modified_time" content="2023-12-08T03:52:32.516Z">
+<meta property="article:modified_time" content="2023-12-09T09:54:23.348Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="web前端">
@@ -370,8 +370,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-12-08 11:52:32</span>
-            <span class="mobile">2023-12-08 11:52:32</span>
+            <span class="desktop">2023-12-09 17:54:23</span>
+            <span class="mobile">2023-12-09 17:54:23</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -413,7 +413,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.6k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.1k 字</span>
         </span>
     
     
@@ -641,7 +641,24 @@
 <td>搜索特定值的字符串, 并返回匹配的位置<br>无法设置第二个参数设置检索起始位置</td>
 </tr>
 </tbody></table>
+<h1 id="Web-API-基础"><a href="#Web-API-基础" class="headerlink" title="Web API 基础"></a>Web API 基础</h1><p>使用 JS 可以操作 html 和浏览器. </p>
+<p><strong>DOM (Doucument Object Model) 文档对象模型</strong> 是浏览器提供的一套专门用来操作网页内容, 实现用户交互的功能.  </p>
+<p><strong>DOM 文档树</strong> 能直观的体现了标签与标签之间的关系.  </p>
+<p><strong>DOM 对象</strong> 浏览器根据 html 标签生成的 JS对象 称之为DOM对象.是对象就有其属性和方法, 修改这个对象的属性会自动映射到标签身上.</p>
+<h3 id="获取DOM对象"><a href="#获取DOM对象" class="headerlink" title="获取DOM对象"></a>获取DOM对象</h3><p>根据CSS选择器来获取DOM元素:</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 选择匹配的第一个元素</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;css选择器&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只能匹配第一个元素, 可以直接操作</span></span><br></pre></td></tr></table></figure></div>
 
+<p>参数: 包含一个或多个有效的CSS选择器 <strong>字符串</strong>  </p>
+<p>返回值: CSS选择器匹配的 <strong>第一个元素</strong> , 一个 HTMLElement 对象. 如果没匹配到返回null.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 选择匹配的多个元素</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectAll</span>(<span class="string">&quot;css选择器&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多个时返回 NodeList 对象集合(伪数组) </span></span><br><span class="line"><span class="keyword">const</span> lis = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.nav li&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 想要得到里面每一个对象, 则需要遍历的方式获得</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lis.<span class="property">length</span>; i++)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(lis[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="其他获取DOM元素方法"><a href="#其他获取DOM元素方法" class="headerlink" title="其他获取DOM元素方法"></a>其他获取DOM元素方法</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 根据id获取</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;nav&quot;</span>)</span><br><span class="line"><span class="comment">// 根据标签获取</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementByTagname</span>(<span class="string">&quot;div&quot;</span>)</span><br><span class="line"><span class="comment">// 根据 类名 获取元素</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementByClassName</span>(<span class="string">&quot;w&quot;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="操作元素内容"><a href="#操作元素内容" class="headerlink" title="操作元素内容"></a>操作元素内容</h3><h4 id="元素-innerText-属性"><a href="#元素-innerText-属性" class="headerlink" title="元素.innerText 属性"></a>元素.innerText 属性</h4><p>能将文本内容添加&#x2F;更新到任意标签位置, 显示纯文本, 不解析标签.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> info = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.info&quot;</span>)</span><br><span class="line"></span><br><span class="line">info.<span class="property">innerText</span> = <span class="string">&quot;汪呜呜~&quot;</span></span><br><span class="line"><span class="comment">// 不解析标签, 如果输入 &lt;br&gt; 时不会换行, 会直接输出 &quot;&lt;br&gt;&quot;.</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="元素-innnerHTML-属性"><a href="#元素-innnerHTML-属性" class="headerlink" title="元素.innnerHTML 属性"></a>元素.innnerHTML 属性</h4><p>与 元素.innerText 不同点是, 会解析标签.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> info = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.info&quot;</span>)</span><br><span class="line"></span><br><span class="line">info.<span class="property">innerText</span> = <span class="string">&quot;&lt;strong&gt; 汪呜呜~ &lt;/strong&gt;&quot;</span></span><br><span class="line"><span class="comment">// 解析标签, 会显示加粗文本</span></span><br></pre></td></tr></table></figure></div>
         </div>
 
         
@@ -709,7 +726,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">前端JavaScript入门</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E4%BB%8B%E7%BB%8D"><span class="nav-text">JavaScript 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-text">书写位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E6%B3%95"><span class="nav-text">输入输出语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E5%80%BC"><span class="nav-text">JavaScript 值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">变量的基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">引用数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E5%87%BD%E6%95%B0"><span class="nav-text">JavaScript 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81HTML%E4%BA%8B%E4%BB%B6"><span class="nav-text">常见HTML事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="nav-text">字符串方法</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E4%BB%8B%E7%BB%8D"><span class="nav-text">JavaScript 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-text">书写位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E6%B3%95"><span class="nav-text">输入输出语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E5%80%BC"><span class="nav-text">JavaScript 值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">变量的基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">引用数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E5%87%BD%E6%95%B0"><span class="nav-text">JavaScript 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81HTML%E4%BA%8B%E4%BB%B6"><span class="nav-text">常见HTML事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="nav-text">字符串方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-API-%E5%9F%BA%E7%A1%80"><span class="nav-text">Web API 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96DOM%E5%AF%B9%E8%B1%A1"><span class="nav-text">获取DOM对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="nav-text">操作元素内容</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>

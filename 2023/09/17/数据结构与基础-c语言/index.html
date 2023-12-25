@@ -32,7 +32,7 @@
 <meta property="og:description" content="数据结构的老师真的讲的太拉了...实在不行了.只能去网上找视频看看,听说数据结构还挺重要而且还有难度的.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-17T11:02:37.000Z">
-<meta property="article:modified_time" content="2023-12-15T06:38:17.790Z">
+<meta property="article:modified_time" content="2023-12-25T03:38:03.145Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -371,8 +371,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-12-15 14:38:17</span>
-            <span class="mobile">2023-12-15 14:38:17</span>
+            <span class="desktop">2023-12-25 11:38:03</span>
+            <span class="mobile">2023-12-25 11:38:03</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -418,7 +418,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.9k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.3k 字</span>
         </span>
     
     
@@ -688,11 +688,121 @@ end</pre>
 
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>逻辑结构: 一对一<br>存储结构: 顺序存储 顺序+链式存储</p>
 <h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>逻辑结构: 一对多<br>存储结构: 顺序存储 链式存储</p>
+<p>树是n个结点的有限集</p>
+<h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><p><strong>结点的度:</strong> 树中一个结点的孩子个数, 树中结点的最大度数称为树的度数.<br><strong>分支结点:</strong> 度数大于0的结点<br><strong>叶子结点(终端结点):</strong> 度为零 (没有子孙结点) 的结点 </p>
+<p><strong>结点的层次:</strong> 从树根开始定义, 根节点为第一层, 它的子结点为第二层, 以此类推.<br><strong>结点的深度:</strong> 从根节点开始自顶向下逐层累加的<br><strong>结点的高度:</strong> 从叶结点开始自底向上逐层累加的</p>
+<p><strong>树的高度(或深度):</strong> 树中结点的最大层数</p>
+<p><strong>有序树和无序树:</strong> 树中结点的各子树从左到右是有次序的, 不能互换, 称之为有序树, 否则称为无序树.<br><strong>路径:</strong> 两个节点之间的路径是由这两个结点之间所经过的 <strong>结点序列</strong> 构成<br><strong>路径长度:</strong> 两个节点之间的路径长度是路径上所经过的 <strong>边的个数</strong> 构成</p>
+<p><strong>森林:</strong> 森林是n棵互不相交的树的集合</p>
 <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ul>
-<li>第 $i$ 层最多结点数为 $2^{i-1}$ , 深度 $k$ 至多结点数为 $2^k-1$  </li>
-<li>度为0的结点数为 $n_0$ , 度为2的结点数为 $n_2$ , 有 $n_0&#x3D;n_2+1$.</li>
-<li></li>
+<li><p>树中的结点数等于所有结点的度数加1  </p>
+</li>
+<li><p>度为 $m$ 的树中, 第i层至多有 $m^{i-1}$ 个结点</p>
+</li>
+<li><p>高度为$h$的$m$叉树至少有 $h$ 个结点, 至多有 $m^h-1 \over m-1$ 个结点.</p>
+</li>
+<li><p>具有 $sum$ 个结点的 $m$ 叉树的最小高度为 $\log _m{n(m-1)+1}$</p>
+<blockquote>
+<p>$sum &#x3D; {m^h-1 \over m-1}$</p>
+</blockquote>
+</li>
+<li><p>高度为 $h$ 的 $m$ 叉数至少有 $h+m-1$ 个结点</p>
+</li>
 </ul>
+<h4 id="区分-度为m的树-m叉树"><a href="#区分-度为m的树-m叉树" class="headerlink" title="区分 度为m的树\m叉树"></a>区分 度为m的树\m叉树</h4><ol>
+<li>m 叉树–每个结点最多只能有m个孩子的树</li>
+</ol>
+<ul>
+<li>任意结点的度数 ≦ m</li>
+<li>可以是空树</li>
+</ul>
+<ol start="2">
+<li>度为m的树–至少有一个结点度 &#x3D;&#x3D; m</li>
+</ol>
+<ul>
+<li>任意结点的度数 ≦ m</li>
+<li>一定为非空树</li>
+</ul>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>二叉树有左右之分(有序树), 给结点编号时每一层从左往右依次编号.</p>
+<h3 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h3><p>高度为h的满二叉树, 含有 $2^h-1$ 个结点.</p>
+<p>对于编号为 $i$ 的结点: </p>
+<ul>
+<li>双亲为 <code>i/2</code></li>
+<li>若有左孩子, 则其为2i</li>
+<li>若有右孩子, 则其为2i</li>
+</ul>
+<h3 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h3><p>不同于满二叉树, 完全二叉树最后一层的结点都靠右排列,且除最后一层, 其他层都是满的.</p>
+<p>高度为 $h$ 的完全二叉树, 最多有 $2^h-1$ 个结点.</p>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><p>树上任意结点的左子树和右子树的深度差不超过1.</p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><ol>
+<li>先序遍历: 根节点 -&gt; 左子树 -&gt; 右子树</li>
+<li>中序遍历: 左子树 -&gt; 根节点 -&gt; 右子树</li>
+<li>后续遍历: 左子树 -&gt; 右子树 -&gt; 根节点</li>
+</ol>
+<p>以上三种其时间复杂度为O(n)</p>
+<ol start="4">
+<li>层次遍历: 从上到下, 从左往右</li>
+</ol>
+<h3 id="哈夫曼树-最优树"><a href="#哈夫曼树-最优树" class="headerlink" title="哈夫曼树(最优树)"></a>哈夫曼树(最优树)</h3><p>给定N个权值作为N个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，为哈夫曼树.<br>哈夫曼树是带权路径长度最短的树, 权值较大的结点离根较近.</p>
+<h4 id="带权路径长度"><a href="#带权路径长度" class="headerlink" title="带权路径长度"></a>带权路径长度</h4><p>结点的带权路径长度为: 从根结点到该结点之间的路径长度与该结点的权的乘积.</p>
+<p>树的带权路径长度规定为所有叶子结点的带权路径长度之和, 记为WPL.</p>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>线性表可以是空表, 图不可以是空图</p>
+<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p>用于查找的数据集合称为查找表, 他是由同一类型的数据元素 (或记录) 组成, 可以是一个数组或链表等数据类型.</p>
+<p><strong>关键字:</strong> 数据元素中唯一标识干元素的某个数据项的值, 使用基于关键字的查找, 结果应该是唯一的.</p>
+<h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><p>从表的一端开始, 按顺序从后往前查找, 没什么好说的.</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><ul>
+<li>算法简单, 对表结构无任何要求</li>
+<li>平均查找长度较大, 当n较大时不推荐采用顺序查找</li>
+</ul>
+<h3 id="折半查找-二分查找"><a href="#折半查找-二分查找" class="headerlink" title="折半查找(二分查找)"></a>折半查找(二分查找)</h3><p>通过三个指针(low, high, mid), low &#x3D; 1, high &#x3D; 表长, mid取low 和 high 的中间值.  </p>
+<ol>
+<li>mid 与给定的 key 比较, 若相等则查找成功, 若不相等则将表分成前后两个子表.</li>
+<li>如果 key 比 mid 大, 则将 low 取为 <code>mid + 1</code>; 反之比 mid 小, 则将 high 取为 <code>mid - 1</code></li>
+</ol>
+<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><ul>
+<li>显然效率比顺序查找快</li>
+<li>必须采用顺序存储结构</li>
+</ul>
+<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p>建立一个索引表,然后在块中顺序查找.</p>
+<h4 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h4><ul>
+<li>效率在顺序查找和折半查找之间</li>
+<li>适用于经常动态变化的线性表</li>
+</ul>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p>KCN: 关键字比较次数<br>RMN: 记录移动次数</p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>最简单的一种排序方式.</p>
+<ol>
+<li>一个一个取待排表中的关键字</li>
+<li>在新的表中顺序查找, 逐个后移元素, 直到找到插入位置</li>
+</ol>
+<h4 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h4><p>时间复杂度</p>
+<p>最坏情况下:<br>KCN ≈ ${n^2}\over {2}$<br>RMN ≈ ${n^2}\over {2}$</p>
+<p>空间复杂度</p>
+<p>只需要一个用于记录的空间, 因此为: <code>O(1)</code></p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>简单, 稳定</li>
+<li>适用于链式</li>
+<li>不推荐用于n较大的情况</li>
+</ul>
+<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p>使用折半查找的排序方法.</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>稳定</li>
+<li>不适用于链式结构</li>
+<li>适合初始记录无序, n较大的情况</li>
+</ul>
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先分组, 使数据 “基本有序” 后, 再进行 直接插入排序.</p>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>跳跃式移动, 不稳定</li>
+<li>不适用于链式</li>
+<li>适合初始记录无序, n较大的情况</li>
+</ul>
+<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><ol>
+<li><p>简单选择排序</p>
+</li>
+<li><p>树形选择排序</p>
+</li>
+<li><p>堆排序</p>
+</li>
+</ol>
 
         </div>
 
@@ -765,7 +875,7 @@ end</pre>
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">数据结构与算法(c语言)</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E9%9B%B6%E7%AB%A0-C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="nav-text">第零章 C语言基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">结构体指针运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD"><span class="nav-text">基本概念和术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">什么是数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8-%E7%89%A9%E7%90%86-%E7%BB%93%E6%9E%84"><span class="nav-text">存储(物理)结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-text">算法的基本特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E4%B8%AA%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7"><span class="nav-text">五个重要特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E4%BC%98%E5%8A%A3%E7%9A%84%E6%A0%87%E5%87%86"><span class="nav-text">评价优劣的标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">空间复杂度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8-%E9%A1%BA%E5%BA%8F%E8%A1%A8"><span class="nav-text">线性表的顺序存储 (顺序表)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8-%E9%93%BE%E8%A1%A8"><span class="nav-text">线性表的链式存储 (链表)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88"><span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%A0%88"><span class="nav-text">顺序栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%A0%88"><span class="nav-text">链栈</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8-%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97"><span class="nav-text">顺序存储 (循环队列)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8-%E9%93%BE%E6%A0%88"><span class="nav-text">链式存储(链栈)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2"><span class="nav-text">串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E4%B8%B2"><span class="nav-text">顺序串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91"><span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E9%9B%B6%E7%AB%A0-C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="nav-text">第零章 C语言基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">结构体指针运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD"><span class="nav-text">基本概念和术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">什么是数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8-%E7%89%A9%E7%90%86-%E7%BB%93%E6%9E%84"><span class="nav-text">存储(物理)结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-text">算法的基本特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E4%B8%AA%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7"><span class="nav-text">五个重要特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E4%BC%98%E5%8A%A3%E7%9A%84%E6%A0%87%E5%87%86"><span class="nav-text">评价优劣的标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">空间复杂度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8-%E9%A1%BA%E5%BA%8F%E8%A1%A8"><span class="nav-text">线性表的顺序存储 (顺序表)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8-%E9%93%BE%E8%A1%A8"><span class="nav-text">线性表的链式存储 (链表)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88"><span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%A0%88"><span class="nav-text">顺序栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%A0%88"><span class="nav-text">链栈</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8-%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97"><span class="nav-text">顺序存储 (循环队列)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8-%E9%93%BE%E6%A0%88"><span class="nav-text">链式存储(链栈)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2"><span class="nav-text">串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E4%B8%B2"><span class="nav-text">顺序串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91"><span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-text">基本术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">完全二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">平衡二叉树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-text">二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91-%E6%9C%80%E4%BC%98%E6%A0%91"><span class="nav-text">哈夫曼树(最优树)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE"><span class="nav-text">图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="nav-text">查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="nav-text">顺序查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-text">折半查找(二分查找)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE"><span class="nav-text">分块查找</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-text">折半插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F"><span class="nav-text">希尔排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F"><span class="nav-text">交换排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-text">选择排序</span></a></li></ol></li></ol>
 
     </div>
 </div>

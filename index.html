@@ -11,12 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     
-        
-        
-        
-            <link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
-        
-    
     <!--- Seo Part-->
     
     <link rel="canonical" href="https://www.wreckloud.com/"/>
@@ -47,43 +41,208 @@
         
         狼牙月影
     </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        狼牙月影
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
     
 <link rel="stylesheet" href="/css/style.css">
 
 
     
-        <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/assets/build/styles.css">
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
     
 
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fonts/fonts.css">
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fonts/Satoshi/satoshi.css">
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fonts/Chillax/chillax.css">
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
     <!--- Font Part-->
     
-        <link href="" rel="stylesheet">
     
     
-        <link href="" rel="stylesheet">
-    
-    
-    
-        <link href="" rel="stylesheet">
     
 
-    <!--- Inject Part-->
-    
+
     <script id="hexo-configurations">
     window.config = {"hostname":"www.wreckloud.com","root":"/","language":"zh-CN","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"4px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":false},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"simple","font":{"enable":"ture","family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"继续阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#3f871e","secondary":"#233f15"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":true,"family":"ARCAEA-title","url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/light.png","dark":"/images/dark.jpg"},"title":"世界探索笔记","subtitle":{"text":["正在加载..."],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":0,"starting_delay":1500,"backing_delay":null,"loop":false,"smart_backspace":true},"text_color":{"light":"#ac3c48","dark":"#a4aecd"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":true,"family":"ARCAEA-title.ttf","url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":"Summoning 101 (Key Ingredient ver.)","artist":"Mili","url":"http://music.163.com/song/media/outer/url?id=1948527667.mp3","cover":"/images/songcover.PNG"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#0d0e12","right":"#56597b","transparency":55},"links":{"Home":{"path":"/","icon":"fa-solid fa-house"},"Archives":{"path":"/archives","icon":"fa-solid fa-archive"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Status":{"path":"/masonry","icon":"fa-solid fa-sparkles"},"About":{"icon":"fa-solid fa-feather","path":"/links/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"info","announcement":"嗷呜呜呜~","links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/17 14:00:00"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#3f871e","secondary":"#233f15","default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/light.png","dark":"/images/dark.jpg"},"title":"世界探索笔记","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":0,"starting_delay":1500,"backing_delay":null,"loop":false,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#0d0e12","right":"#56597b","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Status":{"path":"/masonry","icon":"fa-regular fa-chart-bar"},"About":{"icon":"fa-solid fa-feather","path":"/links/"}},"search":{"enable":"ture","preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"一只啥也不会的狼~","show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/17 14:00:00"};
     window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
     window.data = {"masonry":true};
   </script>
     
     <!--- Fontawesome Part-->
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fontawesome/fontawesome.min.css">
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fontawesome/brands.min.css">
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fontawesome/solid.min.css">
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/fontawesome/regular.min.css">
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
     
     
     
@@ -97,9 +256,9 @@
 
     
         <span class="pjax-progress-bar"></span>
-        <span class="swup-progress-icon">
-            <i class="fa-solid fa-circle-notch fa-spin"></i>
-        </span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
     
 </div>
 
@@ -110,9 +269,8 @@
         
     <style>
         .home-banner-container {
-            background: transparent !important;
+            background: none !important;
         }
-
         .home-article-item,
         .sidebar-links,
         .sidebar-content,
@@ -123,33 +281,30 @@
         footer.footer {
             background-color: var(--background-color-transparent-80) !important;
         }
-
         .right-bottom-tools:hover,
         a.page-number:hover,
         a.extend:hover {
             background-color: var(--primary-color) !important;
         }
-
         .site-info,
         .home-article-sticky-label {
             background-color: var(--background-color-transparent-15) !important;
         }
-
         .home-article-sticky-label {
             backdrop-filter: none !important;
         }
     </style>
-
-    <div class="home-banner-background transition-fade">
+    <div class="home-banner-background transition-fade fixed top-0 left-0 w-screen h-screen scale-125 sm:scale-110 box-border will-change-transform bg-cover">
+        <img src="/images/light.png" alt="home-banner-background" class="w-full h-full object-cover dark:hidden">
+        <img src="/images/dark.jpg" alt="home-banner-background" class="w-full h-full object-cover hidden dark:block">
     </div>
 
 
-<div class="home-banner-container flex justify-center items-center transition-fade">
-    <div class="content flex justify-center items-center">
-        <div class="description flex flex-col justify-center items-center"
+<div class="home-banner-container flex justify-center items-center transition-fade relative">
+    
+    <div class="content mt-8 flex flex-col justify-center items-center">
+        <div class="description flex flex-col justify-center items-center w-screen font-medium text-center"
         
-             style="font-family: 'ARCAEA-title.ttf', sans-serif; !important;"
-                
         >
             世界探索笔记
             
@@ -159,18 +314,22 @@
         </div>
         
     </div>
+    <script>
+        const scrollToMain = ()=> {
+            console.log('scroll');
+            const target = document.querySelector('.main-content-container');
+            target.scrollIntoView({ behavior: 'smooth'});
+        }
+    </script>
 </div>
-
-
-
     
 
     <div class="main-content-container">
 
 
         <div class="main-content-header">
-            <header class="navbar-container">
-    
+            <header class="navbar-container px-6 md:px-12">
+
     <div class="navbar-content has-home-banner">
         <div class="left">
             
@@ -191,96 +350,95 @@
                 <ul class="navbar-list">
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active" 
-                                    href="/"  >
-                                    
-                                        
-                                            <i class="fa-solid fa-house"></i>
-                                        
-                                        首页
+                                <a class="active"
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/archives"  >
-                                    
-                                        
-                                            <i class="fa-solid fa-archive"></i>
-                                        
-                                        时间线
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/categories/"  >
-                                    
-                                        
-                                            <i class="fa-solid fa-folder"></i>
-                                        
-                                        分类
+                                <a class=""
+                                   href="/categories/"
+                                        >
+                                    <i class="fa-solid fa-folder fa-fw"></i>
+                                    分类
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/masonry"  >
-                                    
-                                        
-                                            <i class="fa-solid fa-sparkles"></i>
-                                        
-                                        画廊
+                                <a class=""
+                                   href="/masonry"
+                                        >
+                                    <i class="fa-regular fa-chart-bar fa-fw"></i>
+                                    状态
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/links/"  >
-                                    
-                                        
-                                            <i class="fa-solid fa-feather"></i>
-                                        
-                                        关于
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-solid fa-feather fa-fw"></i>
+                                    关于
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
-                    
-                        <li class="navbar-item search search-popup-trigger">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </li>
                     
                 </ul>
             </div>
             <!-- Mobile -->
             <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
                 
                 <div class="icon-item navbar-bar">
                     <div class="navbar-bar-middle"></div>
@@ -289,87 +447,129 @@
         </div>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
-        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
             
                 
-                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group active" 
-                        href="/"  >
-                             
-                                
-                                    <i class="fa-solid fa-house"></i>
-                                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/"
+                        >
+                            <span>
                                 首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
                             
                         </a>
+                        
+
+                        
                     </li>
-                    <!-- Submenu -->
-                    
             
                 
-                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
-                        href="/archives"  >
-                             
-                                
-                                    <i class="fa-solid fa-archive"></i>
-                                
-                                时间线
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
                             
                         </a>
+                        
+
+                        
                     </li>
-                    <!-- Submenu -->
-                    
             
                 
-                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
-                        href="/categories/"  >
-                             
-                                
-                                    <i class="fa-solid fa-folder"></i>
-                                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories/"
+                        >
+                            <span>
                                 分类
+                            </span>
+                            
+                                <i class="fa-solid fa-folder fa-sm fa-fw"></i>
                             
                         </a>
+                        
+
+                        
                     </li>
-                    <!-- Submenu -->
-                    
             
                 
-                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
-                        href="/masonry"  >
-                             
-                                
-                                    <i class="fa-solid fa-sparkles"></i>
-                                
-                                画廊
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/masonry"
+                        >
+                            <span>
+                                状态
+                            </span>
+                            
+                                <i class="fa-regular fa-chart-bar fa-sm fa-fw"></i>
                             
                         </a>
+                        
+
+                        
                     </li>
-                    <!-- Submenu -->
-                    
             
                 
-                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
-                        href="/links/"  >
-                             
-                                
-                                    <i class="fa-solid fa-feather"></i>
-                                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
                                 关于
+                            </span>
+                            
+                                <i class="fa-solid fa-feather fa-sm fa-fw"></i>
                             
                         </a>
+                        
+
+                        
                     </li>
-                    <!-- Submenu -->
-                    
             
 
+            
+            
         </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
     </div>
 
     <div class="window-mask"></div>
@@ -385,42 +585,45 @@
                 <div class="home-sidebar-container">
     <div class="sticky-container sticky">
         
-            <div class="sidebar-content">
-                <div class="avatar flex justify-center">
-                    <img src="/images/default.png">
-                </div>
-                <div class="author flex flex-col justify-center my-2.5 mx-0">
-                    <div class="name">Wreckloud_雲之残骸</div>
-                    
-                </div>
-                <div class="statistics">
-                    <a class="item" href="/tags">
-                        <div class="number">13</div>
-                        <div class="label">标签</div>
-                    </a>
-                    <a class="item" href="/categories">
-                        <div class="number">3</div>
-                        <div class="label">分类</div>
-                    </a>
-                    <a class="item" href="/archives">
-                        <div class="number">8</div>
-                        <div class="label">文章</div>
-                    </a>
-                </div>
-            </div>
+        
             
-                <div class="sidebar-links"   marginTop >
+                <div class="sidebar-links">
                     <div class="site-info">
                         <div class="site-name">狼牙月影</div>
                         
                     </div>
                     
                         <div class="announcement-outside">
-                            嗷呜呜呜~
+                            一只啥也不会的狼~
                         </div>
                     
                 </div>
             
+            <div class="sidebar-content"  marginTop >
+                <div class="avatar flex justify-center">
+    <img src="/images/default.png">
+</div>
+                <div class="author flex flex-col justify-center my-2.5 mx-0">
+    <div class="name">Wreckloud_雲之残骸</div>
+    
+        <div class="label">Lv2</div>
+    
+</div>
+                <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+            </div>
         
 
     </div>
@@ -439,31 +642,321 @@
                 
 
                 
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+                            
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            原文地址: 一分钟免费激活永久Office全家桶 
+打开 powershell同时按下 windows键+R, 在弹窗中输入 powershell 后回车.
+输入
+irm https://massgrave.dev/get |iex
+
+接着依次选择 ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:51 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/">阅读全文<span class="seo-reader-text"></span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                            计算机网络
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            第一章 计算机网络体系结构计算机网络简介计算机网络是一个将分散的, 具有独立功能的计算机系统, 通过通信设备与线路连接起来, 由功能完善的软件实现资源共享和信息传递的系统.
+计算机网络是 互联(通过通信链路互联互通)的, 自治(无主从关系)的计算机集...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:51 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">阅读全文<span class="seo-reader-text">计算机网络</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Halo%E9%83%A8%E7%BD%B2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                            博客搭建
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            写在前面这是一篇关于我搭建博客的经历分享. 
+什么叫 “吾尝终日而思矣，不如须臾之所学也” 啊! 自己瞎捣鼓服务器半天, 却不如去搜索教程视频学的多…
+真的非常感谢前人大佬自发免费地分享知识! 
+参考的教程文章:
+【好玩儿的Docker项目】好用又强...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:50 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8Halo%E9%83%A8%E7%BD%B2/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">阅读全文<span class="seo-reader-text">博客搭建</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/VS%20Code%20X%20Halo%20%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/VS%20Code%20X%20Halo%20%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/">
+                            VS Code X Halo 部署发布文章
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            UsageOpen the Command Palette and search for Halo Setup.Fill in the relevant information for your Halo site according to the ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:50 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/VS%20Code%20X%20Halo%20%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/VS%20Code%20X%20Halo%20%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/">阅读全文<span class="seo-reader-text">VS Code X Halo 部署发布文章</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/Linux%E5%85%A5%E9%97%A8/Linux%E5%85%A5%E9%97%A8/">
+                            
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            2024&#x2F;3&#x2F;4 11:27
+寒假自己捣鼓服务器用的Linux, 啥也不懂. 完全就是网上搜索复制粘贴的CV工程师, 这下有机会了得好好了解Linux.
+笔记视频来源: 黑马程序员Linux零基础快速入门到精通 
+Linux 简介...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:50 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/Linux%E5%85%A5%E9%97%A8/Linux%E5%85%A5%E9%97%A8/">阅读全文<span class="seo-reader-text"></span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8/">
+                            
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            面向对象类和对象类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. 
+一个代码文件中可以定义多个类, 但只能有一个Public修饰的类, 且这个类的类名必须是Java代码文件的名称.
+成员变量一般无需指定初始化值.
+面向对象三...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:50 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8/">阅读全文<span class="seo-reader-text"></span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2024/03/26/Javaweb/Javaweb/">
+                            
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            Web 网站工作流程
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 26 2024 17:20:50 GMT+0800">
+                
+                    2024-03-26
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2024/03/26/Javaweb/Javaweb/">阅读全文<span class="seo-reader-text"></span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
                     
                 
 
                 
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
+                    <div id="home-article-thumbnail" class="home-article-thumbnail relative h-[150px] overflow-hidden rounded-t-large">
                         <a href="/2023/12/03/Unity%E5%85%A5%E9%97%A8/">
                             <img src="/%E6%83%B3%E5%81%9A%E4%BB%80%E4%B9%88,%20%E5%B0%B1%E5%8A%AA%E5%8A%9B%E5%8E%BB%E5%81%9A%E5%90%A7!" alt="Unity入门" class="w-full h-full object-cover dark:brightness-75 transition-all" />
                         </a>
                     </div>
                 
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-5">
+                    <h3 class="home-article-title">
+                        <a href="/2023/12/03/Unity%E5%85%A5%E9%97%A8/">
+                            Unity入门
+                        </a>
+                    </h3>
 
-                <h3 class="home-article-title">
-                    <a href="/2023/12/03/Unity%E5%85%A5%E9%97%A8/">
-                        Unity入门
-                    </a>
-                </h3>
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>&#x2F;img&#x2F;文章封面&#x2F;Unity封面.jpg</p>
 
-                <div class="home-article-content markdown-body">
-                    
-                        <p>&#x2F;img&#x2F;文章封面&#x2F;Unity封面.jpg</p>
+                        
+                    </div>
 
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
+                    <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
             <span class="home-article-date" data-date="Sun Dec 03 2023 14:32:14 GMT+0800">
@@ -505,83 +998,7 @@
     <a href="/2023/12/03/Unity%E5%85%A5%E9%97%A8/">阅读全文<span class="seo-reader-text">Unity入门</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/11/22/Mysql%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/">
-                        MySQL入门学习
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>数据库是什么呢?</p>
-
-                    
                 </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Nov 22 2023 17:40:43 GMT+0800">
-                
-                    2023-11-22
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Java/">Java</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">入门基础</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/11/22/Mysql%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/">阅读全文<span class="seo-reader-text">MySQL入门学习</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
             </li>
         
             <li class="home-article-item">
@@ -593,107 +1010,27 @@
                 
 
                 
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
-                        <a href="/2023/11/13/C-%E5%85%A5%E9%97%A8/">
-                            <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/Csharp%E5%B0%81%E9%9D%A2.JPG" alt="C#快速入门" class="w-full h-full object-cover dark:brightness-75 transition-all" />
-                        </a>
-                    </div>
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/11/13/C-%E5%85%A5%E9%97%A8/">
-                        C#快速入门
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>为了学习unity而打下基础.真的是好快好快的快速入门哦!</p>
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Nov 13 2023 14:27:28 GMT+0800">
-                
-                    2023-11-13
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">入门基础</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/C/">C#</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/11/13/C-%E5%85%A5%E9%97%A8/">阅读全文<span class="seo-reader-text">C#快速入门</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-                    
-                
-
-                
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
+                    <div id="home-article-thumbnail" class="home-article-thumbnail relative h-[150px] overflow-hidden rounded-t-large">
                         <a href="/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/">
                             <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/JavaScript%E5%B0%81%E9%9D%A2.JPG" alt="前端JavaScript入门" class="w-full h-full object-cover dark:brightness-75 transition-all" />
                         </a>
                     </div>
                 
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-5">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/">
+                            前端JavaScript入门
+                        </a>
+                    </h3>
 
-                <h3 class="home-article-title">
-                    <a href="/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/">
-                        前端JavaScript入门
-                    </a>
-                </h3>
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>世上每个人本来就有自己的发展时区.有些人看似走在你前面, 有些人看似走在你后面.但其实每个人在自己的时区都有自己的步程.</p>
 
-                <div class="home-article-content markdown-body">
-                    
-                        <p>世上每个人本来就有自己的发展时区.有些人看似走在你前面, 有些人看似走在你后面.但其实每个人在自己的时区都有自己的步程.</p>
+                        
+                    </div>
 
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
+                    <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
             <span class="home-article-date" data-date="Mon Nov 06 2023 20:26:32 GMT+0800">
@@ -742,6 +1079,7 @@
     <a href="/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/">阅读全文<span class="seo-reader-text">前端JavaScript入门</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
+                </div>
             </li>
         
             <li class="home-article-item">
@@ -753,27 +1091,27 @@
                 
 
                 
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
+                    <div id="home-article-thumbnail" class="home-article-thumbnail relative h-[150px] overflow-hidden rounded-t-large">
                         <a href="/2023/09/23/Python%E5%9F%BA%E7%A1%80/">
                             <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/Python%E5%B0%81%E9%9D%A2.jpg" alt="Python基础" class="w-full h-full object-cover dark:brightness-75 transition-all" />
                         </a>
                     </div>
                 
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-5">
+                    <h3 class="home-article-title">
+                        <a href="/2023/09/23/Python%E5%9F%BA%E7%A1%80/">
+                            Python基础
+                        </a>
+                    </h3>
 
-                <h3 class="home-article-title">
-                    <a href="/2023/09/23/Python%E5%9F%BA%E7%A1%80/">
-                        Python基础
-                    </a>
-                </h3>
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>大二上学期选修报名了Python,实际上也有点想学习的念头.早听说python处理一些重复性的事很在行?试试看吧!</p>
 
-                <div class="home-article-content markdown-body">
-                    
-                        <p>大二上学期选修报名了Python,实际上也有点想学习的念头.早听说python处理一些重复性的事很在行?试试看吧!</p>
+                        
+                    </div>
 
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
+                    <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
             <span class="home-article-date" data-date="Sat Sep 23 2023 11:17:09 GMT+0800">
@@ -806,12 +1144,12 @@
                     
                         <li>
                             
-                            <a href="/tags/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">入门基础</a>&nbsp;
+                            <a href="/tags/Python/">Python</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/Python/">Python</a>&nbsp;
+                            <a href="/tags/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">入门基础</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -822,258 +1160,14 @@
     <a href="/2023/09/23/Python%E5%9F%BA%E7%A1%80/">阅读全文<span class="seo-reader-text">Python基础</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-                    
-                
-
-                
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
-                        <a href="/2023/09/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80-c%E8%AF%AD%E8%A8%80/">
-                            <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%B0%81%E9%9D%A2.jpg" alt="数据结构与算法(c语言)" class="w-full h-full object-cover dark:brightness-75 transition-all" />
-                        </a>
-                    </div>
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/09/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80-c%E8%AF%AD%E8%A8%80/">
-                        数据结构与算法(c语言)
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>数据结构的老师真的讲的太拉了…实在不行了.只能去网上找视频看看,听说数据结构还挺重要而且还有难度的.</p>
-
-                    
                 </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Sep 17 2023 19:02:37 GMT+0800">
-                
-                    2023-09-17
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/09/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80-c%E8%AF%AD%E8%A8%80/">阅读全文<span class="seo-reader-text">数据结构与算法(c语言)</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-                    
-                
-
-                
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
-                        <a href="/2023/09/17/%E5%89%8D%E7%AB%AFWeb%E5%BC%80%E5%8F%91-HTML5-CSS-JS%E7%AC%94%E8%AE%B0/">
-                            <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B0%81%E9%9D%A2.jpg" alt="HTML与CSS基础笔记" class="w-full h-full object-cover dark:brightness-75 transition-all" />
-                        </a>
-                    </div>
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/09/17/%E5%89%8D%E7%AB%AFWeb%E5%BC%80%E5%8F%91-HTML5-CSS-JS%E7%AC%94%E8%AE%B0/">
-                        HTML与CSS基础笔记
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>web网页开发的入门基础, 这篇主要记录了HTML和CSS的用法.</p>
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Sep 17 2023 19:02:12 GMT+0800">
-                
-                    2023-09-17
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/web%E5%89%8D%E7%AB%AF/">web前端</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/CSS/">CSS</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/HTML/">HTML</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/09/17/%E5%89%8D%E7%AB%AFWeb%E5%BC%80%E5%8F%91-HTML5-CSS-JS%E7%AC%94%E8%AE%B0/">阅读全文<span class="seo-reader-text">HTML与CSS基础笔记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-                    
-                
-
-                
-                    <div id="home-article-thumbnail" class="relative h-[150px] overflow-hidden rounded-t-[10.8px] md:rounded-t-large -m-5 mb-3 sm:-m-6 sm:mb-4 md:-m-7 md:mb-5">
-                        <a href="/2023/09/17/hello-websites/">
-                            <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/Wolf.png" alt="hello websites" class="w-full h-full object-cover dark:brightness-75 transition-all" />
-                        </a>
-                    </div>
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/09/17/hello-websites/">
-                        hello websites
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        <p>这是一篇hexo网页部署,以及Redefine主题配置指南.</p>
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Sep 17 2023 13:50:59 GMT+0800">
-                
-                    2023-09-17
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8C%87%E5%8D%97/">指南</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Hexo/">Hexo</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/09/17/hello-websites/">阅读全文<span class="seo-reader-text">hello websites</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
             </li>
         
     </ul>
 
-    <div class="home-paginator">
+    <div class="home-paginator px-7 py-5">
         <div class="paginator">
-    <span class="page-number current">1</span>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
 
     </div>
@@ -1100,10 +1194,23 @@
               <span>2023</span>
               -
             
-            2023&nbsp;&nbsp;<i class="fa-brands fa-wolf-pack-battalion fa-shake"></i>&nbsp;&nbsp;<a href="/">Wreckloud_雲之残骸</a>
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Wreckloud_雲之残骸</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 14 篇文章
+                    </span>
+                    
+                        <span>
+                            共 22.8k 字
+                        </span>
+                    
+                </p>
+            
         </div>
         
-            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
@@ -1121,7 +1228,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
         </div>
         
         
@@ -1235,7 +1342,19 @@
 </main>
 
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/Swup.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/SwupSlideTheme.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/SwupScriptsPlugin.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/SwupProgressPlugin.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/SwupScrollPlugin.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/SwupPreloadPlugin.min.js"></script>
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
 <script>
     const swup = new Swup({
         plugins: [
@@ -1261,43 +1380,83 @@
 
 
 
-<script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/imageViewer.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/utils.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/main.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/layouts/navbarShrink.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/scrollTopBottom.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/lightDarkSwitch.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/layouts/categoryList.js"></script>
 
+<script src="/js/tools/imageViewer.js" type="module"></script>
 
-    <script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/localSearch.js"></script>
+<script src="/js/utils.js" type="module"></script>
 
+<script src="/js/main.js" type="module"></script>
 
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
 
-    <script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/codeBlock.js"></script>
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
 
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
 
-
-    <script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/layouts/lazyload.js"></script>
-
-
-
-    <script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/runtime.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/odometer.min.js"></script>
-    <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/assets/odometer-theme-minimal.css">
+<script src="/js/layouts/categoryList.js" type="module"></script>
 
 
 
-  <script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/Typed.min.js"></script>
-  <script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/plugins/typed.js"></script>
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
 
 
 
 
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/minimasonry.min.js"></script>
-    <script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/plugins/masonry.js"></script>
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/libs/minimasonry.min.js"></script>
+
+    
+<script src="/js/plugins/masonry.js" type="module"></script>
+
+
 
 
 
 <div class="post-scripts" data-swup-reload-script>
     
-        <script src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/libs/anime.min.js"></script>
-        <script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/tools/tocToggle.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/layouts/toc.js"></script><script type="module" src="https://cdn.bootcdn.net/ajax/libs/hexo-theme-redefine/2.5.0/js/plugins/tabs.js"></script>
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
     
 </div>
 

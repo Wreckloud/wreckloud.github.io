@@ -2336,12 +2336,6 @@ end</pre>
   </entry>
   <entry>
     <title></title>
-    <url>/2024/03/26/Javaweb/Javaweb/</url>
-    <content><![CDATA[<p>Web 网站工作流程</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
     <url>/2024/03/26/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. </p>
 <p>一个代码文件中可以定义多个类, 但只能有一个Public修饰的类, 且这个类的类名必须是Java代码文件的名称.</p>
@@ -2365,6 +2359,12 @@ end</pre>
 <li>提供至少两个构造方法(无参&#x2F;带参)</li>
 <li>提供每一个成员变量对应的成员方法(<code>set()</code>&#x2F;<code>get()</code>)</li>
 </ol>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/03/26/Javaweb/Javaweb/</url>
+    <content><![CDATA[<p>Web 网站工作流程</p>
 ]]></content>
   </entry>
   <entry>
@@ -2651,6 +2651,17 @@ end</pre>
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/2024/03/26/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/</url>
+    <content><![CDATA[<p><a class="link"   href="https://zhuanlan.zhihu.com/p/683722586" >原文地址: 一分钟免费激活永久Office全家桶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="打开-powershell"><a href="#打开-powershell" class="headerlink" title="打开 powershell"></a>打开 powershell</h1><p>同时按下 windows键+R, 在弹窗中输入 powershell 后回车.</p>
+<p>输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/get |iex</span><br></pre></td></tr></table></figure></div>
+
+<p>接着依次选择 <code>2</code> <code>1</code> 即可.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>计算机网络</title>
     <url>/2024/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="第一章-计算机网络体系结构"><a href="#第一章-计算机网络体系结构" class="headerlink" title="第一章 计算机网络体系结构"></a>第一章 计算机网络体系结构</h1><h3 id="计算机网络简介"><a href="#计算机网络简介" class="headerlink" title="计算机网络简介"></a>计算机网络简介</h3><p>计算机网络是一个将分散的, 具有独立功能的<strong>计算机系统</strong>, 通过<strong>通信设备</strong>与<strong>线路</strong>连接起来, 由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统.</p>
@@ -2661,17 +2672,6 @@ end</pre>
 <h3 id="计算机网络功能"><a href="#计算机网络功能" class="headerlink" title="计算机网络功能"></a>计算机网络功能</h3><p>数据通信:<br>计算机网络最基本和最重要的功能, 实现联网计算机之间各种信息传输.</p>
 <p>资源共享:<br>资源共享可以是软件共享, 数据共享和硬件共享.</p>
 <p>分布式处理<br>利用空闲计算机资源以提高整个系统的利用率.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2024/03/26/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/</url>
-    <content><![CDATA[<p><a class="link"   href="https://zhuanlan.zhihu.com/p/683722586" >原文地址: 一分钟免费激活永久Office全家桶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="打开-powershell"><a href="#打开-powershell" class="headerlink" title="打开 powershell"></a>打开 powershell</h1><p>同时按下 windows键+R, 在弹窗中输入 powershell 后回车.</p>
-<p>输入</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/get |iex</span><br></pre></td></tr></table></figure></div>
-
-<p>接着依次选择 <code>2</code> <code>1</code> 即可.</p>
 ]]></content>
   </entry>
 </search>

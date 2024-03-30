@@ -2335,13 +2335,13 @@ end</pre>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/03/26/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8/</url>
+    <title>Java入门</title>
+    <url>/2024/03/30/Java%E5%85%A5%E9%97%A8/Java%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. </p>
 <p>一个代码文件中可以定义多个类, 但只能有一个Public修饰的类, 且这个类的类名必须是Java代码文件的名称.</p>
 <p>成员变量一般无需指定初始化值.</p>
 <p>面向对象三大特征: <strong>封装</strong> <strong>继承</strong> <strong>多态</strong></p>
-<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>对象代表什么, 就得封装对应的数据, 并提供数据对应的方法.</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>对象代表什么, 就得封装对应的数据, 并提供数据对应的方法.</p>
 <blockquote>
 <p>例如: 人关门–<code>人</code> 调用 <code>关门的方法</code> 使门关闭. 应在对象 <code>门</code> 中封装 <code>关门的方法</code> .</p>
 </blockquote>
@@ -2359,7 +2359,48 @@ end</pre>
 <li>提供至少两个构造方法(无参&#x2F;带参)</li>
 <li>提供每一个成员变量对应的成员方法(<code>set()</code>&#x2F;<code>get()</code>)</li>
 </ol>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>创建 String 对象的两种方式:</p>
+<ol>
+<li>直接赋值</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;雲之残骸&quot;</span>;</span><br></pre></td></tr></table></figure></div>
+
+<p>直接赋值的字符串会在串池中.</p>
+<ol start="2">
+<li>关键字 new</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">String</span><span class="params">()</span> <span class="comment">// 创建空白字符串, 不含任何内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">String</span><span class="params">(String original)</span> <span class="comment">// 根据传入的字符串, 创建字符串对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">String</span><span class="params">(<span class="type">char</span>[] chs)</span> <span class="comment">// 根据字符数组, 创建字符串对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">String</span><span class="params">(<span class="type">byte</span>[] chs)</span> <span class="comment">// 根据字节数组, 创建字符对象</span></span><br></pre></td></tr></table></figure></div>
+
+<p>new 的字符串会在堆中.</p>
+<p>特别注意:</p>
+<ul>
+<li>字符串一旦被创建, 就无法修改.</li>
+<li><code>scanner</code> 录入的字符串也是 new 出来的</li>
+</ul>
+<h3 id="字符串常用方法"><a href="#字符串常用方法" class="headerlink" title="字符串常用方法"></a>字符串常用方法</h3><ul>
+<li>区分大小写比较: <code>boolean equals()</code> 方法</li>
+<li>忽略大小写比较: <code>boolean equalsIgnoreCase()</code> 方法</li>
+</ul>
+<blockquote>
+<p>使用语句包裹快捷键: <code>ctrl+alt+T</code><br>补全对象: <code>ctrl+alt+V</code></p>
+</blockquote>
+<ul>
+<li><p>根据索引返回字符: <code>charAt(索引)</code></p>
+</li>
+<li><p>根据索引截取字符串: <code>String substring(开始索引(包含), 结束索引(包含)不包含)</code></p>
+</li>
+<li><p>从索引处截取到末尾: <code>String substring(开始索引)</code><br>例如:</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 截取手机号码的中间4位 (131 1234 5678) -&gt; (1234)</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> <span class="number">13112345678</span>;</span><br><span class="line">phone.substring(<span class="number">3</span>,<span class="number">7</span>); <span class="comment">// 输出结果: 1234</span></span><br></pre></td></tr></table></figure></div>
+
 ]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title></title>

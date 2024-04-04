@@ -30,7 +30,7 @@
 <meta property="og:description" content="跳过了基础语法部分, 从类和对象开始记录.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-30T11:04:12.000Z">
-<meta property="article:modified_time" content="2024-03-31T06:43:31.233Z">
+<meta property="article:modified_time" content="2024-04-04T08:14:42.694Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -575,8 +575,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-03-31 14:43:31</span>
-            <span class="mobile">2024-03-31 14:43:31</span>
+            <span class="desktop">2024-04-04 16:14:42</span>
+            <span class="mobile">2024-04-04 16:14:42</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -614,12 +614,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.3k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.5k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>5 分钟</span>
         </span>
     
     
@@ -715,6 +715,9 @@
 </li>
 </ul>
 <p>Java已在底层对 StringBuilder 做处理, 打印对象输出时不是地址值而是其属性值.</p>
+<h4 id="底层理解"><a href="#底层理解" class="headerlink" title="底层理解"></a>底层理解</h4><p>容量: 最多能装多少 <code>capacity()</code><br>长度: 已经装了多少 <code>length()</code></p>
+<p>所有要拼接的内容都会往一个 <code>StringBuilder</code> 中存放, 不会创建很多无用空间, 节约内存.</p>
+<p>当创建一个 <code>StringBuilder</code> 对象时, 其默认为 容量16字节的数组. 添加的内容长度小于16字节, 则直接存放. 反之则将 原来的容量 * 2 +2. 如果还不够, 以实际长度为准.</p>
 <h3 id="链式编程"><a href="#链式编程" class="headerlink" title="链式编程"></a>链式编程</h3><p>当我们在调用一个方法时, 不需要用变量接收它的结果, 可以继续调用其他方法.</p>
 <p>例如:</p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(getString().substring(<span class="number">1</span>).replace(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;Q&quot;</span>).length()); <span class="comment">// 依赖前一个方法的结果, 再去调用后一个方法, 称之为链式编程.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getString</span><span class="params">()</span>&#123; <span class="comment">// 自定义getString()方法提示输入并接收</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入:&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> sc.next();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
@@ -745,8 +748,18 @@
 <ul>
 <li>有变量参与</li>
 </ul>
+<p>例如:</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;a&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s1 + <span class="string">&quot;b&quot;</span>;</span><br></pre></td></tr></table></figure></div>
+
 <p>在JDK8以前, 底层会使用StringBuilder.</p>
-<p>例如</p>
+<p><code>s2</code> 在拼接的时候创建 <code>StringBuilder();</code> 对象.  </p>
+<p>但每次拼接都会创建 <code>StringBuilder();</code> 对象, 影响性能.</p>
+<p>在JDK8拼接时, 会预估字符串长度并创建数组, 存入数组中然后转换成字符串.</p>
+<p>但预估同样也会消耗时间.</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论:"></a>结论:</h4><p>如果很多字符串变量拼接, 不推荐直接 <code>+</code> .</p>
+<blockquote>
+<p>快捷搜索方法: <code>ctrl</code>+<code>n</code>  </p>
+</blockquote>
 
         </div>
 
@@ -761,7 +774,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-03-31 14:43:31
+                    :</strong> 2024-04-04 16:14:42
             </li>
         
         <li>
@@ -924,7 +937,7 @@
                     </span>
                     
                         <span>
-                            共 23.7k 字
+                            共 23.9k 字
                         </span>
                     
                 </p>

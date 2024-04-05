@@ -30,7 +30,7 @@
 <meta property="og:description" content="跳过了基础语法部分, 从类和对象开始记录.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-30T11:04:12.000Z">
-<meta property="article:modified_time" content="2024-04-04T10:10:22.632Z">
+<meta property="article:modified_time" content="2024-04-05T13:00:21.049Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -544,7 +544,7 @@
             
                 
                 
-                <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B0%81%E9%9D%A2.jpg" alt="Java入门" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/Java%E5%85%A5%E9%97%A8.jpg" alt="Java入门" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
                 
                 <div class="w-full flex items-center absolute bottom-0 justify-start">
                     <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">Java入门</h1>
@@ -575,8 +575,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-04 18:10:22</span>
-            <span class="mobile">2024-04-04 18:10:22</span>
+            <span class="desktop">2024-04-05 21:21</span>
+            <span class="mobile">2024-04-05 21:21</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -614,12 +614,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.5k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.8k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>5 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 分钟</span>
         </span>
     
     
@@ -763,6 +763,47 @@
 <blockquote>
 <p>快捷搜索方法: <code>ctrl</code>+<code>n</code>  </p>
 </blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>会自动扩容, 但不能存基本数据类型, 需要把基本数据类型转换成包装类.</p>
+<h3 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h3><p>创建集合对象.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br></pre></td></tr></table></figure></div>
+
+<p>集合没法直接限定其存储的类型, 这时需要 <strong>泛型</strong> 来限定集合中存储数据的类型.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// JDk7 以前</span></span><br><span class="line"></span><br><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(); <span class="comment">// JDk7 之后</span></span><br></pre></td></tr></table></figure></div>
+
+<p>底层已经对 ArrayList 做处理, 打印的对象不是地址值, 而是集合中存储数据内容.  </p>
+<p>在展示时, 会使用 <code>[ ]</code> 将内容包裹.</p>
+<h3 id="成员方法-2"><a href="#成员方法-2" class="headerlink" title="成员方法"></a>成员方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>增: <code>add(Element e)</code></td>
+<td>添加元素, 返回值表示是否添加成功</td>
+</tr>
+<tr>
+<td>删: <code>remove(Element e)</code></td>
+<td>删除指定元素, 返回值表示是否删除成功</td>
+</tr>
+<tr>
+<td>删: <code>remove(int index)</code></td>
+<td>删除指定索引的元素, 返回被删除的元素</td>
+</tr>
+<tr>
+<td>改: <code>set(int index, Element e)</code></td>
+<td>修改指定索引的元素, 返回被修改的元素</td>
+</tr>
+<tr>
+<td>查: <code>get(int index)</code></td>
+<td>获取指定索引的元素</td>
+</tr>
+<tr>
+<td>查: <code>size()</code></td>
+<td>查询集合中元素的个数</td>
+</tr>
+</tbody></table>
 
         </div>
 
@@ -777,7 +818,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-04-04 18:10:22
+                    :</strong> 2024-04-05 21:00:21
             </li>
         
         <li>
@@ -916,7 +957,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">Java入门</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86JavaBean%E7%B1%BB"><span class="nav-text">标准JavaBean类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">字符串常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder"><span class="nav-text">StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">链式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringJoiner"><span class="nav-text">StringJoiner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="nav-text">字符串拼接</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86JavaBean%E7%B1%BB"><span class="nav-text">标准JavaBean类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">字符串常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder"><span class="nav-text">StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">链式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringJoiner"><span class="nav-text">StringJoiner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="nav-text">字符串拼接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-3"><span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95-2"><span class="nav-text">成员方法</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
@@ -955,7 +996,7 @@
                     </span>
                     
                         <span>
-                            共 24.8k 字
+                            共 25.1k 字
                         </span>
                     
                 </p>

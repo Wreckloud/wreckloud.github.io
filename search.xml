@@ -2462,6 +2462,47 @@ end</pre>
 <blockquote>
 <p>快捷搜索方法: <code>ctrl</code>+<code>n</code>  </p>
 </blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>会自动扩容, 但不能存基本数据类型, 需要把基本数据类型转换成包装类.</p>
+<h3 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h3><p>创建集合对象.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br></pre></td></tr></table></figure></div>
+
+<p>集合没法直接限定其存储的类型, 这时需要 <strong>泛型</strong> 来限定集合中存储数据的类型.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// JDk7 以前</span></span><br><span class="line"></span><br><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(); <span class="comment">// JDk7 之后</span></span><br></pre></td></tr></table></figure></div>
+
+<p>底层已经对 ArrayList 做处理, 打印的对象不是地址值, 而是集合中存储数据内容.  </p>
+<p>在展示时, 会使用 <code>[ ]</code> 将内容包裹.</p>
+<h3 id="成员方法-2"><a href="#成员方法-2" class="headerlink" title="成员方法"></a>成员方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>增: <code>add(Element e)</code></td>
+<td>添加元素, 返回值表示是否添加成功</td>
+</tr>
+<tr>
+<td>删: <code>remove(Element e)</code></td>
+<td>删除指定元素, 返回值表示是否删除成功</td>
+</tr>
+<tr>
+<td>删: <code>remove(int index)</code></td>
+<td>删除指定索引的元素, 返回被删除的元素</td>
+</tr>
+<tr>
+<td>改: <code>set(int index, Element e)</code></td>
+<td>修改指定索引的元素, 返回被修改的元素</td>
+</tr>
+<tr>
+<td>查: <code>get(int index)</code></td>
+<td>获取指定索引的元素</td>
+</tr>
+<tr>
+<td>查: <code>size()</code></td>
+<td>查询集合中元素的个数</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>学习笔记</category>

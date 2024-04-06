@@ -2467,7 +2467,7 @@ end</pre>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br></pre></td></tr></table></figure></div>
 
 <p>集合没法直接限定其存储的类型, 这时需要 <strong>泛型</strong> 来限定集合中存储数据的类型.</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// JDk7 以前</span></span><br><span class="line"></span><br><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(); <span class="comment">// JDk7 之后</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// JDk7 以前</span></span><br><span class="line"></span><br><span class="line">ArrayList list&lt;String&gt; = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); <span class="comment">// JDk7 之后</span></span><br></pre></td></tr></table></figure></div>
 
 <p>底层已经对 ArrayList 做处理, 打印的对象不是地址值, 而是集合中存储数据内容.  </p>
 <p>在展示时, 会使用 <code>[ ]</code> 将内容包裹.</p>
@@ -2945,7 +2945,7 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E6%9D%BF%E7%BB%98%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%BB%86%E7%BA%BF%E7%A8%BF2.jpg"
                       alt="alt text"
                 ></p>
-<h3 id="背景的画法"><a href="#背景的画法" class="headerlink" title="背景的画法"></a>背景的画法</h3>]]></content>
+]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

@@ -2455,7 +2455,26 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E6%9D%BF%E7%BB%98%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%BB%86%E7%BA%BF%E7%A8%BF2.jpg"
                       alt="alt text"
                 ></p>
-]]></content>
+<h1 id="如何画出好看的线稿"><a href="#如何画出好看的线稿" class="headerlink" title="如何画出好看的线稿"></a>如何画出好看的线稿</h1><p>画短线时:</p>
+<ul>
+<li>绘画时运动手腕</li>
+<li>线条一气呵成</li>
+<li>尝试找到顺手的角度绘画</li>
+</ul>
+<blockquote>
+<p>旋转画布快捷键: <code>R</code></p>
+</blockquote>
+<p>画长线时:</p>
+<ul>
+<li>固定住手腕不转动</li>
+<li>缩小画布, 让手腕移动距离变小</li>
+<li>快速地一气呵成</li>
+</ul>
+<h3 id="画笔的设置"><a href="#画笔的设置" class="headerlink" title="画笔的设置"></a>画笔的设置</h3><ul>
+<li>在画笔设置中, 将画笔的 <code>间距</code> 推荐设置为 <code>1%-10%</code> .</li>
+<li>在形状动态下, 将第一个 <code>控制</code> 改为 <code>钢笔压力</code>. <code>最小直径</code> 越小, 线条基于笔压的粗细变化就越明显.</li>
+</ul>
+<h3 id="数位板的设置"><a href="#数位板的设置" class="headerlink" title="数位板的设置"></a>数位板的设置</h3>]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

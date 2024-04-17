@@ -2573,11 +2573,11 @@ end</pre>
 <li>子级定位</li>
 <li>调整盒子的位置(位移或选择)</li>
 </ol>
-<h1 id="CSS-盒子模型"><a href="#CSS-盒子模型" class="headerlink" title="CSS 盒子模型"></a>CSS 盒子模型</h1><h2 id="盒子模型的组成"><a href="#盒子模型的组成" class="headerlink" title="盒子模型的组成"></a>盒子模型的组成</h2><ul>
-<li>内容区域 - width &amp; heigth</li>
-<li>内边距  - padding</li>
-<li>边框线 - boder</li>
-<li>外边距 -margin</li>
+<h1 id="CSS-盒子模型"><a href="#CSS-盒子模型" class="headerlink" title="CSS 盒子模型"></a>CSS 盒子模型</h1><h2 id="基本盒子模型的组成"><a href="#基本盒子模型的组成" class="headerlink" title="基本盒子模型的组成"></a>基本盒子模型的组成</h2><ul>
+<li>内容区域 - width &amp; heigth: 盒子的内容，显示文本和图像</li>
+<li>内边距  - padding: 内容周围的区域</li>
+<li>边框线 - boder: 围绕在内边距和内容外的边框</li>
+<li>外边距 -margin: 边框外的区域</li>
 </ul>
 <p><img  
                      lazyload
@@ -2667,27 +2667,7 @@ end</pre>
 </tbody></table>
 <h3 id="盒子阴影-拓展"><a href="#盒子阴影-拓展" class="headerlink" title="盒子阴影(拓展)"></a>盒子阴影(拓展)</h3><p>属性名: box-shadow<br>属性值: X轴偏移 Y轴偏移 模糊半径 扩散半径 颜色 内外阴影</p>
 <p>默认为外阴影, 内阴影需要添加 inset</p>
-<h1 id="标准流和浮动-了解"><a href="#标准流和浮动-了解" class="headerlink" title="标准流和浮动 (了解)"></a>标准流和浮动 (了解)</h1><h3 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h3><p>标准流也称文档流, 是标签在页面中默认的排布规则.</p>
-<h3 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动(float)"></a>浮动(float)</h3><p>浮动能让块元素水平排列, 具备行内块的特点.</p>
-<p>浮动后元素会顶对齐, 并脱离标准流控制, 如果父级元素未设置高度, 脱离后会对网页布局造成影响.</p>
-<h4 id="关于清除浮动带来的影响"><a href="#关于清除浮动带来的影响" class="headerlink" title="关于清除浮动带来的影响:"></a>关于清除浮动带来的影响:</h4><ol>
-<li>额外标签法</li>
-</ol>
-<p>在父元素雷人的最后添加一个块级元素, 将其css属性设置为 clear: both</p>
-<ol start="2">
-<li><p>单伪元素法</p>
-<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block:</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>双伪元素法</p>
-</li>
-</ol>
-<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<ol start="4">
-<li>overflow 溢出隐藏</li>
-</ol>
-<p>父元素添加CSS属性 overflow: hidden</p>
-<h1 id="flex-布局"><a href="#flex-布局" class="headerlink" title="flex 布局"></a>flex 布局</h1><p>flex 布局也叫弹性布局, 相比浮动, felx更简单灵活.</p>
+<h1 id="弹性盒子模型-flex"><a href="#弹性盒子模型-flex" class="headerlink" title="弹性盒子模型 (flex)"></a>弹性盒子模型 (flex)</h1><p>flex 布局也叫弹性布局, 是 CSS3 的一种新的布局模式. 相比浮动, felx更简单灵活.</p>
 <p>给父元素设置 <code>dispaly: felx</code> ,子元素可以自动挤压或拉伸.</p>
 <h3 id="主轴对齐方式"><a href="#主轴对齐方式" class="headerlink" title="主轴对齐方式:"></a>主轴对齐方式:</h3><p>属性名: <code>justify-content</code>  </p>
 <table>
@@ -2809,6 +2789,26 @@ end</pre>
 <td>基线对齐(默认)</td>
 </tr>
 </tbody></table>
+<h1 id="标准流和浮动-了解"><a href="#标准流和浮动-了解" class="headerlink" title="标准流和浮动 (了解)"></a>标准流和浮动 (了解)</h1><h3 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h3><p>标准流也称文档流, 是标签在页面中默认的排布规则.</p>
+<h3 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动(float)"></a>浮动(float)</h3><p>浮动能让块元素水平排列, 具备行内块的特点.</p>
+<p>浮动后元素会顶对齐, 并脱离标准流控制, 如果父级元素未设置高度, 脱离后会对网页布局造成影响.</p>
+<h4 id="关于清除浮动带来的影响"><a href="#关于清除浮动带来的影响" class="headerlink" title="关于清除浮动带来的影响:"></a>关于清除浮动带来的影响:</h4><ol>
+<li>额外标签法</li>
+</ol>
+<p>在父元素雷人的最后添加一个块级元素, 将其css属性设置为 clear: both</p>
+<ol start="2">
+<li><p>单伪元素法</p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block:</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>双伪元素法</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li>overflow 溢出隐藏</li>
+</ol>
+<p>父元素添加CSS属性 overflow: hidden</p>
 <h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>能灵活改变盒子在网页中的位置  </p>
 <p>第一步: 启用定位模式 <code>position</code><br>第二步: 用边偏移设置盒子位置    </p>
 <table>

@@ -2226,52 +2226,84 @@ end</pre>
 <td>行内</td>
 </tr>
 </tbody></table>
-<h1 id="CSS-属性"><a href="#CSS-属性" class="headerlink" title="CSS 属性"></a>CSS 属性</h1><h3 id="文字属性"><a href="#文字属性" class="headerlink" title="文字属性"></a>文字属性</h3><table>
+<h1 id="CSS-属性"><a href="#CSS-属性" class="headerlink" title="CSS 属性"></a>CSS 属性</h1><h3 id="前端尺寸"><a href="#前端尺寸" class="headerlink" title="前端尺寸"></a>前端尺寸</h3><h4 id="像素-px"><a href="#像素-px" class="headerlink" title="像素 px"></a>像素 <code>px</code></h4><p>像素是屏幕上的一个点, 是计算机显示系统的基本单位. 在前端开发中, px代表的是相对于<strong>显示器屏幕分辨率</strong>的绝对单位.</p>
+<p>像素值不会随着视口大小或缩放级别变化, 保持固定不变.<br>适用于通常用于需要精确布局的场合, 如图形设计, 图标大小等.</p>
+<h4 id="相对长度单位-em"><a href="#相对长度单位-em" class="headerlink" title="相对长度单位 em"></a>相对长度单位 <code>em</code></h4><p>em是一个相对长度单位, 其大小相对于<strong>当前元素的字体</strong>尺寸. 如果当前元素没有设置字体大小, 则相对于父元素的字体大小.</p>
+<p>em单位的尺寸会根据其参考元素的字体大小变化而变化, 具有一定的灵活性.<br>适合需要根据字体大小动态调整布局的场合，如响应式设计中的文本缩放.</p>
+<h4 id="根元素相对长度-rem"><a href="#根元素相对长度-rem" class="headerlink" title="根元素相对长度 rem"></a>根元素相对长度 <code>rem</code></h4><p>rem是CSS3新增的单位, 与em类似, 但它是相对于<strong>根元素</strong> (html) 的字体大小来计算的.</p>
+<p>rem单位使得整个页面的尺寸调整更加一致和方便, 但不支持的浏览器需要特定的回退策略.<br>在需要整体控制字体大小和布局比例时非常有用, 特别是当想要统一调整整个页面的尺寸时.</p>
+<blockquote>
+<p>回退策略:<br>提供备选的尺寸单位(通常是px), 使得页面布局和样式能够降级到一个可接受的状态.</p>
+</blockquote>
+<h4 id="视口单位-vw-vh"><a href="#视口单位-vw-vh" class="headerlink" title="视口单位 vw&#x2F;vh"></a>视口单位 <code>vw</code>&#x2F;<code>vh</code></h4><p>vw和vh是基于视口的单位，分别代表视口宽度和高度的百分比. 1vw等于视口<strong>宽度</strong>的1%, 1vh等于视口<strong>高度</strong>的1%.</p>
+<p>vw和vh单位使得元素能够随着视口大小的变化而伸缩, 非常适合创建全屏或者响应式布局.<br>适用于需要根据视口大小动态调整元素尺寸的响应式设计.</p>
+<h4 id="视口最小-最大单位-vmin-vmax"><a href="#视口最小-最大单位-vmin-vmax" class="headerlink" title="视口最小&#x2F;最大单位 vmin&#x2F;vmax"></a>视口最小&#x2F;最大单位 <code>vmin</code>&#x2F;<code>vmax</code></h4><p>vmin是vw和vh中较小的一个, vmax是较大的一个.<br>这两个单位用于在不同方向上保持元素尺寸的一致性.</p>
+<p>vmin&#x2F;vmax单位有助于在横屏和竖屏模式下保持元素的相对大小一致.<br>在移动设备上, 当屏幕方向改变时, 使用vmin&#x2F;vmax可以确保元素的尺寸适应不同方向.</p>
+<h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比 %"></a>百分比 <code>%</code></h4><p>百分比单位表示相对于父元素的尺寸.例如, 宽度设置为50%的元素将会占据其父元素宽度的一半.</p>
+<p>百分比单位提供了一种简单的方式来创建相对于父元素尺寸的布局.<br>适用于需要根据父元素尺寸来确定自身尺寸的布局.</p>
+<blockquote>
+<p>border 不支持的百分比设置.</p>
+</blockquote>
+<h3 id="文字属性"><a href="#文字属性" class="headerlink" title="文字属性"></a>文字属性</h3><h4 id="文本颜色-color"><a href="#文本颜色-color" class="headerlink" title="文本颜色 color"></a>文本颜色 <code>color</code></h4><p>规定文本的颜色, 值支持:</p>
+<ol>
+<li>颜色的英文单词 </li>
+<li><code>rgba(r,g,b,a)</code> rgb三原色, 取值为0~255 a是透明度</li>
+<li><code>#RRGGBB</code> 三原色的值并一起,但是十六进制</li>
+</ol>
+<h4 id="字体大小-font-size"><a href="#字体大小-font-size" class="headerlink" title="字体大小 font-size"></a>字体大小 <code>font-size</code></h4><p>设置文字尺寸,PC端网页常用单位为 <strong>px</strong>.<br>默认大小一般是16px.</p>
+<blockquote>
+<p>chrome浏览器接受最小字体是12px</p>
+</blockquote>
+<h4 id="字体粗细-font-weight"><a href="#字体粗细-font-weight" class="headerlink" title="字体粗细  font-weight"></a>字体粗细  <code>font-weight</code></h4><p>设置文本的粗细</p>
+<table>
 <thead>
 <tr>
-<th>属性</th>
-<th>说明</th>
+<th>值</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>文本颜色 <code>color</code></td>
-<td>规定文本的颜色, 值支持<br>1.  颜色的英文单词 <br>2. <code>rgba(r,g,b,a)</code> rgb三原色, 取值为0~255 a是透明度<br>3. <code>#RRGGBB</code> 三原色的值并一起,但是十六进制</td>
+<td><code>bold</code></td>
+<td>粗体</td>
 </tr>
 <tr>
-<td>字体大小 <code>font-size</code></td>
-<td>设置文字尺寸,PC端网页常用单位为 <strong>px</strong>.<br>默认大小一般是16px.</td>
+<td><code>bolder</code></td>
+<td>比粗题还粗体</td>
 </tr>
 <tr>
-<td>字体粗细  <code>font-weight</code></td>
-<td>属性值一般写数字表示字体粗细.<br><code>400</code>-normal(正常), <code>700</code>-bold(加粗)</td>
+<td><code>lighter</code></td>
+<td>细体</td>
 </tr>
 <tr>
-<td>字体倾斜  <code>font-style</code></td>
-<td>一般用来 <strong>清除</strong> 字体的默认倾斜.<br><code>normal</code>(不倾斜), <code>italic</code>(倾斜)</td>
-</tr>
-<tr>
-<td>字体样式 <code>font-family</code></td>
-<td>设置字体样式.  属性值填写字体名称即可,多个字体逗号隔开.<br><code>font-family</code>属性最后设置一个字体族名.  <code>sans-serif</code>是无衬线字体.</td>
-</tr>
-<tr>
-<td>行高 <code>line-height</code></td>
-<td>设置多行文本的间距<br>  数字px(以px为单位设置行高)  数字(以当前的px为基准,倍数设置行高).<br><strong>垂直居中技巧: 行高属性值等于盒子高度属性值</strong></td>
-</tr>
-<tr>
-<td>文本缩进  <code>text-indent</code></td>
-<td>属性值: 数字px,数字em(按比例调整,推荐1em)</td>
-</tr>
-<tr>
-<td>文本对齐 <code>text-align</code></td>
-<td>设置对齐方式.</td>
-</tr>
-<tr>
-<td>字体复合属性   <code>font</code></td>
-<td>节省代码量,能集合字体的其他属性调整.  <br>font: 是否倾斜 是否加粗 字号&#x2F;行高 字体 (<strong>必须</strong>按顺序书写)</td>
+<td><code>100</code>~&#96;900&#96;</td>
+<td><code>400</code>-normal(正常), <code>700</code>-bold(加粗)</td>
 </tr>
 </tbody></table>
-<p>修饰线 <code>text-decoration</code></p>
+<h4 id="字体倾斜-font-style"><a href="#字体倾斜-font-style" class="headerlink" title="字体倾斜  font-style"></a>字体倾斜  <code>font-style</code></h4><p>一般用来 <strong>清除</strong> 字体的默认倾斜.</p>
 <table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>normal</code></td>
+<td>不倾斜</td>
+</tr>
+<tr>
+<td><code>italic</code></td>
+<td>倾斜</td>
+</tr>
+</tbody></table>
+<h4 id="字体样式-font-family"><a href="#字体样式-font-family" class="headerlink" title="字体样式 font-family"></a>字体样式 <code>font-family</code></h4><p>设置字体样式.<br>属性值填写字体名称即可,多个字体逗号隔开. 如果字体名称包含空格，它必须加上引号.</p>
+<p><code>font-family</code>属性最后设置一个字体族名.  <code>sans-serif</code>是无衬线字体.</p>
+<h4 id="字体复合属性-font"><a href="#字体复合属性-font" class="headerlink" title="字体复合属性   font"></a>字体复合属性   <code>font</code></h4><p>节省代码量,能集合字体的其他属性调整.  </p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">font</span>: 是否倾斜 是否加粗 字号/行高 字体 (按顺序书写)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h3><h4 id="文本对齐方式-text-align"><a href="#文本对齐方式-text-align" class="headerlink" title="文本对齐方式 text-align"></a>文本对齐方式 <code>text-align</code></h4><p>指定元素文本的水平对齐方式.</p>
+<p>属性值 | 效果<br>left| 文本居左(默认值)<br>right| 文本居右<br>center| 文本居中</p>
+<h4 id="文本修饰线-text-decoration"><a href="#文本修饰线-text-decoration" class="headerlink" title="文本修饰线 text-decoration"></a>文本修饰线 <code>text-decoration</code></h4><table>
 <thead>
 <tr>
 <th>属性值</th>
@@ -2295,6 +2327,32 @@ end</pre>
 <td>上划线</td>
 </tr>
 </tbody></table>
+<h4 id="控制文本大小写-text-transform"><a href="#控制文本大小写-text-transform" class="headerlink" title="控制文本大小写 text-transform"></a>控制文本大小写 <code>text-transform</code></h4><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>captialize</td>
+<td>定义每个单词开头大写</td>
+</tr>
+<tr>
+<td>uppercase</td>
+<td>全部字母大写</td>
+</tr>
+<tr>
+<td>lowercase</td>
+<td>全部字母小写</td>
+</tr>
+</tbody></table>
+<h4 id="文本缩进-text-indent"><a href="#文本缩进-text-indent" class="headerlink" title="文本缩进  text-indent"></a>文本缩进  <code>text-indent</code></h4><p>设置文本块中首行文本的缩进.</p>
+<blockquote>
+<p>负值是允许的. 如果值是负数，将第一行左缩进</p>
+</blockquote>
+<h4 id="行高-line-height"><a href="#行高-line-height" class="headerlink" title="行高 line-height"></a>行高 <code>line-height</code></h4><p>设置多行文本的间距<br>数字px(以px为单位设置行高).<br>数字(以当前的px为基准,倍数设置行高).</p>
+<p>垂直居中技巧: <strong>行高属性值等于盒子高度属性值</strong>  </p>
 <h3 id="背景图属性"><a href="#背景图属性" class="headerlink" title="背景图属性"></a>背景图属性</h3><p>使用背景图实现装饰效果.<br>属性名: <strong>background-image</strong> (bgi)<br>属性值: <strong>url</strong> (背景图片URL)</p>
 <p>常用的几个属性:</p>
 <table>
@@ -2329,9 +2387,10 @@ end</pre>
 <td><code>background</code></td>
 </tr>
 </tbody></table>
-<ul>
-<li>背景图平铺方式  <code>background-repeat</code></li>
-</ul>
+<h4 id="背景色-background-color"><a href="#背景色-background-color" class="headerlink" title="背景色 background-color"></a>背景色 <code>background-color</code></h4><p>简单粗暴设置背景颜色.</p>
+<h4 id="背景图-background-image"><a href="#背景图-background-image" class="headerlink" title="背景图 background-image"></a>背景图 <code>background-image</code></h4><p>默认情况下background-image属性放置在元素的<strong>左上角</strong>, </p>
+<p>如果图像不够大的话会在垂直和水平方向平铺图像,<br>如果图像大小超过元素大小从图像的左上角显示元素大小的那部分.</p>
+<h4 id="背景图平铺方式-background-repeat"><a href="#背景图平铺方式-background-repeat" class="headerlink" title="背景图平铺方式  background-repeat"></a>背景图平铺方式  <code>background-repeat</code></h4><p>设置如何平铺背景图像.</p>
 <table>
 <thead>
 <tr>
@@ -2340,12 +2399,12 @@ end</pre>
 </tr>
 </thead>
 <tbody><tr>
-<td>no-repeat</td>
-<td>不平铺</td>
-</tr>
-<tr>
 <td>repeat</td>
 <td>平铺 (默认效果)</td>
+</tr>
+<tr>
+<td>no-repeat</td>
+<td>不平铺</td>
 </tr>
 <tr>
 <td>repeat-x</td>
@@ -2356,6 +2415,33 @@ end</pre>
 <td>竖直方向平铺</td>
 </tr>
 </tbody></table>
+<h4 id="背景图缩放-background-size"><a href="#背景图缩放-background-size" class="headerlink" title="背景图缩放 background-size"></a>背景图缩放 <code>background-size</code></h4><p>设置背景图像的大小.</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>length</td>
+<td>设置宽高, 第一个值为宽, 第二个值为高. 如果只设置其中一个, 另一个值会自动auto.</td>
+</tr>
+<tr>
+<td>percentage</td>
+<td>计算相对位置区域的百分比, 第一个值为宽, 第二个值为高. 同样设置一个, 另一个auto.</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>保持图片纵横比并将图片缩放成完全覆盖背景区域的最小大小</td>
+</tr>
+<tr>
+<td>contain</td>
+<td>保持图片纵横比并将图像缩放成适合背景定位区域的最大大小</td>
+</tr>
+</tbody></table>
+<h4 id="背景图位置-background-position"><a href="#背景图位置-background-position" class="headerlink" title="背景图位置 background-position"></a>背景图位置 <code>background-position</code></h4><p>设置背景图像的起始位置, 其默认值是: 0% 0% (左上角)</p>
+<p>属性值 | 效果<br>x% y%| 第一个值是水平位置, 第二个值是垂直位置.<br>左上角是0% 0%, 右下角是100% 100%. <br>如果只指定了一个值, 其他值默认是50%.<br>xpos ypos| 单位是像素.<br>方位词组合| 例如: 左上角-left top 中下-center bottom</p>
 <h3 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h3><h3 id="光标类型更改"><a href="#光标类型更改" class="headerlink" title="光标类型更改"></a>光标类型更改</h3><p>设置鼠标悬停在元素上的样式</p>
 <p>属性名: cursor</p>
 <table>

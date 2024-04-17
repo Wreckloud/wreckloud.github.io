@@ -2442,7 +2442,11 @@ end</pre>
 </tbody></table>
 <h4 id="背景图位置-background-position"><a href="#背景图位置-background-position" class="headerlink" title="背景图位置 background-position"></a>背景图位置 <code>background-position</code></h4><p>设置背景图像的起始位置, 其默认值是: 0% 0% (左上角)</p>
 <p>属性值 | 效果<br>x% y%| 第一个值是水平位置, 第二个值是垂直位置.<br>左上角是0% 0%, 右下角是100% 100%. <br>如果只指定了一个值, 其他值默认是50%.<br>xpos ypos| 单位是像素.<br>方位词组合| 例如: 左上角-left top 中下-center bottom</p>
-<h3 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h3><h3 id="光标类型更改"><a href="#光标类型更改" class="headerlink" title="光标类型更改"></a>光标类型更改</h3><p>设置鼠标悬停在元素上的样式</p>
+<h3 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h3><p>使用 <code>border</code> 属性指定表格边框</p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">table</span>, <span class="selector-tag">td</span> &#123; </span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="折叠边框-border-collapse"><a href="#折叠边框-border-collapse" class="headerlink" title="折叠边框 border-collapse"></a>折叠边框 <code>border-collapse</code></h4><p>border-collapse 属性设置表格的边框是否被折叠成一个单一的边框或隔开</p>
+<h3 id="光标类型更改"><a href="#光标类型更改" class="headerlink" title="光标类型更改"></a>光标类型更改</h3><p>设置鼠标悬停在元素上的样式</p>
 <p>属性名: cursor</p>
 <table>
 <thead>
@@ -2569,12 +2573,18 @@ end</pre>
 <li>子级定位</li>
 <li>调整盒子的位置(位移或选择)</li>
 </ol>
-<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><h2 id="盒子模型的组成"><a href="#盒子模型的组成" class="headerlink" title="盒子模型的组成"></a>盒子模型的组成</h2><ul>
+<h1 id="CSS-盒子模型"><a href="#CSS-盒子模型" class="headerlink" title="CSS 盒子模型"></a>CSS 盒子模型</h1><h2 id="盒子模型的组成"><a href="#盒子模型的组成" class="headerlink" title="盒子模型的组成"></a>盒子模型的组成</h2><ul>
 <li>内容区域 - width &amp; heigth</li>
 <li>内边距  - padding</li>
 <li>边框线 - boder</li>
 <li>外边距 -margin</li>
 </ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E5%89%8D%E7%AB%AFCSS3/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.jpg"
+                      alt="css盒子模型"
+                ></p>
 <h4 id="关于尺寸的计算"><a href="#关于尺寸的计算" class="headerlink" title="关于尺寸的计算"></a>关于尺寸的计算</h4><ul>
 <li><strong>默认情况</strong></li>
 </ul>

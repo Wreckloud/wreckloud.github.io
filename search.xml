@@ -676,32 +676,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Unity入门</title>
-    <url>/2023/12/03/Unity%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<p><a class="link"   href="https://blog.csdn.net/qq_53058639/article/details/133637210" >教程链接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="初识-Unity"><a href="#初识-Unity" class="headerlink" title="初识 Unity"></a>初识 Unity</h1><h2 id="基础界面简介"><a href="#基础界面简介" class="headerlink" title="基础界面简介"></a>基础界面简介</h2><h3 id="项目文件结构"><a href="#项目文件结构" class="headerlink" title="项目文件结构"></a>项目文件结构</h3><p>在新建完成后会在创建的目录下生成相关工程文件:</p>
-<blockquote>
-<p><code>Assets</code>: 资源（场景脚本模型）<br><code>Library</code>: 库（系统）<br><code>Logs</code>: 日志<br><code>Packages</code>: 导入的包<br><code>ProjectSettings</code>: 工程设置<br><code>Temp</code>: 临时文件（文件过大可以删除部分缓存）<br><code>UserSettings</code>: 设置  </p>
-</blockquote>
-<h3 id="Unity-窗口"><a href="#Unity-窗口" class="headerlink" title="Unity 窗口"></a>Unity 窗口</h3><p>接下来打开 Unity 窗口, 会有5个窗口面板:</p>
-<h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><p>工程面板，存放工程的各种资源。包括：声音资源、模型资源、场景文件、材质、脚本等。  </p>
-<h4 id="创建代码"><a href="#创建代码" class="headerlink" title="创建代码"></a>创建代码</h4><p>在 <code>Project(工程面板) &gt; Assets</code> 右键选择 create 创建 C# script ,<br>并重命名为 <code>New Name</code> 右键即可打开  </p>
-<blockquote>
-<p>Unity支持持的编程语: C#、Mono、JavaScript </p>
-</blockquote>
-<h3 id="Hierarchy"><a href="#Hierarchy" class="headerlink" title="Hierarchy"></a>Hierarchy</h3><p>层级面板，展示当前打开的场景里面有哪些东西。（里面的东西称为游戏物体）</p>
-<h4 id="Inspector"><a href="#Inspector" class="headerlink" title="Inspector"></a>Inspector</h4><p>检视面板（或属性面板），查看一个游戏物体由哪些组件组成。<br>场景 -&gt; 多个游戏物体 -&gt; 多个组件</p>
-<h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h4><p>场景面板，显示当前场景的样子  </p>
-<h5 id="场景基本操作"><a href="#场景基本操作" class="headerlink" title="场景基本操作"></a>场景基本操作</h5><p>聚焦：双击游戏物体 或者 F<br>放大缩小视野：鼠标滚轮<br>围绕物体旋转：Alt+鼠标左键  </p>
-<h5 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h5><p>Q：视图工具（使用鼠标中键可以临时切换到这个工具）<br>W：移动工具<br>E：旋转工具<br>R：缩放工具  </p>
-<h4 id="Game"><a href="#Game" class="headerlink" title="Game"></a>Game</h4><p>游戏面板，场景运行的时候的样子</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>Unity</category>
-      </categories>
-  </entry>
-  <entry>
     <title>hello websites</title>
     <url>/2023/09/17/hello-websites/</url>
     <content><![CDATA[<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><h2 id="Redefine相关"><a href="#Redefine相关" class="headerlink" title="Redefine相关"></a>Redefine相关</h2><p><a class="link"   href="https://redefine-docs.ohevan.com/" >Redefine主题配置指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>不得不说,这个主题真的巨好看又很丰富的自定义,非常不错!</p>
@@ -1765,33 +1739,6 @@ end</pre>
 ]]></content>
   </entry>
   <entry>
-    <title>VS Code X Halo 部署发布文章</title>
-    <url>/2024/03/26/VS%20Code%20X%20Halo%20%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>Usage<br>Open the Command Palette and search for Halo Setup.<br>Fill in the relevant information for your Halo site according to the prompts.<br>Open a Markdown file, then open the command palette and search for Halo Publish. Once selected, this document will be published to the Halo site.</p>
-<p>打开命令面板(快捷键 <code>ctrl</code>+<code>Shift</code>+<code>p</code>)，搜索Halo Setup。根据提示填写您的Halo站点的相关信息。打开Markdown文件，然后打开命令面板并搜索Halo Publish。一旦被选中，该文档将被发布到Halo网站。</p>
-<p>可用指令:<br>设置Halo站点信息.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.setup</span><br></pre></td></tr></table></figure></div>
-
-<p>将Markdown文件发布到Halo.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.publish</span><br></pre></td></tr></table></figure></div>
-
-<p>将Halo中的帖子拉到本地Markdown文件.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.pull</span><br></pre></td></tr></table></figure></div>
-
-<p>上传Markdown文件中引用的本地图像到Halo.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.upload-images</span><br></pre></td></tr></table></figure></div>
-
-<p>更新从Halo到本地Markdown文件的帖子.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.update</span><br></pre></td></tr></table></figure></div>
-
-<p>为当前帖子设置分类.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.set-categories</span><br></pre></td></tr></table></figure></div>
-
-<p>为当前文章设置标签.</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">vscode-extension-halo.set-tags</span><br></pre></td></tr></table></figure></div>
-]]></content>
-  </entry>
-  <entry>
     <title>博客搭建</title>
     <url>/2024/03/26/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>这是一篇关于我搭建博客的经历分享. </p>
@@ -2030,17 +1977,6 @@ end</pre>
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/03/26/%E5%85%8D%E8%B4%B9%E6%BF%80%E6%B4%BB%E6%B0%B8%E4%B9%85Office%E5%85%A8%E5%AE%B6%E6%A1%B6/</url>
-    <content><![CDATA[<p><a class="link"   href="https://zhuanlan.zhihu.com/p/683722586" >原文地址: 一分钟免费激活永久Office全家桶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="打开-powershell"><a href="#打开-powershell" class="headerlink" title="打开 powershell"></a>打开 powershell</h1><p>同时按下 windows键+R, 在弹窗中输入 powershell 后回车.</p>
-<p>输入</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/get |iex</span><br></pre></td></tr></table></figure></div>
-
-<p>接着依次选择 <code>2</code> <code>1</code> 即可.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>计算机网络</title>
     <url>/2024/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="第一章-计算机网络体系结构"><a href="#第一章-计算机网络体系结构" class="headerlink" title="第一章 计算机网络体系结构"></a>第一章 计算机网络体系结构</h1><h3 id="计算机网络简介"><a href="#计算机网络简介" class="headerlink" title="计算机网络简介"></a>计算机网络简介</h3><p>计算机网络是一个将分散的, 具有独立功能的<strong>计算机系统</strong>, 通过<strong>通信设备</strong>与<strong>线路</strong>连接起来, 由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统.</p>
@@ -2106,7 +2042,7 @@ end</pre>
       </tags>
   </entry>
   <entry>
-    <title>HTML与CSS基础笔记</title>
+    <title>前端-CSS</title>
     <url>/2023/09/17/%E5%89%8D%E7%AB%AFCSS3/</url>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h1 id="CSS-定义"><a href="#CSS-定义" class="headerlink" title="CSS 定义"></a>CSS 定义</h1><p>层叠样式表(Casading Style Sheets), 又叫级联样式表, 简称 <strong>样式表</strong> .<br>用来<strong>描述</strong> HTML文档 的呈现方式,用于美化内容.</p>
@@ -2132,19 +2068,19 @@ end</pre>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;color:red; font-size:20px;&quot;</span>&gt;</span>这是div标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <h1 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h1><p>能查找并选择标签, 实现设置样式的目的</p>
-<h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><h3 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h3><p>能选中页面所有标签,设置相同样式.</p>
+<h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>能选中页面所有标签,设置相同样式.</p>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">* &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>在网页初期使用, 清除网页的默认格式.</p>
-<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><p>使用标签名作为选择器, 能选中<strong>同名</strong>标签, 以设置同一种样式.<br>缺点: 由于批量选中,无法差异化设置.</p>
-<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>能够差异化选中标签</p>
+<h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4><p>使用标签名作为选择器, 能选中<strong>同名</strong>标签, 以设置同一种样式.<br>缺点: 由于批量选中,无法差异化设置.</p>
+<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><p>能够差异化选中标签</p>
 <ol>
 <li>定义类选择器 –&gt; <strong>.类名</strong></li>
 <li>使用类选择器 –&gt; 标签添加 <strong>class &#x3D; “类名”</strong></li>
 </ol>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="comment">/* 定义类选择器 */</span></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.color</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.size</span>&#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>    </span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 使用类选择器 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 一个类能给多个标签使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;color&quot;</span>&gt;</span>这是div标签1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 用空格隔开多个类名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;color size&quot;</span>&gt;</span>这是div标签2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><p>能够差异化选中标签.<br>一般配合 JavaScript 使用</p>
+<h4 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h4><p>能够差异化选中标签.<br>一般配合 JavaScript 使用</p>
 <ol>
 <li>定义id选择器 –&gt; <strong>#id名</strong></li>
 <li>使用id选择器 –&gt; 标签添加 <strong>id&#x3D;”id”</strong></li>
@@ -2155,26 +2091,26 @@ end</pre>
 <li>ID是唯一的</li>
 <li>ID不能以数字开头</li>
 </ul>
-<h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><p>其实都是基础选择器的组合,本质也是选择器.<br>能更精确地选中标签.</p>
-<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><blockquote>
+<h3 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h3><p>其实都是基础选择器的组合,本质也是选择器.<br>能更精确地选中标签.</p>
+<h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4><blockquote>
 <p>父选择器 子选择器 {CSS属性}    </p>
 </blockquote>
 <p>(用空格隔开)</p>
-<h3 id="子代选择器"><a href="#子代选择器" class="headerlink" title="子代选择器"></a>子代选择器</h3><blockquote>
+<h4 id="子代选择器"><a href="#子代选择器" class="headerlink" title="子代选择器"></a>子代选择器</h4><blockquote>
 <p>父选择器 &gt; 子选择器 {CSS属性}    </p>
 </blockquote>
 <p>只选中最近的子级</p>
-<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p>选中 <strong>多组</strong> 标签设置 <strong>相同</strong> 的样式  </p>
+<h4 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h4><p>选中 <strong>多组</strong> 标签设置 <strong>相同</strong> 的样式  </p>
 <blockquote>
 <p>选择器1,选择器2,…,选择器N { CSS属性 }</p>
 </blockquote>
 <p>用逗号隔开</p>
-<h3 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h3><p>选中存在 <strong>多个特点</strong> 的标签</p>
+<h4 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h4><p>选中存在 <strong>多个特点</strong> 的标签</p>
 <blockquote>
 <p>选择器1选择器2 { CSS属性 }</p>
 </blockquote>
 <p>连着写,不隔开.</p>
-<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>能选中元素的状态来设置样式( 例如要设置鼠标悬停的样式 ).</p>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p>能选中元素的状态来设置样式( 例如要设置鼠标悬停的样式 ).</p>
 <blockquote>
 <p>选择器:hover {CSS属性}</p>
 </blockquote>
@@ -2206,7 +2142,7 @@ end</pre>
 <td>点击时</td>
 </tr>
 </tbody></table>
-<h2 id="进阶选择器"><a href="#进阶选择器" class="headerlink" title="进阶选择器"></a>进阶选择器</h2><h3 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h3><table>
+<h3 id="进阶选择器"><a href="#进阶选择器" class="headerlink" title="进阶选择器"></a>进阶选择器</h3><h4 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h4><table>
 <thead>
 <tr>
 <th>选择器</th>
@@ -2227,7 +2163,7 @@ end</pre>
 </tr>
 </tbody></table>
 <p>N支持数学运算.<br>例如: 2N, 选中偶数标签</p>
-<h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><p>能创建虚拟元素(伪元素), 一般用来摆放装饰性内容.</p>
+<h4 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h4><p>能创建虚拟元素(伪元素), 一般用来摆放装饰性内容.</p>
 <table>
 <thead>
 <tr>
@@ -2250,7 +2186,7 @@ end</pre>
 <li>默认为行内显示</li>
 <li>权重和标签选择器相同</li>
 </ul>
-<h3 id="选择器的优先级"><a href="#选择器的优先级" class="headerlink" title="选择器的优先级"></a>选择器的优先级</h3><h1 id="CSS-特性"><a href="#CSS-特性" class="headerlink" title="CSS 特性"></a>CSS 特性</h1><p>CSS能化简代码&#x2F;定位问题,并解决问题  </p>
+<h1 id="CSS-特性"><a href="#CSS-特性" class="headerlink" title="CSS 特性"></a>CSS 特性</h1><p>CSS能化简代码&#x2F;定位问题,并解决问题  </p>
 <h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p><strong>子级</strong> 默认继承 <strong>父级</strong> 的 <strong>文字控制</strong> 属性  </p>
 <p>例如,我们可以选择 body 标签,设置文字效果.</p>
 <h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><ul>
@@ -2261,7 +2197,8 @@ end</pre>
 <blockquote>
 <p>优先级从高到低: !important &gt; 行内样式 (1000) &gt; ID选择器 (100) &gt; 类选择器 (10) &gt; 标签选择器 (1) &gt; 通配符</p>
 </blockquote>
-<p>总的来说范围大的优先级越低.<br><strong>!important</strong> 写在css大括号内, 能提高权重, 谨慎使用.</p>
+<p>总的来说范围大的优先级越低.  </p>
+<p><strong>!important</strong> 写在css大括号内, 能提高权重, 谨慎使用.</p>
 <h3 id="标签的显示模式"><a href="#标签的显示模式" class="headerlink" title="标签的显示模式"></a>标签的显示模式</h3><p>布局页面的时候, 根据需求选择合适的标签显示模式摆放内容.</p>
 <ul>
 <li><strong>块级元素(block)</strong><br>独占一行, 宽度默认与父级元素相等.<br>宽高属性生效.</li>
@@ -2289,42 +2226,51 @@ end</pre>
 <td>行内</td>
 </tr>
 </tbody></table>
-<h1 id="CSS-属性"><a href="#CSS-属性" class="headerlink" title="CSS 属性"></a>CSS 属性</h1><h3 id="文字的控制属性"><a href="#文字的控制属性" class="headerlink" title="文字的控制属性"></a>文字的控制属性</h3><ul>
-<li>字体大小  <code>font-size</code></li>
-</ul>
-<p>设置文字尺寸,PC端网页常用单位为 <strong>px</strong>.<br>默认大小一般是16px.  </p>
-<ul>
-<li>字体粗细  <code>font-weight</code></li>
-</ul>
-<p>属性值一般写数字表示字体粗细.<br>400-normal(正常), 700-bold(加粗)</p>
-<ul>
-<li>字体倾斜  <code>font-style</code></li>
-</ul>
-<p>一般用来 <strong>清除</strong> 字体的默认倾斜.<br>normal(不倾斜), italic(倾斜)</p>
-<ul>
-<li>行高  <code>line-height</code></li>
-</ul>
-<p>设置多行文本的间距<br>数字px(以px为单位设置行高),<br>数字(以当前的px为基准,倍数设置行高).</p>
-<p><strong>垂直居中技巧: 行高属性值等于盒子高度属性值</strong></p>
-<ul>
-<li>字体样式  <code>font-family</code></li>
-</ul>
-<p>设置字体样式.<br>属性值填写字体名称即可,多个字体逗号隔开.</p>
-<p>font-family属性最后设置一个字体族名.<br>sans-serif是无衬线字体.</p>
-<ul>
-<li>字体复合属性   <code>font</code></li>
-</ul>
-<p>节省代码量,能集合字体的其他属性调整.<br>font: 是否倾斜 是否加粗 字号&#x2F;行高 字体 (<strong>必须</strong>按顺序书写)</p>
-<ul>
-<li>文本缩进  <code>text-indent</code></li>
-</ul>
-<p>属性值: 数字px,数字em(按比例调整,推荐1em)</p>
-<ul>
-<li><p>文本对齐 <code>text-align</code></p>
-</li>
-<li><p>修饰线 <code>text-decoration</code></p>
-</li>
-</ul>
+<h1 id="CSS-属性"><a href="#CSS-属性" class="headerlink" title="CSS 属性"></a>CSS 属性</h1><h3 id="文字属性"><a href="#文字属性" class="headerlink" title="文字属性"></a>文字属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文本颜色 <code>color</code></td>
+<td>规定文本的颜色, 值支持<br>1.  颜色的英文单词 <br>2. <code>rgba(r,g,b,a)</code> rgb三原色, 取值为0~255 a是透明度<br>3. <code>#RRGGBB</code> 三原色的值并一起,但是十六进制</td>
+</tr>
+<tr>
+<td>字体大小 <code>font-size</code></td>
+<td>设置文字尺寸,PC端网页常用单位为 <strong>px</strong>.<br>默认大小一般是16px.</td>
+</tr>
+<tr>
+<td>字体粗细  <code>font-weight</code></td>
+<td>属性值一般写数字表示字体粗细.<br><code>400</code>-normal(正常), <code>700</code>-bold(加粗)</td>
+</tr>
+<tr>
+<td>字体倾斜  <code>font-style</code></td>
+<td>一般用来 <strong>清除</strong> 字体的默认倾斜.<br><code>normal</code>(不倾斜), <code>italic</code>(倾斜)</td>
+</tr>
+<tr>
+<td>字体样式 <code>font-family</code></td>
+<td>设置字体样式.  属性值填写字体名称即可,多个字体逗号隔开.<br><code>font-family</code>属性最后设置一个字体族名.  <code>sans-serif</code>是无衬线字体.</td>
+</tr>
+<tr>
+<td>行高 <code>line-height</code></td>
+<td>设置多行文本的间距<br>  数字px(以px为单位设置行高)  数字(以当前的px为基准,倍数设置行高).<br><strong>垂直居中技巧: 行高属性值等于盒子高度属性值</strong></td>
+</tr>
+<tr>
+<td>文本缩进  <code>text-indent</code></td>
+<td>属性值: 数字px,数字em(按比例调整,推荐1em)</td>
+</tr>
+<tr>
+<td>文本对齐 <code>text-align</code></td>
+<td>设置对齐方式.</td>
+</tr>
+<tr>
+<td>字体复合属性   <code>font</code></td>
+<td>节省代码量,能集合字体的其他属性调整.  <br>font: 是否倾斜 是否加粗 字号&#x2F;行高 字体 (<strong>必须</strong>按顺序书写)</td>
+</tr>
+</tbody></table>
+<p>修饰线 <code>text-decoration</code></p>
 <table>
 <thead>
 <tr>
@@ -2349,43 +2295,6 @@ end</pre>
 <td>上划线</td>
 </tr>
 </tbody></table>
-<ul>
-<li>颜色  <code>color</code></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>颜色表示方式</th>
-<th>属性值</th>
-<th>说明</th>
-<th>使用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>颜色关键字</td>
-<td>颜色的英文单词</td>
-<td>red、green、…</td>
-<td>学习测试</td>
-</tr>
-<tr>
-<td>rgb表示法</td>
-<td>rgb(r,g,b)</td>
-<td>rgb三原色, 取值为0~255</td>
-<td>了解</td>
-</tr>
-<tr>
-<td>rgba表示法</td>
-<td>rgba(r,g,b,a)</td>
-<td>a是透明度</td>
-<td>开发使用</td>
-</tr>
-<tr>
-<td>十六进制表示法</td>
-<td>#RRGGBB</td>
-<td>三原色的值并一起,但是十六进制</td>
-<td>设计稿开发</td>
-</tr>
-</tbody></table>
 <h3 id="背景图属性"><a href="#背景图属性" class="headerlink" title="背景图属性"></a>背景图属性</h3><p>使用背景图实现装饰效果.<br>属性名: <strong>background-image</strong> (bgi)<br>属性值: <strong>url</strong> (背景图片URL)</p>
 <p>常用的几个属性:</p>
 <table>
@@ -2397,18 +2306,32 @@ end</pre>
 </thead>
 <tbody><tr>
 <td>背景色</td>
-<td>background-color</td>
+<td><code>background-color</code></td>
 </tr>
 <tr>
 <td>背景图</td>
-<td>background-image</td>
+<td><code>background-image</code></td>
 </tr>
 <tr>
-<td>背景图平铺方式</td>
-<td>background-repeat</td>
+<td>背景图位置</td>
+<td><code>background-position</code></td>
+</tr>
+<tr>
+<td>背景图缩放</td>
+<td><code>background-size</code></td>
+</tr>
+<tr>
+<td>背景图固定</td>
+<td><code>background-attachment</code></td>
+</tr>
+<tr>
+<td>背景图复合属性</td>
+<td><code>background</code></td>
 </tr>
 </tbody></table>
-<p>其中, 关于背景图平铺方式的属性有以下几种:</p>
+<ul>
+<li>背景图平铺方式  <code>background-repeat</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -2431,31 +2354,6 @@ end</pre>
 <tr>
 <td>reapeat-y</td>
 <td>竖直方向平铺</td>
-</tr>
-</tbody></table>
-<p>以及其他几个属性:</p>
-<table>
-<thead>
-<tr>
-<th>描述</th>
-<th>属性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>背景图位置</td>
-<td>background-position</td>
-</tr>
-<tr>
-<td>背景图缩放</td>
-<td>background-size</td>
-</tr>
-<tr>
-<td>背景图固定</td>
-<td>background-attachment</td>
-</tr>
-<tr>
-<td>背景图复合属性</td>
-<td>background</td>
 </tr>
 </tbody></table>
 <h3 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h3><h3 id="光标类型更改"><a href="#光标类型更改" class="headerlink" title="光标类型更改"></a>光标类型更改</h3><p>设置鼠标悬停在元素上的样式</p>

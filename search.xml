@@ -3365,4 +3365,174 @@ end</pre>
         <category>脑洞</category>
       </categories>
   </entry>
+  <entry>
+    <title>ECMAScript入门</title>
+    <url>/2024/04/19/ECMAScript%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>笔记视频来源:<br><a class="link"   href="https://www.bilibili.com/video/BV1Bh4y1q73A/?vd_source=b19220b8f372f3a81aa8463fde694a63" >ECMAScript入门到精通 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://www.dengruicode.com/classes_content?uuid=83ca466a73524f5694fb6eba868dc28e" >配套笔记 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="ECMAScript-概述"><a href="#ECMAScript-概述" class="headerlink" title="ECMAScript 概述"></a>ECMAScript 概述</h1><p>ECMAScript 是定义脚本语言的规范, 而 JavaScript 是遵循 ECMAScript 规范实现的一种编程语言.</p>
+<p>ECMAScript 好比是一本书的目录, 而 JavaScript 是这本书的具体内容.</p>
+<h4 id="ES6-和-JavaScript-有什么区别？"><a href="#ES6-和-JavaScript-有什么区别？" class="headerlink" title="ES6 和 JavaScript 有什么区别？"></a>ES6 和 JavaScript 有什么区别？</h4><p>ES6(ECMAScript 2015)是ECMAScript规范的第六个版本, 而JavaScript是基于ECMAScript规范实现的编程语言.</p>
+<p>ES6可以被看作是 JavaScript 的一个重要的版本更新.</p>
+<h1 id="ECMAScript-入门"><a href="#ECMAScript-入门" class="headerlink" title="ECMAScript 入门"></a>ECMAScript 入门</h1><h3 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h3><h4 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h4><p>是用于存储数据的名称(标识符), 变量可以是任何类型, 如 “数值、字符串” 等.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let str = &quot;字符串&quot;</span><br><span class="line">let num = 100</span><br></pre></td></tr></table></figure></div>
+
+<p>变量可以重新赋值</p>
+<blockquote>
+<p>ES6不区分整型和浮点型, 所有数字都使用 <code>number类型</code> 来表示</p>
+</blockquote>
+<h4 id="常量-Constant"><a href="#常量-Constant" class="headerlink" title="常量(Constant)"></a>常量(Constant)</h4><p>是一个固定的值, 在程序运行中常量的值保持不变</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">const PI = 3.14</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="字符串-string"><a href="#字符串-string" class="headerlink" title="字符串 string"></a>字符串 string</h4><p>字符串类型用于存储字符序列</p>
+<h4 id="数值-number"><a href="#数值-number" class="headerlink" title="数值 number"></a>数值 number</h4><p>用于存储数字, 可以表示整数、浮点数</p>
+<h4 id="布尔类型-boolean"><a href="#布尔类型-boolean" class="headerlink" title="布尔类型 boolean"></a>布尔类型 boolean</h4><p>布尔类型只能取两个值,true(真) 和 false(假)</p>
+<h4 id="函数-function"><a href="#函数-function" class="headerlink" title="函数 function"></a>函数 function</h4><p>函数是一段<strong>可重复执行的代码块</strong>，可以接收输入参数并返回一个值或执行某些操作.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 定义一个计算两数之和的函数</span><br><span class="line">function add(a, b) &#123;</span><br><span class="line">  return a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&quot;add&quot;, add(1, 2))</span><br><span class="line"></span><br><span class="line">// 匿名函数</span><br><span class="line">let sub = function(x,y) &#123;</span><br><span class="line">  return x-y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(sub(1, 2))</span><br><span class="line"></span><br><span class="line">// 箭头函数</span><br><span class="line">let plus = (a,b) =&gt; &#123;</span><br><span class="line">  return a+b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(plus(1, 2))</span><br><span class="line"></span><br><span class="line">// 隐式返回</span><br><span class="line">let minus = (a,b) =&gt; a-b</span><br><span class="line"></span><br><span class="line">let double = n =&gt; 2n</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="数组-array"><a href="#数组-array" class="headerlink" title="数组 array"></a>数组 array</h4><p>数组是一种<strong>有序集合</strong>, 可以包含不同类型的元素，并且数组的长度是<strong>可变的</strong>.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let str = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;] //定义了一个包含4个字符串的数组</span><br><span class="line"></span><br><span class="line">let arr = [&quot;1&quot;,&quot;3.14&quot;,&quot;a&quot;]</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
+<li><p><code>push(元素1,元素2)</code> 向数组<strong>末尾</strong>添加一个或多个元素(用逗号隔开元素), 并返回<strong>修改后数组的长度</strong></p>
+</li>
+<li><p><code>unshift(元素1,元素2)</code> 向数组<strong>开头</strong>添加一个或多个元素, 并返回修<strong>改后数组的长度</strong></p>
+</li>
+<li><p><code>pop()</code> 删除数组<strong>最后一个</strong>元素, 并返回被删除元素删</p>
+</li>
+<li><p><code>shift()</code> 除数组中<strong>第一个</strong>元素, 并返回被删除元素</p>
+</li>
+<li><p><code>splice(要删除元素的索引位置, 要删除的元素数量)</code> 删除元素, 并返回包含被删除元素的数组</p>
+</li>
+<li><p><code>reverse()</code> 反转数组中元素的顺序</p>
+</li>
+<li><p><code>sort()</code> 数组中的元素按照首字母顺序排序</p>
+</li>
+</ul>
+<p>使用 <code>sort()</code> 排序数组 [5,20,13,1,4] ,由于只比较首字母的缘故, 会得到 [1,13,20,4,5] 的结果.</p>
+<p>配合比较函数 <code>(a,b) =&gt; a-b</code>, 实现数字排序:</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr.sort((a,b) =&gt; a-b)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>filter()</code> 筛选符合条件的元素</li>
+</ul>
+<p>例如, 筛选值大于12的元素</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr.filter((n) =&gt; n&gt;12)</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="数组的for循环遍历"><a href="#数组的for循环遍历" class="headerlink" title="数组的for循环遍历"></a>数组的for循环遍历</h5><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (let item of arr)&#123;</span><br><span class="line">  console.log(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr.forEach((value,index) =&gt; &#123;console.log(value,index)&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>Set 是一种特殊的数据结构, 用于存储<strong>无序且唯一</strong>的值的集合.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let number = new Set([1, 2, 3, 4, 5]) //定义了一个包含5个&quot;不重复&quot;的整数的集合</span><br><span class="line"></span><br><span class="line">//错误示范 </span><br><span class="line">let numbers = new Set([1, 2, 3, 4, 5, 5]) </span><br></pre></td></tr></table></figure></div>
+
+<h5 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
+<li><p><code>add(&#39;元素&#39;)</code> 向Set集合中添加新的元素</p>
+</li>
+<li><p><code>delete(&#39;元素&#39;)</code> 从Set集合中删除元素</p>
+</li>
+<li><p><code>clear()</code> 清空 Set集合</p>
+</li>
+<li><p><code>has(&#39;元素&#39;)</code> 检查Set集合是否包含指定元素</p>
+</li>
+<li><p><code>size</code> 获取Set集合的大小</p>
+</li>
+<li><p><code>Array.from(set集合)</code> 将 Set集合 转换为 数组</p>
+</li>
+<li><p>使用扩展运算符<code>...</code>将 Set集合 转换为 数组</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [...Set集合]</span><br></pre></td></tr></table></figure></div>
+
+<p>扩展运算符可用于展开可迭代对象(如数组、字符串等)</p>
+<p>例如</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let str = &#x27;一个字符串&#x27;</span><br><span class="line">console.log(str) // [&#x27;一&#x27;,&#x27;个&#x27;,&#x27;字&#x27;,&#x27;符&#x27;,&#x27;串&#x27;,]</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>将 数组 转换为 Set集合</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let numberArr = [1, 2, 3, 3, 2, 1]</span><br><span class="line">let numberSet = new Set(numberArr)</span><br><span class="line"></span><br><span class="line">// 输出为 [1,2,3]</span><br></pre></td></tr></table></figure></div>
+
+<p>利用 Set集合 特性, 可实现数组去重</p>
+<h5 id="Set集合的for循环遍历"><a href="#Set集合的for循环遍历" class="headerlink" title="Set集合的for循环遍历"></a>Set集合的for循环遍历</h5><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (let item of set)&#123;</span><br><span class="line">  console.log(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr.forEach((value,index) =&gt; &#123;console.log(value,index)&#125;)</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="对象-object"><a href="#对象-object" class="headerlink" title="对象 object"></a>对象 object</h4><p>对象是一种<strong>复合的数据类型</strong>, 可以通过键值对的方式存储多个值.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义了一个包含姓名、年龄和体重的对象</span><br><span class="line"></span><br><span class="line">let boy = &#123;</span><br><span class="line">  name: &quot;David&quot;,</span><br><span class="line">  age: 28,</span><br><span class="line">  weight: 70.5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
+<li>向对象中添加新的属性 <code>对象.新属性 = 值</code></li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">boy.height = 175</span><br></pre></td></tr></table></figure></div>
+
+<p>在对象中, 每个键都是唯一的, 当使用相同的键再次赋值时, 会替换原来键对应的值.</p>
+<ul>
+<li><p>删除属性 <code>delete 对象.属性</code></p>
+</li>
+<li><p>清空对象 <code>对象 = &#123;&#125;</code></p>
+</li>
+<li><p>检查对象是否包含指定属性 <code>&quot;属性&quot; in 对象</code></p>
+</li>
+<li><p>获取对象的属性数量 <code>Object.keys(person).length</code></p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">  name: &quot;张三&quot;,</span><br><span class="line">  gender: &quot;男&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//Object.keys() 用于获取对象属性名(key)的数组</span><br><span class="line">console.log(Object.keys(person)) // 输出为数组, [&quot;name&quot;,&quot;gender&quot;]</span><br><span class="line"></span><br><span class="line">console.log(Object.keys(person).length)  </span><br></pre></td></tr></table></figure></div>
+
+<p>除了 <code>Object.keys(数组)</code> 取对象的属性名, 输出为数组, 还有:</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(Object.values(对象)) // 取对象的值输出为数组</span><br><span class="line"></span><br><span class="line">console.log(Object.entries(对象)) // 取对象的键值对输出为数组</span><br></pre></td></tr></table></figure></div>
+
+
+<ul>
+<li>将对象转换为数组 <code>Object.entries(对象)</code></li>
+</ul>
+<h5 id="对象的for循环遍历"><a href="#对象的for循环遍历" class="headerlink" title="对象的for循环遍历"></a>对象的for循环遍历</h5><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (let key in 对象) &#123;</span><br><span class="line">  console.log(key, 对象[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object.enties(对象).forEach(</span><br><span class="line">  ([key, value]) =&gt; &#123;</span><br><span class="line">  console.log(key, value)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>map 是一种特殊的数据结构,用于存储<strong>键值对</strong>的有序集合.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义了一个包含姓名、年龄和体重的map</span><br><span class="line">let girl = new Map([</span><br><span class="line">  [&quot;name&quot;, &quot;Luna&quot;],</span><br><span class="line">  [&quot;age&quot;, 20],</span><br><span class="line">  [&quot;weight&quot;, 50.5]</span><br><span class="line">])</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p> Map相对于对象提供了更灵活、有序、高效的键值对存储和操作方式,当需要在大量键值对中快速查找或删除特定键值对时, Map比对象更高效<br>Map提供了一些便捷的方法来操作键值对, 如: <code>get()</code>、<code>set()</code>、<code>delete()</code><br>Map提供了一些便捷的迭代方法, 如: <code>forEach()</code>、<code>keys()</code>、<code>values()</code>、<code>entries()</code></p>
+</blockquote>
+<h5 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
+<li>向Map集合中添加新的元素 <code>set(&#39;键&#39;,&#39;键值&#39;)</code></li>
+</ul>
+<blockquote>
+<p>在Map集合中, 每个键都是唯一的, 当使用相同的键再次调用 <code>set()</code> 方法时, 会替换原来键对应的值.</p>
+</blockquote>
+<ul>
+<li><p>删除元素 <code>delete(&#39;元素&#39;)</code></p>
+</li>
+<li><p>检查Map集合是否包含指定元素 <code>has(&#39;元素&#39;)</code></p>
+</li>
+<li><p>获取Map集合的大小 <code>size()</code></p>
+</li>
+<li><p><code>clear()</code> 清空 Map集合</p>
+</li>
+<li><p>将Map集合转换为数组 <code>Array.from(Map集合)</code></p>
+</li>
+<li><p>使用扩展运算符<code>...</code>将 Map集合 转换为 数组</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [...Map集合]</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="map集合的for循环遍历"><a href="#map集合的for循环遍历" class="headerlink" title="map集合的for循环遍历"></a>map集合的for循环遍历</h5><p><code>[key, value]</code> 就是一种解构语法, 解构可以从数组或对象中提取值并赋给变量.<br>将 Map 集合中的键值对解构为 key 和 value 两个变量.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (let [key, value] of person) &#123;</span><br><span class="line">console.log(key, value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">person.forEach(</span><br><span class="line">  (value, key) =&gt; &#123;</span><br><span class="line">  console.log(key, value)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="类-class"><a href="#类-class" class="headerlink" title="类 class"></a>类 class</h4><p>类是一种蓝图或模板，用于<strong>创建具有相同属性和方法的</strong>对象</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  //若在类中没有显式声明属性, 但在构造函数或方法中引用了未声明的属性, 会自动将其视为实例属性</span><br><span class="line"></span><br><span class="line">  name</span><br><span class="line">  age</span><br><span class="line"></span><br><span class="line">  //构造函数 用于初始化属性</span><br><span class="line">  constructor(name, age) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //方法 返回个人信息</span><br><span class="line">  info() &#123;</span><br><span class="line">    console.log(&quot;姓名&quot;, this.name, &quot;年龄&quot;, this.age)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 新建对象</span><br><span class="line">const person = new Person(&quot;张三&quot;, 22)</span><br><span class="line"></span><br><span class="line">//调用info()方法</span><br><span class="line">person.info()</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h5><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">`姓名:$&#123;this.name&#125; 年龄:$&#123;this.age&#125;` </span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
 </search>

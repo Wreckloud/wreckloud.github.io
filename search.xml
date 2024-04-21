@@ -616,11 +616,12 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>知识笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
         <tag>Python</tag>
         <tag>入门基础</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -666,10 +667,12 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>指南</category>
+        <category>攻略手册</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>攻略</tag>
+        <tag>网站</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -902,11 +905,12 @@
 <h4 id="元素-innnerHTML-属性"><a href="#元素-innnerHTML-属性" class="headerlink" title="元素.innnerHTML 属性"></a>元素.innnerHTML 属性</h4><p>与 元素.innerText 不同点是, 会解析标签.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> info = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.info&quot;</span>)</span><br><span class="line"></span><br><span class="line">info.<span class="property">innerText</span> = <span class="string">&quot;&lt;strong&gt; 汪呜呜~ &lt;/strong&gt;&quot;</span></span><br><span class="line"><span class="comment">// 解析标签, 会显示加粗文本</span></span><br></pre></td></tr></table></figure></div>]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
         <tag>web前端</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1289,7 +1293,7 @@ end</pre>
 </ol>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
         <tag>数据结构</tag>
@@ -1298,7 +1302,7 @@ end</pre>
       </tags>
   </entry>
   <entry>
-    <title>板绘学习</title>
+    <title>我要画画!</title>
     <url>/2024/04/04/%E6%9D%BF%E7%BB%98%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="绘画前准备"><a href="#绘画前准备" class="headerlink" title="绘画前准备"></a>绘画前准备</h1><p>最最重要的一点! 无论这次作品是否满意, 请一定要 <strong>「完成作品」</strong> !!</p>
 <p>只有完成作品, 才能更好地反思和吸取经验. 不过我认为, 这最重要的还是培养坚持的习惯.</p>
@@ -1441,10 +1445,11 @@ end</pre>
 <p>还可以贴一张纸在数位板上增加摩擦力.</p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>兴趣</category>
       </categories>
       <tags>
         <tag>绘画</tag>
+        <tag>爱好</tag>
       </tags>
   </entry>
   <entry>
@@ -1664,9 +1669,10 @@ end</pre>
 </blockquote>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
+        <tag>入门基础</tag>
         <tag>Java</tag>
       </tags>
   </entry>
@@ -1686,7 +1692,7 @@ end</pre>
 <p><a class="link"   href="https://www.hostbuf.com/t/988.html" >FinalShell SSH工具 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -1705,10 +1711,11 @@ end</pre>
 <p>分布式处理<br>利用空闲计算机资源以提高整个系统的利用率.</p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
-        <tag>计算机</tag>
+        <tag>笔记</tag>
+        <tag>计算机硬件</tag>
       </tags>
   </entry>
   <entry>
@@ -1755,17 +1762,16 @@ end</pre>
 </tbody></table>
 ]]></content>
       <categories>
-        <category>知识</category>
+        <category>拓展知识</category>
       </categories>
       <tags>
         <tag>web前端</tag>
         <tag>VUE</tag>
-        <tag>专业知识</tag>
-        <tag>学习笔记</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
-    <title>前端-CSS</title>
+    <title>CSS3-web前端基础前端</title>
     <url>/2023/09/17/%E5%89%8D%E7%AB%AFCSS3/</url>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h1 id="CSS-定义"><a href="#CSS-定义" class="headerlink" title="CSS 定义"></a>CSS 定义</h1><p>层叠样式表(Casading Style Sheets), 又叫级联样式表, 简称 <strong>样式表</strong> .<br>用来<strong>描述</strong> HTML文档 的呈现方式,用于美化内容.</p>
@@ -2651,15 +2657,16 @@ end</pre>
 <p>例如, 要设置不同尺寸设备下网页样式:</p>
 <div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line"> <span class="comment">/* 设备小于768px加载样式 */</span></span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>: red;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">992px</span>) <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line"> <span class="comment">/* 设备小于768px但小于992px加载样式  */</span></span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>: pink;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">992px</span>) &#123;</span><br><span class="line"> <span class="comment">/* 设备大于992px加载样式 */</span></span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>: green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
         <tag>web前端</tag>
         <tag>CSS</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
-    <title>HTML5基础笔记</title>
+    <title>HTML5-Web前端基础</title>
     <url>/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/</url>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
@@ -2971,11 +2978,12 @@ end</pre>
 </tbody></table>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>专业课知识</category>
       </categories>
       <tags>
         <tag>web前端</tag>
         <tag>HTML</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -3086,6 +3094,10 @@ end</pre>
       <categories>
         <category>脑洞</category>
       </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>原创角色</tag>
+      </tags>
   </entry>
   <entry>
     <title>ECMAScript入门</title>
@@ -3251,10 +3263,12 @@ end</pre>
 
 <h5 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h5><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">`姓名:$&#123;this.name&#125; 年龄:$&#123;this.age&#125;` </span><br></pre></td></tr></table></figure></div>]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>拓展知识</category>
       </categories>
       <tags>
+        <tag>入门基础</tag>
         <tag>web前端</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
 </search>

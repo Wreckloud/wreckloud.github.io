@@ -3336,6 +3336,9 @@ end</pre>
                       alt="文件路径"
                 ></p>
 <p>目标就是完整路径, 接下来将他复制下来.</p>
+<blockquote>
+<p>注意:<br>有时复制下来可能会存在双引号, 但是无论如何, 都不需要加上<strong>引号</strong>!</p>
+</blockquote>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -3343,10 +3346,7 @@ end</pre>
                       alt="设置注册表"
                 ></p>
 <p>粘贴到刚刚新建的字符串名称.</p>
-<blockquote>
-<p>注意: 无论路径里有没有空格都不需要加上<strong>引号</strong>!</p>
-</blockquote>
-<ol start="4">
+<ol>
 <li>右键刚刚新建的字符串</li>
 </ol>
 <p>点击 <code>修改</code></p>

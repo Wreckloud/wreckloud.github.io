@@ -3399,9 +3399,9 @@ end</pre>
 <p>这样设置后, 在任意时候按下快捷键, 就会打开这个已经设置成管理员模式的cmd快捷方式.</p>
 <h2 id="软件运行不再提示-UAC"><a href="#软件运行不再提示-UAC" class="headerlink" title="软件运行不再提示 UAC"></a>软件运行不再提示 UAC</h2><p>默认以管理员身份运行设置好后, 又有新的问题.</p>
 <p>每次打开, 还是那烦人的弹框, 这怎么忍? </p>
-<p><a class="link"   href="https://zhuanlan.zhihu.com/p/113767050" >文章来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, 感谢大佬 <a class="link"   href="https://www.zhihu.com/people/xiu2" >@西柚秀 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 的攻略分享.</p>
+<p>感谢大佬 <a class="link"   href="https://www.zhihu.com/people/xiu2" >@西柚秀 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 的攻略分享.</p>
 <p>大佬甚至还制作了小工具: <a class="link"   href="https://zhuanlan.zhihu.com/p/114096199" >添加 UAC 白名单的小工具 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>接下来是手动教程!</p>
+<p>[手动设置教程] (<a class="link"   href="https://zhuanlan.zhihu.com/p/113767050" >https://zhuanlan.zhihu.com/p/113767050 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>)</p>
 <h4 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h4>]]></content>
       <categories>
         <category>攻略手册</category>

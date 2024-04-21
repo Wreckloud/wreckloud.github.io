@@ -17,21 +17,30 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://www.wreckloud.com/tags/python/"/>
+    <link rel="canonical" href="https://www.wreckloud.com/2024/04/21/windows的用户账户控制-uac-及相关操作/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="个人博客,用来存放杂七杂八的东西">
-<meta property="og:type" content="website">
-<meta property="og:title" content="狼牙月影">
-<meta property="og:url" content="https://www.wreckloud.com/tags/Python/index.html">
+        <meta name="description" content="记录一下关于单独关闭UAC和添加UAC白名单的方法, 很实用哦!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows的用户账户控制(UAC)及相关操作">
+<meta property="og:url" content="https://www.wreckloud.com/2024/04/21/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6-UAC-%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="狼牙月影">
-<meta property="og:description" content="个人博客,用来存放杂七杂八的东西">
+<meta property="og:description" content="记录一下关于单独关闭UAC和添加UAC白名单的方法, 很实用哦!">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A8.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A82.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F.jpg">
+<meta property="article:published_time" content="2024-04-21T06:34:26.000Z">
+<meta property="article:modified_time" content="2024-04-21T08:16:28.612Z">
 <meta property="article:author" content="Wreckloud">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="攻略">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg">
     
     
     <!--- Icon Part-->
@@ -43,7 +52,7 @@
     
     <title>
         
-            标签: Python -
+            Windows的用户账户控制(UAC)及相关操作 -
         
         狼牙月影
     </title>
@@ -535,46 +544,337 @@
             <div class="main-content">
 
                 
-                    <div class="tag-container">
-	<div class="tag-name">
-		<i class="fa-solid fa-tag"></i>&nbsp;Python
-	</div>
-	<div class="tag-post-list">
-		
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
 
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2023</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/UAC.jpg" alt="Windows的用户账户控制(UAC)及相关操作" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">Windows的用户账户控制(UAC)及相关操作</h1>
+                </div>
+            
             </div>
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-              
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/default.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Wreckloud_雲之残骸</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-21 14:34:26</span>
+        <span class="mobile">2024-04-21 14:34:26</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-21 16:16:28</span>
+            <span class="mobile">2024-04-21 16:16:28</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
                 
                     
-                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-23'>
+                        
+                        <li>
+                            <a href="/categories/%E6%94%BB%E7%95%A5%E6%89%8B%E5%86%8C/">攻略手册</a>&nbsp;
+                        </li>
+                    
+                    
                 
-                    
-                        <a href="/2023/09/23/Python%E5%9F%BA%E7%A1%80/" class="block overflow-hidden w-fit">
-                            <span class="article-title mb-0.5 text-2xl">Python基础</span>
-                        </a>
-                    
-              
             </ul>
-        </section>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%94%BB%E7%95%A5/">攻略</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
-	</div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <p>用户账户控制(User Account Control，简称UAC), 是一种通知用户是否对应用程序使用硬盘和系统文件授权, 从而防止恶意程序损坏系统的机制.</p>
+<p>UAC是啥, 还是得看看微软官方去了解. </p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/security/application-security/application-control/user-account-control/" >用户帐户控制概述 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>我只觉得弹窗太麻烦了, Win10 系统中关闭UAC的方法是:</p>
+<blockquote>
+<p>控制面板—用户账户—更改用户账户控制设置.</p>
+<p>在弹出的对话框中设置你觉得合适的等级即可，拖到最下方的 从不通知.</p>
+</blockquote>
+<p>就不会有弹窗通知了, 但是!</p>
+<p>这样的话,<strong>所有软件</strong>都可以偷偷申请管理员权限, 并且在<strong>你不知情</strong>的情况下随意修改你的系统设置或文件!</p>
+<p>可恶的微软竟然没有制作 UAC 白名单系统, 狠狠拷打!</p>
+<p>这里就主要总结记录一下我觉得很有用的关键操作.</p>
+<h1 id="强制以普通用户方式运行"><a href="#强制以普通用户方式运行" class="headerlink" title="强制以普通用户方式运行"></a>强制以普通用户方式运行</h1><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84591808" >文章来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, 感谢大佬 <a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/people/xiu2" >@西柚秀 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 的攻略分享.</p>
+<p>本操作主要针对一些软件喜欢强制以管理员方式运行, 偷偷在后台搞小动作的应用.  </p>
+<p>(对没错! 就是你! 腾讯的WeGay!!! 不给权限还不让进!!)</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg"
+                      alt="WeGay"
+                ></p>
+<h3 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h3><p>WeGame 软件在启动的时候就会申请 UAC, 正常情况下只能同意.</p>
+<p>强制以普通用户方式运行设置后, 双击打开软件就是 普通用户权限.<br>所以就是, 既然你非要申请管理员权限, 那么我就不拒绝你的申请, 而是直接不让你申请, 这样不就不会提示 UAC 了.</p>
+<p>当然, 如果临时需要管理员权限的话, 依然可以 [<code>右键 - 以管理员方式运行</code>]</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
+<li>打开注册表编辑器.</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8.jpg"
+                      alt="注册表编辑器"
+                ></p>
+<blockquote>
+<p>除了系统搜索 <code>注册表</code> 之外, 还可以:<br>按下 <code>Win+R</code>键 打开 运行 窗口，输入 <code>regedit</code> 并点击 确定 按钮(或直接回车).  </p>
+<p>这样是不是更酷点? 哈哈!</p>
+</blockquote>
+<ol start="2">
+<li>在注册表编辑器地址栏中输入:</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers</span><br></pre></td></tr></table></figure></div>
+
+<p>如果没有 Layers 文件夹的话, 可以自己新建一个.</p>
+<blockquote>
+<p>选中 <code>AppCompatFlags</code> 右键, 点击 <code>新建</code> -&gt; <code>项</code><br>新建 Layers 文件夹</p>
+</blockquote>
+<ol start="3">
+<li>右键 Layers 文件夹, 点击 <code>新建</code> -&gt; <code>字符串值</code>, 新建一个 字符串值.</li>
+</ol>
+<p>字符串名称就是你指定的软件完整路径, 例如 Wegame 的路径:</p>
+<p>找到wegame的快捷方式(一般就是桌面的图标), 然后右键快捷方式 -&gt; <code>属性</code>:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.jpg"
+                      alt="文件路径"
+                ></p>
+<p>目标就是完整路径, 接下来将他复制下来.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A8.jpg"
+                      alt="设置注册表"
+                ></p>
+<p>粘贴到刚刚新建的字符串名称.</p>
+<blockquote>
+<p>注意; 无论路径里有没有空格都不需要加上<strong>引号</strong>!</p>
+</blockquote>
+<ol start="4">
+<li>右键刚刚新建的字符串</li>
+</ol>
+<p>点击 <code>修改</code></p>
+<p>填入数值数据</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">RUNASINVOKER</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A82.jpg"
+                      alt="修改数值数据"
+                ></p>
+<p>现在, 再次打开Wegame试试吧!</p>
+<h1 id="程序默认以管理员身份运行"><a href="#程序默认以管理员身份运行" class="headerlink" title="程序默认以管理员身份运行"></a>程序默认以管理员身份运行</h1><p>有的程序确实需要管理员权限运行, 例如 CMD.  </p>
+<p>但是呢, 每一次打开都要先右键选中 <code>以管理员身份运行</code> 还是很麻烦…<br>(我觉得是, 那就是! <del>毕竟懒是人类第一生产力</del>( ?</p>
+<p>接下来, 就来实现只要打开程序, 就默认以管理员身份运行吧!</p>
+<h3 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>找到 <code>目标程序</code> 快捷方式. </p>
+<p>右键 <code>目标程序</code> 快捷方式 -&gt; 点击 <code>属性</code> -&gt; <code>兼容性</code> 选项卡下的 <code>以管理员身份运行此程序</code>.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F.jpg"
+                      alt="其他程序"
+                ></p>
+<p>看到了吧! 对, 没错, 勾选 <code>以管理员身份运行</code> 即可!</p>
+<p>然后别忘记依次点击 <code>确定</code> 保存更改.</p>
+<h1 id="添加-UAC-白名单-软件运行不再提示-UAC"><a href="#添加-UAC-白名单-软件运行不再提示-UAC" class="headerlink" title="添加 UAC 白名单, 软件运行不再提示 UAC"></a>添加 UAC 白名单, 软件运行不再提示 UAC</h1><p>默认以管理员身份运行设置好后, 又有新的问题.</p>
+<p>每次打开, 还是那烦人的弹框, 这怎么忍? </p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113767050" >文章来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, 感谢大佬 <a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/people/xiu2" >@西柚秀 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 的攻略分享.</p>
+<p>大佬甚至还制作了小工具: <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114096199" >添加 UAC 白名单的小工具 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>接下来是手动教程!</p>
+<h3 id="操作步骤-2"><a href="#操作步骤-2" class="headerlink" title="操作步骤"></a>操作步骤</h3>
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Windows的用户账户控制(UAC)及相关操作</li>
+        <li><strong>作者:</strong> Wreckloud_雲之残骸</li>
+        <li><strong>创建于
+                :</strong> 2024-04-21 14:34:26</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-04-21 16:16:28
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://www.wreckloud.com/2024/04/21/Windows的用户账户控制-UAC-及相关操作/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
 </div>
 
-<div class="tag-paginator">
-	<div class="paginator">
-    <span class="page-number current">1</span>
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E6%94%BB%E7%95%A5/">#攻略</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/04/19/ECMAScript%E5%85%A5%E9%97%A8/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">ECMAScript入门</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div class="twikoo-container">
+        <script data-swup-reload-script
+                src='https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js'
+        ></script>
+        <div id="twikoo-comment"></div>
+        <script data-swup-reload-script>
+            function loadTwikoo() {
+                twikoo.init({
+                    el: '#twikoo-comment',
+                    envId: 'https://wreckloud-twikoo.hf.space',
+                });
+            }
+
+            if ('true') {
+                const loadTwikooTimeout = setTimeout(() => {
+                    loadTwikoo();
+                    clearTimeout(loadTwikooTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadTwikoo);
+            }
+        </script>
+    </div>
+
+
+        
+        
+    
 </div>
 
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Windows的用户账户控制(UAC)及相关操作</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E4%BB%A5%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E6%96%B9%E5%BC%8F%E8%BF%90%E8%A1%8C"><span class="nav-text">强制以普通用户方式运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E"><span class="nav-text">原理说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-text">操作步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%BB%98%E8%AE%A4%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%90%E8%A1%8C"><span class="nav-text">程序默认以管理员身份运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4-1"><span class="nav-text">操作步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-UAC-%E7%99%BD%E5%90%8D%E5%8D%95-%E8%BD%AF%E4%BB%B6%E8%BF%90%E8%A1%8C%E4%B8%8D%E5%86%8D%E6%8F%90%E7%A4%BA-UAC"><span class="nav-text">添加 UAC 白名单, 软件运行不再提示 UAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4-2"><span class="nav-text">操作步骤</span></a></li></ol></li></ol></li></ol>
+
+    </div>
 </div>
+        </div>
+    
+</div>
+
 
 
                 
@@ -674,6 +974,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">

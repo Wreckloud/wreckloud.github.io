@@ -3118,7 +3118,29 @@ end</pre>
 <h3 id="常量-Constant"><a href="#常量-Constant" class="headerlink" title="常量(Constant)"></a>常量(Constant)</h3><p>是一个固定的值, 在程序运行中常量的值保持不变</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">const PI = 3.14</span><br></pre></td></tr></table></figure></div>
 
+<h3 id="如何选择使用-let-或-const"><a href="#如何选择使用-let-或-const" class="headerlink" title="如何选择使用 let 或 const"></a>如何选择使用 let 或 const</h3><ol>
+<li>默认使用 const.</li>
+<li>当其需求为可变时, 使用 let 进行可变声明.</li>
+</ol>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h3 id="字符串-string"><a href="#字符串-string" class="headerlink" title="字符串 string"></a>字符串 string</h3><p>字符串类型用于存储字符序列</p>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li><p><code>length</code> 字符串长度</p>
+</li>
+<li><p><code>toLowerCase</code> &#x2F; <code>toUpperCase</code> 转小写&#x2F;转大写</p>
+</li>
+<li><p><code>字符串[索引]</code> 返回索引处的字符</p>
+</li>
+<li><p><code>[...字符串]</code> 字符串转为字符数组</p>
+</li>
+<li><p><code>parseInt(&quot;1234&quot;)</code> 字符串转 int</p>
+</li>
+<li><p><code>replaceALL(&quot;目标字符串&quot;,&quot;替换成的字符串&quot;)</code> 替换全部字符串替换</p>
+</li>
+<li><p><code>replacece(&quot;目标字符串&quot;,&quot;替换成的字符串&quot;)</code>替换一个字符串替换</p>
+</li>
+</ul>
+<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">`姓名:$&#123;this.name&#125; 年龄:$&#123;this.age&#125;` </span><br></pre></td></tr></table></figure></div>
+
 <h3 id="数值-number"><a href="#数值-number" class="headerlink" title="数值 number"></a>数值 number</h3><p>用于存储数字, 可以表示整数、浮点数</p>
 <h3 id="布尔类型-boolean"><a href="#布尔类型-boolean" class="headerlink" title="布尔类型 boolean"></a>布尔类型 boolean</h3><p>布尔类型只能取两个值,true(真) 和 false(假)</p>
 <h3 id="函数-function"><a href="#函数-function" class="headerlink" title="函数 function"></a>函数 function</h3><p>函数是一段<strong>可重复执行的代码块</strong>，可以接收输入参数并返回一个值或执行某些操作.</p>
@@ -3128,7 +3150,7 @@ end</pre>
 <h3 id="数组-array"><a href="#数组-array" class="headerlink" title="数组 array"></a>数组 array</h3><p>数组是一种<strong>有序集合</strong>, 可以包含不同类型的元素，并且数组的长度是<strong>可变的</strong>.</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let str = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;] //定义了一个包含4个字符串的数组</span><br><span class="line"></span><br><span class="line">let arr = [&quot;1&quot;,&quot;3.14&quot;,&quot;a&quot;]</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
 <li><p><code>push(元素1,元素2)</code> 向数组<strong>末尾</strong>添加一个或多个元素(用逗号隔开元素), 并返回<strong>修改后数组的长度</strong></p>
 </li>
 <li><p><code>unshift(元素1,元素2)</code> 向数组<strong>开头</strong>添加一个或多个元素, 并返回修<strong>改后数组的长度</strong></p>
@@ -3161,7 +3183,7 @@ end</pre>
 <h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>Set 是一种特殊的数据结构, 用于存储<strong>无序且唯一</strong>的值的集合.</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let number = new Set([1, 2, 3, 4, 5]) //定义了一个包含5个&quot;不重复&quot;的整数的集合</span><br><span class="line"></span><br><span class="line">//错误示范 </span><br><span class="line">let numbers = new Set([1, 2, 3, 4, 5, 5]) </span><br></pre></td></tr></table></figure></div>
 
-<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
 <li><p><code>add(&#39;元素&#39;)</code> 向Set集合中添加新的元素</p>
 </li>
 <li><p><code>delete(&#39;元素&#39;)</code> 从Set集合中删除元素</p>
@@ -3197,7 +3219,7 @@ end</pre>
 <h3 id="对象-object"><a href="#对象-object" class="headerlink" title="对象 object"></a>对象 object</h3><p>对象是一种<strong>复合的数据类型</strong>, 可以通过键值对的方式存储多个值.</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">//定义了一个包含姓名、年龄和体重的对象</span><br><span class="line"></span><br><span class="line">let boy = &#123;</span><br><span class="line">  name: &quot;David&quot;,</span><br><span class="line">  age: 28,</span><br><span class="line">  weight: 70.5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<h4 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
 <li>向对象中添加新的属性 <code>对象.新属性 = 值</code></li>
 </ul>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">boy.height = 175</span><br></pre></td></tr></table></figure></div>
@@ -3232,7 +3254,7 @@ end</pre>
 <blockquote>
 <p> Map相对于对象提供了更灵活、有序、高效的键值对存储和操作方式,当需要在大量键值对中快速查找或删除特定键值对时, Map比对象更高效<br>Map提供了一些便捷的方法来操作键值对, 如: <code>get()</code>、<code>set()</code>、<code>delete()</code><br>Map提供了一些便捷的迭代方法, 如: <code>forEach()</code>、<code>keys()</code>、<code>values()</code>、<code>entries()</code></p>
 </blockquote>
-<h5 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
+<h5 id="常用方法-4"><a href="#常用方法-4" class="headerlink" title="常用方法"></a>常用方法</h5><ul>
 <li>向Map集合中添加新的元素 <code>set(&#39;键&#39;,&#39;键值&#39;)</code></li>
 </ul>
 <blockquote>
@@ -3261,8 +3283,6 @@ end</pre>
 
 <h3 id="类-class"><a href="#类-class" class="headerlink" title="类 class"></a>类 class</h3><p>类是一种蓝图或模板，用于<strong>创建具有相同属性和方法的</strong>对象.<br>命名时 类 的首字母大写.</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  //若在类中没有显式声明属性, 但在构造函数或方法中引用了未声明的属性, 会自动将其视为实例属性</span><br><span class="line"></span><br><span class="line">  name</span><br><span class="line">  age</span><br><span class="line"></span><br><span class="line">  //构造函数 用于初始化属性</span><br><span class="line">  constructor(name, age) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //方法 返回个人信息</span><br><span class="line">  info() &#123;</span><br><span class="line">    console.log(&quot;姓名&quot;, this.name, &quot;年龄&quot;, this.age)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 新建对象</span><br><span class="line">const person = new Person(&quot;张三&quot;, 22)</span><br><span class="line"></span><br><span class="line">//调用info()方法</span><br><span class="line">person.info()</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">`姓名:$&#123;this.name&#125; 年龄:$&#123;this.age&#125;` </span><br></pre></td></tr></table></figure></div>
 
 <h1 id="私有属性"><a href="#私有属性" class="headerlink" title="私有属性"></a>私有属性</h1><p>私有属性是指仅在类内部可访问和操作的属性, 外部无法直接访问和修改.</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">  #name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -3311,7 +3331,28 @@ end</pre>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let &#123;name = &quot;李四&quot;&#125; = person</span><br></pre></td></tr></table></figure></div>
 
 <p>重命名解构值</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let &#123;name:userName &#125; = person</span><br></pre></td></tr></table></figure></div>]]></content>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">let &#123;name:userName &#125; = person</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="承诺-Promise"><a href="#承诺-Promise" class="headerlink" title="承诺 Promise"></a>承诺 Promise</h1><blockquote>
+<p>异步操作 是指在程序执行过程中, 某个操作不会立即返回结果, 而是需要一段时间的等待.</p>
+<p>例如用户登陆时, 需要一段等待的时间, 不会立即返回结果.</p>
+</blockquote>
+<p>Promise 对象有三种状态:</p>
+<ol>
+<li>pending (进行中) - 初始状态</li>
+<li>fulfilled (已成功) </li>
+<li>rejected (已失败)</li>
+</ol>
+<p>当创建一个 Promise 对象时, 它的初始状态为 <code>pending</code>, 表示异步执行还未完成.<br>当异步执行成功时, 会调用 resolve 函数把 Promise 对象的状态改变为 <code>fulfilled</code>, 可通过 then 方法来获取异步操作的结果.<br>当异步执行异常时, 会调用 reject 函数把 Promise 对象的状态更改为 <code>rejected</code>, 可通过 catch 方法来处理错误.  </p>
+<p>结合三元运算, 例如:</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">const myPromise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    // 异步操作</span><br><span class="line">    true ? resolve(&#x27;已成功&#x27;) : reject(&#x27;已失败&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<p>这里, <code>resolve(&#39;已成功&#39;)</code> 被调用时, 它会将字符串 <code>&#39;已成功&#39;</code> 设置为 Promise 的解析值.<br>但是, 这个值并不会立即被输出到控制台. </p>
+<p>输出发生在你使用 .then() 方法时.</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">myPromise</span><br><span class="line">    .then((value) =&gt; &#123;</span><br><span class="line">        // 当 promise 被成功 resolve 时执行</span><br><span class="line">        console.log(value); // 这里输出: Promise is fulfilled.</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) =&gt; &#123;</span><br><span class="line">        // 当 promise 被 reject 时执行</span><br><span class="line">        console.log(error);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></div>
+
+<p> <code>.catch()</code> 方法来添加失败情况的回调函数.<br>使用 <code>.finally</code> , 无论是成功还是失败都会执行, 可用于输出日志.</p>
+]]></content>
       <categories>
         <category>拓展知识</category>
       </categories>

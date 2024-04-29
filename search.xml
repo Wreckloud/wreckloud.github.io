@@ -3352,6 +3352,11 @@ end</pre>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">myPromise</span><br><span class="line">    .then((value) =&gt; &#123;</span><br><span class="line">        // 当 promise 被成功 resolve 时执行</span><br><span class="line">        console.log(value); // 这里输出: Promise is fulfilled.</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) =&gt; &#123;</span><br><span class="line">        // 当 promise 被 reject 时执行</span><br><span class="line">        console.log(error);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></div>
 
 <p> <code>.catch()</code> 方法来添加失败情况的回调函数.<br>使用 <code>.finally</code> , 无论是成功还是失败都会执行, 可用于输出日志.</p>
+<h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><p>fetch 是基于 Promise 的 api, 它可以发送http请求并接收服务器返回的响应数据<br>fetch 返回的是一个 Promise 对象  </p>
+<blockquote>
+<p>API(Application Programming Interface) 中文通常翻译为 <code>&quot;应用程序编程接口&quot;</code>.</p>
+<p>API是一组预定义的函数, 协议和工具. 用于构建软件应用.</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>拓展知识</category>
@@ -3500,6 +3505,57 @@ end</pre>
       </categories>
       <tags>
         <tag>攻略</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js的安装和配置</title>
+    <url>/2024/04/29/Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="Node-js-概述"><a href="#Node-js-概述" class="headerlink" title="Node.js 概述"></a>Node.js 概述</h1><p>在 Node.js 出现之前, JavaScript 主要用于网页上浏览器, 处理客户端的交互逻辑.<br>而 Node.js 使得 JavaScript 也能够用于服务器端编程, 处理如数据库操作, 网络请求等后端任务.</p>
+<p>Node.js 附带了 <code>npm</code> (Node Package Manager) 中文意为“Node 包管理器”.<br>它是 JavaScript 编程语言的一个包管理器, 也这是世界上最大的开源库生态系统. 开发者可以轻松地共享和使用他人开发的包, 加速了开发过程. </p>
+<blockquote>
+<p>开源 (Open Source)<br>是一种软件发布模式，其中软件的源代码 (即编写程序的原始代码) 对所有人都是可用的.<br>任何人都可以查看、修改和增强源代码, 并且通常可以在遵守特定许可证的条件下自由地分享和分发软件.</p>
+</blockquote>
+<h1 id="下载并安装-Node-js"><a href="#下载并安装-Node-js" class="headerlink" title="下载并安装 Node.js"></a>下载并安装 Node.js</h1><p><a class="link"   href="https://nodejs.org/" >Node.js 官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>LTS (Long Term Support) 代表 “长期支持”, 通常比较稳定.</p>
+<p>Current 通常指的是软件的最新版本, 它可能包含最新的功能, 改进和修复.</p>
+<p>点击官网的下载按钮开始下载.</p>
+<p>下载完成后, 无脑下一步–&gt;下一步–&gt;安装即可.</p>
+<p>安装完成后, 在cmd中输入如下指令查看安装版本.</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Node.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/cmd.jpg"
+                      alt="alt text"
+                ></p>
+<p>如果看到正确的版本号, 即为安装成功!</p>
+<h1 id="配置-Node-js"><a href="#配置-Node-js" class="headerlink" title="配置 Node.js"></a>配置 Node.js</h1><p>更改默认镜像源</p>
+<p>查看当前镜像源</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm get registry</span><br></pre></td></tr></table></figure></div>
+
+<p>修改为淘宝的镜像源  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Node.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/cmd2.jpg"
+                      alt="alt text"
+                ></p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure></div>
+
+<p>再次查看当前镜像源, 即为修改成功.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Node.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/Wreckloud%2024%E5%B9%B404%E6%9C%8829%E6%97%A5%2022%E6%97%B619%E5%88%8613%E7%A7%92.jpg"
+                      alt="alt text"
+                ></p>
+]]></content>
+      <categories>
+        <category>攻略手册</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
       </tags>
   </entry>
 </search>

@@ -30,7 +30,7 @@
 <meta property="og:description" content="ECMAScript 是定义脚本语言的规范, 而 JavaScript 是遵循 ECMAScript 规范实现的一种编程语言.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-19T09:48:52.000Z">
-<meta property="article:modified_time" content="2024-04-28T12:32:45.049Z">
+<meta property="article:modified_time" content="2024-04-29T11:32:44.544Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="入门基础">
 <meta property="article:tag" content="web前端">
@@ -511,7 +511,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">22</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -519,7 +519,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">15</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -577,8 +577,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-28 20:32:45</span>
-            <span class="mobile">2024-04-28 20:32:45</span>
+            <span class="desktop">2024-04-29 19:32:44</span>
+            <span class="mobile">2024-04-29 19:32:44</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -624,7 +624,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.1k 字</span>
         </span>
     
     
@@ -897,6 +897,11 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">myPromise</span><br><span class="line">    .then((value) =&gt; &#123;</span><br><span class="line">        // 当 promise 被成功 resolve 时执行</span><br><span class="line">        console.log(value); // 这里输出: Promise is fulfilled.</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) =&gt; &#123;</span><br><span class="line">        // 当 promise 被 reject 时执行</span><br><span class="line">        console.log(error);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></div>
 
 <p> <code>.catch()</code> 方法来添加失败情况的回调函数.<br>使用 <code>.finally</code> , 无论是成功还是失败都会执行, 可用于输出日志.</p>
+<h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><p>fetch 是基于 Promise 的 api, 它可以发送http请求并接收服务器返回的响应数据<br>fetch 返回的是一个 Promise 对象  </p>
+<blockquote>
+<p>API(Application Programming Interface) 中文通常翻译为 <code>&quot;应用程序编程接口&quot;</code>.</p>
+<p>API是一组预定义的函数, 协议和工具. 用于构建软件应用.</p>
+</blockquote>
 
         </div>
 
@@ -911,7 +916,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-04-28 20:32:45
+                    :</strong> 2024-04-29 19:32:44
             </li>
         
         <li>
@@ -1042,7 +1047,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">ECMAScript入门</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript-%E6%A6%82%E8%BF%B0"><span class="nav-text">ECMAScript 概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F"><span class="nav-text">变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F-Variable"><span class="nav-text">变量(Variable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F-Constant"><span class="nav-text">常量(Constant)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%BD%BF%E7%94%A8-let-%E6%88%96-const"><span class="nav-text">如何选择使用 let 或 const</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-string"><span class="nav-text">字符串 string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC-number"><span class="nav-text">数值 number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B-boolean"><span class="nav-text">布尔类型 boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0-function"><span class="nav-text">函数 function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84-array"><span class="nav-text">数组 array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1-object"><span class="nav-text">对象 object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB-class"><span class="nav-text">类 class</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7"><span class="nav-text">私有属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84"><span class="nav-text">解构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%A7%A3%E6%9E%84"><span class="nav-text">数组解构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84"><span class="nav-text">对象解构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%BF%E8%AF%BA-Promise"><span class="nav-text">承诺 Promise</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript-%E6%A6%82%E8%BF%B0"><span class="nav-text">ECMAScript 概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F"><span class="nav-text">变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F-Variable"><span class="nav-text">变量(Variable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F-Constant"><span class="nav-text">常量(Constant)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%BD%BF%E7%94%A8-let-%E6%88%96-const"><span class="nav-text">如何选择使用 let 或 const</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-string"><span class="nav-text">字符串 string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC-number"><span class="nav-text">数值 number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B-boolean"><span class="nav-text">布尔类型 boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0-function"><span class="nav-text">函数 function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84-array"><span class="nav-text">数组 array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1-object"><span class="nav-text">对象 object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB-class"><span class="nav-text">类 class</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7"><span class="nav-text">私有属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84"><span class="nav-text">解构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%A7%A3%E6%9E%84"><span class="nav-text">数组解构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84"><span class="nav-text">对象解构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%BF%E8%AF%BA-Promise"><span class="nav-text">承诺 Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fetch"><span class="nav-text">Fetch</span></a></li></ol></li></ol>
 
     </div>
 </div>
@@ -1077,11 +1082,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 14 篇文章
+                        共 15 篇文章
                     </span>
                     
                         <span>
-                            共 33.6k 字
+                            共 34k 字
                         </span>
                     
                 </p>

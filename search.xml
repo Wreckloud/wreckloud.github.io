@@ -3749,7 +3749,7 @@ end</pre>
 <li>Mb&#x2F;s &#x3D; $10^3$ kb&#x2F;s</li>
 <li>Gb&#x2F;s &#x3D; $10^3$ Mb&#x2F;s</li>
 </ul>
-<h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4><p>网络的通信线路所能传输数据的能力<br>单位: Hz</p>
+<h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4><p>网络通信线路所能传输数据的能力<br>单位: Hz</p>
 <h4 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h4><p>单位时间内通过某个信道的数据量</p>
 <h3 id="网络协议的三大要素"><a href="#网络协议的三大要素" class="headerlink" title="网络协议的三大要素"></a>网络协议的三大要素</h3><ul>
 <li>语法: 用户数据与控制信息得的结构和格式.  </li>
@@ -3809,7 +3809,7 @@ end</pre>
 <li>功能特性: 指明某条线上出现的某一电平的电压表示何种意义.</li>
 <li>过程特性: 指明对于不同功能的各种可能事件的出现顺序.</li>
 </ul>
-<h3 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h3><h4 id="传输媒体"><a href="#传输媒体" class="headerlink" title="传输媒体"></a>传输媒体</h4><p>传输媒体分为两类:</p>
+<h3 id="信号传输"><a href="#信号传输" class="headerlink" title="信号传输"></a>信号传输</h3><h4 id="传输媒体"><a href="#传输媒体" class="headerlink" title="传输媒体"></a>传输媒体</h4><p>传输媒体分为两类:</p>
 <ul>
 <li>导引型传输媒体: 同轴电缆, 双绞线, 光纤, 电力线;</li>
 <li>非导引型传输媒体: 无线电波, 微波, 红外线, 可见光</li>
@@ -3834,7 +3834,38 @@ end</pre>
 </li>
 <li><p>双向同时通信(双工): 通信双方可以同时发送和接收信息</p>
 </li>
+<li><p>码元: 是一段调制好的基本波形, 可以表示比特信息<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%A0%81%E5%85%83.png"
+                      alt="alt text"
+                ></p>
+</li>
+<li><p>编码: 数字数据编码为数字信号</p>
+</li>
+<li><p>调制: 数字数据编码为模拟信号<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6.png"
+                      alt="alt text"
+                ></p>
+</li>
 </ul>
+<h3 id="信号失真"><a href="#信号失真" class="headerlink" title="信号失真"></a>信号失真</h3><p>信号在传输过程中会受到各种因素的影响, 使得信号波形失去码元之间清晰界限, 这种现象称为 <strong>“码间干扰”</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E4%BF%A1%E5%8F%B7%E5%A4%B1%E7%9C%9F.png"
+                      alt="alt text"
+                ></p>
+<h3 id="奈氏准则"><a href="#奈氏准则" class="headerlink" title="奈氏准则"></a>奈氏准则</h3><p>理想低通信道的最高码元传输速率 $&#x3D; 2W Baud &#x3D; 2W$ 码元&#x2F;秒<br>理想带宽信道的最高码元传输速率 $&#x3D; W Baud &#x3D; W$ 码元&#x2F;秒</p>
+<blockquote>
+<p>$W$ : 信道带宽 (Hz)<br>$Baud$ : 波特, 即 码元&#x2F;秒</p>
+</blockquote>
+<h3 id="香农公式"><a href="#香农公式" class="headerlink" title="香农公式"></a>香农公式</h3><p>$c &#x3D; W × log_2^{(1 +  \frac{S}{N})}$</p>
+<blockquote>
+<p>$c$ : 信道的极限信息传输速率 (b&#x2F;s)<br>$W$ : 信道带宽 (Hz)<br>$S$ : 信道内所传输信号的平均功率<br>$N$ : 信道内的高斯噪声功率<br>$\frac{S}{N}$ : 信噪比(dB)</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>专业课知识</category>

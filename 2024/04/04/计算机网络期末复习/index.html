@@ -17,7 +17,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://www.wreckloud.com/2024/04/04/计算机组成原理/"/>
+    <link rel="canonical" href="https://www.wreckloud.com/2024/04/04/计算机网络期末复习/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -25,7 +25,7 @@
         <meta name="description" content="完犊子, 期末了一点没复习. 嘿嘿, 怪物猎人真好玩, 嘿嘿.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络">
-<meta property="og:url" content="https://www.wreckloud.com/2024/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:url" content="https://www.wreckloud.com/2024/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="狼牙月影">
 <meta property="og:description" content="完犊子, 期末了一点没复习. 嘿嘿, 怪物猎人真好玩, 嘿嘿.">
 <meta property="og:locale" content="zh_CN">
@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93.png">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C.png">
 <meta property="article:published_time" content="2024-04-04T13:49:47.000Z">
-<meta property="article:modified_time" content="2024-06-11T14:10:17.932Z">
+<meta property="article:modified_time" content="2024-06-12T07:26:52.937Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="计算机硬件">
@@ -593,8 +593,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-11 22:10:17</span>
-            <span class="mobile">2024-06-11 22:10:17</span>
+            <span class="desktop">2024-06-12 15:26:52</span>
+            <span class="mobile">2024-06-12 15:26:52</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -636,12 +636,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.6k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.6k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>12 分钟</span>
         </span>
     
     
@@ -773,12 +773,12 @@
 <ol>
 <li><p>网络接口层: 对应于OSI模型的物理层和数据链路层, 负责在物理媒介上传输原始比特流, 以及确保局域网内数据的可靠传输.</p>
 </li>
-<li><p>网络层: 负责跨网络的数据传输, 使用 <strong>IP协议</strong>来实现数据包从源头到目的地的路由.</p>
+<li><p>网络层: 负责跨网络的数据传输, 使用 <strong>IP协议</strong> 来实现数据包从源头到目的地的路由.</p>
 </li>
 </ol>
 <blockquote>
 <p>IP协议（Internet Protocol）的两个基本功能可以概括为：</p>
-<p>寻址：IP协议为网络中的每个设备分配一个唯一的IP地址，这样数据就可以被发送到正确的目的地。</p>
+<p>寻址：IP协议为网络中的每个设备分配一个唯一的<strong>IP地址</strong>(互联网协议地址)，这样数据就可以被发送到正确的目的地。</p>
 <p>路由：IP协议负责将数据包从源头,找到到达目的地的方式. 通过一系列的网络设备和网络，直到到达目标。</p>
 </blockquote>
 <ol start="3">
@@ -789,39 +789,113 @@
 <p>UDP（User Datagram Protocol）提供不可靠的, 无连接的服务. 适用于那些对传输速度和实时性有较高要求，但可以容忍一定数据丢失的应用场景.</p>
 </blockquote>
 <ol start="4">
-<li>应用层: 对应于OSI模型的会话层, 表示层和应用层. 为用户和应用程序提供网络服务.</li>
+<li>应用层: 对应于OSI模型的 会话层, 表示层和应用层. 为用户和应用程序提供网络服务.</li>
 </ol>
+<h3 id="网络地址"><a href="#网络地址" class="headerlink" title="网络地址"></a>网络地址</h3><p>网络可以识别的地址有 <strong>逻辑(IP)地址</strong> 和 <strong>物理(MAC)地址</strong> 两大类.</p>
+<ul>
+<li><p>物理地址（MAC地址）：是网络设备硬件的唯一标识符，通常指的是网络接口卡（NIC）上的媒体访问控制（MAC）地址</p>
+</li>
+<li><p>逻辑地址（IP地址）：逻辑地址是<strong>IP协议分配</strong>给网络设备的, 用于网络层和传输层通信的地址.</p>
+</li>
+</ul>
+<p>MAC地址用于局域网内的通信, 而IP地址用于更广泛的网络环境.</p>
+<h3 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h3><p><strong>子网掩码</strong> 与IP地址一起使用, 用于定义网络中哪些部分是<strong>网络地址</strong>, 哪些是<strong>主机地址</strong>.  子网掩码中的1表示该位属于网络号, 0表示属于主机号.</p>
+<p>IP地址是由 <strong>网络地址</strong> 和 <strong>主机地址</strong> 组成</p>
+<p>将IP地址与子网掩码进行 <strong>逻辑“与”（AND）</strong> 操作, 所得结果就是<strong>网络号</strong>.<br>网络号相同的设备被认为是在同一子网内。</p>
+<blockquote>
+<p>例如:<br>假设有一个IP地址192.168.1.10和一个子网掩码255.255.255.0 </p>
+<p>将IP地址和子网掩码转换为二进制，然后进行逻辑“与”操作：<br>(逻辑“与”: 只有当两个相应的位都是1时，结果位才为1，否则为0)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>二进制表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP地址</td>
+<td>11000000 . 10101000 . 00000001 . 00001010</td>
+</tr>
+<tr>
+<td>子网掩码</td>
+<td>11111111 . 11111111 . 11111111 . 00000000</td>
+</tr>
+<tr>
+<td>逻辑“与”结果</td>
+<td>11000000 . 10101000 . 00000001 . 00000000</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>将结果转换回十进制，得到网络号192.168.1.0。</p>
+</blockquote>
+<p>IPv4和IPv6是IP协议的两个版本, 它们用于 <strong>定义互联网上设备如何标识和通信的方式</strong>.  </p>
+<h4 id="IPv4地址"><a href="#IPv4地址" class="headerlink" title="IPv4地址"></a>IPv4地址</h4><p>是32位二进制的, 以四组十进制数表示.</p>
+<blockquote>
+<p>例如: 192.168.1.1</p>
+</blockquote>
+<p>在<strong>IPv4</strong>中, IP地址被分为五类：A、B、C、D和E。这种分类基于IP地址的第一个字节（二进制中最高位的8位）, 用于决定地址的用途和可能的地址数量.</p>
+<ul>
+<li><strong>A类</strong>（1-127）,用于大型网络(如跨国公司), 默认子网掩码：255.0.0.0</li>
+<li><strong>B类</strong>（128-191）,用于中型网络(如地区网络), 默认子网掩码：255.255.0.0</li>
+<li><strong>C类</strong>（192-223）,小型网络(如家庭), 默认子网掩码：255.255.255.0</li>
+<li><strong>D类</strong>（224-239）,广播地址.</li>
+<li><strong>E类</strong>（240-255）,保留用于实验和研究, 不用于公共网络.</li>
+</ul>
+<h4 id="IPv6地址"><a href="#IPv6地址" class="headerlink" title="IPv6地址"></a>IPv6地址</h4><p>是128位的, 以八组四个十六进制数表示.</p>
+<blockquote>
+<p>例如: 2001:0db8:85a3:0000:0000:8a2e:0370:7334</p>
+</blockquote>
+<p>IPv6地址一组中的前导0可以不写<br>在有多个0连续出现时, 可以用一对冒号取代, 且只能取代一次.</p>
+<blockquote>
+<p>例如:<br>21DA:0000:0000:0000:02AA:000F:FE08:9C5A</p>
+<p>缩写为:<br>21DA::2AA:F:FE08:9C5A 或者<br>21DA:0:0:0:2AA:F:FE08:9C5A</p>
+</blockquote>
+<p>IPv6提供了比IPv4更大的地址空间, 解决了IPv4地址耗尽的问题.  </p>
+<p>为了从IPv4平稳过渡到IPv6, IPv6引入一种特殊的格式, 即在IPv4地址转换为十六进制, 再前置80个”0”和一个”ffff”以匹配128位的IPv6.</p>
+<blockquote>
+<p>例如, 将IPv4: 192.168.0.1 转换为IPv6</p>
+<ol>
+<li>转换为十六进制：C0A8 0001</li>
+<li>前导零 + ffff：0000:0000:0000:0000:0000:ffff:c0a8:0001</li>
+</ol>
+<p>也可以简化表示为:<br>::ffff:c0a8:1  </p>
+</blockquote>
 <h3 id="三种交换方式"><a href="#三种交换方式" class="headerlink" title="三种交换方式"></a>三种交换方式</h3><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F1.png"
                       alt="alt text"
                 ></p>
-<p>传统两两相连的方式, 当电话数量很多时, 电话线也很多, 非常不方便.</p>
+<p>传统两两相连的数据传输方法, 当电话数量很多时, 电话线也很多, 非常不方便.  </p>
+<p>随着技术的进步和应用需求的多样化, 逐渐发展出了更加复杂和高效的数据传输方式, 以满足不同场景下的通信需求.</p>
 <h4 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h4><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F2.png"
                       alt="alt text"
                 ></p>
-<p>电话交换机接通电话线的方式称为电路交换;</p>
+<p>电话交换机接通电话线的方式称为电路交换, 电路交换提供了稳定的连接;</p>
 <h4 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h4><p>路由器是实现 <strong>分组交换</strong> 的关键构建, 其任务是转发收到的分组, 这是网络核心部分最重要的功能.</p>
+<p>分组交换广泛应用于互联网, 提供了灵活性和效率.</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F3.png"
                       alt="alt text"
                 ></p>
+<h4 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h4><p>报文交换主要用于早期的电报通信网, 现在使用较少, 通常被较先进的分组交换方式所取代, 报文交换则在传输完整消息方面有其优势.</p>
 <blockquote>
-<p>报文是在网络中传输的数据单元, 报文可以包含控制信息和用户数据, 它是一个完整的数据传输单元, 可以独立地在网络中进行传输.</p>
+<p>报文是在网络中传输的数据单元, 报文可以包含控制信息和用户数据, 它是一个完整的数据传输单元, 可以独立地在网络中进行传输.  </p>
 </blockquote>
 <p>发送方会将较长的数据报文分割成一个个更小的等长数据段. 在每一个数据段前面加上一些由必要的控制信息组成的 <strong>首部</strong>.<br>首部包含了分组的目的地址.</p>
+<blockquote>
+<p>每一层都有各自的报文头部<br>当数据包从高层（最高应用层）向底层（最低物理层）传输时, 报文首部会逐渐添加;<br>当数据包从低层向高层传输时, 报文首部会逐渐减少;  </p>
+</blockquote>
 <p>发送过程</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">发送方</span><br><span class="line">  构造分组</span><br><span class="line">  发送分组</span><br><span class="line"></span><br><span class="line">路由器</span><br><span class="line">  缓存分组</span><br><span class="line">  转发分组</span><br><span class="line">简称为 &quot;分组转发&quot;</span><br><span class="line"></span><br><span class="line">路由器处理分组的过程</span><br><span class="line">  把收到的分组存放缓存(暂时存储)</span><br><span class="line">  查找转发表, 找到目的地址应从哪个端口转发</span><br><span class="line">  把分组送到适当的端口转发出去</span><br><span class="line"></span><br><span class="line">接收方</span><br><span class="line">  接收分组</span><br><span class="line">  还原报文</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h3><p>报文交换主要用于早期的电报通信网, 现在使用较少, 通常被较先进得到分组交换方式所取代</p>
-<p>三种交换方式的对比</p>
-<p>假设ABCD是分组传输路径所要经过的四个结点交换机, 纵坐标为时间</p>
+<h4 id="三种交换方式的对比"><a href="#三种交换方式的对比" class="headerlink" title="三种交换方式的对比"></a>三种交换方式的对比</h4><p>假设ABCD是分组传输路径所要经过的四个结点交换机, 纵坐标为时间</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -932,11 +1006,11 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-06-11 22:10:17
+                    :</strong> 2024-06-12 15:26:52
             </li>
         
         <li>
-            <strong>链接:</strong> https://www.wreckloud.com/2024/04/04/计算机组成原理/
+            <strong>链接:</strong> https://www.wreckloud.com/2024/04/04/计算机网络期末复习/
         </li>
         <li>
             <strong>
@@ -1059,7 +1133,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">计算机网络</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">第一章 计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">计算机网络的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-text">计算机网络的主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">计算机网络的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">计算机网络的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">计算机网络的性能指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%B8%89%E5%A4%A7%E8%A6%81%E7%B4%A0"><span class="nav-text">网络协议的三大要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">计算机网络体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI"><span class="nav-text">OSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-text">TCP&#x2F;IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="nav-text">三种交换方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2"><span class="nav-text">报文交换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E4%BC%A0%E8%BE%93"><span class="nav-text">信号传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%B1%E7%9C%9F"><span class="nav-text">信号失真</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99"><span class="nav-text">奈氏准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F"><span class="nav-text">香农公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="nav-text">透明传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B"><span class="nav-text">差错检测</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">第一章 计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">计算机网络的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-text">计算机网络的主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">计算机网络的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">计算机网络的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">计算机网络的性能指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%B8%89%E5%A4%A7%E8%A6%81%E7%B4%A0"><span class="nav-text">网络协议的三大要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">计算机网络体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI"><span class="nav-text">OSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-text">TCP&#x2F;IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80"><span class="nav-text">网络地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E5%8D%8F%E8%AE%AE"><span class="nav-text">IP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="nav-text">三种交换方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E4%BC%A0%E8%BE%93"><span class="nav-text">信号传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%B1%E7%9C%9F"><span class="nav-text">信号失真</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99"><span class="nav-text">奈氏准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F"><span class="nav-text">香农公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="nav-text">透明传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B"><span class="nav-text">差错检测</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
@@ -1098,7 +1172,7 @@
                     </span>
                     
                         <span>
-                            共 41k 字
+                            共 42k 字
                         </span>
                     
                 </p>

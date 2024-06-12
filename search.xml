@@ -3867,9 +3867,9 @@ end</pre>
 </ol>
 <h3 id="网络地址"><a href="#网络地址" class="headerlink" title="网络地址"></a>网络地址</h3><p>网络可以识别的地址有 <strong>逻辑(IP)地址</strong> 和 <strong>物理(MAC)地址</strong> 两大类.</p>
 <ul>
-<li><p>物理地址（MAC地址）：是网络设备硬件的唯一标识符，通常指的是网络接口卡（NIC）上的媒体访问控制（MAC）地址</p>
+<li><p>物理地址（MAC地址）：是网络设备硬件的唯一标识符，通常指的是网络接口卡（NIC）上的媒体访问控制（MAC）地址, 设备生产时就固化在其中.</p>
 </li>
-<li><p>逻辑地址（IP地址）：逻辑地址是<strong>IP协议分配</strong>给网络设备的, 用于网络层和传输层通信的地址.</p>
+<li><p>逻辑地址（IP地址）：逻辑地址是<strong>IP协议分配</strong>给网络设备的, 用于网络层和传输层通信的地址, IP地址的分配可根据需求灵活调整.</p>
 </li>
 </ul>
 <p>MAC地址用于局域网内的通信, 而IP地址用于更广泛的网络环境.</p>
@@ -3935,6 +3935,71 @@ end</pre>
 </ol>
 <p>也可以简化表示为:<br>::ffff:c0a8:1  </p>
 </blockquote>
+<h1 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h1><h3 id="交换机（Switch）"><a href="#交换机（Switch）" class="headerlink" title="交换机（Switch）"></a>交换机（Switch）</h3><p>是局域网内的交换设备, 用于连接网络节点, 每个端口独享带宽, 实现点对点通信, 提高网络效率.</p>
+<p>交换机的主要功能有：</p>
+<ol>
+<li><strong>数据转发</strong>：根据MAC地址表将数据帧转发到正确的端口</li>
+<li><strong>MAC地址学习</strong>：动态学习并<strong>更新MAC地址表</strong></li>
+<li><strong>广播抑制</strong>：减少不必要的广播流量</li>
+<li><strong>避免冲突</strong>：通过CSMA&#x2F;CD协议避免数据发送冲突</li>
+</ol>
+<p>当交换机收到数据帧后，根据目的MAC地址查找MAC地址表, 确定对应端口, 然后将数据帧转发出去.</p>
+<blockquote>
+<p>数据链路层 传输的协议 数据单元 就是 <strong>帧</strong></p>
+</blockquote>
+<p>MAC地址表初始为空, 会动态学习过程构建. 这一过程主要包含:</p>
+<ol>
+<li><strong>学习</strong>：记录数据帧来源的MAC地址和端口。</li>
+<li><strong>转发</strong>：根据学习到的信息将数据帧转发到目的端口。</li>
+<li><strong>泛洪</strong>：未知目的MAC地址时，将数据帧发送到所有端口。</li>
+<li><strong>更新</strong>：定期更新MAC地址表，移除过时的条目。</li>
+</ol>
+<h3 id="路由器（Router）"><a href="#路由器（Router）" class="headerlink" title="路由器（Router）"></a>路由器（Router）</h3><ul>
+<li><p><strong>定义</strong>：连接不同网络（如局域网、广域网）的设备，工作在网络层。</p>
+</li>
+<li><p><strong>主要功能</strong>：</p>
+<ol>
+<li>路由选择：根据路由表选择数据包的最佳传输路径。</li>
+<li>数据交换：通过转发表实现数据包的快速转发。</li>
+<li>网络分段：提高网络的可管理性和安全性。</li>
+<li>流量控制：管理网络流量，防止拥塞。</li>
+<li>隔离广播：限制广播域的范围。</li>
+<li>异种网络连接：连接不同类型的网络技术。</li>
+</ol>
+</li>
+<li><p><strong>路由表与转发表</strong>：</p>
+<ul>
+<li>路由表：根据路由选择算法生成，包含目的网络和下一跳地址。</li>
+<li>转发表：从路由表生成，用于快速查找和转发数据包。</li>
+</ul>
+</li>
+<li><p><strong>工作原理</strong>：</p>
+<ul>
+<li>接收数据包，查找路由表确定下一跳。</li>
+<li>将数据包转发到相应端口，直至到达目的地。</li>
+</ul>
+</li>
+</ul>
+<h3 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h3><ul>
+<li><p><strong>交换机与路由器的区别</strong>：</p>
+<ul>
+<li>工作层次：交换机工作在数据链路层，路由器工作在网络层。</li>
+<li>地址学习：交换机通过MAC地址学习，路由器通过IP地址进行路由选择。</li>
+<li>广播域：交换机划分冲突域，路由器划分广播域。</li>
+</ul>
+</li>
+<li><p><strong>网络安全</strong>：</p>
+<ul>
+<li>交换机和路由器都可以通过访问控制列表（ACLs）等技术实现网络安全。</li>
+</ul>
+</li>
+<li><p><strong>网络管理</strong>：</p>
+<ul>
+<li>使用SNMP等协议进行网络设备的监控和管理。</li>
+</ul>
+</li>
+</ul>
+<p>通过这样的整理，知识点变得更加清晰和有逻辑性，便于理解和记忆。</p>
 <h3 id="三种交换方式"><a href="#三种交换方式" class="headerlink" title="三种交换方式"></a>三种交换方式</h3><p><img  
                      lazyload
                      src="/images/loading.svg"

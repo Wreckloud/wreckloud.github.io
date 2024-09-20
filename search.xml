@@ -627,25 +627,38 @@
   <entry>
     <title>hello websites</title>
     <url>/2023/09/17/hello-websites/</url>
-    <content><![CDATA[<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><h2 id="Redefine相关"><a href="#Redefine相关" class="headerlink" title="Redefine相关"></a>Redefine相关</h2><p><a class="link"   href="https://redefine-docs.ohevan.com/" >Redefine主题配置指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>不得不说,这个主题真的巨好看又很丰富的自定义,非常不错!</p>
-<p>此外,主题作者还加入了一些方便的模块让笔记更好看:</p>
+    <content><![CDATA[<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><h2 id="安装-git-和-node-js"><a href="#安装-git-和-node-js" class="headerlink" title="安装 git 和 node.js"></a>安装 git 和 node.js</h2><p>由于 Hexo 是基于 Node.js 驱动的一款博客框架, 所以安装NodeJS.</p>
+<p><a class="link"   href="https://nodejs.org/en/" >下载node.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>为了能把 hexo 部署到 github 仓库, 还需要安装 git.</p>
+<p><a class="link"   href="https://git-scm.com/downloads" >下载git <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>安装之后可以输入以下命令查看是否安装成功:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></div>
 
-  <div class="note-large default">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>文章属性自定义</p>
+<blockquote>
+<p>npm（Node Package Manager, Node 包管理器）是 Node.js 的默认包管理工具.</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/hello_website/%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png"
+                      alt="检查是否安装成功"
+                ></p>
+<h2 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h2><p>环境准备好了就可使用 npm 开始安装 Hexo 了, 在命令行输入执行如下命令:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div>
 
-    </div>
-    <div class="notel-content">
-      <p><strong>文章时效性</strong><br>expires: 2023-08-31 23:59:59<br><strong>置顶文章:</strong><br>sticky: 值 (值越大,顶置文章越靠前)<br><strong>首页摘要:</strong><br>excerpt: “这是文章摘要”<br><strong>文章缩略图:</strong><br>thumbnail: “图片链接”<br><strong>文章头图:</strong><br>banner: “图片链接”<br>cover: “图片链接”</p>
+<p>可能会出现下载缓慢的情况, 可以尝试使用国内镜像源.<br><a href="../_posts/Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE.md">如何更改 npm 源?</a></p>
+<p>待到安装完成后, 在一处新建文件夹作为博客的根目录.<br> 然后进入这个文件夹并右键空白处, 选择 “Open git bash here” 打开命令行, 接着依次输入以下命令:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog <span class="comment"># 创建新的 Hexo 博客项目, 文件夹名为 Blog.</span></span><br><span class="line"><span class="built_in">cd</span> Blog <span class="comment"># 进入博客目录.</span></span><br><span class="line">npm install <span class="comment"># 安装 Hexo 所需的依赖包.</span></span><br></pre></td></tr></table></figure></div>
 
-    </div>
-  </div>
+<p>这样就完成了 Hexo 的安装, 并创建了一个新的博客项目.<br>运行以下命令启动本地服务器:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server </span><br></pre></td></tr></table></figure></div>
 
-
-<h2 id="hexo-快速指令"><a href="#hexo-快速指令" class="headerlink" title="hexo 快速指令"></a>hexo 快速指令</h2><ol>
-<li>创建一篇文章</li>
-</ol>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+<p>启动本地服务器后, 就可访问 <a class="link"   href="http://localhost:4000/" >http://localhost:4000 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 看到博客效果.</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>Hexo 官方主题站点: <a class="link"   href="https://hexo.io/themes/" >https://hexo.io/themes/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>(可能需要科学上网)</p>
+<p>这里推荐我使用的主题 Redefine, 它很简洁, 功能也很强大.</p>
+<p><a class="link"   href="https://github.com/EvanNotFound/hexo-theme-redefine" >Redefine 官方GitHub页 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://redefine-docs.ohevan.com/" >Redefine主题配置指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>将下载的主题文件夹放到<strong>博客根目录</strong>下的 <code>themes</code> 文件夹下, 并修改<strong>根目录</strong>下博客配置文件 <code>_config.yml</code> 中的 <code>theme</code> 选项为 <code>redefine</code>.</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">不得不说,这个主题真的巨好看又很丰富的自定义,非常不错!</span></span><br><span class="line"></span><br><span class="line"><span class="string">此外,主题作者还加入了一些方便的模块让笔记更好看:</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">notel</span> <span class="string">default</span> <span class="string">文章属性自定义</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">**文章时效性**</span></span><br><span class="line"><span class="attr">expires:</span> <span class="number">2023-08-31 23:59:59</span> </span><br><span class="line"><span class="string">**置顶文章:**</span>   </span><br><span class="line"><span class="attr">sticky:</span> <span class="string">值</span> <span class="string">(值越大,顶置文章越靠前)</span></span><br><span class="line"><span class="string">**首页摘要:**</span>   </span><br><span class="line"><span class="attr">excerpt:</span> <span class="string">&quot;这是文章摘要&quot;</span></span><br><span class="line"><span class="string">**文章缩略图:**</span> </span><br><span class="line"><span class="attr">thumbnail:</span> <span class="string">&quot;图片链接&quot;</span></span><br><span class="line"><span class="string">**文章头图:**</span>   </span><br><span class="line"><span class="attr">banner:</span> <span class="string">&quot;图片链接&quot;</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&quot;图片链接&quot;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endnotel</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## hexo 快速指令</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span><span class="string">.</span> <span class="string">创建一篇文章</span></span><br><span class="line"></span><br><span class="line"><span class="string">```</span> <span class="string">bash</span></span><br><span class="line"><span class="string">$</span> <span class="string">hexo</span> <span class="string">new</span> <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
 
 <ol start="2">
 <li>运行网页</li>
@@ -1717,174 +1730,6 @@ end</pre>
       <tags>
         <tag>笔记</tag>
         <tag>计算机硬件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VUE简介</title>
-    <url>/2024/04/09/VUE%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<h1 id="VUE-概述"><a href="#VUE-概述" class="headerlink" title="VUE 概述"></a>VUE 概述</h1><p>Vue 是一套 <strong>渐进式</strong> <strong>前端框架</strong> , 可以按需引入Vue.js的部分功能.</p>
-<p><a class="link"   href="https://cn.vuejs.org/" >VUE官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>传统网页的内容都是写死了的. 而 VUE 所作的, 就是用一个变量或者占位符代替, 将其变成动态内容页面.</p>
-<p><a class="link"   href="https://www.bilibili.com/video/BV1Cq4y1w7iY/?share_source=copy_web&vd_source=663cc380bfc10fe6df62cd0cb979820d" >看完这个视频, 我就不信你还学不会Vue <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="VUE-快速开始"><a href="#VUE-快速开始" class="headerlink" title="VUE 快速开始"></a>VUE 快速开始</h1><h2 id="传统方式开发"><a href="#传统方式开发" class="headerlink" title="传统方式开发"></a>传统方式开发</h2><p>可以借助 script 标签直接通过 CDN 引入 Vue.js 文件(也可以下载这个文件 <a class="link"   href="https://unpkg.com/vue@3/dist/vue.global.js" >vue.global.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>).</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="获取简单数据类型"><a href="#获取简单数据类型" class="headerlink" title="获取简单数据类型"></a>获取简单数据类型</h3><ol>
-<li>在JS代码区域, 创建Vue核心对象, 定义数据模型.</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// setup选项 用于设置响应式数据和方法等</span></span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// return 用于返回数据</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">msg</span>:<span class="string">&quot;哇哦!&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<ol start="2">
-<li>在页面上创建 id 为 app 的元素.</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<ol start="3">
-<li>将 VUE 应用程序 挂载到页面 app 元素上, 接收返回值</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">msg</span>:<span class="string">&quot;哇哦!&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)  <span class="comment">// 使用 mount 挂载</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123; msg &#125;&#125; </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 使用 插值表达式(这两个大括号) 接收返回值 --&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="获取复杂数据类型"><a href="#获取复杂数据类型" class="headerlink" title="获取复杂数据类型"></a>获取复杂数据类型</h3><p>当需要获取对象,数组之类的, 就需要使用到 <code>reactive</code>.</p>
-<p><code>reactive</code> 是一种响应式数据的类型, 先放一边, 待会会简单解释一下.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> person = <span class="title class_">Vue</span>.<span class="title function_">reactive</span>(&#123; <span class="comment">// 使用 reactive 定义对象</span></span></span><br><span class="line"><span class="language-javascript">          <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">age</span>:<span class="string">&quot;22岁&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          person <span class="comment">// 返回对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123; person.name &#125;&#125; </span><br><span class="line">  &#123;&#123; person.age &#125;&#125; </span><br><span class="line">  <span class="comment">&lt;!-- 在页面上接收返回的对象 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br></pre></td></tr></table></figure></div>
-
-<p>使用 <code>=</code> 即可修改 reactive 对象的属性.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> person = <span class="title class_">Vue</span>.<span class="title function_">reactive</span>(&#123; </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">age</span>:<span class="string">&quot;22岁&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        person.<span class="property">age</span> = <span class="string">&quot;23岁&quot;</span> </span></span><br><span class="line"><span class="language-javascript">      ...</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>可以使用 解构 的方式让代码简洁一丢丢.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> &#123;createApp,reactive&#125; = <span class="title class_">Vue</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> person = <span class="title function_">reactive</span>(&#123;  </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">age</span>:<span class="string">&quot;22岁&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          person</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123; person.name &#125;&#125; </span><br><span class="line">  &#123;&#123; person.age &#125;&#125; </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br></pre></td></tr></table></figure></div>
-
-<h3 id="响应式数据"><a href="#响应式数据" class="headerlink" title="响应式数据"></a>响应式数据</h3><p>创建响应式数据是指建立一种机制, 使得当数据发生变化时, 视图(用户界面)能够自动更新以反映这些变化.<br>这是Vue的核心特性之一, 它允许开发者以声明式的方式编写代码, 而无需手动操作DOM.</p>
-<p>响应式数据的类型先介绍这两个:</p>
-<ul>
-<li><code>reactive</code> 用于存储复杂数据类型的响应式对象.</li>
-<li><code>ref</code> 用于存储单个基本类型的响应式数据.</li>
-</ul>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123; msg &#125;&#125;</span><br><span class="line">  &#123;&#123; num &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> &#123;createApp,ref&#125; = <span class="title class_">Vue</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> num = <span class="title function_">ref</span>(<span class="number">10</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">msg</span>:<span class="string">&quot;哇哦!&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        num</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>使用 <code>.Value</code> 修改 ref 中的值</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> &#123;createApp,ref&#125; = <span class="title class_">Vue</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> num = <span class="title function_">ref</span>(<span class="number">10</span>)</span></span><br><span class="line"><span class="language-javascript">        num.<span class="property">Value</span> = <span class="number">20</span> <span class="comment">// ref 是引用类型, 不能直接使用 &quot;=&quot;</span></span></span><br><span class="line"><span class="language-javascript">        ...</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><code>ref</code> 也可用于存储数组数据.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> &#123;createApp,ref&#125; = <span class="title class_">Vue</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> num = <span class="title function_">ref</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span></span><br><span class="line"><span class="language-javascript">        ...</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2><p>只需要对传统方式开发稍作修改即可转变为模块化开发.  </p>
-<p>但需要注意的是, 本地路径无法显示模块化开发. 使用 VScode 下载插件 <a class="link"   href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" >Live Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 以使用本地服务器调试即可.</p>
-<p>需要引入 <a class="link"   href="https://unpkg.com/vue@3/dist/vue.esm-browser.js" >vue.esm-browser.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> , 同样可以事先下载然后本地引入.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123; msg &#125;&#125;</span><br><span class="line">  &#123;&#123; person.name &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"> <span class="comment">// 模块化开发添加  type=&quot;module&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 删除head标签中 CDN 引入 Vue.js 文件, 并添加引入 vue.esm-browser.js</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123; reactive, createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;https://unpkg.com/vue@3/dist/vue.esm-browser.js&#x27;</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> person = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">age</span>: <span class="string">&quot;22&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">msg</span>: <span class="string">&quot;哇哦!&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        person</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>只需在 script 标签添加 <code>type=&quot;module&quot; </code> 以及引入 <code>vue.esm-browser.js</code> 即可完成从传统模式到模块化的转变.</p>
-<h1 id="VUE-事件"><a href="#VUE-事件" class="headerlink" title="VUE 事件"></a>VUE 事件</h1><p><code>v-model=&quot;值&quot;</code>|在表单元素上创建双向数据绑定</p>
-<p><code>v-if</code><br><code>v-else</code><br><code>v-else</code>|条件性渲染元素, 判定为true时渲染, 否则不渲染</p>
-<h3 id="v-on-绑定事件"><a href="#v-on-绑定事件" class="headerlink" title="v-on 绑定事件"></a>v-on 绑定事件</h3><p><code>v-on:事件=&quot;事件名()&quot;</code> 能为HTML标签绑定事件, 例如绑定点击事件 <code>click</code> 使每次点击按钮, 数值加一:</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;msg&#125;&#125;:&#123;&#123;text.click&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;clickAct&quot;</span>&gt;</span>点我!<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- v-on: 可简写为 @ --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;clickAct&quot;</span>&gt;</span>点我!<span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123; createApp, reactive &#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> text = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">click</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> <span class="title function_">clickAct</span> = (<span class="params"></span>) =&gt; &#123; <span class="comment">// 定义一个数值加一的方法</span></span></span><br><span class="line"><span class="language-javascript">        text.<span class="property">click</span> += <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">msg</span>: <span class="string">&quot;点击次数&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        text,</span></span><br><span class="line"><span class="language-javascript">        clickAct <span class="comment">// 注意也需要将方法添加到 return 之中</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><code>click</code> 就是一个标准的DOM事件, 除此之外常用的事件类型有:</p>
-<h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><table>
-<thead>
-<tr>
-<th>事件名称</th>
-<th>触发时机</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>@mouseover</code><br><code>@mouseout</code></td>
-<td>鼠标指针 移入\移出 到元素上时</td>
-</tr>
-<tr>
-<td><code>@mouseenter</code><br><code>@mouseleave</code></td>
-<td>鼠标指针 移入\移出 元素边界时</td>
-</tr>
-<tr>
-<td><code>@dblclick</code></td>
-<td>双击元素时</td>
-</tr>
-<tr>
-<td><code>@mousedown</code><br><code>@mouseup</code></td>
-<td>鼠标按钮 被按下\被释放 时</td>
-</tr>
-<tr>
-<td><code>@mousemove</code></td>
-<td>鼠标指针在元素上移动时</td>
-</tr>
-</tbody></table>
-<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><table>
-<thead>
-<tr>
-<th>事件名称</th>
-<th>触发时机</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>@keydown</code></td>
-<td>键盘按键被按下时</td>
-</tr>
-<tr>
-<td><code>@keyup</code></td>
-<td>键盘按键被释放时</td>
-</tr>
-<tr>
-<td><code>@keypress</code></td>
-<td>键盘按键被按下并保持一段时间时</td>
-</tr>
-</tbody></table>
-<p>当使用键盘事件, 一般会监听特定的按键.<br>例如, 监听键盘上的Enter键: <code>@keyup.enter</code>.</p>
-<p>此时, 只有在松开键盘上的Enter键时, 才会触发keyup事件.  </p>
-<p>同样的,<br>如果需要监听松开 <code>空格</code>, 就写 <code>@keyup.space</code> ,<br>如果需要监听按下 <code>Tab</code>, 就写 <code>@keydown.tab</code> ,<br>当需要组合按下<code>CTRL+A</code>时, 就写 <code>@keydown.ctrl.a</code><br>依次类推.</p>
-<h3 id="v-show-显示控制"><a href="#v-show-显示控制" class="headerlink" title="v-show 显示控制"></a>v-show 显示控制</h3><p>在元素中添加 <code>v-show:布尔值</code> 属性可以实现显示控制.</p>
-<p>当 <code>v-show:false</code> 时, 会给元素添加 <code>style=&quot;display: none;&quot;</code> 的 CSS 属性, 以达到隐藏元素的效果.<br>当 <code>v-show:true</code> 时, 会移除该属性.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">true</span>&gt;</span>看得见我吗?<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> <span class="comment">&lt;!-- 显示 --&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">false</span>&gt;</span>看得见我吗?<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> <span class="comment">&lt;!-- 隐藏 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>可以配合 绑定事件 以达到切换状态的效果</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 将响应式数据的值传给 v-show --&gt;</span></span><br><span class="line">  当前状态: &#123;&#123;shower.state&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">&quot;shower.state&quot;</span>&gt;</span>看得见我吗?<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span> = <span class="string">&quot;switcher&quot;</span>&gt;</span>切换显示状态<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123; createApp, reactive &#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> shower = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">state</span>:<span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> <span class="title function_">switcher</span> = (<span class="params"></span>) =&gt; &#123; <span class="comment">// 定义一个每次调用, 能够切换布尔值的函数</span></span></span><br><span class="line"><span class="language-javascript">        shower.<span class="property">state</span> = !shower.<span class="property">state</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        switcher,</span></span><br><span class="line"><span class="language-javascript">        shower</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="V-if-条件渲染"><a href="#V-if-条件渲染" class="headerlink" title="V-if 条件渲染"></a>V-if 条件渲染</h3><p><code>v-if:布尔值</code> 也可以实现显示控制, 不过它是删除&#x2F;添加 DOM 元素.</p>
-<p>当 <code>v-show:false</code> 时, 会移除该元素, 以达到隐藏元素的效果.<br>当 <code>v-show:true</code> 时, 会渲染这个元素.</p>
-<p><code>v-if:布尔值</code> 不适合频繁切换显示隐藏的元素.</p>
-<p><code>v-if</code> 的使用方法与其他编程语言中的条件语句类似.<br>例如, 需要按条件显示状态.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  成绩状态: &#123;&#123;student.score&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">&quot;student.score &lt; 60&quot;</span>&gt;</span>不合格<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-else-if</span>=<span class="string">&quot;student.score &gt;= 60 &amp;&amp; student.score &lt; 80&quot;</span>&gt;</span>合格<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-else</span>=<span class="string">&quot;student.score &gt;= 80 &amp;&amp; student.score &lt;= 100&quot;</span>&gt;</span>优秀<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123; createApp, reactive &#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> student = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">score</span>: <span class="number">59</span> <span class="comment">// 修改分数, 以展示不同状态</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        student</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="v-for-列表渲染"><a href="#v-for-列表渲染" class="headerlink" title="v-for 列表渲染"></a>v-for 列表渲染</h3><p><code>v-for</code> 能遍历容器的元素或者对象的属性.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 遍历数组 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;value in data.num&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123;value&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123;createApp,reactive&#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> data = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">num</span>: [<span class="string">&quot;一&quot;</span>,<span class="string">&quot;二&quot;</span>,<span class="string">&quot;三&quot;</span>,<span class="string">&quot;四&quot;</span>],       </span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          data</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>这样, <code>v-for</code> 就能将数组中的元素遍历出来, 并用 <code>li</code> 标签依次展示出来.</p>
-<p>如果遍历的是对象, 直接使用 <code>v-for</code> 会将所有属性依次展示出来.<br>但一般我们都希望属性以 <code>key:value</code> 的形式, 可以这样写.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(value,key,index) in data.user&quot;</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- template 用于声明性地定义组件的HTML结构, 是一个包裹其他元素的占位符 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-if</span>=<span class="string">&quot;index == 1&quot;</span>&gt;</span> <span class="comment">&lt;!-- template可以组合使用 --&gt;</span></span><br><span class="line">        &#123;&#123;index&#125;&#125;:&#123;&#123;key&#125;&#125; : &#123;&#123;value&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123;createApp,reactive&#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> data = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">user</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">gender</span>:<span class="string">&quot;男&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,          </span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        data</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="v-bind-动态属性绑定"><a href="#v-bind-动态属性绑定" class="headerlink" title="v-bind 动态属性绑定"></a>v-bind 动态属性绑定</h3><p><code>v-bind:属性值</code> 能为HTML标签绑定属性值, 如设置 href, css 样式等.<br><code>v-bind:</code> 可简写为 <code>:</code>.</p>
-<p>例如, 动态绑定文本输入框的提示文本或动态绑定超链接.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">&quot;test.web&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:placeholder</span>=<span class="string">&quot;test.txt&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123;createApp,reactive&#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> test = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">txt</span>: <span class="string">&quot;这是一段可以任意修改的文本.&quot;</span></span></span><br><span class="line"><span class="language-javascript">        <span class="attr">web</span>: <span class="string">&quot;www.bilibili.com&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        test</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="v-model-双向数据绑定"><a href="#v-model-双向数据绑定" class="headerlink" title="v-model 双向数据绑定"></a>v-model 双向数据绑定</h3><p>不同于 v-bind 动态属性绑定, 双向数据绑定能使用户修改input值时, 自动更新数据.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    成绩状态: &#123;&#123;student.score&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">&quot;student.score &lt; 60&quot;</span>&gt;</span>不合格<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-else-if</span>=<span class="string">&quot;student.score &gt;= 60 &amp;&amp; student.score &lt; 80&quot;</span>&gt;</span>合格<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-else</span>=<span class="string">&quot;student.score &gt;= 80 &amp;&amp; student.score &lt;= 100&quot;</span>&gt;</span>优秀<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:value</span>=<span class="string">&quot;student.score&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- v-model 会自动绑定文本框的 value 元素 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;student.score&quot;</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123; createApp, reactive &#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> student = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">score</span>: <span class="number">59</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          student</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><code>v-model</code> 是实时渲染的,<br>使用 <code>.lazy</code> 能使其在失去焦点或按下回车之后再渲染.<br>使用 <code>.number</code> 能使输入框的值转换为数字.<br>使用 <code>.trim</code> 能去除字符串首尾的空格.  </p>
-<h3 id="v-text-v-html-渲染数据"><a href="#v-text-v-html-渲染数据" class="headerlink" title="v-text&#x2F;v-html 渲染数据"></a>v-text&#x2F;v-html 渲染数据</h3><p><code>v-text=&quot;字符串&quot;</code> 会将字符串解析为纯文本格式.<br><code>v-html=&quot;字符串&quot;</code> 会将字符串中的HTML标签解析为HTML格式. </p>
-<h1 id="computed-计算属性"><a href="#computed-计算属性" class="headerlink" title="computed 计算属性"></a>computed 计算属性</h1><p>普通的函数不会自动追踪依赖, 每次调用都需要手动传入参数.<br><code>computed</code> 属性是响应式的, 它会根据依赖的数据自动重新计算.</p>
-<p><code>computed</code> 属性具有缓存机制, 只有当依赖的数据发生变化时, 计算才会重新执行.<br>这意味着在依赖数据未变化的情况下, 多次访问同一个computed属性会立即返回之前的计算结果, 而不会重复执行计算.<br>普通的函数每次调用都会执行. </p>
-<p>例如, 同时调用两次方法和computed:</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;sub1&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  &#123;&#123;sub2()&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  &#123;&#123;sub1&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  &#123;&#123;sub2()&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123;createApp, reactive, computed&#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> data = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">x</span>:<span class="number">10</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">y</span>:<span class="number">20</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// computed</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> sub1 = <span class="title function_">computed</span>(<span class="function">()=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;computed 执行了一次!&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> data.<span class="property">x</span> - data.<span class="property">y</span></span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 方法</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> <span class="title function_">sub2</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;方法 执行了一次!&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> data.<span class="property">x</span> - data.<span class="property">y</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        data, </span></span><br><span class="line"><span class="language-javascript">        sub1,</span></span><br><span class="line"><span class="language-javascript">        sub2</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br></pre></td></tr></table></figure></div>
-<p>打开控制台即可验证.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/VUE%E7%AE%80%E4%BB%8B/VUE%E5%9B%BE%E7%89%87.jpg"
-                      alt="alt text"
-                ></p>
-<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>它可以用来监听数据的变化, 并且可以执行异步操作或者较为复杂的逻辑.</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  爱好: </span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>请选择<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;明日方舟&quot;</span>&gt;</span>玩明日方舟<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;原神&quot;</span>&gt;</span>玩原神<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;星穹铁道&quot;</span>&gt;</span>玩星穹铁道<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;王者荣耀&quot;</span>&gt;</span>玩王者荣耀<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> &#123;createApp,reactive,ref,watch&#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">setup</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> hobby = <span class="title function_">ref</span>(<span class="string">&quot;1&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">watch</span>(hobby,<span class="function">(<span class="params">newValue,oldValue</span>)=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`从 <span class="subst">$&#123;oldValue&#125;</span> 变成了 <span class="subst">$&#123;newValue&#125;</span>`</span>)</span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        hobby,</span></span><br><span class="line"><span class="language-javascript">        watch</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>自动监听 <code>watchEffect</code></p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    爱好: </span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>请选择<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;明日方舟&quot;</span>&gt;</span>玩明日方舟<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;原神&quot;</span>&gt;</span>玩原神<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;星穹铁道&quot;</span>&gt;</span>玩星穹铁道<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;王者荣耀&quot;</span>&gt;</span>玩王者荣耀<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123;createApp,reactive,ref,watchEffect&#125; <span class="keyword">from</span> <span class="string">&quot;./vue.esm-browser.js&quot;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setup</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> hobby = <span class="title function_">ref</span>(<span class="string">&quot;&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">watchEffect</span>(<span class="function">()=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="keyword">if</span> (hobby.<span class="property">value</span> !== <span class="string">&quot;&quot;</span> )</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`原来你也玩 <span class="subst">$&#123;hobby.value&#125;</span>`</span>)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="language-javascript">          hobby,</span></span><br><span class="line"><span class="language-javascript">          watchEffect</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <categories>
-        <category>拓展知识</category>
-      </categories>
-      <tags>
-        <tag>web前端</tag>
-        <tag>VUE</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -3500,147 +3345,7 @@ end</pre>
       </tags>
   </entry>
   <entry>
-    <title>Win 用户账户控制(UAC)</title>
-    <url>/2024/04/21/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6-UAC-%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>用户账户控制(User Account Control，简称UAC), 是一种通知用户是否对应用程序使用硬盘和系统文件授权, 从而防止恶意程序损坏系统的机制.</p>
-<p>微软官方介绍:<br><a class="link"   href="https://learn.microsoft.com/zh-cn/windows/security/application-security/application-control/user-account-control/" >用户帐户控制概述 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>我只觉得弹窗太麻烦了, Win10 系统不弹出UAC的方法是**(不推荐)**:</p>
-<blockquote>
-<p><code>控制面板</code> –&gt; <code>用户账户</code> –&gt; <code>系统和安全</code> –&gt; <code>安全和维护</code> –&gt; <code>更改用户账户控制设置</code>.</p>
-<p>在弹出的对话框中设置你觉得合适的等级即可，拖到最下方的 <code>从不通知</code>.</p>
-</blockquote>
-<p>就不会有弹窗通知了, 但是!</p>
-<p>这样的话,<strong>所有软件</strong>都可以偷偷申请管理员权限, 并且在<strong>你不知情</strong>的情况下随意修改你的系统设置或文件!</p>
-<p>这里就主要总结记录一下我觉得很有用的关键操作.</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="强制以普通用户方式运行"><a href="#强制以普通用户方式运行" class="headerlink" title="强制以普通用户方式运行"></a>强制以普通用户方式运行</h2><blockquote>
-<p>请注意!</p>
-<p>修改注册表之前应当谨慎, 因为不当的更改可能会导致系统不稳定或安全问题.</p>
-</blockquote>
-<p>本操作主要针对一些软件喜欢强制以管理员方式运行, 偷偷在后台搞小动作的应用.  </p>
-<p>(对没错! 就是你! 腾讯的WeGay!!! 不给权限还不让进!!)</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg"
-                      alt="WeGay"
-                ></p>
-<h4 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h4><p>WeGame 软件在启动的时候就会申请 UAC, 正常情况下只能同意.</p>
-<p>但是我们可以强制 <strong>以普通用户</strong> 方式运行设置, 双击打开软件就是 <code>普通用户权限</code>.</p>
-<p>通俗的说, 就是我直接明确告诉系统: “你个小小 WeGame, 以 <strong>普通用户</strong> 的方式运行就够了!”<br>这样系统就知道 wegame 用普通用户方式运行, 就不会再询问权限, 因此也不会提示 UAC 了.</p>
-<p>当然, 如果临时需要管理员权限的话, 依然可以 <code>右键 -&gt; 以管理员方式运行</code></p>
-<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4><ol>
-<li>打开注册表编辑器.</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8.jpg"
-                      alt="注册表编辑器"
-                ></p>
-<blockquote>
-<p>除了系统搜索 <code>注册表</code> 之外, 还可以:<br>按下 <code>Win+R</code>键 打开 运行 窗口，输入 <code>regedit</code> 并点击 确定 按钮(或直接回车).  </p>
-<p>这样是不是更酷点? 哈哈!</p>
-</blockquote>
-<ol start="2">
-<li>在注册表编辑器地址栏中输入:</li>
-</ol>
-<div class="highlight-container" data-rel="R"><figure class="iseeu highlight r"><table><tr><td class="code"><pre><span class="line">计算机<span class="punctuation">\</span>HKEY_CURRENT_USER<span class="punctuation">\</span>Software<span class="punctuation">\</span>Microsoft<span class="punctuation">\</span>Windows NT<span class="punctuation">\</span>CurrentVersion<span class="punctuation">\</span>AppCompatFlags<span class="punctuation">\</span>Layers</span><br></pre></td></tr></table></figure></div>
-
-<p>如果没有 Layers 文件夹的话, 可以自己新建一个.</p>
-<blockquote>
-<p>选中 <code>AppCompatFlags</code> 右键, 点击 <code>新建</code> -&gt; <code>项</code><br>新建 Layers 文件夹</p>
-</blockquote>
-<ol start="3">
-<li>右键 Layers 文件夹, 点击 <code>新建</code> -&gt; <code>字符串值</code>, 新建一个 字符串值. <a id="test"></a></li>
-</ol>
-<p>字符串名称就是你指定的软件完整路径, 例如 Wegame 的路径:</p>
-<p>找到wegame的快捷方式(一般就是桌面的图标), 然后右键快捷方式 -&gt; <code>属性</code>:</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.jpg"
-                      alt="文件路径"
-                ></p>
-<p>目标就是完整路径, 接下来将他复制下来.</p>
-<blockquote>
-<p>注意:<br>有时复制下来可能会存在双引号, 但是无论如何, 都不需要加上<strong>引号</strong>!</p>
-</blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A8.jpg"
-                      alt="设置注册表"
-                ></p>
-<p>粘贴到刚刚新建的字符串名称.</p>
-<ol>
-<li>右键刚刚新建的字符串</li>
-</ol>
-<p>点击 <code>修改</code></p>
-<p>填入数值数据</p>
-<div class="highlight-container" data-rel="R"><figure class="iseeu highlight r"><table><tr><td class="code"><pre><span class="line">RUNASINVOKER</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A82.jpg"
-                      alt="修改数值数据"
-                ></p>
-<p>现在, 再次打开Wegame试试吧!</p>
-<h2 id="软件运行不再提示-UAC"><a href="#软件运行不再提示-UAC" class="headerlink" title="软件运行不再提示 UAC"></a>软件运行不再提示 UAC</h2><p>有的程序 (例如CMD), 确实需要权限. 但是每次以管理员身份运行, 都会弹出提示.<br>我们也可以用同样的道理, 直接告诉系统它以管理员的身份运行, 避免询问提示.</p>
-<p><a href="Github.com/XIU2">@西柚秀</a>大佬制作的UAC 白名单小工具, 可以轻松实现运行不会提示 UAC, 而且软件依然拥有 管理员权限.</p>
-<p><a class="link"   href="https://zhuanlan.zhihu.com/p/114096199" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   href="https://zhuanlan.zhihu.com/p/114096199" >原文地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="程序默认以管理员身份运行-仍提示UAC"><a href="#程序默认以管理员身份运行-仍提示UAC" class="headerlink" title="程序默认以管理员身份运行(仍提示UAC)"></a>程序默认以管理员身份运行(仍提示UAC)</h2><p>每一次打开都要先右键选中 <code>以管理员身份运行</code> 还是很麻烦…<br>(我觉得是, 那就是! <del>毕竟懒是人类第一生产力</del>( ?</p>
-<p>接下来, 就来实现只要打开程序, 就默认以管理员身份运行吧!</p>
-<p>我觉得这一部分有点多此一举..</p>
-<h4 id="一般程序-操作步骤"><a href="#一般程序-操作步骤" class="headerlink" title="一般程序 操作步骤"></a>一般程序 操作步骤</h4><ol>
-<li><p>找到 <code>目标程序</code> 快捷方式. </p>
-</li>
-<li><p>右键 <code>目标程序</code> 快捷方式 -&gt; 点击 <code>属性</code> -&gt; <code>兼容性</code> 选项卡下的 <code>以管理员身份运行此程序</code>.</p>
-</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F.jpg"
-                      alt="其他程序"
-                ></p>
-<ol start="3">
-<li>看到了吧! 对, 没错, 勾选 <code>以管理员身份运行</code> 即可!</li>
-</ol>
-<p>然后别忘记依次点击 <code>确定</code> 保存更改.</p>
-<h4 id="CMD-操作步骤"><a href="#CMD-操作步骤" class="headerlink" title="CMD 操作步骤"></a>CMD 操作步骤</h4><p>CMD如果按照一般的步骤设置, 快捷方式打开确实是以管理员身份运行的, 别的方法(例如R+WIN键 CMD)打开依旧不是管理员. </p>
-<p>谁用cmd会用快捷方式打开啊(至少我不是.</p>
-<p>因此, 可以试试设置快捷键快速打开快捷方式到管理员模式.</p>
-<ol>
-<li>打开win10自带的搜索, 输入cmd, 右键 <code>打开文件位置</code>, 找到 <code>命令提示符</code> 快捷方式.</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/cmd%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.jpg"
-                      alt="alt text"
-                ></p>
-<ol start="2">
-<li>自定义按键设置快捷键</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E5%91%98%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg"
-                      alt="alt text"
-                ></p>
-<p>这样设置后, 在任意时候按下快捷键, 就会打开这个已经设置成管理员模式的cmd快捷方式.</p>
-]]></content>
-      <categories>
-        <category>攻略手册</category>
-      </categories>
-      <tags>
-        <tag>攻略</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Node.js的安装和配置</title>
+    <title>更改 Node.js 的默认镜像源</title>
     <url>/2024/04/29/Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="Node-js-概述"><a href="#Node-js-概述" class="headerlink" title="Node.js 概述"></a>Node.js 概述</h1><p>在 Node.js 出现之前, JavaScript 主要用于网页上浏览器, 处理客户端的交互逻辑.<br>而 Node.js 使得 JavaScript 也能够用于服务器端编程, 处理如数据库操作, 网络请求等后端任务.</p>
 <p>Node.js 附带了 <code>npm</code> (Node Package Manager) 中文意为“Node 包管理器”.<br>它是 JavaScript 编程语言的一个包管理器, 也这是世界上最大的开源库生态系统. 开发者可以轻松地共享和使用他人开发的包, 加速了开发过程. </p>
@@ -3688,47 +3393,6 @@ end</pre>
       </categories>
       <tags>
         <tag>nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javaweb</title>
-    <url>/2024/05/06/XML%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="XML-概述"><a href="#XML-概述" class="headerlink" title="XML 概述"></a>XML 概述</h1><p>XML 是 EXtensible Markup Language的缩写, 可拓展标记语言.</p>
-<p>XML 作为一个独立的技术 在各种编程语言中都可以使用, 对于 JavaWeb 我们将其作为配置文件使用.</p>
-<h3 id="XML-配置文件"><a href="#XML-配置文件" class="headerlink" title="XML 配置文件"></a>XML 配置文件</h3><div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<ol>
-<li>根标签只能有一个</li>
-<li>第一行永远是 <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code></li>
-<li>xml是有约束 ,约束用于限定xml内部能编写的内容.</li>
-</ol>
-<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目, 由Apache、Sun 和其他一些公司及个人共同开发而成.<br>最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现, 因为Tomcat 技术先进、性能稳定, 而且免费, 因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可, 成为目前比较流行的Web 应用服务器.</p>
-<p>Tomcat官方网站：<a class="link"   href="http://tomcat.apache.org/"  title="http://tomcat.apache.org/">http://tomcat.apache.org/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h1><p><strong>HTTP 超文本传输协议</strong> (HTTP-Hyper Text transfer protocol), 是一个属于应用层的面向对象的协议, 由于其简捷、快速的方式, 适用于分布式超媒体信息系统.<br>它于1990年提出, 经过十几年的使用与发展, 得到不断地完善和扩展.  </p>
-<p>它是一种详细规定了浏览器和万维网服务器之间互相通信的<strong>规则</strong>, 通过因特网传送万维网文档的数据传送协议.<br>客户端与服务端通信时传输的内容我们称之为<strong>报文</strong>.<br>HTTP协议就是<strong>规定报文的格式</strong>. HTTP就是一个通信规则, 这个规则规定了客户端发送给服务器的报文格式，也规定了服务器发送给客户端的报文格式.  </p>
-<p>实际我们要学习的就是这两种报文。<br>客户端发送给服务器的称为”<strong>请求报文</strong>“,<br>服务器发送给客户端的称为”<strong>响应报文</strong>“。  </p>
-<h1 id="Servlet简介"><a href="#Servlet简介" class="headerlink" title="Servlet简介"></a>Servlet简介</h1><ul>
-<li>静态资源</li>
-</ul>
-<p>无需在程序运行时通过代码运行生成的资源,在程序运行之前就写好的资源. </p>
-<blockquote>
-<p>例如:html css js img ,音频文件和视频文件</p>
-</blockquote>
-<ul>
-<li>动态资源</li>
-</ul>
-<p>需要在程序运行时通过代码运行生成的资源,在程序运行之前无法确定的数据,运行时动态生成.</p>
-<blockquote>
-<p>例如Servlet,Thymeleaf … …  </p>
-</blockquote>
-<p>动态资源指的不是视图上的动画效果或者是简单的人机交互效果</p>
-]]></content>
-      <categories>
-        <category>专业课知识</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>Javaweb</tag>
       </tags>
   </entry>
   <entry>
@@ -4027,6 +3691,19 @@ end</pre>
       <tags>
         <tag>笔记</tag>
         <tag>计算机硬件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaWeb学习笔记</title>
+    <url>/2024/09/20/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>专业课知识</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+        <tag>Web开发</tag>
       </tags>
   </entry>
 </search>

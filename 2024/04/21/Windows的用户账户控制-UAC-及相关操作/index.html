@@ -17,24 +17,32 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://www.wreckloud.com/2024/04/04/计算机网络/"/>
+    <link rel="canonical" href="https://www.wreckloud.com/2024/04/21/windows的用户账户控制-uac-及相关操作/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="完犊子, 期末了一点没复习. 嘿嘿, 怪物猎人真好玩, 嘿嘿.">
+        <meta name="description" content="记录一下关于单独关闭UAC和添加UAC白名单的方法, 很实用哦!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络">
-<meta property="og:url" content="https://www.wreckloud.com/2024/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:title" content="Win 用户账户控制(UAC)">
+<meta property="og:url" content="https://www.wreckloud.com/2024/04/21/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6-UAC-%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="狼牙月影">
-<meta property="og:description" content="完犊子, 期末了一点没复习. 嘿嘿, 怪物猎人真好玩, 嘿嘿.">
+<meta property="og:description" content="记录一下关于单独关闭UAC和添加UAC白名单的方法, 很实用哦!">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-04T13:49:47.000Z">
-<meta property="article:modified_time" content="2024-06-11T03:56:53.048Z">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A8.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A82.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/cmd%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E5%91%98%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
+<meta property="article:published_time" content="2024-04-21T06:34:26.000Z">
+<meta property="article:modified_time" content="2024-04-23T12:31:48.801Z">
 <meta property="article:author" content="Wreckloud">
-<meta property="article:tag" content="笔记">
-<meta property="article:tag" content="计算机硬件">
+<meta property="article:tag" content="攻略">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg">
     
     
     <!--- Icon Part-->
@@ -46,7 +54,7 @@
     
     <title>
         
-            计算机网络 -
+            Win 用户账户控制(UAC) -
         
         狼牙月影
     </title>
@@ -545,10 +553,10 @@
             
                 
                 
-                <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF.jpg" alt="计算机网络" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                <img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/UAC.jpg" alt="Win 用户账户控制(UAC)" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
                 
                 <div class="w-full flex items-center absolute bottom-0 justify-start">
-                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">计算机网络</h1>
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">Win 用户账户控制(UAC)</h1>
                 </div>
             
             </div>
@@ -569,15 +577,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-04-04 21:49:47</span>
-        <span class="mobile">2024-04-04 21:49:47</span>
+        <span class="desktop">2024-04-21 14:34:26</span>
+        <span class="mobile">2024-04-21 14:34:26</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-11 11:56:53</span>
-            <span class="mobile">2024-06-11 11:56:53</span>
+            <span class="desktop">2024-04-23 20:31:48</span>
+            <span class="mobile">2024-04-23 20:31:48</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -591,7 +599,7 @@
                     
                         
                         <li>
-                            <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%9F%A5%E8%AF%86/">专业课知识</a>&nbsp;
+                            <a href="/categories/%E6%94%BB%E7%95%A5%E6%89%8B%E5%86%8C/">攻略手册</a>&nbsp;
                         </li>
                     
                     
@@ -605,11 +613,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6/">计算机硬件</a>&nbsp;
+                        <a href="/tags/%E6%94%BB%E7%95%A5/">攻略</a>&nbsp;
                     </li>
                 
             </ul>
@@ -619,12 +623,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>287 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.3k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 分钟</span>
         </span>
     
     
@@ -643,14 +647,135 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="第一章-计算机网络体系结构"><a href="#第一章-计算机网络体系结构" class="headerlink" title="第一章 计算机网络体系结构"></a>第一章 计算机网络体系结构</h1><h3 id="计算机网络简介"><a href="#计算机网络简介" class="headerlink" title="计算机网络简介"></a>计算机网络简介</h3><p>计算机网络是一个将分散的, 具有独立功能的<strong>计算机系统</strong>, 通过<strong>通信设备</strong>与<strong>线路</strong>连接起来, 由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统.</p>
-<p>计算机网络是 <strong>互联</strong>(通过通信链路互联互通)的, <strong>自治</strong>(无主从关系)的计算机集合.</p>
-<p><strong>网络</strong> 就是把许多计算机连接在一起<br><strong>互联网</strong> 就是把许多网络连接在一起<br><strong>因特网</strong> 是世界上最大的互联网, 前身为ARPAnet</p>
-<p><strong>ISP</strong> 是指因特网服务提供者&#x2F;提供商(如中国电信等). </p>
-<p>三级结构的因特网分为主干ISP, 地区ISP和本地ISP.</p>
-<h3 id="计算机网络功能"><a href="#计算机网络功能" class="headerlink" title="计算机网络功能"></a>计算机网络功能</h3><p>数据通信:<br>计算机网络最基本和最重要的功能, 实现联网计算机之间各种信息传输.</p>
-<p>资源共享:<br>资源共享可以是软件共享, 数据共享和硬件共享.</p>
-<p>分布式处理<br>利用空闲计算机资源以提高整个系统的利用率.</p>
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>用户账户控制(User Account Control，简称UAC), 是一种通知用户是否对应用程序使用硬盘和系统文件授权, 从而防止恶意程序损坏系统的机制.</p>
+<p>微软官方介绍:<br><a class="link"   target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/security/application-security/application-control/user-account-control/" >用户帐户控制概述 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>我只觉得弹窗太麻烦了, Win10 系统不弹出UAC的方法是**(不推荐)**:</p>
+<blockquote>
+<p><code>控制面板</code> –&gt; <code>用户账户</code> –&gt; <code>系统和安全</code> –&gt; <code>安全和维护</code> –&gt; <code>更改用户账户控制设置</code>.</p>
+<p>在弹出的对话框中设置你觉得合适的等级即可，拖到最下方的 <code>从不通知</code>.</p>
+</blockquote>
+<p>就不会有弹窗通知了, 但是!</p>
+<p>这样的话,<strong>所有软件</strong>都可以偷偷申请管理员权限, 并且在<strong>你不知情</strong>的情况下随意修改你的系统设置或文件!</p>
+<p>这里就主要总结记录一下我觉得很有用的关键操作.</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="强制以普通用户方式运行"><a href="#强制以普通用户方式运行" class="headerlink" title="强制以普通用户方式运行"></a>强制以普通用户方式运行</h2><blockquote>
+<p>请注意!</p>
+<p>修改注册表之前应当谨慎, 因为不当的更改可能会导致系统不稳定或安全问题.</p>
+</blockquote>
+<p>本操作主要针对一些软件喜欢强制以管理员方式运行, 偷偷在后台搞小动作的应用.  </p>
+<p>(对没错! 就是你! 腾讯的WeGay!!! 不给权限还不让进!!)</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/wegay.jpg"
+                      alt="WeGay"
+                ></p>
+<h4 id="原理说明"><a href="#原理说明" class="headerlink" title="原理说明"></a>原理说明</h4><p>WeGame 软件在启动的时候就会申请 UAC, 正常情况下只能同意.</p>
+<p>但是我们可以强制 <strong>以普通用户</strong> 方式运行设置, 双击打开软件就是 <code>普通用户权限</code>.</p>
+<p>通俗的说, 就是我直接明确告诉系统: “你个小小 WeGame, 以 <strong>普通用户</strong> 的方式运行就够了!”<br>这样系统就知道 wegame 用普通用户方式运行, 就不会再询问权限, 因此也不会提示 UAC 了.</p>
+<p>当然, 如果临时需要管理员权限的话, 依然可以 <code>右键 -&gt; 以管理员方式运行</code></p>
+<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4><ol>
+<li>打开注册表编辑器.</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8.jpg"
+                      alt="注册表编辑器"
+                ></p>
+<blockquote>
+<p>除了系统搜索 <code>注册表</code> 之外, 还可以:<br>按下 <code>Win+R</code>键 打开 运行 窗口，输入 <code>regedit</code> 并点击 确定 按钮(或直接回车).  </p>
+<p>这样是不是更酷点? 哈哈!</p>
+</blockquote>
+<ol start="2">
+<li>在注册表编辑器地址栏中输入:</li>
+</ol>
+<div class="highlight-container" data-rel="R"><figure class="iseeu highlight r"><table><tr><td class="code"><pre><span class="line">计算机<span class="punctuation">\</span>HKEY_CURRENT_USER<span class="punctuation">\</span>Software<span class="punctuation">\</span>Microsoft<span class="punctuation">\</span>Windows NT<span class="punctuation">\</span>CurrentVersion<span class="punctuation">\</span>AppCompatFlags<span class="punctuation">\</span>Layers</span><br></pre></td></tr></table></figure></div>
+
+<p>如果没有 Layers 文件夹的话, 可以自己新建一个.</p>
+<blockquote>
+<p>选中 <code>AppCompatFlags</code> 右键, 点击 <code>新建</code> -&gt; <code>项</code><br>新建 Layers 文件夹</p>
+</blockquote>
+<ol start="3">
+<li>右键 Layers 文件夹, 点击 <code>新建</code> -&gt; <code>字符串值</code>, 新建一个 字符串值. <a id="test"></a></li>
+</ol>
+<p>字符串名称就是你指定的软件完整路径, 例如 Wegame 的路径:</p>
+<p>找到wegame的快捷方式(一般就是桌面的图标), 然后右键快捷方式 -&gt; <code>属性</code>:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.jpg"
+                      alt="文件路径"
+                ></p>
+<p>目标就是完整路径, 接下来将他复制下来.</p>
+<blockquote>
+<p>注意:<br>有时复制下来可能会存在双引号, 但是无论如何, 都不需要加上<strong>引号</strong>!</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A8.jpg"
+                      alt="设置注册表"
+                ></p>
+<p>粘贴到刚刚新建的字符串名称.</p>
+<ol>
+<li>右键刚刚新建的字符串</li>
+</ol>
+<p>点击 <code>修改</code></p>
+<p>填入数值数据</p>
+<div class="highlight-container" data-rel="R"><figure class="iseeu highlight r"><table><tr><td class="code"><pre><span class="line">RUNASINVOKER</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E6%B3%A8%E5%86%8C%E8%A1%A82.jpg"
+                      alt="修改数值数据"
+                ></p>
+<p>现在, 再次打开Wegame试试吧!</p>
+<h2 id="软件运行不再提示-UAC"><a href="#软件运行不再提示-UAC" class="headerlink" title="软件运行不再提示 UAC"></a>软件运行不再提示 UAC</h2><p>有的程序 (例如CMD), 确实需要权限. 但是每次以管理员身份运行, 都会弹出提示.<br>我们也可以用同样的道理, 直接告诉系统它以管理员的身份运行, 避免询问提示.</p>
+<p><a href="Github.com/XIU2">@西柚秀</a>大佬制作的UAC 白名单小工具, 可以轻松实现运行不会提示 UAC, 而且软件依然拥有 管理员权限.</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114096199" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114096199" >原文地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="程序默认以管理员身份运行-仍提示UAC"><a href="#程序默认以管理员身份运行-仍提示UAC" class="headerlink" title="程序默认以管理员身份运行(仍提示UAC)"></a>程序默认以管理员身份运行(仍提示UAC)</h2><p>每一次打开都要先右键选中 <code>以管理员身份运行</code> 还是很麻烦…<br>(我觉得是, 那就是! <del>毕竟懒是人类第一生产力</del>( ?</p>
+<p>接下来, 就来实现只要打开程序, 就默认以管理员身份运行吧!</p>
+<p>我觉得这一部分有点多此一举..</p>
+<h4 id="一般程序-操作步骤"><a href="#一般程序-操作步骤" class="headerlink" title="一般程序 操作步骤"></a>一般程序 操作步骤</h4><ol>
+<li><p>找到 <code>目标程序</code> 快捷方式. </p>
+</li>
+<li><p>右键 <code>目标程序</code> 快捷方式 -&gt; 点击 <code>属性</code> -&gt; <code>兼容性</code> 选项卡下的 <code>以管理员身份运行此程序</code>.</p>
+</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F.jpg"
+                      alt="其他程序"
+                ></p>
+<ol start="3">
+<li>看到了吧! 对, 没错, 勾选 <code>以管理员身份运行</code> 即可!</li>
+</ol>
+<p>然后别忘记依次点击 <code>确定</code> 保存更改.</p>
+<h4 id="CMD-操作步骤"><a href="#CMD-操作步骤" class="headerlink" title="CMD 操作步骤"></a>CMD 操作步骤</h4><p>CMD如果按照一般的步骤设置, 快捷方式打开确实是以管理员身份运行的, 别的方法(例如R+WIN键 CMD)打开依旧不是管理员. </p>
+<p>谁用cmd会用快捷方式打开啊(至少我不是.</p>
+<p>因此, 可以试试设置快捷键快速打开快捷方式到管理员模式.</p>
+<ol>
+<li>打开win10自带的搜索, 输入cmd, 右键 <code>打开文件位置</code>, 找到 <code>命令提示符</code> 快捷方式.</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/cmd%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.jpg"
+                      alt="alt text"
+                ></p>
+<ol start="2">
+<li>自定义按键设置快捷键</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Windows%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E6%8E%A7%E5%88%B6(UAC)%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E5%91%98%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg"
+                      alt="alt text"
+                ></p>
+<p>这样设置后, 在任意时候按下快捷键, 就会打开这个已经设置成管理员模式的cmd快捷方式.</p>
 
         </div>
 
@@ -658,18 +783,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 计算机网络</li>
+        <li><strong>标题:</strong> Win 用户账户控制(UAC)</li>
         <li><strong>作者:</strong> Wreckloud_雲之残骸</li>
         <li><strong>创建于
-                :</strong> 2024-04-04 21:49:47</li>
+                :</strong> 2024-04-21 14:34:26</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-06-11 11:56:53
+                    :</strong> 2024-04-23 20:31:48
             </li>
         
         <li>
-            <strong>链接:</strong> https://www.wreckloud.com/2024/04/04/计算机网络/
+            <strong>链接:</strong> https://www.wreckloud.com/2024/04/21/Windows的用户账户控制-UAC-及相关操作/
         </li>
         <li>
             <strong>
@@ -691,11 +816,7 @@
             <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6/">#计算机硬件</a>&nbsp;
+                        <a href="/tags/%E6%94%BB%E7%95%A5/">#攻略</a>&nbsp;
                     </li>
                 
             </ul>
@@ -709,13 +830,13 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/04/04/%E6%9D%BF%E7%BB%98%E5%AD%A6%E4%B9%A0/"
+                        href="/2024/04/29/Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">我要画画!</span>
+                                <span class="post-nav-title-item">更改 Node.js 的默认镜像源</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -725,10 +846,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"
+                        href="/2024/04/19/ECMAScript%E5%85%A5%E9%97%A8/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">计算机网络</span>
+                                <span class="post-nav-title-item">ECMAScript入门</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -791,8 +912,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">计算机网络</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">第一章 计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B"><span class="nav-text">计算机网络简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD"><span class="nav-text">计算机网络功能</span></a></li></ol></li></ol></li></ol>
+        <div class="page-title">Win 用户账户控制(UAC)</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E4%BB%A5%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E6%96%B9%E5%BC%8F%E8%BF%90%E8%A1%8C"><span class="nav-text">强制以普通用户方式运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%BF%90%E8%A1%8C%E4%B8%8D%E5%86%8D%E6%8F%90%E7%A4%BA-UAC"><span class="nav-text">软件运行不再提示 UAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%BB%98%E8%AE%A4%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%90%E8%A1%8C-%E4%BB%8D%E6%8F%90%E7%A4%BAUAC"><span class="nav-text">程序默认以管理员身份运行(仍提示UAC)</span></a></li></ol></li></ol>
 
     </div>
 </div>
@@ -831,7 +952,7 @@
                     </span>
                     
                         <span>
-                            共 37.3k 字
+                            共 38.2k 字
                         </span>
                     
                 </p>

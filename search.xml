@@ -768,6 +768,15 @@
     <url>/2023/11/06/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p><a class="link"   href="https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=b19220b8f372f3a81aa8463fde694a63" >笔记视频教程来源 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><a class="link"   href="https://www.w3school.com.cn/js/js_intro.asp" >教程网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
+<ul>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AF-HTML5.md">HTML</a>: 负责网页的架构 </p>
+</li>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFCSS3.md">CSS</a>: 负责网页的样式，美化</p>
+</li>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8.md">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
+</li>
+</ul>
 <h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.  </p>
 <p>JavaScipt 又分为:</p>
 <ul>
@@ -1791,6 +1800,15 @@ end</pre>
     <title>CSS3-web前端基础前端</title>
     <url>/2023/09/17/%E5%89%8D%E7%AB%AFCSS3/</url>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
+<ul>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AF-HTML5.md">HTML</a>: 负责网页的架构 </p>
+</li>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFCSS3.md">CSS</a>: 负责网页的样式，美化</p>
+</li>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8.md">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
+</li>
+</ul>
 <h1 id="CSS-定义"><a href="#CSS-定义" class="headerlink" title="CSS 定义"></a>CSS 定义</h1><p>层叠样式表(Casading Style Sheets), 又叫级联样式表, 简称 <strong>样式表</strong> .<br>用来<strong>描述</strong> HTML文档 的呈现方式,用于美化内容.</p>
 <p>CSS书写基本格式:</p>
 <blockquote>
@@ -2688,14 +2706,13 @@ end</pre>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
 <ul>
-<li><p>HTML: 负责网页的架构</p>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AF-HTML5.md">HTML</a>: 负责网页的架构 </p>
 </li>
-<li><p>CSS: 负责网页的样式，美化</p>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFCSS3.md">CSS</a>: 负责网页的样式，美化</p>
 </li>
-<li><p>JavaScript（JS）: 负责网页的行为</p>
+<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8.md">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
 </li>
 </ul>
-<p>此篇基础笔记记录了HTML与CSS中的基础属性.它们都属于标记语言.</p>
 <h1 id="HTML-定义"><a href="#HTML-定义" class="headerlink" title="HTML 定义"></a>HTML 定义</h1><p>HTML 超文本标记语言 ———— HyperText Markup Language</p>
 <p>超文本是链接<br>标记也叫标签,带尖括号的文本</p>
 <ol>
@@ -3758,7 +3775,7 @@ end</pre>
       <tags>
         <tag>Java</tag>
         <tag>笔记</tag>
-        <tag>Web开发</tag>
+        <tag>Web后端</tag>
       </tags>
   </entry>
   <entry>

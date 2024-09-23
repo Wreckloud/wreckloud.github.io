@@ -3943,7 +3943,8 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
                       alt="Maven安装检查"
                 ></p>
-<h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
+<h3 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h3><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在IDEA 中集成 Maven.  </p>
+<h4 id="方式一-配置当前项目的-Maven-路径"><a href="#方式一-配置当前项目的-Maven-路径" class="headerlink" title="方式一: 配置当前项目的 Maven 路径"></a>方式一: 配置当前项目的 Maven 路径</h4><h4 id="方式二-配置全局-Maven-路径"><a href="#方式二-配置全局-Maven-路径" class="headerlink" title="方式二: 配置全局 Maven 路径"></a>方式二: 配置全局 Maven 路径</h4><h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
 <ul>
 <li>问题: 代码耦合度高, 难以维护(主要是因为对象由程序代码产生).</li>
 <li>目标: 充分解耦.</li>

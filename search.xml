@@ -3717,7 +3717,27 @@ end</pre>
   <entry>
     <title>JavaWeb学习笔记</title>
     <url>/2024/09/20/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><p>Vue 是一套前端框架, 免除原生的JavaScript中的DOM操作, 简化书写.</p>
+<p><a class="link"   href="https://cn.vuejs.org/" >VUE官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>基于 MVVM (Model-View-ViewModel) 思想, 实现数据双向绑定.</p>
+<h2 id="Vue快速入门"><a href="#Vue快速入门" class="headerlink" title="Vue快速入门"></a>Vue快速入门</h2><ul>
+<li>新建HTML文件, 引入Vue.js文件</li>
+</ul>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>在JS代码区域, 创建Vue核心对象, 定义数据模型.</li>
+</ul>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>, <span class="comment">// 绑定元素, 代表创建的对象接管的区域</span></span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123; <span class="comment">// 数据模型</span></span></span><br><span class="line"><span class="language-javascript">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>编写视图</li>
+</ul>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; message &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><h3 id="同步与异步"><a href="#同步与异步" class="headerlink" title="同步与异步"></a>同步与异步</h3><p>同步: 浏览器发出请求后, 等待服务器返回响应, 再继续执行下一步操作.</p>
+<p>异步: 浏览器发出请求后, 继续执行下一步操作, 服务器返回响应后, 再执行回调函数.</p>
+<h1 id="原生ajax"><a href="#原生ajax" class="headerlink" title="原生ajax"></a>原生ajax</h1>]]></content>
       <categories>
         <category>专业课知识</category>
       </categories>
@@ -3871,6 +3891,58 @@ end</pre>
     <title>Spring-SSM框架核心概念</title>
     <url>/2024/09/23/Spring-SSM%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1Fi4y1S7ix?p=5&vd_source=b19220b8f372f3a81aa8463fde694a63" >黑马程序员SSM框架教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h1><p>Maven 是 apache 基金会推出的一个开源的 <strong>项目管理工具</strong>, 它基于项目对象模型(project object model, POM)的概念.<br>Maven 通过一小段描述信息, 可以帮助我们 <strong>管理和构建 java 项目</strong>.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E4%BB%8B%E7%BB%8D.png"
+                      alt="maven介绍"
+                ></p>
+<blockquote>
+<p><a class="link"   href="https://www.apache.org/" >apache 软件基金会 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, 是目前世界上最大且最受欢迎的开源软件基金会之一.<br><a class="link"   href="https://www.apache.org/index.html#projects-list" >apache 所有的开源项目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h3 id="Maven-的作用"><a href="#Maven-的作用" class="headerlink" title="Maven 的作用"></a>Maven 的作用</h3><ul>
+<li>依赖管理: 自动下载项目依赖, 并管理这些依赖的版本.</li>
+<li>标准项目构建: 自动编译, 测试, 打包, 发布项目.</li>
+<li>统一项目结构: 项目结构的标准化, 使得项目更加清晰.<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png"
+                      alt="maven项目管理"
+                ></li>
+</ul>
+<h3 id="Maven-安装"><a href="#Maven-安装" class="headerlink" title="Maven 安装"></a>Maven 安装</h3><ol>
+<li><p>下载并解压Maven:<br>maven 官方提供的压缩包 <strong>apache-maven-X.X.X-bin.zip</strong><br><a class="link"   href="https://maven.apache.org/download.cgi" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.  </p>
+</li>
+<li><p>配置仓库:</p>
+</li>
+</ol>
+<p>仓库用于存储资源, 管理各种jar包.  </p>
+<p>修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;localRepository&gt;</code> 标签下配置本地仓库路径.    </p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>C:\本地路径<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p><strong>本地仓库</strong>：自己计算机上的一个目录.<br><strong>中央仓库</strong>：由Maven团队维护的全球唯一的。<a class="link"   href="https://repo1.maven.org/maven2/" >仓库地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.<br><strong>远程仓库（私服）</strong>：一般由公司团队搭建的私有仓库.<br>本地仓库优先级高于远程仓库.  </p>
+</blockquote>
+<p>为了提升下载速度, 可以配置镜像仓库.<br>配置阿里云私服, 修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;mirrors&gt;</code> 标签下配置镜像仓库.  </p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>阿里云公共仓库<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><a class="link"   href="https://developer.aliyun.com/mvn/guide" >阿里云官方说明文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ol start="3">
+<li>配置环境变量:</li>
+</ol>
+<p>为了能在任意目录下使用 Maven, 可以将 Maven 的 bin 目录添加到环境变量中.  </p>
+<p>在系统环境变量中添加 <code>MAVEN_HOME</code>, 值为解压后的 Maven 目录.<br>在用户环境变量中添加 <code>PATH</code>, 值为 <code>%MAVEN_HOME%\bin</code>.  </p>
+<p>测试 Maven 是否安装成功:  </p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure></div>
+
+<p>返回以下内容, 表示安装成功.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
+                      alt="Maven安装检查"
+                ></p>
 <h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
 <ul>
 <li>问题: 代码耦合度高, 难以维护(主要是因为对象由程序代码产生).</li>

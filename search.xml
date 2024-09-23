@@ -784,13 +784,14 @@
 <li>Web APIs 其中又包括 DOM(页面文档对象模型) 和 BOM(浏览器对象模型)</li>
 </ul>
 <p>ECMAScript和JavaScript的关系是, 前者是后者的规格, 后者是前者的一种实现.<br>在日常场合, 这两个词是可以互换的.</p>
-<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><p>与CSS类似, 同样也有以下三种书写方式:</p>
-<h4 id="行内书写"><a href="#行内书写" class="headerlink" title="行内书写"></a>行内书写</h4><p>代码写在标签内部, 在<a class="link"   href="https://cn.vuejs.org/" >vue框架 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>会使用这种模式.  </p>
+<p><a href="http://www.wreckloud.com/2024/04/19/ECMAScript%E5%85%A5%E9%97%A8/">ECMAScript笔记</a></p>
+<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><h4 id="行内书写"><a href="#行内书写" class="headerlink" title="行内书写"></a>行内书写</h4><p>代码写在标签内部, 在<a class="link"   href="https://cn.vuejs.org/" >vue框架 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>会使用这种模式.  </p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;提示文本&#x27;)&quot;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="内部书写"><a href="#内部书写" class="headerlink" title="内部书写"></a>内部书写</h4><p>直接写在html文件里, 用<code>&lt;script src=&quot;文件路径&quot;&gt;&lt;/script&gt;</code>标签包裹住.<br>规范写法是 <strong>写在<code>&lt;/body&gt;</code>的上方</strong> , 通常将其放在HTML页面底部.<br>alert(‘你好, js’)页面弹出警告对话框.</p>
 <h4 id="外部书写"><a href="#外部书写" class="headerlink" title="外部书写"></a>外部书写</h4><p>代码写在以.js结尾的文件里.<br>通过<code>&lt;script src=&quot;文件路径&quot;&gt;&lt;/script&gt;</code>标签, 引入到html页面中.<br>外部js标签中间的代码会被忽略.</p>
 <p>关于在JavaScript的结束符, 对于浏览器可以自动推断语句结束位置, 写不写无所谓.</p>
+<h1 id="JavaScript-基础语法"><a href="#JavaScript-基础语法" class="headerlink" title="JavaScript 基础语法"></a>JavaScript 基础语法</h1><p>变量名, 函数名等都是区分大小写的.<br>每行结尾分号不是必须的, 但是推荐加上.</p>
 <h3 id="输入输出语法"><a href="#输入输出语法" class="headerlink" title="输入输出语法"></a>输入输出语法</h3><h4 id="输出语法"><a href="#输出语法" class="headerlink" title="输出语法"></a>输出语法</h4><ol>
 <li><p>document.write</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;要输出的内容&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
@@ -798,9 +799,9 @@
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&lt;h1&gt;标题示例&lt;/h1&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 <p>可以直接输出标签.</p>
 </li>
-<li><p>alert</p>
+<li><p>window.alert</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">`要输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
-<p>在页面弹出警告对话框.</p>
+<p>在页面弹出警告对话框, 可以省略window.</p>
 </li>
 <li><p>console.log</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`在控制台输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
@@ -810,7 +811,6 @@
 <h4 id="输入语法"><a href="#输入语法" class="headerlink" title="输入语法"></a>输入语法</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">`要求输入内容的提示`</span>)</span><br></pre></td></tr></table></figure></div>
 <p>能显示一个对话框, 对话框中包含提示信息.  </p>
 <h4 id="访问-更改-HTML-元素"><a href="#访问-更改-HTML-元素" class="headerlink" title="访问&#x2F;更改 HTML 元素"></a>访问&#x2F;更改 HTML 元素</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 访问</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更改</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id).<span class="property">innerHTML</span> = 要更改成的元素</span><br></pre></td></tr></table></figure></div>
-
 
 <h2 id="JavaScript-值"><a href="#JavaScript-值" class="headerlink" title="JavaScript 值"></a>JavaScript 值</h2><p>JavaScript 语句定义两种类型的值:</p>
 <p>混合值被称为<strong>字面量（literal）</strong>.<br>变量值被称为<strong>变量</strong>. </p>

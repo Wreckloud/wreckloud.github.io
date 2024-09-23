@@ -3902,4 +3902,65 @@ end</pre>
         <tag>SSM框架</tag>
       </tags>
   </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2024/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><ol>
+<li><strong>括号</strong>用于查找一定范围的字符串<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[abc]</td>
+<td>查找方括号之间的任何字符</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>查找任何从 0 至 9 的数字</td>
+</tr>
+<tr>
+<td>(x</td>
+<td>y)</td>
+</tr>
+</tbody></table>
+</li>
+<li><strong>元字符</strong>（Metacharacter）是拥有特殊含义的字符<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\d</code></td>
+<td>查找数字</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>查找空白字符</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配单词边界</td>
+</tr>
+<tr>
+<td><code>\uxxxx</code></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>Quantifiers <strong>定义量词</strong></li>
+</ol>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>定义（创建）一个 JavaScript 对象:</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> wolf = &#123;</span><br><span class="line">  <span class="title class_">Name</span>: <span class="string">&quot;Wreckloud&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">  <span class="attr">howling</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;howl~&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>拓展知识</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
 </search>

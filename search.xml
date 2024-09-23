@@ -3981,7 +3981,25 @@ end</pre>
                       alt="alt text"
                 ></p>
 <p>别忘记点击 <code>Apply</code> 应用.  </p>
-<h4 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h4><h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
+<h4 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h4><p>新建项目</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/%E5%88%9B%E5%BB%BAMaven%E9%A1%B9%E7%9B%AE1.png"
+                      alt="alt text"
+                ></p>
+<p>然后选择 Java 项目, 在Build tool中选择Maven, 然后点击下一步.  </p>
+<blockquote>
+<p>(注意: 不同版本的 IDEA 可能会有些许差异, 我这个是2024版本)</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/%E5%88%9B%E5%BB%BAMaven%E9%A1%B9%E7%9B%AE3.png"
+                      alt="alt text"
+                ></p>
+<p>初次创建时, Maven 会自动下载依赖包, 请耐心等待.  </p>
+<h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
 <ul>
 <li>问题: 代码耦合度高, 难以维护(主要是因为对象由程序代码产生).</li>
 <li>目标: 充分解耦.</li>

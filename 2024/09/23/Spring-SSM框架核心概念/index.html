@@ -32,8 +32,13 @@
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E4%BB%8B%E7%BB%8D.png">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%830.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%831.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%832.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%833.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%834.png">
 <meta property="article:published_time" content="2024-09-23T05:14:32.000Z">
-<meta property="article:modified_time" content="2024-09-23T11:36:23.132Z">
+<meta property="article:modified_time" content="2024-09-23T15:27:41.366Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="Spring">
@@ -581,8 +586,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-23 19:36:23</span>
-            <span class="mobile">2024-09-23 19:36:23</span>
+            <span class="desktop">2024-09-23 23:27:41</span>
+            <span class="mobile">2024-09-23 23:27:41</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -628,12 +633,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>947 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.1k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 分钟</span>
         </span>
     
     
@@ -680,17 +685,19 @@
 </li>
 </ol>
 <p>仓库用于存储资源, 管理各种jar包.  </p>
-<p>修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;localRepository&gt;</code> 标签下配置本地仓库路径.    </p>
-<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>C:\本地路径<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;localRepository&gt;</code> 标签下配置本地仓库路径.   </p>
+<p>我新建一个在 <code>D:\Code\apache\</code> 下的 <code>maven_repo</code> 目录, 作为本地仓库.</p>
+<p>那么我的 <code>settings.xml</code> 文件内容如下:  </p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Code\apache\maven_repo<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <blockquote>
 <p><strong>本地仓库</strong>：自己计算机上的一个目录.<br><strong>中央仓库</strong>：由Maven团队维护的全球唯一的。<a class="link"   target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/" >仓库地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.<br><strong>远程仓库（私服）</strong>：一般由公司团队搭建的私有仓库.<br>本地仓库优先级高于远程仓库.  </p>
 </blockquote>
-<p>为了提升下载速度, 可以配置镜像仓库.<br>配置阿里云私服, 修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;mirrors&gt;</code> 标签下配置镜像仓库.  </p>
+<p>为了提升下载速度, 可以配置镜像仓库.<br>配置阿里云私服, 也在 <code>conf/settings.xml</code> 文件中配置 <code>&lt;mirrors&gt;</code> 标签下配置镜像仓库.  </p>
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>阿里云公共仓库<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p><a class="link"   target="_blank" rel="noopener" href="https://developer.aliyun.com/mvn/guide" >阿里云官方说明文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ol start="3">
+<ol>
 <li>配置环境变量:</li>
 </ol>
 <p>为了能在任意目录下使用 Maven, 可以将 Maven 的 bin 目录添加到环境变量中.  </p>
@@ -705,8 +712,43 @@
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
                       alt="Maven安装检查"
                 ></p>
-<h3 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h3><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在IDEA 中集成 Maven.  </p>
-<h4 id="方式一-配置当前项目的-Maven-路径"><a href="#方式一-配置当前项目的-Maven-路径" class="headerlink" title="方式一: 配置当前项目的 Maven 路径"></a>方式一: 配置当前项目的 Maven 路径</h4><h4 id="方式二-配置全局-Maven-路径"><a href="#方式二-配置全局-Maven-路径" class="headerlink" title="方式二: 配置全局 Maven 路径"></a>方式二: 配置全局 Maven 路径</h4><h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
+<h3 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h3><h4 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h4><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在IDEA 中集成 Maven.  </p>
+<p>可以针对当前项目配置 Maven , 不过那样每次新项目都要配置, 比较繁琐.<br>直接略过, 我们来配置全局 Maven 路径.</p>
+<p>如果你的 IDEA 还在项目界面, 请先关闭项目返回开始界面.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%830.png"
+                      alt="alt text"
+                ></p>
+<p>然后在开始界面点击 <code>All settings...</code>.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%831.png"
+                      alt="alt text"
+                ></p>
+<p>点击左侧 <code>Build, Execution, Deployment</code> -&gt; <code>Build Tools</code> -&gt; <code>Maven</code>.<br>配置 Maven 的全局路径等信息.<br>记得如果更改不了 <code>User settings file</code> , 请点击 <code>override</code> 按钮.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%832.png"
+                      alt="alt text"
+                ></p>
+<p>配置完成后点击 <code>Apply</code> 应用.<br>接着更改两个地方的 java 版本.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%833.png"
+                      alt="alt text"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%834.png"
+                      alt="alt text"
+                ></p>
+<p>别忘记点击 <code>Apply</code> 应用.  </p>
+<h4 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h4><h1 id="Spring-SSM框架核心概念"><a href="#Spring-SSM框架核心概念" class="headerlink" title="Spring-SSM框架核心概念"></a>Spring-SSM框架核心概念</h1><p>Spring是一个开源框架, 它是为了解决企业级应用开发的复杂性而创建的.<br>那么, 具体是解决什么问题呢?</p>
 <ul>
 <li>问题: 代码耦合度高, 难以维护(主要是因为对象由程序代码产生).</li>
 <li>目标: 充分解耦.</li>
@@ -741,7 +783,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-23 19:36:23
+                    :</strong> 2024-09-23 23:27:41
             </li>
         
         <li>
@@ -896,7 +938,7 @@
                     </span>
                     
                         <span>
-                            共 39.5k 字
+                            共 39.7k 字
                         </span>
                     
                 </p>

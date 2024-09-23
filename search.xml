@@ -770,11 +770,11 @@
 <p><a class="link"   href="https://www.w3school.com.cn/js/js_intro.asp" >教程网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
 <ul>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AF-HTML5.md">HTML</a>: 负责网页的架构 </p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/">HTML</a>: 负责网页的架构 </p>
 </li>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFCSS3.md">CSS</a>: 负责网页的样式，美化</p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AFCSS3/">CSS</a>: 负责网页的样式，美化</p>
 </li>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8.md">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
 </li>
 </ul>
 <h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.  </p>
@@ -838,7 +838,8 @@
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> 常量名 = 常量的值</span><br></pre></td></tr></table></figure></div>
 
 <p>常量不允许重新赋值, 声明时必须初始化.</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.   </p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>可以使用 typeof 运算符来判断变量的数据类型.</p>
+<h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.   </p>
 <p>NaN(Not a number, 非数) 表示一个计算错误. 对NaN的任何操作都会返回 NaN.</p>
 <h4 id="boolean-布尔型"><a href="#boolean-布尔型" class="headerlink" title="boolean 布尔型"></a>boolean 布尔型</h4><p>只有两个值: <code>true</code> 和 <code>false</code></p>
 <h4 id="String-字符串型"><a href="#String-字符串型" class="headerlink" title="String 字符串型"></a>String 字符串型</h4><p>被 “”(双引号) ‘’(单引号) &#96;&#96;(反引号) 包裹的都是字符串.</p>
@@ -887,58 +888,6 @@
 <td>执行多行匹配</td>
 </tr>
 </tbody></table>
-<h4 id="正则表达式-1"><a href="#正则表达式-1" class="headerlink" title="正则表达式"></a>正则表达式</h4><ol>
-<li><strong>括号</strong>用于查找一定范围的字符串<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[abc]</td>
-<td>查找方括号之间的任何字符</td>
-</tr>
-<tr>
-<td>[0-9]</td>
-<td>查找任何从 0 至 9 的数字</td>
-</tr>
-<tr>
-<td>(x</td>
-<td>y)</td>
-</tr>
-</tbody></table>
-</li>
-<li><strong>元字符</strong>（Metacharacter）是拥有特殊含义的字符<table>
-<thead>
-<tr>
-<th>元字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>\d</code></td>
-<td>查找数字</td>
-</tr>
-<tr>
-<td><code>\s</code></td>
-<td>查找空白字符</td>
-</tr>
-<tr>
-<td><code>\b</code></td>
-<td>匹配单词边界</td>
-</tr>
-<tr>
-<td><code>\uxxxx</code></td>
-<td></td>
-</tr>
-</tbody></table>
-</li>
-<li>Quantifiers <strong>定义量词</strong></li>
-</ol>
-<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>定义（创建）一个 JavaScript 对象:</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> wolf = &#123;</span><br><span class="line">  <span class="title class_">Name</span>: <span class="string">&quot;Wreckloud&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">  <span class="attr">howling</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;howl~&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-
 <h3 id="常见HTML事件"><a href="#常见HTML事件" class="headerlink" title="常见HTML事件"></a>常见HTML事件</h3><table>
 <thead>
 <tr>
@@ -1802,11 +1751,11 @@ end</pre>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
 <ul>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AF-HTML5.md">HTML</a>: 负责网页的架构 </p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/">HTML</a>: 负责网页的架构 </p>
 </li>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFCSS3.md">CSS</a>: 负责网页的样式，美化</p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AFCSS3/">CSS</a>: 负责网页的样式，美化</p>
 </li>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8.md">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
 </li>
 </ul>
 <h1 id="CSS-定义"><a href="#CSS-定义" class="headerlink" title="CSS 定义"></a>CSS 定义</h1><p>层叠样式表(Casading Style Sheets), 又叫级联样式表, 简称 <strong>样式表</strong> .<br>用来<strong>描述</strong> HTML文档 的呈现方式,用于美化内容.</p>
@@ -2706,11 +2655,11 @@ end</pre>
     <content><![CDATA[<p>笔记来源于: <a class="link"   href="https://www.bilibili.com/video/BV1kM4y127Li?p=1" >黑马Web开发教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><strong>Web前端开发包括: HTML、CSS和JavaScrip</strong>   </p>
 <ul>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AF-HTML5.md">HTML</a>: 负责网页的架构 </p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/">HTML</a>: 负责网页的架构 </p>
 </li>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFCSS3.md">CSS</a>: 负责网页的样式，美化</p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AFCSS3/">CSS</a>: 负责网页的样式，美化</p>
 </li>
-<li><p><a href="../_posts/%E5%89%8D%E7%AB%AFJavaScript%E5%85%A5%E9%97%A8.md">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
+<li><p><a href="http://www.wreckloud.com/2023/09/17/%E5%89%8D%E7%AB%AF-HTML5/">JavaScript（JS）</a>: 负责网页的行为,实现交互</p>
 </li>
 </ul>
 <h1 id="HTML-定义"><a href="#HTML-定义" class="headerlink" title="HTML 定义"></a>HTML 定义</h1><p>HTML 超文本标记语言 ———— HyperText Markup Language</p>

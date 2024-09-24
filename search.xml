@@ -4096,7 +4096,7 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
                       alt="Maven安装检查"
                 ></p>
-<h1 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h1><h4 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h4><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在 IDEA 中集成 Maven.  </p>
+<h1 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h1><h3 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h3><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在 IDEA 中集成 Maven.  </p>
 <p>可以针对当前项目配置 Maven , 不过那样每次新项目都要配置, 比较繁琐.<br>直接略过, 我们来配置全局 Maven 路径.</p>
 <p>如果你的 IDEA 还在项目界面, 请先关闭项目返回开始界面.  </p>
 <p><img  
@@ -4105,7 +4105,7 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%830.png"
                       alt="alt text"
                 ></p>
-<p>然后在开始界面点击 <code>All settings...</code></p>
+<p>然后在开始界面 到 <code>Customize</code> 选项卡下, 点击 <code>All settings...</code></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -4132,7 +4132,7 @@ end</pre>
                       alt="alt text"
                 ></p>
 <p>别忘记点击 <code>Apply</code> 应用.  </p>
-<h4 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h4><p>新建项目</p>
+<h3 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h3><p>新建项目</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -4150,6 +4150,29 @@ end</pre>
                       alt="alt text"
                 ></p>
 <p>初次创建时, Maven 会自动下载依赖包, 请耐心等待.  </p>
+<h3 id="导入已有-Maven-项目"><a href="#导入已有-Maven-项目" class="headerlink" title="导入已有 Maven 项目"></a>导入已有 Maven 项目</h3><p>有时候如果已经有了一个 Maven 项目, 可以直接在 IDEA 中导入并打开它.<br>导入项目的关键是找到 <code>pom.xml</code> 文件.  </p>
+<h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>在 IDEA 项目右侧, 找到 Maven 图标, 点击加号, 找到已有 Maven 项目的 <code>pom.xml</code> 文件, 双击即可开始导入.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE.png"
+                      alt="alt text"
+                ></p>
+<p>如果没看见右侧工具栏, 可以在 <code>View</code> -&gt; <code>Appearance</code> -&gt; <code>Tool windows bar</code> 中打开.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE0.png"
+                      alt="alt text"
+                ></p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>也可以在 IDEA 的菜单栏中选择 <code>File</code> -&gt; <code>project Structure</code> 打开项目, 然后选择 <code>pom.xml</code> 文件.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE2.png"
+                      alt="alt text"
+                ></p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>Maven 依赖管理是 Maven 最重要的功能之一.  </p>
 ]]></content>
       <categories>
         <category>攻略手册</category>

@@ -3986,16 +3986,17 @@ end</pre>
   <entry>
     <title>Maven概述</title>
     <url>/2024/09/24/Maven%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h1><p>Maven 是 <a class="link"   href="https://www.apache.org/" >apache 软件基金会 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 推出的一个开源的 <strong>项目管理工具</strong>.<br>Maven 基于项目对象模型(project object model, POM)的概念,<br>通过一小段描述信息 (pom.xml), 来自动 <strong>管理</strong> 和 <strong>构建</strong> java 项目.  </p>
+    <content><![CDATA[<h1 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h1><p>Maven 是 <a class="link"   href="https://www.apache.org/" >apache 软件基金会 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 推出的一个开源的 <strong>项目管理工具</strong>.  </p>
+<blockquote>
+<p><a class="link"   href="https://www.apache.org/index.html#projects-list" >apache 所有的开源项目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>Maven 基于项目对象模型 (project object model, POM) 的概念,<br>通过一小段描述信息 (pom.xml), 来自动 <strong>管理</strong> 和 <strong>构建</strong> java 项目.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/maven%E4%BB%8B%E7%BB%8D.png"
                       alt="maven介绍"
                 ></p>
-<blockquote>
-<p><a class="link"   href="https://www.apache.org/index.html#projects-list" >apache 所有的开源项目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</blockquote>
 <h3 id="Maven-的作用"><a href="#Maven-的作用" class="headerlink" title="Maven 的作用"></a>Maven 的作用</h3><ul>
 <li><strong>依赖管理</strong>: 自动下载项目依赖, 并管理这些依赖的版本.</li>
 <li><strong>标准项目构建</strong>: 自动编译, 测试, 打包, 发布项目.</li>
@@ -4006,16 +4007,36 @@ end</pre>
                       alt="maven项目管理"
                 ></li>
 </ul>
-<h3 id="Maven-安装"><a href="#Maven-安装" class="headerlink" title="Maven 安装"></a>Maven 安装</h3><h4 id="下载并解压Maven"><a href="#下载并解压Maven" class="headerlink" title="下载并解压Maven:"></a>下载并解压Maven:</h4><p>下载 maven 官方提供的 <code>Binary zip archive</code> 压缩包<br><a class="link"   href="https://maven.apache.org/download.cgi" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.<br><img  
+<h1 id="Maven-安装"><a href="#Maven-安装" class="headerlink" title="Maven 安装"></a>Maven 安装</h1><h3 id="下载并解压-Maven"><a href="#下载并解压-Maven" class="headerlink" title="下载并解压 Maven:"></a>下载并解压 Maven:</h3><p>下载 maven 官方提供的 <code>Binary zip archive</code> 压缩包<br><a class="link"   href="https://maven.apache.org/download.cgi" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.<br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E4%B8%8B%E8%BD%BDMaven.png"
                       alt="alt text"
                 ></p>
-<h4 id="配置仓库"><a href="#配置仓库" class="headerlink" title="配置仓库:"></a>配置仓库:</h4><p>仓库用于存储资源, 管理各种jar包.  </p>
-<p>修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;localRepository&gt;</code> 标签下配置本地仓库路径.   </p>
-<p>我新建一个在 <code>D:\Code\apache\</code> 下的 <code>maven_repo</code> 目录, 作为本地仓库.</p>
-<p>那么我的 <code>settings.xml</code> 文件内容如下:  </p>
+<p>下载后解压到一个方便管理的目录.<br>由于一些兼容性和安全性问题, 路径尽量不要包含 <strong>中文</strong> 或 <strong>空格</strong>.  </p>
+<p>接下来, 以我的路径为例: </p>
+<blockquote>
+<p><code>D:\Code\apache\maven-3.6.3</code>   </p>
+</blockquote>
+<p>进行配置.</p>
+<h3 id="配置仓库"><a href="#配置仓库" class="headerlink" title="配置仓库:"></a>配置仓库:</h3><p>仓库 (repository) 用于存储 Maven 下载的资源, 管理各种jar包.  </p>
+<p>我们新建一个文件夹作为 本地仓库,<br>我的 本地仓库 路径设置为: </p>
+<blockquote>
+<p><code>D:\Code\apache\maven_repo</code></p>
+</blockquote>
+<h4 id="配置-本地仓库"><a href="#配置-本地仓库" class="headerlink" title="配置 本地仓库"></a>配置 本地仓库</h4><p>然后要让 Maven 知道这个本地仓库的位置.</p>
+<p>找到刚刚解压的 Maven 目录, 进入 <code>conf</code> 目录, 打开 <code>settings.xml</code> 文件.</p>
+<p>在 <code>conf/settings.xml</code> 文件中找到 <code>&lt;localRepository&gt;</code> 标签, 配置本地仓库路径.   </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E4%BB%93%E5%BA%931.png"
+                      alt="alt text"
+                ></p>
+<blockquote>
+<p>VScode 中 ctrl+f 搜索 <code>localRepository</code> 可快速定位到该标签.</p>
+</blockquote>
+<p>我的配置如下:</p>
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Code\apache\maven_repo<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <blockquote>

@@ -4071,14 +4071,22 @@ end</pre>
 <p>然后在 <code>系统变量</code> 里 找到<code>Path</code>, 点击编辑.<br>新建一个变量, 变量值为 </p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%Maven_Home%\bin </span><br></pre></td></tr></table></figure></div>
 
-<p>然后点击 <code>确定</code>.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F3.png"
                       alt="alt text"
                 ></p>
+<p>然后依次点击 以下三个窗口的 <code>确定</code> </p>
+<ul>
+<li>编辑环境变量</li>
+<li>环境变量</li>
+<li>系统属性</li>
+</ul>
+<p>来保存配置.  </p>
+<blockquote>
 <p>注意这里的 变量值 <code>%Maven_Home%</code> 和 刚刚设置的 变量名 <code>Maven_Home</code> 要一致.<br>例如 你把变量名设置为 <code>MAVEN</code> , 那么变量值就应该设置为 <code>%MAVEN%\bin</code> .</p>
+</blockquote>
 <h3 id="测试-Maven-是否安装成功"><a href="#测试-Maven-是否安装成功" class="headerlink" title="测试 Maven 是否安装成功:"></a>测试 Maven 是否安装成功:</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure></div>
 
 <p>返回以下内容, 表示安装成功.</p>

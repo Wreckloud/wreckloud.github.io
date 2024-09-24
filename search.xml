@@ -4212,6 +4212,91 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92.png"
                       alt="alt text"
                 ></p>
+<p>还可以在 <code>pom.xml</code> 文件窗口的右键菜单中查看依赖树.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92%E8%A7%86%E5%9B%BE.png"
+                      alt="alt text"
+                ></p>
+<h4 id="排除依赖"><a href="#排除依赖" class="headerlink" title="排除依赖"></a>排除依赖</h4><p>有时候我们只需要用到 <code>logback-classic</code> 依赖中的某些类, 而不需要 <code>logback-core</code> 依赖中的所有类.<br>这时就可以在 <code>&lt;dependency&gt;</code> 标签中加入 <code>&lt;exclusions&gt;</code> 标签, 排除不需要的依赖.  </p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span> <span class="comment">&lt;!-- 排除不需要的依赖 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>每次改变 <code>pom.xml</code> 文件, 别忘记点击按钮重新加载.  </p>
+<h3 id="依赖范围"><a href="#依赖范围" class="headerlink" title="依赖范围"></a>依赖范围</h3><p>Maven 依赖默认情况下是 <code>compile</code> 范围, 即在任何(主程序, 测试程序, 打包)时候都生效.  </p>
+<p>我们可以通过 <code>&lt;dependency&gt;</code> 标签的 <code>&lt;scope&gt;</code> 标签来修改依赖范围.<br><scope> 标签的值有以下几种:</p>
+<table>
+<thead>
+<tr>
+<th>scope值</th>
+<th>主程序</th>
+<th>测试程序</th>
+<th>打包(运行)</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>compile</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>依赖范围默认值, 即在任何时候都生效</td>
+</tr>
+<tr>
+<td>test</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>仅在测试程序中生效</td>
+</tr>
+<tr>
+<td>provided</td>
+<td>√</td>
+<td>√</td>
+<td>-</td>
+<td>仅在编译和测试程序中生效, 如 servlet-api</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>-</td>
+<td>√</td>
+<td>√</td>
+<td>仅在运行时生效, 如 JDBC驱动程序</td>
+</tr>
+</tbody></table>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>Maven 生命周期是为了自动化构建项目, 并提供一系列的插件来完成构建过程.  </p>
+<p>Maven 中有三套 相互独立 的生命周期:</p>
+<ol>
+<li>clean: 清理项目</li>
+<li>default: 默认构建</li>
+<li>site: 生成项目报告</li>
+</ol>
+<p>每套生命周期都有一系列的插件, 这些插件可以完成构建的各个阶段.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png"
+                      alt="alt text"
+                ></p>
+<p>我们只需要关注以下几个阶段:</p>
+<ul>
+<li>clean：移除上一次构建生成的文件</li>
+<li>compile：编译项目源代码</li>
+<li>test: 使用合适的单元测试框架运行测试（junit）</li>
+<li>package：将编译后的文件打包，如：jar、war等</li>
+<li>install：安装项目到本地仓库</li>
+</ul>
+<p>在 IDEA 中, 已经集成了 Maven 的生命周期.<br>需要注意的是 </p>
+<ul>
+<li>在同一套生命周期中, 当运行后面的阶段时, 前面的阶段都会运行.</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/IDEA%E9%9B%86%E6%88%90%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png"
+                      alt="alt text"
+                ></p>
+<p>在此处双击 需要运行的阶段, 即可运行该阶段.  </p>
 ]]></content>
       <categories>
         <category>攻略手册</category>

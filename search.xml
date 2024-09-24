@@ -3990,7 +3990,7 @@ end</pre>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E4%BB%8B%E7%BB%8D.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/maven%E4%BB%8B%E7%BB%8D.png"
                       alt="maven介绍"
                 ></p>
 <blockquote>
@@ -4002,17 +4002,17 @@ end</pre>
 <li><strong>统一项目结构</strong>: 项目结构的标准化, 使得项目更加清晰.<br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/maven%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png"
                       alt="maven项目管理"
                 ></li>
 </ul>
-<h3 id="Maven-安装"><a href="#Maven-安装" class="headerlink" title="Maven 安装"></a>Maven 安装</h3><ol>
-<li><p>下载并解压Maven:<br>maven 官方提供的压缩包 <strong>apache-maven-X.X.X-bin.zip</strong><br><a class="link"   href="https://maven.apache.org/download.cgi" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.  </p>
-</li>
-<li><p>配置仓库:</p>
-</li>
-</ol>
-<p>仓库用于存储资源, 管理各种jar包.  </p>
+<h3 id="Maven-安装"><a href="#Maven-安装" class="headerlink" title="Maven 安装"></a>Maven 安装</h3><h4 id="下载并解压Maven"><a href="#下载并解压Maven" class="headerlink" title="下载并解压Maven:"></a>下载并解压Maven:</h4><p>下载 maven 官方提供的 <code>Binary zip archive</code> 压缩包<br><a class="link"   href="https://maven.apache.org/download.cgi" >下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E4%B8%8B%E8%BD%BDMaven.png"
+                      alt="alt text"
+                ></p>
+<h4 id="配置仓库"><a href="#配置仓库" class="headerlink" title="配置仓库:"></a>配置仓库:</h4><p>仓库用于存储资源, 管理各种jar包.  </p>
 <p>修改 Maven 下 <code>conf/settings.xml</code> 文件, 在 <code>&lt;localRepository&gt;</code> 标签下配置本地仓库路径.   </p>
 <p>我新建一个在 <code>D:\Code\apache\</code> 下的 <code>maven_repo</code> 目录, 作为本地仓库.</p>
 <p>那么我的 <code>settings.xml</code> 文件内容如下:  </p>
@@ -4037,7 +4037,7 @@ end</pre>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
                       alt="Maven安装检查"
                 ></p>
 <h3 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h3><h4 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h4><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在IDEA 中集成 Maven.  </p>
@@ -4046,33 +4046,33 @@ end</pre>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%830.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%830.png"
                       alt="alt text"
                 ></p>
 <p>然后在开始界面点击 <code>All settings...</code>.</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%831.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%831.png"
                       alt="alt text"
                 ></p>
 <p>点击左侧 <code>Build, Execution, Deployment</code> -&gt; <code>Build Tools</code> -&gt; <code>Maven</code>.<br>配置 Maven 的全局路径等信息.<br>记得如果更改不了 <code>User settings file</code> , 请点击 <code>override</code> 按钮.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%832.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%832.png"
                       alt="alt text"
                 ></p>
 <p>配置完成后点击 <code>Apply</code> 应用.<br>接着更改两个地方的 java 版本.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%833.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%833.png"
                       alt="alt text"
                 ><br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%834.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%834.png"
                       alt="alt text"
                 ></p>
 <p>别忘记点击 <code>Apply</code> 应用.  </p>
@@ -4080,7 +4080,7 @@ end</pre>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/%E5%88%9B%E5%BB%BAMaven%E9%A1%B9%E7%9B%AE1.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%88%9B%E5%BB%BAMaven%E9%A1%B9%E7%9B%AE1.png"
                       alt="alt text"
                 ></p>
 <p>然后选择 Java 项目, 在Build tool中选择Maven, 然后点击下一步.  </p>
@@ -4090,7 +4090,7 @@ end</pre>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/%E5%88%9B%E5%BB%BAMaven%E9%A1%B9%E7%9B%AE3.png"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%88%9B%E5%BB%BAMaven%E9%A1%B9%E7%9B%AE3.png"
                       alt="alt text"
                 ></p>
 <p>初次创建时, Maven 会自动下载依赖包, 请耐心等待.  </p>

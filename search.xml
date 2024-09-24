@@ -4203,6 +4203,15 @@ end</pre>
                       alt="alt text"
                 ></p>
 <p>等待 IDEA 自动下载依赖包,<br>就能在右侧的 Maven 依赖树中看到 <code>logback-classic</code> 依赖了.  </p>
+<h3 id="依赖传递"><a href="#依赖传递" class="headerlink" title="依赖传递"></a>依赖传递</h3><p>依赖具有传递性.</p>
+<p>例如刚刚我们添加了 <code>logback-classic</code> 依赖, 它依赖了 <code>logback-core</code> 依赖.<br><code>logback-core</code> 依赖了 <code>slf4j-api</code> 依赖.  </p>
+<p>所以 Maven 会自动下载 <code>logback-core</code> 和 <code>slf4j-api</code> 依赖.<br>不信你就打开刚刚的文件夹看看:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92.png"
+                      alt="alt text"
+                ></p>
 ]]></content>
       <categories>
         <category>攻略手册</category>

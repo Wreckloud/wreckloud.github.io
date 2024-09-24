@@ -3990,7 +3990,7 @@ end</pre>
 <blockquote>
 <p><a class="link"   href="https://www.apache.org/index.html#projects-list" >apache 所有的开源项目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </blockquote>
-<p>Maven 基于项目对象模型 (project object model, POM) 的概念,<br>通过一小段描述信息 (pom.xml), 来自动 <strong>管理</strong> 和 <strong>构建</strong> java 项目.  </p>
+<p>Maven 基于项目对象模型 (project object model, POM) 的概念, 通过一小段描述信息 (pom.xml), 来自动 <strong>管理</strong> 和 <strong>构建</strong> java 项目.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -4016,7 +4016,7 @@ end</pre>
 <p>下载后解压到一个方便管理的目录.<br>由于一些兼容性和安全性问题, 路径尽量不要包含 <strong>中文</strong> 或 <strong>空格</strong>.  </p>
 <p>接下来, 以我的路径为例: </p>
 <blockquote>
-<p><code>D:\Code\apache\maven-3.6.3</code>   </p>
+<p><code>D:\Code\apache\apache-maven-3.9.9</code>   </p>
 </blockquote>
 <p>进行配置.</p>
 <h3 id="配置仓库"><a href="#配置仓库" class="headerlink" title="配置仓库:"></a>配置仓库:</h3><p>仓库 (repository) 用于存储 Maven 下载的资源, 管理各种jar包.  </p>
@@ -4024,9 +4024,8 @@ end</pre>
 <blockquote>
 <p><code>D:\Code\apache\maven_repo</code></p>
 </blockquote>
-<h4 id="配置-本地仓库"><a href="#配置-本地仓库" class="headerlink" title="配置 本地仓库"></a>配置 本地仓库</h4><p>然后要让 Maven 知道这个本地仓库的位置.</p>
-<p>找到刚刚解压的 Maven 目录, 进入 <code>conf</code> 目录, 打开 <code>settings.xml</code> 文件.</p>
-<p>在 <code>conf/settings.xml</code> 文件中找到 <code>&lt;localRepository&gt;</code> 标签, 配置本地仓库路径.   </p>
+<p>然后, 要让 Maven 知道这个本地仓库的位置.</p>
+<h4 id="配置-本地仓库"><a href="#配置-本地仓库" class="headerlink" title="配置 本地仓库"></a>配置 本地仓库</h4><p>来到刚刚解压的 Maven 文件夹, 进入 <code>conf</code> 目录, 打开 <code>settings.xml</code> 文件.<br>在 <code>conf/settings.xml</code> 文件中找到 <code>&lt;localRepository&gt;</code> 标签, 在注释外添加本地仓库路径.   </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -4039,11 +4038,11 @@ end</pre>
 <p>我的配置如下:</p>
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Code\apache\maven_repo<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<h4 id="配置-远程仓库"><a href="#配置-远程仓库" class="headerlink" title="配置 远程仓库"></a>配置 远程仓库</h4><p>Maven 有 由 Maven团队 维护的全球唯一的 中央仓库 <a class="link"   href="https://repo1.maven.org/maven2/" >仓库地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.<br>不过由于其在海外, 大陆访问速度较慢, 所以我们可以配置国内的阿里云镜像仓库以提升下载速度.  </p>
+<h4 id="配置-远程仓库"><a href="#配置-远程仓库" class="headerlink" title="配置 远程仓库"></a>配置 远程仓库</h4><p>Maven 有 由 Maven团队 维护的全球唯一的 中央仓库<br><strong>(<a class="link"   href="https://repo1.maven.org/maven2/" >仓库地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>)</strong>.<br>不过由于其在海外, 大陆访问速度较慢, 所以我们可以配置国内的 阿里云镜像 仓库, 以提升下载速度.  </p>
 <blockquote>
 <p>本地仓库 优先级高于 远程仓库.  </p>
 </blockquote>
-<p>配置阿里云私服, 也在 <code>conf/settings.xml</code> 文件中配置 <code>&lt;mirrors&gt;</code> 标签下配置镜像仓库.  </p>
+<p>配置阿里云私服, 也是在 <code>conf/settings.xml</code> 文件中配置 <code>&lt;mirrors&gt;</code> 标签下配置镜像仓库.  </p>
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>阿里云公共仓库<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p><img  

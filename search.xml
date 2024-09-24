@@ -3986,7 +3986,7 @@ end</pre>
   <entry>
     <title>Maven概述</title>
     <url>/2024/09/24/Maven%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h1><p>Maven 是 apache 基金会推出的一个开源的 <strong>项目管理工具</strong>, 它基于项目对象模型(project object model, POM)的概念.<br>Maven 通过一小段描述信息, 可以帮助我们 <strong>管理和构建 java 项目</strong>.  </p>
+    <content><![CDATA[<h1 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h1><p>Maven 是 <a class="link"   href="https://www.apache.org/" >apache 软件基金会 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 推出的一个开源的 <strong>项目管理工具</strong>.<br>Maven 基于项目对象模型(project object model, POM)的概念,<br>通过一小段描述信息 (pom.xml), 来自动 <strong>管理</strong> 和 <strong>构建</strong> java 项目.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -3994,12 +3994,12 @@ end</pre>
                       alt="maven介绍"
                 ></p>
 <blockquote>
-<p><a class="link"   href="https://www.apache.org/" >apache 软件基金会 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, 是目前世界上最大且最受欢迎的开源软件基金会之一.<br><a class="link"   href="https://www.apache.org/index.html#projects-list" >apache 所有的开源项目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   href="https://www.apache.org/index.html#projects-list" >apache 所有的开源项目 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </blockquote>
 <h3 id="Maven-的作用"><a href="#Maven-的作用" class="headerlink" title="Maven 的作用"></a>Maven 的作用</h3><ul>
-<li>依赖管理: 自动下载项目依赖, 并管理这些依赖的版本.</li>
-<li>标准项目构建: 自动编译, 测试, 打包, 发布项目.</li>
-<li>统一项目结构: 项目结构的标准化, 使得项目更加清晰.<br><img  
+<li><strong>依赖管理</strong>: 自动下载项目依赖, 并管理这些依赖的版本.</li>
+<li><strong>标准项目构建</strong>: 自动编译, 测试, 打包, 发布项目.</li>
+<li><strong>统一项目结构</strong>: 项目结构的标准化, 使得项目更加清晰.<br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Spring%E6%A1%86%E6%9E%B6/maven%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png"

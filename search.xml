@@ -4069,14 +4069,17 @@ end</pre>
                       alt="alt text"
                 ></p>
 <p>完成后, 点击 <code>确定</code>.</p>
-<p>然后在 <code>系统变量</code> 里 找到<code>Path</code>, 点击编辑.<br>新建一个变量, 变量值为 <code>%Maven_Home%\bin</code>, 然后点击 <code>确定</code>.  </p>
-<p>注意这里的 变量值 <code>%Maven_Home%</code> 和 刚刚设置的 变量名 <code>Maven_Home</code> 内容要一致.</p>
+<p>然后在 <code>系统变量</code> 里 找到<code>Path</code>, 点击编辑.<br>新建一个变量, 变量值为 </p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">%Maven_Home%\bin </span><br></pre></td></tr></table></figure></div>
+
+<p>然后点击 <code>确定</code>.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F3.png"
                       alt="alt text"
                 ></p>
+<p>注意这里的 变量值 <code>%Maven_Home%</code> 和 刚刚设置的 变量名 <code>Maven_Home</code> 要一致.<br>例如 你把变量名设置为 <code>MAVEN</code> , 那么变量值就应该设置为 <code>%MAVEN%\bin</code> .</p>
 <h3 id="测试-Maven-是否安装成功"><a href="#测试-Maven-是否安装成功" class="headerlink" title="测试 Maven 是否安装成功:"></a>测试 Maven 是否安装成功:</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure></div>
 
 <p>返回以下内容, 表示安装成功.</p>
@@ -4086,7 +4089,7 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%AE%89%E8%A3%85%E6%A3%80%E6%9F%A5.png"
                       alt="Maven安装检查"
                 ></p>
-<h3 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h3><h4 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h4><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在IDEA 中集成 Maven.  </p>
+<h1 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h1><h4 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h4><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在 IDEA 中集成 Maven.  </p>
 <p>可以针对当前项目配置 Maven , 不过那样每次新项目都要配置, 比较繁琐.<br>直接略过, 我们来配置全局 Maven 路径.</p>
 <p>如果你的 IDEA 还在项目界面, 请先关闭项目返回开始界面.  </p>
 <p><img  
@@ -4095,7 +4098,7 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%830.png"
                       alt="alt text"
                 ></p>
-<p>然后在开始界面点击 <code>All settings...</code>.</p>
+<p>然后在开始界面点击 <code>All settings...</code></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"

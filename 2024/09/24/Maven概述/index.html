@@ -48,8 +48,9 @@
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE.png">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE0.png">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE2.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96.png">
 <meta property="article:published_time" content="2024-09-24T03:06:33.000Z">
-<meta property="article:modified_time" content="2024-09-24T05:37:03.096Z">
+<meta property="article:modified_time" content="2024-09-24T06:55:02.230Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Maven">
@@ -597,8 +598,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-24 13:37:03</span>
-            <span class="mobile">2024-09-24 13:37:03</span>
+            <span class="desktop">2024-09-24 14:55:02</span>
+            <span class="mobile">2024-09-24 14:55:02</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -644,12 +645,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.2k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.4k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>5 分钟</span>
         </span>
     
     
@@ -854,7 +855,22 @@
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E5%9C%A8IDEA%E5%AF%BC%E5%85%A5Maven%E9%A1%B9%E7%9B%AE2.png"
                       alt="alt text"
                 ></p>
-<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>Maven 依赖管理是 Maven 最重要的功能之一.  </p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>Maven 依赖管理是 Maven 最重要的功能之一.<br>修改 <code>pom.xml</code> 文件, 加入依赖包的坐标, 即可轻松管理依赖包.  </p>
+<p>在项目下找到 <code>pom.xml</code> 文件, 双击打开.  </p>
+<p>在 <code>&lt;project&gt;</code> 内, 声明 <code>&lt;dependencies&gt;</code> 标签, 然后在 <code>&lt;dependencies&gt;</code> 标签内加入依赖包的坐标.  </p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> <span class="comment">&lt;!-- 组织名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  <span class="comment">&lt;!-- 模块名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>IDEA 会自动补全内容, 这里以 <code>logback-classic</code> 依赖为例：<br>在 <groupId> 标签内输入 <code>ch.qos.logback</code>, IDEA 便会自动补全信息.  </p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>接着点击 重新加载依赖 按钮, 等待 IDEA 自动下载依赖包.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96.png"
+                      alt="alt text"
+                ></p>
+<p>就能在右侧的 Maven 依赖树中看到 <code>logback-classic</code> 依赖了.  </p>
 
         </div>
 
@@ -869,7 +885,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-24 13:37:03
+                    :</strong> 2024-09-24 14:55:02
             </li>
         
         <li>
@@ -1024,7 +1040,7 @@
                     </span>
                     
                         <span>
-                            共 40.2k 字
+                            共 40.4k 字
                         </span>
                     
                 </p>

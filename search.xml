@@ -4098,7 +4098,7 @@ end</pre>
                 ></p>
 <h1 id="在-IDEA-集成-Maven"><a href="#在-IDEA-集成-Maven" class="headerlink" title="在 IDEA 集成 Maven"></a>在 IDEA 集成 Maven</h1><h3 id="配置-Maven-环境"><a href="#配置-Maven-环境" class="headerlink" title="配置 Maven 环境"></a>配置 Maven 环境</h3><p>我们并不会一直在命令行中使用 Maven, 绝大部分时候我们都会在 IDEA 中集成 Maven.  </p>
 <p>可以针对当前项目配置 Maven , 不过那样每次新项目都要配置, 比较繁琐.<br>直接略过, 我们来配置全局 Maven 路径.</p>
-<p>如果你的 IDEA 还在项目界面, 请先关闭项目返回开始界面.  </p>
+<h4 id="关联-IDEA-环境"><a href="#关联-IDEA-环境" class="headerlink" title="关联 IDEA 环境"></a>关联 IDEA 环境</h4><p>如果你的 IDEA 还在项目界面, 请先关闭项目返回开始界面.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -4112,23 +4112,19 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%831.png"
                       alt="alt text"
                 ></p>
-<p>点击左侧 <code>Build, Execution, Deployment</code> -&gt; <code>Build Tools</code> -&gt; <code>Maven</code>.<br>配置 Maven 的全局路径等信息.<br>记得如果更改不了 <code>User settings file</code> , 请点击 <code>override</code> 按钮.  </p>
+<p>在左侧选项卡中选择 <code>Build, Execution, Deployment</code><br>接着找到 <code>Build Tools</code> -&gt; <code>Maven</code> 来配置 Maven 的全局路径等信息.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%832.png"
                       alt="alt text"
                 ></p>
-<p>配置完成后点击 <code>Apply</code> 应用.<br>接着更改两个地方的 java 版本.  </p>
+<p>配置完成后点击 <code>Apply</code> 应用.  </p>
+<h4 id="配置-Java-版本"><a href="#配置-Java-版本" class="headerlink" title="配置 Java 版本"></a>配置 Java 版本</h4><p>接着指定这两个地方的 java 版本.  </p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%833.png"
-                      alt="alt text"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Maven%E6%A6%82%E8%BF%B0/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%834.png"
+                     data-src="/Maven%E5%85%B3%E8%81%94IDEA%E7%8E%AF%E5%A2%833.png"
                       alt="alt text"
                 ></p>
 <p>别忘记点击 <code>Apply</code> 应用.  </p>
@@ -4141,7 +4137,7 @@ end</pre>
                 ></p>
 <p>然后选择 Java 项目, 在Build tool中选择Maven, 然后点击下一步.  </p>
 <blockquote>
-<p>(注意: 不同版本的 IDEA 可能会有些许差异, 我这个是2024版本)</p>
+<p>(注意: 不同版本的 IDEA 可能会有些许差异, 我这个是 2024 版本的 IDEA)</p>
 </blockquote>
 <p><img  
                      lazyload

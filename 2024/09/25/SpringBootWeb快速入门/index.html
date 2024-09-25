@@ -31,8 +31,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/SpringBootWeb%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/%E6%96%B0%E5%BB%BASpring%20Boot%E9%A1%B9%E7%9B%AE.png">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/SpringBootWeb%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/SpringBootWeb%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/%E6%88%90%E5%8A%9F%E7%95%8C%E9%9D%A2.png">
 <meta property="article:published_time" content="2024-09-25T12:28:41.000Z">
-<meta property="article:modified_time" content="2024-09-25T13:30:59.350Z">
+<meta property="article:modified_time" content="2024-09-25T13:39:49.038Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="Web后端">
@@ -514,7 +515,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">28</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">30</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -522,7 +523,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -580,8 +581,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-25 21:30:59</span>
-            <span class="mobile">2024-09-25 21:30:59</span>
+            <span class="desktop">2024-09-25 21:39:49</span>
+            <span class="mobile">2024-09-25 21:39:49</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -627,7 +628,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>323 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>366 字</span>
         </span>
     
     
@@ -673,7 +674,17 @@
 <p>并编写如下代码:</p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;  </span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求处理类</span></span><br><span class="line"><span class="meta">@RestController</span> <span class="comment">// 标识此为请求处理类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span>  <span class="comment">// 标识此方法处理 &quot;/hello&quot; 请求</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目."></a>启动项目.</h4>
+<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><p>运行刚刚的 启动类, 会自动占用端口号 <code>8080</code>, 再在浏览器中输入 <code>http://localhost:8080/hello</code>, 即可看到 “Hello World” 页面.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/SpringBootWeb%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/%E6%88%90%E5%8A%9F%E7%95%8C%E9%9D%A2.png"
+                      alt="alt text"
+                ></p>
+<blockquote>
+<p><a href="">什么是 Http 协议?</a></p>
+</blockquote>
+
         </div>
 
         
@@ -687,7 +698,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-25 21:30:59
+                    :</strong> 2024-09-25 21:39:49
             </li>
         
         <li>
@@ -731,6 +742,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/09/25/Http%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Http协议简介</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -838,11 +864,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 19 篇文章
+                        共 20 篇文章
                     </span>
                     
                         <span>
-                            共 41.4k 字
+                            共 41.5k 字
                         </span>
                     
                 </p>

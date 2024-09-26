@@ -3890,7 +3890,9 @@ end</pre>
   <entry>
     <title>正则表达式</title>
     <url>/2024/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><ol>
+    <content><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>可以校验字符串是否符合某种模式，并进行替换、查找等操作。</p>
+<p>在 Java 中，正则表达式是通过 <code>str.matches(正则表达式规则)</code> 来实现的。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
 <li><strong>括号</strong>用于查找一定范围的字符串<table>
 <thead>
 <tr>

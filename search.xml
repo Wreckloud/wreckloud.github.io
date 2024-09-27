@@ -4495,4 +4495,44 @@ end</pre>
         <tag>构建工具</tag>
       </tags>
   </entry>
+  <entry>
+    <title>MySQL安装</title>
+    <url>/2024/09/27/MySQL%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="从官网获取安装程序"><a href="#从官网获取安装程序" class="headerlink" title="从官网获取安装程序"></a>从官网获取安装程序</h1><p>访问MySQL官网, 选择下载MySQL Community Server(社区版), 下载最新版本的MySQL安装程序.  </p>
+<p><a class="link"   href="https://www.mysql.com/" >MySQL 官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85.png"
+                      alt="alt text"
+                ></p>
+<p><a class="link"   href="https://dev.mysql.com/downloads/mysql/" >MySQL下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%852.png"
+                      alt="alt text"
+                ><br>选择第二项下载.</p>
+<h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><p>下载完安装程序后, 双击运行安装程序.  </p>
+<p>如果安装方式直接选择 <code>Full</code> , 虽然会自动选择核心组件, 但是无法指定安装路径(默认为C盘).<br>直接选择 <code>Custom</code> 就能指定安装路径, 但是直接选择后不会自动选择核心组件, 需要手动勾选.</p>
+<p>于是, 我们先选择 <code>Full</code> 安装方式, 先让安装程序为我们自动勾选核心组件.然后点击 <code>&lt;back</code> 按钮, 选择 <code>Custom</code> 来自定义安装路径.  </p>
+<blockquote>
+<p>如果不在乎安装路径, 直接选择 <code>Full</code> 就行.</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%853.png"
+                      alt="alt text"
+                ></p>
+]]></content>
+      <categories>
+        <category>数据库管理</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>安装指南</tag>
+      </tags>
+  </entry>
 </search>

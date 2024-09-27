@@ -4525,6 +4525,51 @@ end</pre>
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%853.png"
                       alt="alt text"
                 ></p>
+<p>更改安装路径, 将安装路径从默认的<br><code>C:\Program Files\MySQL\...</code><br>设置为<br><code>任意路径\MySQL\...</code><br>(根据自己的实际情况更改).  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/%E7%9B%AE%E5%BD%95%E9%80%89%E6%8B%A9.png"
+                      alt="alt text"
+                ></p>
+<p>每一个组件都需要修改路径, 修改完成后点击 <code>Next&gt;</code> 按钮.<br>接着无脑下一步, 等待组件安装.  </p>
+<p>直到设置密码的界面, 推荐使用简单密码, 因为到头来还是防自己的(  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81.png"
+                      alt="alt text"
+                ></p>
+<p>接着无脑下一步, 这个界面得注意一下:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/PixPin_2024-09-27_19-15-28.png"
+                      alt="alt text"
+                ></p>
+<p>不过还是保持默认比较好.</p>
+<p>在这个界面取消, 完成安装.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/PixPin_2024-09-27_19-16-17.png"
+                      alt="alt text"
+                ></p>
+<h1 id="启动-MySQL"><a href="#启动-MySQL" class="headerlink" title="启动 MySQL"></a>启动 MySQL</h1><ul>
+<li>启动</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql80</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>停止<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql80</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<p>要注意的是 cmd 必须以管理员身份运行, 否则会提示拒绝访问.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Mysql%E5%AE%89%E8%A3%85/cmd.png"
+                      alt="alt text"
+                ></p>
 ]]></content>
       <categories>
         <category>数据库管理</category>

@@ -1499,10 +1499,71 @@ end</pre>
       </tags>
   </entry>
   <entry>
-    <title>Java入门</title>
+    <title>Java SE入门</title>
     <url>/2024/03/30/Java%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>面向对象三大特征: <strong>封装</strong> <strong>继承</strong> <strong>多态</strong></p>
-<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. </p>
+    <content><![CDATA[<h1 id="JavaSE-简介"><a href="#JavaSE-简介" class="headerlink" title="JavaSE 简介"></a>JavaSE 简介</h1><h3 id="基础常识"><a href="#基础常识" class="headerlink" title="基础常识"></a>基础常识</h3><ul>
+<li>软件开发: 软件, 即一系列按照特定顺序组织的计算机暑假和指令的集合. 软件可分为 系统软件 和 应用软件.</li>
+<li>人机交互方式分为: 图形界面, 命令行界面.</li>
+</ul>
+<blockquote>
+<p>命令行界面: 快捷方式: win+R, 输入 cmd 回车, 打开命令行窗口.</p>
+<p>常用的cmd命令:</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>dir</code></td>
+<td>显示当前目录下的文件和文件夹</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td><code>cd..</code></td>
+<td>切换到上级目录</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>创建文件夹</td>
+</tr>
+<tr>
+<td><code>rmdir</code></td>
+<td>删除文件夹</td>
+</tr>
+<tr>
+<td><code>del</code></td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td><code>exit</code></td>
+<td>退出dos窗口</td>
+</tr>
+</tbody></table>
+</blockquote>
+<ul>
+<li>什么是计算机语言: 计算机语言是人类与计算机之间交流的语言, 是人类用来表达思想和指令的符号系统.</li>
+</ul>
+<blockquote>
+<p>第一代语言: 纯机器语言<br>第二代语言: 汇编<br>第三代语言: C, C++, Java</p>
+</blockquote>
+<h3 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h3><p>Java 是一门<strong>面向对象编程</strong>语言, 其特点是:</p>
+<p>面向对象三大特征: <strong>封装</strong> <strong>继承</strong> <strong>多态</strong><br>面向对象基本概念: <strong>类</strong> <strong>对象</strong> <strong>方法</strong> <strong>属性</strong></p>
+<blockquote>
+<p>常说的 Java 三大版本是:<br><strong>Java SE(Standard Edition)</strong> 标准版, 面向桌面应用的开发环境.<br><strong>Java EE(Enterprise Edition)</strong> 企业版, 面向企业级应用的开发环境.<br><strong>Java ME(Micro Edition)</strong> 微型版, 面向移动终端的开发环境.</p>
+</blockquote>
+<p>Java 两种核心机制:</p>
+<ul>
+<li><p>垃圾回收机制 GC (Garbage Collection):<br>Java 吸收了 C++ 和 Smalltalk 的特点, 融合了 C 和 Java 的优点. Java 垃圾回收机制是自动的, 无需程序员手动操作.</p>
+</li>
+<li><p>Java 虚拟机(JVM):<br>Java 会在运行的系统中安装 Java 虚拟机(JVM), 并通过 JVM 运行 Java 代码, 因此 Java 代码在不同平台上运行时, 无需重新编译.</p>
+</li>
+</ul>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. </p>
 <p>一个代码文件中可以定义多个类, 但只能有一个Public修饰的类, 且这个类的类名必须是Java代码文件的名称.</p>
 <p>成员变量一般无需指定初始化值.</p>
 <h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>对象代表什么, 就得封装对应的数据, 并提供数据对应的方法.</p>

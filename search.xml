@@ -693,7 +693,8 @@
 </ul>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始化; 条件; 迭代) &#123;</span><br><span class="line">    <span class="comment">// 语句</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (条件) &#123;</span><br><span class="line">    <span class="comment">// 语句</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// 语句</span></span><br><span class="line">&#125; <span class="keyword">while</span> (条件);</span><br></pre></td></tr></table></figure></div>
 
-
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组是一种存储多个相同类型元素的集合, 数组的声明格式如下:</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[数组长度];</span><br></pre></td></tr></table></figure></div>
 
 <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. </p>
 <p>一个代码文件中可以定义多个类, 但只能有一个Public修饰的类, 且这个类的类名必须是Java代码文件的名称.</p>
@@ -2474,6 +2475,30 @@
 </blockquote>
 <p>Tomcat 支持 JavaEE 中 Servlet&#x2F;JSP 等 少量规范, 因此 Tomcat 被称为轻量级的 Web容器, Servlet容器.<br>Servlet程序需要依赖于Tomcat才能运行.</p>
 <p>在Spring Boot中, 内嵌了Tomcat作为Web服务器, 可以直接使用.  </p>
+<h1 id="请求响应"><a href="#请求响应" class="headerlink" title="请求响应"></a>请求响应</h1><p>BS架构: (Browser-Server) 是一种客户端-服务器架构, 客户端只需要浏览器即可访问, 应用程序的逻辑和数据都存储在服务器端.  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/SpringBootWeb%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/BS%E6%9E%B6%E6%9E%84.png"
+                      alt="alt text"
+                ></p>
+<blockquote>
+<p>CS架构: (Client-Server) 是一种服务器-客户端架构, 需要特别的客户端才可以访问到服务器.</p>
+</blockquote>
+<p>在 BS 架构中, 客户端向服务器发送请求, 服务器处理请求并返回响应.  </p>
+<p>HTTP协议规定了客户端和服务器之间通信的规则.<br>在 SpringBoot 中, 前端控制器 DispatcherServlet 会解析 HTTP 请求, 并将请求封装到一个请求对象中.<br>这个对象称之为 <code>HttpServletRequest</code>.  </p>
+<p>在 Servlet 中可以借助另一个对象 <code>HttpServletRequest</code> 来设置响应参数.  </p>
+<p>这里总结两个对象:</p>
+<ul>
+<li><code>HttpServletRequest</code>: 客户端请求对象, 封装客户端请求信息.</li>
+<li><code>HttpServletResponse</code>: 服务器响应对象, 封装服务器响应信息.</li>
+</ul>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><p>传统方式:</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestController</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simpleParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simpleParam</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">        <span class="comment">// 获取请求参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">ageStr</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;age&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> Integer.parseInt(ageStr);</span><br><span class="line">        System.out.println(name+<span class="string">&quot;:&quot;</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>SpringBoot 方式:</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestController</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simpleParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simpleParam</span><span class="params">(String name,Integer age)</span> &#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(name+<span class="string">&quot;:&quot;</span>+age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 ]]></content>
       <categories>
         <category>专业课知识</category>

@@ -696,12 +696,30 @@
 <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组是一种存储多个相同类型元素的集合, 数组的声明格式如下:</p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[数组长度];</span><br></pre></td></tr></table></figure></div>
 
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类名首字母建议大写, 满足驼峰命名法. 不能使用关键字, 满足标志符规则. </p>
-<p>一个代码文件中可以定义多个类, 但只能有一个Public修饰的类, 且这个类的类名必须是Java代码文件的名称.</p>
-<p>成员变量一般无需指定初始化值.</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+<p>是面向对线的三大特征.</p>
+<h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><p>类: 用来描述具有相同属性和行为的对象的集合.<br>对象: 类的实例, 具有状态和行为.</p>
+<blockquote>
+<p>类就像一个模板, 而对象就像是根据模板制造出来的具体事物.  </p>
+</blockquote>
+<h4 id="类的语法格式"><a href="#类的语法格式" class="headerlink" title="类的语法格式"></a>类的语法格式</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">修饰符 class 类名 &#123;</span><br><span class="line">    <span class="comment">// 属性声明 (属性, 成员变量, 不用初始化)</span></span><br><span class="line">    数据类型 变量名;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 方法声明 (行为, 方法 也叫函数)</span></span><br><span class="line">    <span class="keyword">public</span> 数据类型 方法名(参数列表) &#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<ul>
+<li>修饰符 <code>Public</code> 能使类的属性和方法对其他类可见</li>
+<li>修饰符 <code>Private</code> 能使类的属性和方法仅对本类可见</li>
+</ul>
+</blockquote>
+<h4 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h4><p>有了 类 这个模板后, 我们就能实例化出具体的对象了.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line">类名 对象名 = <span class="keyword">new</span> 类名();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用对象的方法</span></span><br><span class="line">对象名.方法名(参数列表);</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>对象代表什么, 就得封装对应的数据, 并提供数据对应的方法.</p>
 <blockquote>
-<p>例如: 人关门–<code>人</code> 调用 <code>关门的方法</code> 使门关闭. 应在对象 <code>门</code> 中封装 <code>关门的方法</code> .</p>
+<p>例如: 人关门–<code>人</code> 调用 <code>关门的方法</code> 使门关闭.<br>应在对象 <code>门</code> 中封装 <code>关门的方法</code> .</p>
 </blockquote>
 <p>private 只能在本类中访问</p>
 <h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>基本格式</p>

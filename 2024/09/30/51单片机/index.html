@@ -31,13 +31,15 @@
 <meta property="og:site_name" content="狼牙月影">
 <meta property="og:description" content="本文将深入探讨51单片机的工作原理、编程方法和在各种电子项目中的应用，帮助读者快速掌握51单片机的使用技巧。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%8B%E8%BD%BDkeil.png">
 <meta property="article:published_time" content="2024-09-30T04:41:49.000Z">
-<meta property="article:modified_time" content="2024-10-11T03:59:43.239Z">
+<meta property="article:modified_time" content="2024-10-14T06:29:29.705Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="51单片机">
 <meta property="article:tag" content="微控制器">
 <meta property="article:tag" content="嵌入式系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%8B%E8%BD%BDkeil.png">
     
     
     <!--- Icon Part-->
@@ -579,8 +581,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-10-11 11:59:43</span>
-            <span class="mobile">2024-10-11 11:59:43</span>
+            <span class="desktop">2024-10-14 14:29:29</span>
+            <span class="mobile">2024-10-14 14:29:29</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -625,6 +627,10 @@
 
     
     
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>139 字</span>
+        </span>
+    
     
         <span class="article-min2read article-meta-item">
             <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
@@ -646,7 +652,19 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            
+            <h1 id="51单片机介绍"><a href="#51单片机介绍" class="headerlink" title="51单片机介绍"></a>51单片机介绍</h1><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先需要安装几个软件</p>
+<a class="button " href='资源下载' title='center large'><i class='source/res/51单片机所需资源.zip fa-download'></i> center large</a>
+<h4 id="安装-Keil-集成开发环境"><a href="#安装-Keil-集成开发环境" class="headerlink" title="安装 Keil 集成开发环境"></a>安装 Keil 集成开发环境</h4><p>Keil 是用来写 C 语言程序的, 它还可以将程序编译成单片机可以识别的指令集.</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.keil.com/download/product/" >下载 Keil 集成开发环境 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%8B%E8%BD%BDkeil.png"
+                      alt="alt text"
+                ></p>
+<p>在官网中选中对应的版本,下载完成后安装即可.<br>不过填信息可能会有点麻烦…</p>
+<h4 id="STC-ISP-下载安装"><a href="#STC-ISP-下载安装" class="headerlink" title="STC-ISP 下载安装"></a>STC-ISP 下载安装</h4><p>STC-ISP 可以将编译好的程序下载到单片机中, 以让程序能在单片机运行.</p>
+
         </div>
 
         
@@ -660,7 +678,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-10-11 11:59:43
+                    :</strong> 2024-10-14 14:29:29
             </li>
         
         <li>
@@ -791,7 +809,7 @@
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">51单片机原理与应用</div>
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#51%E5%8D%95%E7%89%87%E6%9C%BA%E4%BB%8B%E7%BB%8D"><span class="nav-text">51单片机介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
@@ -830,7 +848,7 @@
                     </span>
                     
                         <span>
-                            共 46.4k 字
+                            共 46.5k 字
                         </span>
                     
                 </p>

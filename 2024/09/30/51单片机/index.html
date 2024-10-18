@@ -33,7 +33,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%8B%E8%BD%BDkeil.png">
 <meta property="article:published_time" content="2024-09-30T04:41:49.000Z">
-<meta property="article:modified_time" content="2024-10-14T06:40:24.583Z">
+<meta property="article:modified_time" content="2024-10-17T07:18:09.591Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="51单片机">
 <meta property="article:tag" content="微控制器">
@@ -581,8 +581,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-10-14 14:40:24</span>
-            <span class="mobile">2024-10-14 14:40:24</span>
+            <span class="desktop">2024-10-17 15:18:09</span>
+            <span class="mobile">2024-10-17 15:18:09</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -628,7 +628,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>141 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>331 字</span>
         </span>
     
     
@@ -655,15 +655,23 @@
             <h1 id="51单片机介绍"><a href="#51单片机介绍" class="headerlink" title="51单片机介绍"></a>51单片机介绍</h1><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先需要安装几个软件</p>
 <a class="button  center large" target="_blank" rel="noopener" href='https://www.123684.com/s/bCMjVv-z6ot' title='开始使用'><i class='fa-solid fa-download'></i> 开始使用</a>
 <h4 id="安装-Keil-集成开发环境"><a href="#安装-Keil-集成开发环境" class="headerlink" title="安装 Keil 集成开发环境"></a>安装 Keil 集成开发环境</h4><p>Keil 是用来写 C 语言程序的, 它还可以将程序编译成单片机可以识别的指令集.</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.keil.com/download/product/" >下载 Keil 集成开发环境 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%8B%E8%BD%BDkeil.png"
                       alt="alt text"
                 ></p>
-<p>在官网中选中对应的版本,下载完成后安装即可.<br>不过填信息可能会有点麻烦…</p>
-<h4 id="STC-ISP-下载安装"><a href="#STC-ISP-下载安装" class="headerlink" title="STC-ISP 下载安装"></a>STC-ISP 下载安装</h4><p>STC-ISP 可以将编译好的程序下载到单片机中, 以让程序能在单片机运行.</p>
+<h4 id="STC-ISP-安装"><a href="#STC-ISP-安装" class="headerlink" title="STC-ISP 安装"></a>STC-ISP 安装</h4><p>STC-ISP 可以将编译好的程序下载到单片机中, 以让程序能在单片机运行.</p>
+<h4 id="USB驱动"><a href="#USB驱动" class="headerlink" title="USB驱动"></a>USB驱动</h4><p>安装了串口驱动后 STC-ISP 才能识别单片机.</p>
+<blockquote>
+<p>由于我已经安装的时候没有截图写教程, 所以先就不写详细的安装步骤了(</p>
+</blockquote>
+<h3 id="51-单片机简介"><a href="#51-单片机简介" class="headerlink" title="51 单片机简介"></a>51 单片机简介</h3><p>单片机(MicrocontrollerUnit, MCU)算一种袖珍版计算机, 一个芯片就能构成完整的计算机系统.<br>单片机成本低, 体积小, 结构简单. 在学习使用单片机的过程中, 可以快速了解计算机原理与其结构.  </p>
+<p>Intel 公司推出了 8051 单片机内核, 因此这种类似于 8051 内核的单片机, 我们都统称为 51 单片机.  </p>
+<p>51 单片机的<br>位数: 8位.<br>RAM: 512字节.<br>ROM: 8K (Flash).<br>工作频率: 12Mhz.  </p>
+<blockquote>
+<p>RAM: 随机存取存储器, 用于存储程序和数据(会丢失数据, 相当于工作台).<br>ROM: 只读存储器, 用于存储程序(长期存储, 相当于仓库).  </p>
+</blockquote>
 
         </div>
 
@@ -678,7 +686,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-10-14 14:40:24
+                    :</strong> 2024-10-17 15:18:09
             </li>
         
         <li>
@@ -809,7 +817,7 @@
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">51单片机原理与应用</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#51%E5%8D%95%E7%89%87%E6%9C%BA%E4%BB%8B%E7%BB%8D"><span class="nav-text">51单片机介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#51%E5%8D%95%E7%89%87%E6%9C%BA%E4%BB%8B%E7%BB%8D"><span class="nav-text">51单片机介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#51-%E5%8D%95%E7%89%87%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="nav-text">51 单片机简介</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
@@ -848,7 +856,7 @@
                     </span>
                     
                         <span>
-                            共 46.5k 字
+                            共 47.8k 字
                         </span>
                     
                 </p>

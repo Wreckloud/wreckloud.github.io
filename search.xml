@@ -23,6 +23,69 @@
 <blockquote>
 <p>RAM: 随机存取存储器, 用于存储程序和数据(会丢失数据, 相当于工作台).<br>ROM: 只读存储器, 用于存储程序(长期存储, 相当于仓库).  </p>
 </blockquote>
+<h3 id="单片机内部结构图"><a href="#单片机内部结构图" class="headerlink" title="单片机内部结构图"></a>单片机内部结构图</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA.png"
+                      alt="alt text"
+                ></p>
+<h1 id="LED-灯控制"><a href="#LED-灯控制" class="headerlink" title="LED 灯控制"></a>LED 灯控制</h1><h3 id="新建一个-Keil-工程"><a href="#新建一个-Keil-工程" class="headerlink" title="新建一个 Keil 工程"></a>新建一个 Keil 工程</h3><p>为了方便导入和管理代码:</p>
+<p>首先, 在电脑中新建一个文件夹, 作为所有 Keil 工程的存放位置.<br>然后, 打开 Keil 软件, 新建第一个工程文件夹.  </p>
+<p>如果不这么做, 文件就会散成一团(</p>
+<p>接着, 如图所示.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE.png"
+                      alt="alt text"
+                ></p>
+<p>然后在跳出的对话框中选中 Atmel 下的 AT89C52.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E9%80%89%E6%8B%A9%E6%A0%B8%E5%BF%83.png"
+                      alt="alt text"
+                ></p>
+<p>会有一个对话框询问是否自动创建开始文件.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%AF%B9%E8%AF%9D%E6%A1%86.png"
+                      alt="alt text"
+                ></p>
+<p>推荐选 <code>否</code> ,选了是影响也不大.</p>
+<p>接着, 我们要在项目中添加一个 .c 的文件, 作为程序的入口.<br>由于这个版本的 keil 不能直接新建, 所以我们得先在 <strong>系统的文件管理器</strong> 中新建文件.</p>
+<p>在文件管理器中找到项目文件夹, 右键新建一个文件, 命名为 <code>main.c</code>.</p>
+<p>然后在 keil 中将这个 <code>main.c</code> 文件添加到工程中.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E6%B7%BB%E5%8A%A0%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6.png"
+                      alt="alt text"
+                ></p>
+<p>这样, 工程就新建完成了!  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E6%88%90%E5%8A%9F.png"
+                      alt="alt text"
+                ></p>
+<p>接下来就可以开始编写代码了.</p>
+<p>为了能在程序编译好后能直接得到 .hex 文件, 我们还得在 Keil 中设置一下编译选项.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE.png"
+                      alt="alt text"
+                ></p>
+<p>在 <code>Output</code> 选项卡中, 勾选 <code>Create HEX file</code>.</p>
+<h3 id="LED-灯控制-1"><a href="#LED-灯控制-1" class="headerlink" title="LED 灯控制"></a>LED 灯控制</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/LED.png"
+                      alt="alt text"
+                ></p>
+<p>LED 灯是指发光二极管.</p>
 ]]></content>
       <categories>
         <category>电子与计算机工程</category>
@@ -821,7 +884,7 @@
 <li>多态</li>
 </ul>
 <p>是面向对线的三大特征.</p>
-<h3 id="封装和隐藏"><a href="#封装和隐藏" class="headerlink" title="封装和隐藏"></a>封装和隐藏</h3><p>如果能直接访问对象的属性:</p>
+<h2 id="1-封装和隐藏"><a href="#1-封装和隐藏" class="headerlink" title="1. 封装和隐藏"></a>1. 封装和隐藏</h2><p>如果能直接访问对象的属性:</p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    ...;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        p.age = -<span class="number">18</span>; <span class="comment">// 直接访问对象的属性</span></span><br><span class="line">        System.out.println(p.age); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>显然, 年龄 -18 是非法的, 程序能执行, 但不符合逻辑.<br>所以, 我们需要对属性进行封装, 隐藏起来, 只提供一些方法来访问和修改属性.</p>
 <p>修改后的代码如下:</p>
@@ -867,16 +930,210 @@
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Student</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">    System.out.println(s.getName());</span><br><span class="line">    System.out.println(s.getAge());</span><br><span class="line">    System.out.println(s.getGender());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>构造器也是一种方法, 因此也能重载.</p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是面向对象编程的重要特征之一.</p>
-<h4 id="继承的语法格式"><a href="#继承的语法格式" class="headerlink" title="继承的语法格式"></a>继承的语法格式</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">class 子类 extends 父类 &#123;</span><br><span class="line">    <span class="comment">// 子类独有属性和方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h2><p>继承是面向对象编程的重要特征之一.</p>
+<h3 id="继承的语法格式"><a href="#继承的语法格式" class="headerlink" title="继承的语法格式"></a>继承的语法格式</h3><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">class 子类 extends 父类 &#123;</span><br><span class="line">    <span class="comment">// 子类独有属性和方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="继承的特点"><a href="#继承的特点" class="headerlink" title="继承的特点"></a>继承的特点</h4><ul>
-<li>子类拥有父类的所有属性和方法.</li>
-<li>子类可以增加自己的属性和方法.</li>
-<li>子类可以重写父类的方法.</li>
+<h4 id="方法的重写-override"><a href="#方法的重写-override" class="headerlink" title="方法的重写(override)"></a>方法的重写(override)</h4><p>子类可以重新定义父类的方法, 不能修改除方法体以外的东西.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Animal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Animal</span>();</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        a.eat(); <span class="comment">// 输出: 动物吃东西</span></span><br><span class="line">        d.eat(); <span class="comment">// 输出: 狗吃骨头</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>这里 <code>Dog</code> 类重写了 <code>Animal</code> 类的 <code>eat()</code> 方法.</p>
+<p>两个 <code>eat()</code> 都是 public 方法, 因此可以被其他类调用.</p>
+<blockquote>
+<p>区分:</p>
+<ul>
+<li>重载(overload): 同名方法, 参数不同.</li>
+<li>重写(override): 子类重写父类方法, 参数相同.</li>
 </ul>
-<h4 id="继承的注意事项"><a href="#继承的注意事项" class="headerlink" title="继承的注意事项"></a>继承的注意事项</h4><ul>
-<li>子类构造方法必须调用父类构造方法.</li>
+</blockquote>
+<h3 id="关键字-super"><a href="#关键字-super" class="headerlink" title="关键字 super"></a>关键字 super</h3><p>super 关键字用来调用父类的方法和属性.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">        <span class="built_in">super</span>.eat(); <span class="comment">// 调用父类的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        d.eat(); <span class="comment">// 输出: 狗吃骨头, 动物吃东西</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>Dog</code> 类重写了 <code>Animal</code> 类的 <code>eat()</code> 方法, 并调用了父类的方法 <code>super.eat()</code>.</p>
+<h2 id="3-多态"><a href="#3-多态" class="headerlink" title="3. 多态"></a>3. 多态</h2><p>多态是面向对象编程的重要特征之一, 在java中体现为:</p>
+<ol>
+<li>方法的重写和重载.</li>
+<li>对象的多态性.</li>
+</ol>
+<p>Java 引用变量有两个类型:</p>
+<ol>
+<li>编译时类型: 变量声明时所指的类型.</li>
+<li>运行时类型: 变量实际指向的对象的类型.</li>
+</ol>
+<p>例如一个 <code>Student stu = new Student();</code></p>
+<ul>
+<li>编译时类型: <code>Student stu</code> </li>
+<li>运行时类型: <code>new Student()</code></li>
+</ul>
+<p>JVM 分为: </p>
+<ul>
+<li><code>方法区</code>: 存放类的信息 </li>
+<li><code>堆</code>: 是一个大仓库,存放对象实例</li>
+<li><code>栈</code>: 是一个工作台,存放局部变量和方法调用</li>
+</ul>
+<p>当 new 一个对象时, JVM 会在堆内存中创建一个对象, 并将对象的引用存入栈内存中.<br>当调用方法时, JVM 会根据栈内存中的引用找到对象, 并根据对象的实际类型调用相应的方法.</p>
+<h4 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h4><p><code>instanceof</code> 运算符用来判断一个对象是否属于某个类.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (obj <span class="keyword">instanceof</span> 类名) &#123;</span><br><span class="line">    <span class="comment">// 代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>针对 8 种基本定义相应的引用类型.</p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>对应的包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td><strong>char</strong></td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line">System.out.println(i.intValue()); <span class="comment">// 输出: 10</span></span><br></pre></td></tr></table></figure></div>
+
+<p>有了类的特点, 就可以调用类中的方法.</p>
+<h3 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h3><p>Java提供了8种基本数据类型, 每种类型都有相应的包装类, 用于将基本数据类型封装成对象.<br>以下是基本数据类型与它们对应的包装类的对照表：</p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>对应的包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+</tbody></table>
+<h4 id="包装类实例化"><a href="#包装类实例化" class="headerlink" title="包装类实例化"></a>包装类实例化</h4><ul>
+<li>通过构造器</li>
+</ul>
+<p>包装类可以通过构造器直接使用基本数据类型来创建实例：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line">System.out.println(i.intValue()); <span class="comment">// 输出: 10</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>通过字符串</li>
+</ul>
+<p>包装类也可以通过字符串参数来创建实例，但需要注意字符串必须能正确转换为相应的基本数据类型：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Float</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Float</span>(<span class="string">&quot;3.14&quot;</span>); <span class="comment">// 正确</span></span><br><span class="line"><span class="type">Long</span> <span class="variable">l</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Long</span>(<span class="string">&quot;123&quot;</span>); <span class="comment">// 正确</span></span><br><span class="line"><span class="type">Long</span> <span class="variable">l2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Long</span>(<span class="string">&quot;asdf&quot;</span>); <span class="comment">// 报错，因为&quot;asdf&quot;不是数字</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><ul>
+<li>装箱</li>
+</ul>
+<p>装箱是将基本数据类型转换为对应的包装类实例的过程。这可以通过自动装箱（auto-boxing）实现，Java编译器会自动将基本数据类型转换为包装类：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">t</span> <span class="operator">=</span> i; <span class="comment">// 自动装箱</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>拆箱</li>
+</ul>
+<p>拆箱是将包装类实例转换回基本数据类型的过程。这可以通过自动拆箱（auto-unboxing）实现，Java编译器会自动将包装类实例转换为基本数据类型：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; <span class="comment">// 自动拆箱</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="字符串与基本数据类型的转换"><a href="#字符串与基本数据类型的转换" class="headerlink" title="字符串与基本数据类型的转换"></a>字符串与基本数据类型的转换</h4><ul>
+<li>字符串转基本数据类型</li>
+</ul>
+<p>可以使用 <code>parseXXX</code> 方法将字符串转换为基本数据类型：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> Integer.parseInt(str); <span class="comment">// 输出: 123</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>基本数据类型转字符串</li>
+</ul>
+<p>可以使用 <code>String.valueOf</code> 方法或<code>toString</code>方法将基本数据类型转换为字符串：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">123</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> String.valueOf(num); <span class="comment">// 输出: &quot;123&quot;</span></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str2</span> <span class="operator">=</span> num + <span class="string">&quot;&quot;</span>; <span class="comment">// 输出: &quot;123&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>自动装箱和拆箱是Java 5引入的特性, 它们简化了基本数据类型和包装类之间的转换。</p>
+</blockquote>
+<h4 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h4><p>所有类的父类, 所有类的祖先类.</p>
+<p>当确定传进来的一定是一个类时, 将类型设置为 Object 类即可.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">    <span class="comment">// 代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>object 类中的主要方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public Object()</code></td>
+<td>空参构造</td>
+</tr>
+<tr>
+<td><code>equals(Object obj)</code></td>
+<td>判断两个对象是否相等</td>
+</tr>
+<tr>
+<td><code>hashCode()</code></td>
+<td>返回对象的哈希码值</td>
+</tr>
+<tr>
+<td><code>toString()</code></td>
+<td>返回对象的字符串表示</td>
+</tr>
+</tbody></table>
+<h1 id="高级类特性"><a href="#高级类特性" class="headerlink" title="高级类特性"></a>高级类特性</h1><h2 id="关键字-static"><a href="#关键字-static" class="headerlink" title="关键字 static"></a>关键字 static</h2><p>在 Java 类中, 可用static修饰属性和方法等.</p>
+<p>被修饰后的成员具备以下特点:</p>
+<ul>
+<li>随着类的加载而加载.</li>
+<li>优先于对象存在.</li>
+<li>修饰的成员, 被所有对象所共享.</li>
+<li>访问权限允许时, 可以不创建对象, 直接被调用.</li>
 </ul>
 <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>创建 String 对象的两种方式:</p>
 <ol>

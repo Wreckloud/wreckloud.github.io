@@ -33,7 +33,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Java%E5%85%A5%E9%97%A8/java%E7%BC%96%E8%AF%91.png">
 <meta property="article:published_time" content="2024-03-30T11:04:12.000Z">
-<meta property="article:modified_time" content="2024-10-18T06:59:14.171Z">
+<meta property="article:modified_time" content="2024-10-24T07:03:19.390Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="入门基础">
 <meta property="article:tag" content="Java">
@@ -580,8 +580,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-10-18 14:59:14</span>
-            <span class="mobile">2024-10-18 14:59:14</span>
+            <span class="desktop">2024-10-24 15:03:19</span>
+            <span class="mobile">2024-10-24 15:03:19</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -623,12 +623,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.9k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.1k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>18 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>24 分钟</span>
         </span>
     
     
@@ -1149,7 +1149,7 @@
 <li>多态</li>
 </ul>
 <p>是面向对线的三大特征.</p>
-<h3 id="封装和隐藏"><a href="#封装和隐藏" class="headerlink" title="封装和隐藏"></a>封装和隐藏</h3><p>如果能直接访问对象的属性:</p>
+<h2 id="1-封装和隐藏"><a href="#1-封装和隐藏" class="headerlink" title="1. 封装和隐藏"></a>1. 封装和隐藏</h2><p>如果能直接访问对象的属性:</p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    ...;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        p.age = -<span class="number">18</span>; <span class="comment">// 直接访问对象的属性</span></span><br><span class="line">        System.out.println(p.age); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>显然, 年龄 -18 是非法的, 程序能执行, 但不符合逻辑.<br>所以, 我们需要对属性进行封装, 隐藏起来, 只提供一些方法来访问和修改属性.</p>
 <p>修改后的代码如下:</p>
@@ -1195,16 +1195,210 @@
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Student</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">    System.out.println(s.getName());</span><br><span class="line">    System.out.println(s.getAge());</span><br><span class="line">    System.out.println(s.getGender());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>构造器也是一种方法, 因此也能重载.</p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是面向对象编程的重要特征之一.</p>
-<h4 id="继承的语法格式"><a href="#继承的语法格式" class="headerlink" title="继承的语法格式"></a>继承的语法格式</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">class 子类 extends 父类 &#123;</span><br><span class="line">    <span class="comment">// 子类独有属性和方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h2><p>继承是面向对象编程的重要特征之一.</p>
+<h3 id="继承的语法格式"><a href="#继承的语法格式" class="headerlink" title="继承的语法格式"></a>继承的语法格式</h3><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">class 子类 extends 父类 &#123;</span><br><span class="line">    <span class="comment">// 子类独有属性和方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="继承的特点"><a href="#继承的特点" class="headerlink" title="继承的特点"></a>继承的特点</h4><ul>
-<li>子类拥有父类的所有属性和方法.</li>
-<li>子类可以增加自己的属性和方法.</li>
-<li>子类可以重写父类的方法.</li>
+<h4 id="方法的重写-override"><a href="#方法的重写-override" class="headerlink" title="方法的重写(override)"></a>方法的重写(override)</h4><p>子类可以重新定义父类的方法, 不能修改除方法体以外的东西.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Animal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Animal</span>();</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        a.eat(); <span class="comment">// 输出: 动物吃东西</span></span><br><span class="line">        d.eat(); <span class="comment">// 输出: 狗吃骨头</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>这里 <code>Dog</code> 类重写了 <code>Animal</code> 类的 <code>eat()</code> 方法.</p>
+<p>两个 <code>eat()</code> 都是 public 方法, 因此可以被其他类调用.</p>
+<blockquote>
+<p>区分:</p>
+<ul>
+<li>重载(overload): 同名方法, 参数不同.</li>
+<li>重写(override): 子类重写父类方法, 参数相同.</li>
 </ul>
-<h4 id="继承的注意事项"><a href="#继承的注意事项" class="headerlink" title="继承的注意事项"></a>继承的注意事项</h4><ul>
-<li>子类构造方法必须调用父类构造方法.</li>
+</blockquote>
+<h3 id="关键字-super"><a href="#关键字-super" class="headerlink" title="关键字 super"></a>关键字 super</h3><p>super 关键字用来调用父类的方法和属性.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;动物吃东西&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗吃骨头&quot;</span>);</span><br><span class="line">        <span class="built_in">super</span>.eat(); <span class="comment">// 调用父类的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        d.eat(); <span class="comment">// 输出: 狗吃骨头, 动物吃东西</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>Dog</code> 类重写了 <code>Animal</code> 类的 <code>eat()</code> 方法, 并调用了父类的方法 <code>super.eat()</code>.</p>
+<h2 id="3-多态"><a href="#3-多态" class="headerlink" title="3. 多态"></a>3. 多态</h2><p>多态是面向对象编程的重要特征之一, 在java中体现为:</p>
+<ol>
+<li>方法的重写和重载.</li>
+<li>对象的多态性.</li>
+</ol>
+<p>Java 引用变量有两个类型:</p>
+<ol>
+<li>编译时类型: 变量声明时所指的类型.</li>
+<li>运行时类型: 变量实际指向的对象的类型.</li>
+</ol>
+<p>例如一个 <code>Student stu = new Student();</code></p>
+<ul>
+<li>编译时类型: <code>Student stu</code> </li>
+<li>运行时类型: <code>new Student()</code></li>
+</ul>
+<p>JVM 分为: </p>
+<ul>
+<li><code>方法区</code>: 存放类的信息 </li>
+<li><code>堆</code>: 是一个大仓库,存放对象实例</li>
+<li><code>栈</code>: 是一个工作台,存放局部变量和方法调用</li>
+</ul>
+<p>当 new 一个对象时, JVM 会在堆内存中创建一个对象, 并将对象的引用存入栈内存中.<br>当调用方法时, JVM 会根据栈内存中的引用找到对象, 并根据对象的实际类型调用相应的方法.</p>
+<h4 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h4><p><code>instanceof</code> 运算符用来判断一个对象是否属于某个类.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (obj <span class="keyword">instanceof</span> 类名) &#123;</span><br><span class="line">    <span class="comment">// 代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>针对 8 种基本定义相应的引用类型.</p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>对应的包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td><strong>char</strong></td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line">System.out.println(i.intValue()); <span class="comment">// 输出: 10</span></span><br></pre></td></tr></table></figure></div>
+
+<p>有了类的特点, 就可以调用类中的方法.</p>
+<h3 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h3><p>Java提供了8种基本数据类型, 每种类型都有相应的包装类, 用于将基本数据类型封装成对象.<br>以下是基本数据类型与它们对应的包装类的对照表：</p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>对应的包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+</tbody></table>
+<h4 id="包装类实例化"><a href="#包装类实例化" class="headerlink" title="包装类实例化"></a>包装类实例化</h4><ul>
+<li>通过构造器</li>
+</ul>
+<p>包装类可以通过构造器直接使用基本数据类型来创建实例：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line">System.out.println(i.intValue()); <span class="comment">// 输出: 10</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>通过字符串</li>
+</ul>
+<p>包装类也可以通过字符串参数来创建实例，但需要注意字符串必须能正确转换为相应的基本数据类型：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Float</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Float</span>(<span class="string">&quot;3.14&quot;</span>); <span class="comment">// 正确</span></span><br><span class="line"><span class="type">Long</span> <span class="variable">l</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Long</span>(<span class="string">&quot;123&quot;</span>); <span class="comment">// 正确</span></span><br><span class="line"><span class="type">Long</span> <span class="variable">l2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Long</span>(<span class="string">&quot;asdf&quot;</span>); <span class="comment">// 报错，因为&quot;asdf&quot;不是数字</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><ul>
+<li>装箱</li>
+</ul>
+<p>装箱是将基本数据类型转换为对应的包装类实例的过程。这可以通过自动装箱（auto-boxing）实现，Java编译器会自动将基本数据类型转换为包装类：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">t</span> <span class="operator">=</span> i; <span class="comment">// 自动装箱</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>拆箱</li>
+</ul>
+<p>拆箱是将包装类实例转换回基本数据类型的过程。这可以通过自动拆箱（auto-unboxing）实现，Java编译器会自动将包装类实例转换为基本数据类型：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; <span class="comment">// 自动拆箱</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="字符串与基本数据类型的转换"><a href="#字符串与基本数据类型的转换" class="headerlink" title="字符串与基本数据类型的转换"></a>字符串与基本数据类型的转换</h4><ul>
+<li>字符串转基本数据类型</li>
+</ul>
+<p>可以使用 <code>parseXXX</code> 方法将字符串转换为基本数据类型：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> Integer.parseInt(str); <span class="comment">// 输出: 123</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>基本数据类型转字符串</li>
+</ul>
+<p>可以使用 <code>String.valueOf</code> 方法或<code>toString</code>方法将基本数据类型转换为字符串：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">123</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> String.valueOf(num); <span class="comment">// 输出: &quot;123&quot;</span></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str2</span> <span class="operator">=</span> num + <span class="string">&quot;&quot;</span>; <span class="comment">// 输出: &quot;123&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>自动装箱和拆箱是Java 5引入的特性, 它们简化了基本数据类型和包装类之间的转换。</p>
+</blockquote>
+<h4 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h4><p>所有类的父类, 所有类的祖先类.</p>
+<p>当确定传进来的一定是一个类时, 将类型设置为 Object 类即可.</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">    <span class="comment">// 代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>object 类中的主要方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public Object()</code></td>
+<td>空参构造</td>
+</tr>
+<tr>
+<td><code>equals(Object obj)</code></td>
+<td>判断两个对象是否相等</td>
+</tr>
+<tr>
+<td><code>hashCode()</code></td>
+<td>返回对象的哈希码值</td>
+</tr>
+<tr>
+<td><code>toString()</code></td>
+<td>返回对象的字符串表示</td>
+</tr>
+</tbody></table>
+<h1 id="高级类特性"><a href="#高级类特性" class="headerlink" title="高级类特性"></a>高级类特性</h1><h2 id="关键字-static"><a href="#关键字-static" class="headerlink" title="关键字 static"></a>关键字 static</h2><p>在 Java 类中, 可用static修饰属性和方法等.</p>
+<p>被修饰后的成员具备以下特点:</p>
+<ul>
+<li>随着类的加载而加载.</li>
+<li>优先于对象存在.</li>
+<li>修饰的成员, 被所有对象所共享.</li>
+<li>访问权限允许时, 可以不创建对象, 直接被调用.</li>
 </ul>
 <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>创建 String 对象的两种方式:</p>
 <ol>
@@ -1410,7 +1604,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-10-18 14:59:14
+                    :</strong> 2024-10-24 15:03:19
             </li>
         
         <li>
@@ -1537,7 +1731,7 @@
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">Java SE入门</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaSE-%E7%AE%80%E4%BB%8B"><span class="nav-text">JavaSE 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%B8%B8%E8%AF%86"><span class="nav-text">基础常识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E7%AE%80%E4%BB%8B"><span class="nav-text">Java简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99-Hello-World"><span class="nav-text">编写 Hello World</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-IDE"><span class="nav-text">集成开发环境(IDE)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-%E4%B8%AD%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text">Java 中的命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">类的语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="nav-text">对象创建</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E4%B8%8E%E6%88%90%E5%91%98"><span class="nav-text">类与成员</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="nav-text">软件包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">包的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%8C%85"><span class="nav-text">导入包</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E5%92%8C%E9%9A%90%E8%97%8F"><span class="nav-text">封装和隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-text">构造器(构造方法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-text">继承</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">字符串常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder"><span class="nav-text">StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">链式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringJoiner"><span class="nav-text">StringJoiner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="nav-text">字符串拼接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-2"><span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95-2"><span class="nav-text">成员方法</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaSE-%E7%AE%80%E4%BB%8B"><span class="nav-text">JavaSE 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%B8%B8%E8%AF%86"><span class="nav-text">基础常识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E7%AE%80%E4%BB%8B"><span class="nav-text">Java简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99-Hello-World"><span class="nav-text">编写 Hello World</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-IDE"><span class="nav-text">集成开发环境(IDE)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-%E4%B8%AD%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text">Java 中的命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-text">控制语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">类的语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="nav-text">对象创建</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E4%B8%8E%E6%88%90%E5%91%98"><span class="nav-text">类与成员</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="nav-text">软件包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">包的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%8C%85"><span class="nav-text">导入包</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B0%81%E8%A3%85%E5%92%8C%E9%9A%90%E8%97%8F"><span class="nav-text">1. 封装和隐藏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-text">构造器(构造方法)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%A7%E6%89%BF"><span class="nav-text">2. 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">继承的语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97-super"><span class="nav-text">关键字 super</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A4%9A%E6%80%81"><span class="nav-text">3. 多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-text">包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E7%AE%B1"><span class="nav-text">装箱</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E7%B1%BB%E7%89%B9%E6%80%A7"><span class="nav-text">高级类特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97-static"><span class="nav-text">关键字 static</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">字符串常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder"><span class="nav-text">StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">链式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringJoiner"><span class="nav-text">StringJoiner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="nav-text">字符串拼接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-2"><span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95-2"><span class="nav-text">成员方法</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
@@ -1576,7 +1770,7 @@
                     </span>
                     
                         <span>
-                            共 47.8k 字
+                            共 49.3k 字
                         </span>
                     
                 </p>

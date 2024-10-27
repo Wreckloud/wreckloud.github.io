@@ -153,6 +153,8 @@
 <p>用按钮控制 LED 灯亮灭:</p>
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;REG52.H&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个延时函数, 抹除抖动的影响.</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> xms)</span>		</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">char</span> i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(xms)</span><br><span class="line">	&#123;</span><br><span class="line">	i = <span class="number">500</span>;</span><br><span class="line">	<span class="keyword">while</span> (--i);</span><br><span class="line">	xms--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        P2 = <span class="number">0xFE</span>; <span class="comment">// 点亮全部 LED 灯</span></span><br><span class="line">        <span class="keyword">if</span>(P2_0 == <span class="number">0</span>)&#123; <span class="comment">// 按下按钮</span></span><br><span class="line">            P2 = <span class="number">0x00</span>; <span class="comment">// 熄灭全部 LED 灯</span></span><br><span class="line">        &#125;</span><br><span class="line">        Delay(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
 
+<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><p>在之前, 我们使用的是 <code>Delay()</code> 函数来延时, 但这种方式很不精确, 而且会占用主程序, 无法在 <code>Delay()</code> 函数执行时执行其他任务.</p>
+<p>定时器就能用来实现精确的延时, 其电路的连接和运转均在单片机内部完成.</p>
 <h1 id="数码管"><a href="#数码管" class="headerlink" title="数码管"></a>数码管</h1><p>LED 数码管是一种简单, 廉价的显示器, 是由多个发光二极管封装在一起组成 “8” 自型的器件.</p>
 <p>LED 连接方式有两种</p>
 <ul>
@@ -163,6 +165,20 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/LED%E6%98%BE%E7%A4%BA%E5%99%A8.png"
+                      alt="alt text"
+                ></p>
+<p>在单片机上, 是四位一体的数码管. 接线如图所示, 也分为共阴极和共阳极两种连接方式.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%9B%9B%E4%BD%8D%E4%B8%80%E4%BD%93LED%E6%98%BE%E7%A4%BA%E5%99%A8.png"
+                      alt="alt text"
+                ></p>
+<p>四位一体数码管在单片机上接线如图所示:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/LED%E6%98%BE%E7%A4%BA%E5%99%A8%E6%8E%A5%E7%BA%BF.png"
                       alt="alt text"
                 ></p>
 ]]></content>

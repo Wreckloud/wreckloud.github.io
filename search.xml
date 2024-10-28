@@ -155,6 +155,81 @@
 
 <h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><p>在之前, 我们使用的是 <code>Delay()</code> 函数来延时, 但这种方式很不精确, 而且会占用主程序, 无法在 <code>Delay()</code> 函数执行时执行其他任务.</p>
 <p>定时器就能用来实现精确的延时, 其电路的连接和运转均在单片机内部完成.</p>
+<p>在 STC89C52 中, 有 T0, T1, T2 这三个定时器.<br>T0 和 T1 与传统的 51单片机 兼容, T2 则是此型号单片机增加的资源.</p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>定时器在单片机内部就像一个小闹钟. 根据时钟的输出信号, 每隔 <code>一个时间段</code>, 计数单元的数值就会增加一.<br>当计数单元数值增加到 <code>设定的提醒时间</code> 时, 计数单元就会向 <code>中断系统</code> 发出中断申请, 使程序跳转到中断服务函数中执行.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%AE%9A%E6%97%B6%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E6%9D%A5.png"
+                      alt="alt text"
+                ></p>
+<blockquote>
+<p><code>中断系统</code> 类似于 <code>定时器</code>, 也是单片机内部的资源.</p>
+</blockquote>
+<p>STC89C52 的 T0, T1 都有如下几种工作模式:</p>
+<ul>
+<li>模式0: 13 位定时器&#x2F;计数器</li>
+<li>模式1: 16 位定时器&#x2F;计数器 (常用)</li>
+<li>模式2: 8 位自动重装模式</li>
+<li>模式3: 两个 8 位计数器</li>
+</ul>
+<p>工作模式 1 的框图:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%AE%9A%E6%97%B6%E5%99%A8%E5%B7%A5%E4%BD%9C%E6%A1%86%E5%9B%BE.png"
+                      alt="alt text"
+                ></p>
+<h4 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h4><p>如图, 在计数器里有</p>
+<ul>
+<li>TL(Timer Low) : 低字节</li>
+<li>TH(Timer High): 高字节</li>
+</ul>
+<p>两个字节, 它们总共可以存储 65536 个不同的数值.</p>
+<p><code>时钟模块</code> 稳定地给 <code>计数器</code> 脉冲. 每来一次脉冲, 计数器就会增加 1.<br>直到 计数数到 65536 , 计数器溢出, 置一个标志位, 并向 <code>中断系统</code> 发出中断申请.</p>
+<h4 id="定时器时钟"><a href="#定时器时钟" class="headerlink" title="定时器时钟"></a>定时器时钟</h4><p>系统时钟, 即晶振周期.</p>
+<h4 id="中断系统"><a href="#中断系统" class="headerlink" title="中断系统"></a>中断系统</h4><p>中断系统是为使 CPU 具有对外界紧急事件的实时处理能力而设置的.  </p>
+<p>请示 CPU 中断的请求称为中断源, 中断源的轻重缓急称之为中断优先级.<br>高优先级的中断可以打断低优先级的中断.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%A8%8B%E5%BA%8F%E5%85%AD%E6%88%90.png"
+                      alt="alt text"
+                ></p>
+<h4 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h4><p>TCON 为定时器&#x2F;计数器 T0, T1 的控制寄存器, 同时也锁存 T0, T1 溢出中断源和外部请求中断源等.<br>TCON 格式如下:</p>
+<table>
+<thead>
+<tr>
+<th>SFR name</th>
+<th>Address</th>
+<th>bit</th>
+<th>B7</th>
+<th>B6</th>
+<th>B5</th>
+<th>B4</th>
+<th>B3</th>
+<th>B2</th>
+<th>B1</th>
+<th>B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCON</td>
+<td>88H</td>
+<td>name</td>
+<td>TF1</td>
+<td>TR1</td>
+<td>TF0</td>
+<td>TR0</td>
+<td>IE1</td>
+<td>IT1</td>
+<td>IE0</td>
+<td>IT0</td>
+</tr>
+</tbody></table>
+<ul>
+<li>TF1: 定时器&#x2F;计数器 T1 溢出标志. 当 T1</li>
+</ul>
 <h1 id="数码管"><a href="#数码管" class="headerlink" title="数码管"></a>数码管</h1><p>LED 数码管是一种简单, 廉价的显示器, 是由多个发光二极管封装在一起组成 “8” 自型的器件.</p>
 <p>LED 连接方式有两种</p>
 <ul>

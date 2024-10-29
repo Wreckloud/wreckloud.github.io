@@ -197,10 +197,71 @@
                      data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%A8%8B%E5%BA%8F%E5%85%AD%E6%88%90.png"
                       alt="alt text"
                 ></p>
+<p>不同型号的单片机拥有不同的中断资源.<br>在 STC89C52 中, 中断源共有 8 个.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/51%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F.png"
+                      alt="alt text"
+                ></p>
+<p>不使用定时器依然可以实现延时, 可以通过查询 TF0 标志位.<br>就像你一直需要检查你的钟一样.</p>
+<p>中断号:</p>
+<table>
+<thead>
+<tr>
+<th>中断源</th>
+<th>中断服务函数</th>
+<th>中断号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外部中断0</td>
+<td>Int0_Routine(void)</td>
+<td>interrupt 0;</td>
+</tr>
+<tr>
+<td>定时器0</td>
+<td>Timer0_Routine(void)</td>
+<td>interrupt 1;</td>
+</tr>
+<tr>
+<td>外部中断1</td>
+<td>Int1_Routine(void)</td>
+<td>interrupt 2;</td>
+</tr>
+<tr>
+<td>定时器1</td>
+<td>Timer1_Routine(void)</td>
+<td>interrupt 3;</td>
+</tr>
+<tr>
+<td>串口中断</td>
+<td>UART_Routine(void)</td>
+<td>interrupt 4;</td>
+</tr>
+<tr>
+<td>定时器2</td>
+<td>Timer2_Routine(void)</td>
+<td>interrupt 5;</td>
+</tr>
+<tr>
+<td>外部中断2</td>
+<td>Int2_Routine(void)</td>
+<td>interrupt 6;</td>
+</tr>
+<tr>
+<td>外部中断3</td>
+<td>Int3_Routine(void)</td>
+<td>interrupt 7;</td>
+</tr>
+</tbody></table>
 <h2 id="定时器相关的寄存器"><a href="#定时器相关的寄存器" class="headerlink" title="定时器相关的寄存器"></a>定时器相关的寄存器</h2><p>寄存器是连接软硬件的桥梁, 相当于一个复杂机器的操作按钮.</p>
 <p>在单片机中寄存器就是一段特殊的 RAM 存储器.<br>一方面, 寄存器可以存储和读取数据,<br>另一方面, 每一个寄存器背后都连接了一根导线, 控制着电路的连接方式.</p>
-<h3 id="TCON-定时器控制寄存器"><a href="#TCON-定时器控制寄存器" class="headerlink" title="TCON 定时器控制寄存器"></a>TCON 定时器控制寄存器</h3><p>TCON(Timer Control) 为定时器&#x2F;计数器 T0, T1 的<strong>控制寄存器</strong>, 同时也锁存 T0, T1 溢出中断源和外部请求中断源等.<br>TF1, IE1, IT1等, 控制<code>定时器 T1</code>;IE0, TF0, IT0等 控制<code>定时器 T0</code>.</p>
-<p>TCON 格式如下(可位寻址):</p>
+<h3 id="TCON-定时器控制寄存器"><a href="#TCON-定时器控制寄存器" class="headerlink" title="TCON 定时器控制寄存器"></a>TCON 定时器控制寄存器</h3><p>TCON(Timer Control) 为定时器&#x2F;计数器 T0, T1 的<strong>控制寄存器</strong>, 同时也锁存 T0, T1 溢出中断源和外部请求中断源等.<br>TF1, IE1, IT1等, 控制<code>定时器 T1</code>;IE0, TF0, IT0等 控制<code>定时器 T0</code>.  </p>
+<blockquote>
+<p>TCON 可位寻址, 因此能单独操作 TCON 寄存器的各个位.</p>
+</blockquote>
+<p>TCON 格式如下:</p>
 <table>
 <thead>
 <tr>
@@ -245,7 +306,10 @@
 <li>IE(Interrupt Enable): <code>定时器/计数器 </code> 的 <strong>中断使能位</strong>. IE1 &#x3D; 1 时外部中断向 CPU 请求中断, 当 CPU 响应该中断时, 由硬件清 0.</li>
 <li>IT(Interrupt Type): <code>定时器/计数器 </code> 的 <strong>中断类型位</strong>. 0 时为边沿触发, 1 时为电平触发.</li>
 </ul>
-<h3 id="TMOD-定时器工作模式寄存器"><a href="#TMOD-定时器工作模式寄存器" class="headerlink" title="TMOD 定时器工作模式寄存器"></a>TMOD 定时器工作模式寄存器</h3><p>定时和计数功能由特殊功能寄存器 TMOD(Timer Mode) 控制 C&#x2F;~T 进行选择.</p>
+<h3 id="TMOD-定时器工作模式寄存器"><a href="#TMOD-定时器工作模式寄存器" class="headerlink" title="TMOD 定时器工作模式寄存器"></a>TMOD 定时器工作模式寄存器</h3><p>定时和计数功能由特<strong>殊功能寄存器</strong> TMOD(Timer Mode) , 控制着 C&#x2F;~T 进行选择.</p>
+<blockquote>
+<p>TMOD 不可位寻址, 只能整体赋值.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -322,29 +386,35 @@
 <tbody><tr>
 <td>0</td>
 <td>0</td>
-<td>13位定时器&#x2F;计数器</td>
+<td>模式0:<br>13位定时器&#x2F;计数器</td>
 <td>兼容 8084 定时模式, TL只用低 5 位参与分频, TH1 整个 8 位全用.</td>
 </tr>
 <tr>
 <td>0</td>
 <td>1</td>
-<td>16位定时器&#x2F;计数器</td>
+<td>模式1:<br>16位定时器&#x2F;计数器</td>
 <td>TL,TH 整个 16 位全用.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>0</td>
-<td>8位自动重装模式</td>
+<td>模式2:<br>8位自动重装模式</td>
 <td>当溢出时将 TH1 存放的值自动装入 TL1.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>1</td>
-<td>无效</td>
+<td>模式3:<br>无效</td>
 <td>停止计数.</td>
 </tr>
 </tbody></table>
-<p>LED 数码管是一种简单, 廉价的显示器, 是由多个发光二极管封装在一起组成 “8” 自型的器件.</p>
+<h3 id="使用定时器实现-LED-闪烁"><a href="#使用定时器实现-LED-闪烁" class="headerlink" title="使用定时器实现 LED 闪烁"></a>使用定时器实现 LED 闪烁</h3><p>接下来实践一下, 用定时器实现每隔 <strong>一秒</strong> 闪烁一次 LED 灯.</p>
+<p>已知 计时器最大只能为 65535 ,我们先让计时器计数 1000 次时就溢出, 也就是先计 1微秒.<br>将计时器的初值设置为 64535 即可.</p>
+<p>然后将这个 1微秒 的计时器重复 1000 次, 就是一个一秒的计时器了.</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;REGX52.H&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Timer0_Init</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="comment">// 设置 TMOD定时器工作模式(不能寻址, 只能整体赋值)</span></span><br><span class="line">	TMOD = <span class="number">0x01</span>; <span class="comment">// 0000 0001 将模式设置为模式1, 使用整个TL0和TH0..</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 设置 TCON定时器控制寄存器(能寻址, 可以单独赋值)</span></span><br><span class="line">	TF0 = <span class="number">0</span>; </span><br><span class="line">	TR0 = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 将 64535 赋值给定时器0, 先把64535分成高8位和低8位, 然后分别赋值给TH0和TL0.</span></span><br><span class="line">	TH0 = <span class="number">64535</span>/<span class="number">256</span>;</span><br><span class="line">	TL0 = <span class="number">64535</span>%<span class="number">256</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 打开中断系统</span></span><br><span class="line">	ET0 = <span class="number">1</span>;</span><br><span class="line">	EA = <span class="number">1</span>;</span><br><span class="line">	PT0 = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	Timer0_Init; <span class="comment">// 启动配置好的定时器0</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> T0Counter = <span class="number">0</span>; <span class="comment">// 定义一个计算定时器执行了多少次的变量, 以让1毫秒的计时器重复1000次.</span></span><br><span class="line"><span class="comment">// 定时器0中断服务程序</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Timer0_Routine</span><span class="params">()</span> interrupt 1 &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重新校对计时器, 保证下一次计时也是 1毫秒</span></span><br><span class="line">    TH0 = <span class="number">64535</span>/<span class="number">256</span>;</span><br><span class="line">	TL0 = <span class="number">64535</span>%<span class="number">256</span>;</span><br><span class="line"></span><br><span class="line">    T0Counter++; </span><br><span class="line">    <span class="keyword">if</span> (T0Counter &gt;= <span class="number">1000</span>)&#123;</span><br><span class="line">        T0Counter = <span class="number">0</span>;</span><br><span class="line">        P2_0 = ~P2_0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+<h1 id="数码管"><a href="#数码管" class="headerlink" title="数码管"></a>数码管</h1><p>LED 数码管是一种简单, 廉价的显示器, 是由多个发光二极管封装在一起组成 “8” 自型的器件.</p>
 <p>LED 连接方式有两种</p>
 <ul>
 <li>共阴极</li>

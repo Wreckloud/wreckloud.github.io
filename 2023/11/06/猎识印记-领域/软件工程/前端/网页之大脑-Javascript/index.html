@@ -32,7 +32,7 @@
 <meta property="og:description" content="世上每个人本来就有自己的发展时区.有些人看似走在你前面, 有些人看似走在你后面.但其实每个人在自己的时区都有自己的步程.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-06T12:26:32.000Z">
-<meta property="article:modified_time" content="2024-11-23T11:33:36.007Z">
+<meta property="article:modified_time" content="2024-11-23T11:54:40.724Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="web前端">
@@ -573,8 +573,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-23 19:33:36</span>
-            <span class="mobile">2024-11-23 19:33:36</span>
+            <span class="desktop">2024-11-23 19:54:40</span>
+            <span class="mobile">2024-11-23 19:54:40</span>
             <span class="hover-info">幽影变迁</span>
         </span>
     
@@ -640,12 +640,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.5k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.6k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>10 分钟</span>
         </span>
     
     
@@ -671,7 +671,7 @@
 <li>Web APIs 其中又包括 DOM(页面文档对象模型) 和 BOM(浏览器对象模型)</li>
 </ul>
 <p>ECMAScript 和 JavaScript 的关系是, 前者是后者的规格, 后者是前者的一种实现.<br>在日常场合, 这两个词是可以互换的.</p>
-<p><a href="/2024/04/19/猎识印记-领域/软件工程/前端/ECMAScript入门/">ECMAScript入门</a></p>
+<p><a href="ECMAScript%E5%85%A5%E9%97%A8.md">ECMAScript入门</a></p>
 <h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><h4 id="内部书写"><a href="#内部书写" class="headerlink" title="内部书写"></a>内部书写</h4><p>直接写在 html 文件里.</p>
 <p>在 HTML 文档中，可以在任意地方，放置任意数量的<code>&lt;script&gt; &lt;/script&gt;</code>,<br>一般会把脚本置于<code>&lt;body&gt;</code><strong>元素的底部</strong>，可改善显示速度.</p>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS 引入方式<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&#x27;Hello JS&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
@@ -816,7 +816,11 @@
 <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JSON 对象：<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation，JavaScript 对象标记法。<br>JSON 是通过 JavaScript 标记法书写的文本。其格式如下：</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;key&quot;</span>:value,</span><br><span class="line">    <span class="string">&quot;key&quot;</span>:value,</span><br><span class="line">    <span class="string">&quot;key&quot;</span>:value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>其中，<strong>key 必须使用引号并且是双引号标记，value 可以是任意数据类型。</strong><br>![[file-20241123193334176.png]]</p>
+<p>其中，<strong>key 必须使用引号并且是双引号标记，value 可以是任意数据类型。</strong></p>
+<p>![[file-20241123193334176.png]]</p>
+<p>代码演示:</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3. JSON - JS对象标记法</span></span><br><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;itcast&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">  <span class="attr">gender</span>: <span class="string">&#x27;男&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">alert</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(person)); <span class="comment">//js对象 --&gt; json字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> personJson = <span class="string">&#x27;&#123;&quot;name&quot;: &quot;heima&quot;, &quot;age&quot;: 18&#125;&#x27;</span>;</span><br><span class="line"><span class="title function_">alert</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(personJson).<span class="property">name</span>);</span><br></pre></td></tr></table></figure></div>
+
 <h1 id="Web-API-基础"><a href="#Web-API-基础" class="headerlink" title="Web API 基础"></a>Web API 基础</h1><p>使用 JS 可以操作 html 和浏览器.</p>
 <p><strong>DOM (Doucument Object Model) 文档对象模型</strong> 是浏览器提供的一套专门用来操作网页内容, 实现用户交互的功能.</p>
 <p><strong>DOM 文档树</strong> 能直观的体现了标签与标签之间的关系.</p>
@@ -849,7 +853,7 @@
         
             <li>
                 <strong>此记变迁于
-                    :</strong> 2024-11-23 19:33:36
+                    :</strong> 2024-11-23 19:54:40
             </li>
         
         <li>
@@ -1007,7 +1011,7 @@
                     </span>
                     
                         <span>
-                            共 51.3k 字
+                            共 51.4k 字
                         </span>
                     
                 </p>

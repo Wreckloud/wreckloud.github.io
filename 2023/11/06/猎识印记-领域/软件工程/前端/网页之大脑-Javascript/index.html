@@ -32,7 +32,7 @@
 <meta property="og:description" content="世上每个人本来就有自己的发展时区.有些人看似走在你前面, 有些人看似走在你后面.但其实每个人在自己的时区都有自己的步程.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-06T12:26:32.000Z">
-<meta property="article:modified_time" content="2024-11-22T05:12:45.349Z">
+<meta property="article:modified_time" content="2024-11-23T11:33:36.007Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="web前端">
@@ -573,8 +573,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-22 13:12:45</span>
-            <span class="mobile">2024-11-22 13:12:45</span>
+            <span class="desktop">2024-11-23 19:33:36</span>
+            <span class="mobile">2024-11-23 19:33:36</span>
             <span class="hover-info">幽影变迁</span>
         </span>
     
@@ -640,12 +640,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.5k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>7 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
         </span>
     
     
@@ -664,7 +664,7 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript 是一种运行在 <strong>客户端(浏览器)</strong> 的编程语言, 能实现人机交互的效果.</p>
+			<h1 id="JavaScript-介绍"><a href="#JavaScript-介绍" class="headerlink" title="JavaScript 介绍"></a>JavaScript 介绍</h1><p>JavaScript（简称：<strong>JS</strong>） 是一门跨平台、面向对象的脚本语言, 是用来控制网页行为的, 实现人机交互效果.<br>JavaScript 和 Java 是完全不同的语言, 不论是概念还是设计。但是基础语法类似.<br>(哪个编程语言基础语法不类似呢?</p>
 <p>JavaScipt 又分为:</p>
 <ul>
 <li>ECMAScript(JavaScript 语言基础) 和 Web APIs</li>
@@ -672,31 +672,62 @@
 </ul>
 <p>ECMAScript 和 JavaScript 的关系是, 前者是后者的规格, 后者是前者的一种实现.<br>在日常场合, 这两个词是可以互换的.</p>
 <p><a href="/2024/04/19/猎识印记-领域/软件工程/前端/ECMAScript入门/">ECMAScript入门</a></p>
-<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><h4 id="行内书写"><a href="#行内书写" class="headerlink" title="行内书写"></a>行内书写</h4><p>代码写在标签内部, 在<a class="link"   target="_blank" rel="noopener" href="https://cn.vuejs.org/" >vue 框架<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>会使用这种模式.</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;提示文本&#x27;)&quot;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></div>
+<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><h4 id="内部书写"><a href="#内部书写" class="headerlink" title="内部书写"></a>内部书写</h4><p>直接写在 html 文件里.</p>
+<p>在 HTML 文档中，可以在任意地方，放置任意数量的<code>&lt;script&gt; &lt;/script&gt;</code>,<br>一般会把脚本置于<code>&lt;body&gt;</code><strong>元素的底部</strong>，可改善显示速度.</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS 引入方式<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&#x27;Hello JS&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<h4 id="内部书写"><a href="#内部书写" class="headerlink" title="内部书写"></a>内部书写</h4><p>直接写在 html 文件里, 用<code>&lt;script src=&quot;文件路径&quot;&gt;&lt;/script&gt;</code>标签包裹住.<br>规范写法是 <strong>写在<code>&lt;/body&gt;</code>的上方</strong> , 通常将其放在 HTML 页面底部.<br>alert(‘你好, js’)页面弹出警告对话框.</p>
-<h4 id="外部书写"><a href="#外部书写" class="headerlink" title="外部书写"></a>外部书写</h4><p>代码写在以.js 结尾的文件里.<br>通过<code>&lt;script src=&quot;文件路径&quot;&gt;&lt;/script&gt;</code>标签, 引入到 html 页面中.<br>外部 js 标签中间的代码会被忽略.</p>
-<p>关于在 JavaScript 的结束符, 对于浏览器可以自动推断语句结束位置, 写不写无所谓.</p>
+<h4 id="外部书写"><a href="#外部书写" class="headerlink" title="外部书写"></a>外部书写</h4><p>代码写在以 <code>.js </code>结尾的文件里.<br>通过在 HTML 文件的标签, 引入到 html 页面中.</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;你的/文件路径/你的JS文件名字.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这个<code>&lt;script&gt;</code>标签通常放在 HTML 页面的<code>&lt;head&gt;</code>部分或<code>&lt;body&gt;</code>部分的底部.</p>
+<p>注意在 <code>你的JS文件名字.js</code> 中, 无需 <code>&lt;script&gt;</code></p>
+<p>同之前的例子, 在 <code>你的JS文件名字.js</code> 只用这样编写:</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&#x27;Hello JS&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>即可达到同样的效果.</p>
+<blockquote>
+<p>关于在 JavaScript 的结束符, 对于浏览器可以自动推断语句结束位置, 写不写无所谓.<br>不过要注意的是在同一项目中, 要么全写, 要么全不写.</p>
+</blockquote>
 <h1 id="JavaScript-基础语法"><a href="#JavaScript-基础语法" class="headerlink" title="JavaScript 基础语法"></a>JavaScript 基础语法</h1><p>变量名, 函数名等都是区分大小写的.<br>每行结尾分号不是必须的, 但是推荐加上.</p>
-<h3 id="输入输出语法"><a href="#输入输出语法" class="headerlink" title="输入输出语法"></a>输入输出语法</h3><h4 id="输出语法"><a href="#输出语法" class="headerlink" title="输出语法"></a>输出语法</h4><ol>
+<h3 id="输入输出语法"><a href="#输入输出语法" class="headerlink" title="输入输出语法"></a>输入输出语法</h3><h4 id="输出语法"><a href="#输出语法" class="headerlink" title="输出语法"></a>输出语法</h4><p>有以下三种:</p>
+<table>
+<thead>
+<tr>
+<th>api</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>window.alert</code></td>
+<td>警告框</td>
+</tr>
+<tr>
+<td><code>document.write</code></td>
+<td>在 HTML 输出内容</td>
+</tr>
+<tr>
+<td><code>console.log</code></td>
+<td>写如浏览器的控制台</td>
+</tr>
+</tbody></table>
+<ul>
+<li>window.alert</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">`要输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>在页面弹出警告对话框, 完整的语法为 <code>window.alert(</code>要输出的内容<code>)</code></p>
+<ul>
 <li>document.write</li>
-</ol>
+</ul>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;要输出的内容&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>能向 body 内输出内容.<br>如果输出的内容写的是标签, 也会被解析成网页元素.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&lt;h1&gt;标题示例&lt;/h1&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>可以直接输出标签.</p>
-<ol start="2">
-<li>window.alert</li>
-</ol>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">`要输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p>在页面弹出警告对话框, 可以省略 window.</p>
-<ol start="3">
+<ul>
 <li>console.log</li>
-</ol>
+</ul>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`在控制台输出的内容`</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p>控制台输出语法, 程序员调试使用.</p>
@@ -705,41 +736,26 @@
 <p>能显示一个对话框, 对话框中包含提示信息.</p>
 <h4 id="访问-更改-HTML-元素"><a href="#访问-更改-HTML-元素" class="headerlink" title="访问&#x2F;更改 HTML 元素"></a>访问&#x2F;更改 HTML 元素</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 访问</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更改</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id).<span class="property">innerHTML</span> = 要更改成的元素</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="JavaScript-值"><a href="#JavaScript-值" class="headerlink" title="JavaScript 值"></a>JavaScript 值</h2><p>JavaScript 语句定义两种类型的值:</p>
-<p>混合值被称为<strong>字面量（literal）</strong>.<br>变量值被称为<strong>变量</strong>.</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> int b = <span class="number">10</span>; <span class="comment">//b为常量，10为字面量</span></span><br><span class="line">string str = “hello world！”; <span class="comment">// str 为变量，hello world！为字面量</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="JavaScript-值"><a href="#JavaScript-值" class="headerlink" title="JavaScript 值"></a>JavaScript 值</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>JS 是一门弱类型语言, 变量是可以存放不同类型的值的. (类似于 Python)<br>JS 中主要通过 <code>let</code> 关键字来声明变量的.</p>
+<p>要想使用变量, 首先需要创建变量(也称为声明变量或者定义变量).</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 变量名 = 要赋的值</span><br></pre></td></tr></table></figure></div>
 
-<p>有些数据可以在程序使用之前预先设定并在整个运行过程中没有变化，这称为<strong>常量</strong>。</p>
-<p>有些数据在程序运行中可以变化或者被赋值，这称为<strong>变量</strong>。</p>
-<h4 id="变量命名规整"><a href="#变量命名规整" class="headerlink" title="变量命名规整"></a>变量命名规整</h4><p>规则:</p>
-<ul>
-<li>不能使用关键字</li>
-<li>只能使用 <strong>下划线, 字母, 数字, $</strong> 组成, 不能以数字开头</li>
-<li>字母严格区分大小写</li>
-</ul>
-<p>规范:</p>
-<ul>
-<li>起名有意义</li>
-<li>遵守小驼峰命名法</li>
-</ul>
-<h3 id="变量的基本使用"><a href="#变量的基本使用" class="headerlink" title="变量的基本使用"></a>变量的基本使用</h3><p>要想使用变量, 首先需要创建变量(也称为声明变量或者定义变量).</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名<span class="number">1</span> = 要赋的值, 变量名<span class="number">2</span> = 要赋的值</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 变量名<span class="number">1</span> = 要重新赋的值</span><br></pre></td></tr></table></figure></div>
-
-<p>使用 <code>var</code> 重复声明不会丢失它的值.</p>
-<p>使用 <code>let</code> 关键字重新声明变量可以解决这个问题</p>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>使用 <code>const</code> 声明的变量称为 “常量” .<br>当某一个变量<strong>永远不会被改变</strong>的时候, 就可以使用 <code>const</code> 来声明.</p>
+<p>在早期, 声明变量还可以使用 <code>var</code> 关键字来声明.<br>不过, <code>var</code>声明的变量，有一些其他不严谨的地方, 例如能够重复声明变量等.</p>
+<p>因此, 声明变量主要还是使用 <code>let</code>.</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>使用 <code>const</code> 声明的变量称为 “常量” .<br>当某一个变量 <strong>永远不会被改变</strong> 的时候, 就可以使用 <code>const</code> 来声明.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 常量名 = 常量的值</span><br></pre></td></tr></table></figure></div>
 
 <p>常量不允许重新赋值, 声明时必须初始化.</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>可以使用 typeof 运算符来判断变量的数据类型.</p>
-<h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS 属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.</p>
-<p>NaN(Not a number, 非数) 表示一个计算错误. 对 NaN 的任何操作都会返回 NaN.</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>JS 中的数据类型分为: <strong>原始数据类型</strong> 和 <strong>引用数据类型</strong>.<br>可以使用 <code>typeof()</code> 关键字来判断变量的数据类型.</p>
+<h3 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h3><h4 id="number-数字型"><a href="#number-数字型" class="headerlink" title="number 数字型"></a>number 数字型</h4><p>JS 属于弱数据类型, 数字类型(Number)可以是整数, 小数, 正数, 负数.</p>
+<p><code>NaN</code>(Not a number, 非数) 表示一个计算错误. 对 <code>NaN</code> 的任何操作都会返回 <code>NaN</code>.</p>
 <h4 id="boolean-布尔型"><a href="#boolean-布尔型" class="headerlink" title="boolean 布尔型"></a>boolean 布尔型</h4><p>只有两个值: <code>true</code> 和 <code>false</code></p>
-<h4 id="String-字符串型"><a href="#String-字符串型" class="headerlink" title="String 字符串型"></a>String 字符串型</h4><p>被 “”(双引号) ‘’(单引号) &#96;&#96;(反引号) 包裹的都是字符串.</p>
-<p><code>+</code> 运算符, 可实现字符串拼接.<br>也可以使用模板字符串:</p>
+<h4 id="String-字符串型"><a href="#String-字符串型" class="headerlink" title="String 字符串型"></a>String 字符串型</h4><p>被 <strong>双引号</strong>, <strong>单引号</strong> 包裹的都是字符串.</p>
+<p><code>+</code> 运算符, 可实现字符串拼接.</p>
+<p>字符串也可以使用 <strong>反引号</strong> 包裹, 一般用于模板字符串:</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`大家好, 我是<span class="subst">$&#123;name&#125;</span>, 今年<span class="subst">$&#123;age&#125;</span>`</span>)</span><br></pre></td></tr></table></figure></div>
 
-<p>格式化字符串输出 &#96;&#96;(反引号), 变量用 ${} 包裹.</p>
+<p>这就是格式化字符串输出, 变量用 <code>$&#123;&#125;</code> 包裹.</p>
 <h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>JavaScript 数组用方括号书写.<br>数组属于对象.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cars = [<span class="string">&quot;Porsche&quot;</span>, <span class="string">&quot;Volvo&quot;</span>, <span class="string">&quot;BMW&quot;</span>];</span><br></pre></td></tr></table></figure></div>
 
@@ -754,77 +770,53 @@
 <p>空的字符串变量既有值也有类型.</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="string">&quot;&quot;</span>;                <span class="comment">// 值是 &quot;&quot;，类型是 &quot;string&quot;</span></span><br></pre></td></tr></table></figure></div>
 
-<h1 id="JavaScript-函数"><a href="#JavaScript-函数" class="headerlink" title="JavaScript 函数"></a>JavaScript 函数</h1><p>下面是 计算两个数的乘积, 并返回结果函数 的实例:</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="title function_">myFunction</span>(<span class="number">7</span>, <span class="number">8</span>);        <span class="comment">// 调用函数，返回值被赋值给 x</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;                <span class="comment">// 函数返回 a 和 b 的乘积</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h1 id="JavaScript-函数"><a href="#JavaScript-函数" class="headerlink" title="JavaScript 函数"></a>JavaScript 函数</h1><p>函数（function）是被设计用来执行特定任务的代码块, 方便程序的封装复用.<br>其基本格式如下:</p>
+<h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> 函数名(参数<span class="number">1</span>,参数<span class="number">2.</span>.)&#123;</span><br><span class="line">    要执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则表达式可用于 校验数据 和 文本替换操作.</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/正则表达式/修饰符</span><br></pre></td></tr></table></figure></div>
+<p>下面是计算两个数的乘积, 并返回结果函数 的实例:</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="title function_">add</span>(<span class="number">7</span>, <span class="number">8</span>);        <span class="comment">// 3. 调用函数，返回值被赋值给 x</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 定义一个 add 函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;                <span class="comment">// 2. 定义其功能, 计算并返回 a 和 b 的和</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>正则匹配到第一个匹配项则停止, 并且默认大小写敏感, 如果想修改默认选项, 则需要修饰符.</p>
-<table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>i</code>:ignore case</td>
-<td>执行对大小写不敏感的匹配</td>
-</tr>
-<tr>
-<td><code>g</code>:global</td>
-<td>执行全文搜索 (查找所有匹配而非在找到第一个匹配后停止)</td>
-</tr>
-<tr>
-<td><code>m</code>:multiple lines</td>
-<td>执行多行匹配</td>
-</tr>
-</tbody></table>
-<h3 id="常见-HTML-事件"><a href="#常见-HTML-事件" class="headerlink" title="常见 HTML 事件"></a>常见 HTML 事件</h3><table>
-<thead>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>onchange</code></td>
-<td>HTML 元素已被改变</td>
-</tr>
-<tr>
-<td><code>onmouseover</code></td>
-<td>用户把鼠标移动到 HTML 元素上</td>
-</tr>
-<tr>
-<td><code>onmouseout</code></td>
-<td>用户把鼠标移开 HTML 元素</td>
-</tr>
-<tr>
-<td><code>onkeydown</code></td>
-<td>用户按下键盘按键</td>
-</tr>
-<tr>
-<td><code>onload</code></td>
-<td>浏览器已经完成页面加载</td>
-</tr>
-</tbody></table>
-<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>indexoOf(&quot;文本&quot;,检索起始索引)</code> <br> <code>lastIndexOf(&quot;文本&quot;,检索起始索引)</code></td>
-<td>返回字符串中指定文本<strong>首次</strong> &#x2F; <strong>最后一次</strong>出现的索引<br>如果未找到文本, 返回 -1</td>
-</tr>
-<tr>
-<td><code>search()</code></td>
-<td>搜索特定值的字符串, 并返回匹配的位置<br>无法设置第二个参数设置检索起始位置</td>
-</tr>
-</tbody></table>
+<p>因为 JavaScript 是弱数据类型的语言, 所以注意以下几点:</p>
+<ul>
+<li>形参不需要声明类型</li>
+<li>返回值也不需要声明类型</li>
+</ul>
+<p>JavaScript 解释器会在函数调用和返回时根据传入的实参自动确定它们的类型.</p>
+<p>特别注意, 在 JavaScript 中, 函数的调用只需要名称正确即可，参数列表不管的.<br>例如刚刚的 <code>add()</code> :</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>);</span><br><span class="line"><span class="title function_">alert</span>(result); <span class="comment">// 30 (10+20)</span></span><br></pre></td></tr></table></figure></div>
+
+<p>依然能得到结果, 10 传递给了变量 a, 20 传递给了变量 b, 而 30 和 40 没有变量接受, 但是不影响函数的正常调用.<br>不过呢, 当然在实际开发中, 还是建议一致.</p>
+<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p>还有一种不为函数指定名字的定义方式, 称之为 <code>匿名函数</code>.<br>由于它们没有名称, 因此无法直接通过函数名来调用, 而是通过变量或表达式来调用.</p>
+<p>匿名函数有两种定义的方式:</p>
+<ul>
+<li>函数表达式</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="keyword">function</span> (<span class="params">a,b</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>箭头函数 (常用)</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title function_">add</span> = (<span class="params">a,b</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>匿名函数声明好了之后, 是将这个函数赋值给了 add 变量.<br>那我们就可以直接通过 add 函数直接调用, 调用代码如下：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line"><span class="title function_">alert</span>(result);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h3><p>在 JavaScript 中自定义对象特别简单，其语法格式如下：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 对象名 = &#123;</span><br><span class="line">    属性名<span class="number">1</span>: 属性值<span class="number">1</span>,</span><br><span class="line">    属性名<span class="number">2</span>: 属性值<span class="number">2</span>,</span><br><span class="line">    属性名<span class="number">3</span>: 属性值<span class="number">3</span>,</span><br><span class="line">    方法名称: <span class="keyword">function</span>(<span class="params">形参列表</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>我们可以通过如下语法调用属性：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.属性名</span><br></pre></td></tr></table></figure></div>
+
+<p>通过如下语法调用函数：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.方法名()</span><br></pre></td></tr></table></figure></div>
+
+<p>代码演示：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//自定义对象</span></span><br><span class="line">    <span class="keyword">let</span> user = &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;wreckloud&quot;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">gender</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">        <span class="attr">show1</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">             <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;是我!&quot;</span>);</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="comment">// 可简写为:</span></span><br><span class="line">        <span class="title function_">show2</span>(<span class="params"></span>)&#123;</span><br><span class="line">             <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;还是我!&quot;</span>);</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">name</span>);</span><br><span class="line">    user.<span class="title function_">show1</span>();</span><br><span class="line">    user.<span class="title function_">show2</span>();</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JSON 对象：<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation，JavaScript 对象标记法。<br>JSON 是通过 JavaScript 标记法书写的文本。其格式如下：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;key&quot;</span>:value,</span><br><span class="line">    <span class="string">&quot;key&quot;</span>:value,</span><br><span class="line">    <span class="string">&quot;key&quot;</span>:value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>其中，<strong>key 必须使用引号并且是双引号标记，value 可以是任意数据类型。</strong><br>![[file-20241123193334176.png]]</p>
 <h1 id="Web-API-基础"><a href="#Web-API-基础" class="headerlink" title="Web API 基础"></a>Web API 基础</h1><p>使用 JS 可以操作 html 和浏览器.</p>
 <p><strong>DOM (Doucument Object Model) 文档对象模型</strong> 是浏览器提供的一套专门用来操作网页内容, 实现用户交互的功能.</p>
 <p><strong>DOM 文档树</strong> 能直观的体现了标签与标签之间的关系.</p>
@@ -857,7 +849,7 @@
         
             <li>
                 <strong>此记变迁于
-                    :</strong> 2024-11-22 13:12:45
+                    :</strong> 2024-11-23 19:33:36
             </li>
         
         <li>
@@ -982,7 +974,7 @@
 	<div class="post-toc">
 		<div class="toc-title">此页目录</div>
 		<div class="page-title">网页之大脑-Javascript</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E4%BB%8B%E7%BB%8D"><span class="nav-text">JavaScript 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-text">书写位置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">JavaScript 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E6%B3%95"><span class="nav-text">输入输出语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E5%80%BC"><span class="nav-text">JavaScript 值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">变量的基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">引用数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E5%87%BD%E6%95%B0"><span class="nav-text">JavaScript 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81-HTML-%E4%BA%8B%E4%BB%B6"><span class="nav-text">常见 HTML 事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="nav-text">字符串方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-API-%E5%9F%BA%E7%A1%80"><span class="nav-text">Web API 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-DOM-%E5%AF%B9%E8%B1%A1"><span class="nav-text">获取 DOM 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="nav-text">操作元素内容</span></a></li></ol></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E4%BB%8B%E7%BB%8D"><span class="nav-text">JavaScript 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-text">书写位置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">JavaScript 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E6%B3%95"><span class="nav-text">输入输出语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E5%80%BC"><span class="nav-text">JavaScript 值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-text">常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">原始数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">引用数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-%E5%87%BD%E6%95%B0"><span class="nav-text">JavaScript 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="nav-text">方式二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1"><span class="nav-text">自定义对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-API-%E5%9F%BA%E7%A1%80"><span class="nav-text">Web API 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-DOM-%E5%AF%B9%E8%B1%A1"><span class="nav-text">获取 DOM 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="nav-text">操作元素内容</span></a></li></ol></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1015,7 +1007,7 @@
                     </span>
                     
                         <span>
-                            共 50.3k 字
+                            共 51.3k 字
                         </span>
                     
                 </p>

@@ -32,7 +32,7 @@
 <meta property="og:description" content="HTML 是网页内容的骨架, 它定义了网页的结构和内容.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-17T11:02:12.000Z">
-<meta property="article:modified_time" content="2024-11-22T07:52:47.928Z">
+<meta property="article:modified_time" content="2024-11-23T06:04:32.584Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="web前端">
@@ -573,8 +573,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-22 15:52:47</span>
-            <span class="mobile">2024-11-22 15:52:47</span>
+            <span class="desktop">2024-11-23 14:04:32</span>
+            <span class="mobile">2024-11-23 14:04:32</span>
             <span class="hover-info">幽影变迁</span>
         </span>
     
@@ -640,12 +640,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.2k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.6k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 分钟</span>
         </span>
     
     
@@ -679,7 +679,8 @@
 <blockquote>
 <p>在 <code>VS Code</code> 中，可以按 <code>！+ Tab</code> 生成 HTML 的基本骨架.</p>
 </blockquote>
-<h1 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h1><h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><p>h1~h6(双标签)</p>
+<h1 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h1><h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><p>HTML 标签是预定义好的, 其都有自己的含义与效果.</p>
+<p>h1~h6(双标签)</p>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>二级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>三级标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>四级标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>五级标题<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>六级标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>注意不要仅仅是为了生成粗体或大号的文本而使用标题, 正确使用标题有益于 SEO.</p>
@@ -761,7 +762,11 @@
 
 <p>alt 属性提供了图片的替代文本，对于无障碍访问和 SEO 都很重要。</p>
 <p>图片路径可以是本地也可以来自网络的 url。</p>
-
+<h4 id="路径表示"><a href="#路径表示" class="headerlink" title="路径表示"></a>路径表示</h4><p>在引入图片、视频、音频、css 等内容时, 我们需要指定文件的路径, 而在前端开发中，路径的书写形式分为两类：</p>
+<ul>
+<li>绝对路径<ul>
+<li>绝对磁盘路径</li>
+<li>绝对网络路径
   <div class="note-large default">
     <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
       <i class="notel-icon fa-solid fa-info"></i><p>URL</p>
@@ -771,8 +776,15 @@
       <p>URL（Uniform Resource Locator）是统一资源定位符的缩写，它是用于定位互联网上资源的标准化地址，能告诉浏览器在哪里可以找到特定的网页或其他在线资源。</p>
 
     </div>
-  </div>
-
+  </div></li>
+</ul>
+</li>
+<li>相对路径<ul>
+<li><code>./</code> : 当前目录(可省略)</li>
+<li><code>../</code> : 上一级目录</li>
+</ul>
+</li>
+</ul>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ol>
 <li>无序列表:</li>
 </ol>
@@ -842,13 +854,20 @@
 <blockquote>
 <p>快速生成表格结构: <code>table&gt;tr*行数&gt;td&#123;单元格内容&#125;</code></p>
 </blockquote>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>表单在 Web 网页中用来给用户填写信息.</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>表单在 Web 网页中用来给用户填写信息, 填写的信息最终会保存在数据库中.</p>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;服务器地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get|post&quot;</span> <span class="attr">name</span>=<span class="string">&quot;表单名称&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<p>在 method 中,</p>
 <ul>
-<li>get 提交的数据 url 可见, post 不可见.</li>
-<li>get 用于提交少量数据, post 大量.</li>
+<li>表单标签: <code>&lt;form&gt;</code></li>
+<li>表单属性:<ul>
+<li><code>action</code> : 规定表单向何处发送表单数据, 表单提交的 URL.</li>
+<li><code>method</code> : 规定用于发送表单数据的方式, 有以下两种.<ul>
+<li><code>GET</code> : 数据是拼接在 url 后面的, 如: xx?username&#x3D;Tom&amp;age&#x3D;12，url 中能携带的表单数据大小是有限制的。</li>
+<li><code>POST</code> : 表单数据是在请求体（消息体）中携带的.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p>一个完整的表单包含三个基本元素:</p>
 <ul>
@@ -856,6 +875,9 @@
 <li>表单域</li>
 <li>表单按钮</li>
 </ul>
+<p>常见的表单示例:</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    form表单属性:</span></span><br><span class="line"><span class="comment">        action: 表单提交的url, 往何处提交数据 . 如果不指定, 默认提交到当前页面</span></span><br><span class="line"><span class="comment">        method: 表单的提交方式 .</span></span><br><span class="line"><span class="comment">            get: 在url后面拼接表单数据, 比如: ?username=Tom&amp;age=12 , url长度有限制 . 默认值</span></span><br><span class="line"><span class="comment">            post: 在消息体(请求体)中传递的, 参数大小无限制的.</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">        年龄: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
 <h3 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h3><h4 id="1-input-标签"><a href="#1-input-标签" class="headerlink" title="1. input 标签"></a>1. input 标签</h4><div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;...&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <table>
@@ -1010,7 +1032,7 @@
         
             <li>
                 <strong>此记变迁于
-                    :</strong> 2024-11-22 15:52:47
+                    :</strong> 2024-11-23 14:04:32
             </li>
         
         <li>
@@ -1156,7 +1178,7 @@
                     </span>
                     
                         <span>
-                            共 50.3k 字
+                            共 51.3k 字
                         </span>
                     
                 </p>

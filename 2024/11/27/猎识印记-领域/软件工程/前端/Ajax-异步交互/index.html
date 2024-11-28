@@ -33,9 +33,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/ajax-%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92/file-20241127122550616.jpg">
 <meta property="article:published_time" content="2024-11-27T03:57:22.000Z">
-<meta property="article:modified_time" content="2024-11-27T07:44:40.159Z">
+<meta property="article:modified_time" content="2024-11-28T04:31:21.927Z">
 <meta property="article:author" content="Wreckloud">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="Ajax">
+<meta property="article:tag" content="异步编程">
+<meta property="article:tag" content="Axios">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/ajax-%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92/file-20241127122550616.jpg">
     
@@ -510,7 +512,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">29</div>
         <div class="label text-third-text-color text-sm">影踪标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -573,8 +575,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-27 15:44:40</span>
-            <span class="mobile">2024-11-27 15:44:40</span>
+            <span class="desktop">2024-11-28 12:31:21</span>
+            <span class="mobile">2024-11-28 12:31:21</span>
             <span class="hover-info">幽影变迁</span>
         </span>
     
@@ -617,11 +619,30 @@
         </span>
     
     
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ajax/">Ajax</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">异步编程</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Axios/">Axios</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>687 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>813 字</span>
         </span>
     
     
@@ -694,6 +715,10 @@
 </ul>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.<span class="title function_">post</span>(<span class="string">&quot;https://mock.apifox.cn/m1/3083103-0-default/emps/update&quot;</span>,<span class="string">&quot;id=1&quot;</span>).<span class="title function_">then</span>(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">data</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
 
+<h1 id="异步变为同步操作"><a href="#异步变为同步操作" class="headerlink" title="异步变为同步操作"></a>异步变为同步操作</h1><p>有时为了可读性和维护性, 代码又需要让异步变为同步操作.</p>
+<p><code>async</code>就是来声明一个异步方法，<code>await</code>是用来等待异步任务执行.</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">search</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">//基于axios发送异步请求，请求https://web-server.itheima.net/emps/list，根据条件查询员工列表</span></span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">`https://web-server.itheima.net/emps/list?name=<span class="subst">$&#123;<span class="variable language_">this</span>.searchForm.name&#125;</span>&amp;gender=<span class="subst">$&#123;<span class="variable language_">this</span>.searchForm.gender&#125;</span>&amp;job=<span class="subst">$&#123;<span class="variable language_">this</span>.searchForm.job&#125;</span>`</span>);</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">empList</span> = result.<span class="property">data</span>.<span class="property">data</span>;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+
 		</div>
 
 		
@@ -707,7 +732,7 @@
         
             <li>
                 <strong>此记变迁于
-                    :</strong> 2024-11-27 15:44:40
+                    :</strong> 2024-11-28 12:31:21
             </li>
         
         <li>
@@ -729,6 +754,22 @@
 		</div>
 		
 
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Ajax/">#Ajax</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">#异步编程</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Axios/">#Axios</a>&nbsp;
+			</li>
+			
+		</ul>
 		
 
 		
@@ -804,7 +845,7 @@
 	<div class="post-toc">
 		<div class="toc-title">此页目录</div>
 		<div class="page-title">Ajax</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Axios-%E5%8F%91%E9%80%81-Ajax-%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7"><span class="nav-text">Axios - 发送 Ajax 请求工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="nav-text">入门案例</span></a></li></ol></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Axios-%E5%8F%91%E9%80%81-Ajax-%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7"><span class="nav-text">Axios - 发送 Ajax 请求工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="nav-text">入门案例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E5%8F%98%E4%B8%BA%E5%90%8C%E6%AD%A5%E6%93%8D%E4%BD%9C"><span class="nav-text">异步变为同步操作</span></a></li></ol>
 
 	</div>
 </div>
@@ -837,7 +878,7 @@
                     </span>
                     
                         <span>
-                            共 56.2k 字
+                            共 56.7k 字
                         </span>
                     
                 </p>

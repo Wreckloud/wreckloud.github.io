@@ -32,7 +32,7 @@
 <meta property="og:description" content="正则表达式是一种强大的文本处理工具，用于搜索、替换和验证字符串。本文将详细介绍正则表达式的基本概念、语法规则和实际应用。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-23T06:56:24.000Z">
-<meta property="article:modified_time" content="2024-11-22T04:07:31.646Z">
+<meta property="article:modified_time" content="2025-02-20T09:21:16.836Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="计算机通识">
 <meta name="twitter:card" content="summary">
@@ -571,8 +571,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-22 12:07:31</span>
-            <span class="mobile">2024-11-22 12:07:31</span>
+            <span class="desktop">2025-02-20 17:21:16</span>
+            <span class="mobile">2025-02-20 17:21:16</span>
             <span class="hover-info">幽影变迁</span>
         </span>
     
@@ -620,12 +620,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>408 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>681 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -644,130 +644,125 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>可以校验字符串是否符合某种模式，并进行替换、查找等操作。</p>
-<p>在 Java 中，正则表达式是通过 <code>str.matches(正则表达式规则)</code> 来实现的。</p>
-<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
-<li><p><strong>括号</strong>用于查找一定范围的字符串</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[abc]</td>
-<td>查找方括号之间的任何 <strong>单个</strong> 字符</td>
-</tr>
-<tr>
-<td>[^abc]</td>
-<td>查找任何不在方括号之间的字符</td>
-</tr>
-<tr>
-<td>[a-z]</td>
-<td>查找任何从 a 到 z 的小写字母</td>
-</tr>
-<tr>
-<td>[A-Z]</td>
-<td>查找任何从 A 到 Z 的大写字母</td>
-</tr>
-<tr>
-<td>[0-9]</td>
-<td>查找任何从 0 至 9 的数字</td>
-</tr>
-<tr>
-<td>(x</td>
-<td>y)</td>
-</tr>
-</tbody></table>
-</li>
-<li><p><strong>元字符</strong>（Metacharacter）是拥有特殊含义的字符</p>
+			<p>正则表达式是用特殊字符组合描述文本规则的强大工具.<br>在 Java 中，正则表达式是通过 <code>str.matches(正则表达式规则)</code> 来实现的。</p>
+<p>以下是核心语法和案例：</p>
+<h3 id="中括号表达式"><a href="#中括号表达式" class="headerlink" title="[] 中括号表达式"></a><code>[]</code> 中括号表达式</h3><p>匹配中括号中的任意一个字符.</p>
+<ul>
+<li><code>[a-z]</code>  表示字母 a 到 z 的范围</li>
+<li><code>[^abc]</code>  表示排除 a&#x2F;b&#x2F;c 的任意字符</li>
+<li><code>^</code>  在中括号内表示”排除”</li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配单个元音字母</span></span><br><span class="line">System.out.println(<span class="string">&quot;a&quot;</span>.matches(<span class="string">&quot;[aeiou]&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配非数字字符</span></span><br><span class="line">System.out.println(<span class="string">&quot;k&quot;</span>.matches(<span class="string">&quot;[^0-9]&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配 1 个大写字母或数字</span></span><br><span class="line">System.out.println(<span class="string">&quot;A&quot;</span>.matches(<span class="string">&quot;[A-Z0-9]&quot;</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="转义字符与元字符"><a href="#转义字符与元字符" class="headerlink" title="\ 转义字符与元字符"></a><code>\</code> 转义字符与元字符</h3><p>转义字符将其后紧跟的字符标记为有特殊含义的<strong>元字符</strong>（Metacharacter）</p>
 <table>
 <thead>
 <tr>
 <th>元字符</th>
-<th>描述</th>
+<th>作用</th>
+<th>Java 正则写法</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>.</code></td>
-<td>匹配除换行符以外的任何单个字符</td>
+<td>匹配任意字符（除换行符）</td>
+<td><code>\\.</code></td>
 </tr>
 <tr>
 <td><code>\d</code></td>
-<td>查找数字</td>
+<td>匹配数字</td>
+<td><code>\\d</code></td>
 </tr>
 <tr>
 <td><code>\D</code></td>
-<td>查找非数字</td>
+<td>匹配非数字</td>
+<td><code>\\D</code></td>
 </tr>
 <tr>
 <td><code>\w</code></td>
-<td>查找字母、数字和下划线</td>
+<td>匹配字母、数字、下划线</td>
+<td><code>\\w</code></td>
 </tr>
 <tr>
 <td><code>\W</code></td>
-<td>查找非字母、数字和下划线</td>
+<td>匹配非单词字符</td>
+<td><code>\\W</code></td>
 </tr>
 <tr>
 <td><code>\s</code></td>
-<td>查找空白字符</td>
+<td>匹配空格、制表符等</td>
+<td><code>\\s</code></td>
 </tr>
 <tr>
 <td><code>\b</code></td>
 <td>匹配单词边界</td>
-</tr>
-<tr>
-<td><code>\uxxxx</code></td>
-<td></td>
+<td><code>\\b</code></td>
 </tr>
 </tbody></table>
-</li>
-<li><p>Quantifiers <strong>定义量词</strong></p>
-<table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检查字符串是否为 3 位数字</span></span><br><span class="line">System.out.println(<span class="string">&quot;123&quot;</span>.matches(<span class="string">&quot;\\d&#123;3&#125;&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 判断是否包含非数字字符</span></span><br><span class="line">System.out.println(<span class="string">&quot;a1&quot;</span>.matches(<span class="string">&quot;.*\\D.*&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配以 &quot;cat&quot; 结尾的单词（需用 \\b 表示边界）</span></span><br><span class="line">System.out.println(<span class="string">&quot;bobcat&quot;</span>.matches(<span class="string">&quot;.*\\bcat&quot;</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><h4 id="1-模糊限定符"><a href="#1-模糊限定符" class="headerlink" title="1. 模糊限定符"></a>1. 模糊限定符</h4><table>
 <thead>
 <tr>
-<th>表达式</th>
-<th>描述</th>
+<th>符号</th>
+<th>作用</th>
+<th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>*</code></td>
-<td>匹配前面的字符零次或多次</td>
+<td>匹配 0 次或多次</td>
+<td><code>a*</code></td>
 </tr>
 <tr>
 <td><code>+</code></td>
-<td>匹配前面的字符一次或多次</td>
+<td>匹配 1 次或多次</td>
+<td><code>\\d+</code></td>
 </tr>
 <tr>
 <td><code>?</code></td>
-<td>匹配前面的字符零次或一次</td>
+<td>匹配 0 次或 1 次</td>
+<td><code>xyz?</code></td>
 </tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配以 a 开头，后跟 0 或多个 b 的字符串</span></span><br><span class="line">System.out.println(<span class="string">&quot;abbb&quot;</span>.matches(<span class="string">&quot;ab\*&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配至少 1 位数字</span></span><br><span class="line">System.out.println(<span class="string">&quot;7&quot;</span>.matches(<span class="string">&quot;\\d+&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配 &quot;http&quot; 或 &quot;https&quot;</span></span><br><span class="line">System.out.println(<span class="string">&quot;https&quot;</span>.matches(<span class="string">&quot;https?&quot;</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="2-精确限定符"><a href="#2-精确限定符" class="headerlink" title="2. 精确限定符"></a>2. 精确限定符</h4><table>
+<thead>
 <tr>
+<th>符号</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
 <td><code>&#123;n&#125;</code></td>
-<td>匹配前面的字符恰好 n 次</td>
+<td>匹配恰好 n 次</td>
+<td><code>a&#123;3&#125;</code></td>
 </tr>
 <tr>
 <td><code>&#123;n,&#125;</code></td>
-<td>匹配前面的字符至少 n 次</td>
+<td>匹配至少 n 次</td>
+<td><code>\\d&#123;2,&#125;</code></td>
 </tr>
 <tr>
 <td><code>&#123;n,m&#125;</code></td>
-<td>匹配前面的字符至少 n 次，但不超过 m 次</td>
+<td>匹配至少 n 次，至多 m 次</td>
+<td><code>a&#123;2,4&#125;</code></td>
 </tr>
 </tbody></table>
-</li>
-</ol>
-<p>例如:<br>判断手机号码是否合法:</p>
-<ol>
-<li>手机号码由 11 位数字组成</li>
-<li>以数字 1 开头</li>
-<li>第二位数字为 3 到 9</li>
-</ol>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String regex = &quot;1[3-9]\\d&#123;9&#125;&quot;;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配 3 位区号 + 8 位数字的电话号码</span></span><br><span class="line">System.out.println(<span class="string">&quot;010-12345678&quot;</span>.matches(<span class="string">&quot;\\d&#123;3&#125;-\\d&#123;8&#125;&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配 2~4 个连续字母 a</span></span><br><span class="line">System.out.println(<span class="string">&quot;aaa&quot;</span>.matches(<span class="string">&quot;a&#123;2,4&#125;&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 匹配至少 5 位数字</span></span><br><span class="line">System.out.println(<span class="string">&quot;12345&quot;</span>.matches(<span class="string">&quot;\\d&#123;5,&#125;&quot;</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
 
-<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>定义（创建）一个 JavaScript 对象:</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wolf = &#123;</span><br><span class="line">  <span class="title class_">Name</span>: <span class="string">&quot;Wreckloud&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">  <span class="attr">howling</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;howl~&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<h3 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h3><ol>
+<li>邮箱格式验证</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">regex</span> <span class="operator">=</span> <span class="string">&quot;[a-zA-Z0-9]+@[a-z]+\\.[a-z]&#123;2,3&#125;&quot;</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;test@mail.com&quot;</span>.matches(regex)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>日期格式验证（YYYY-MM-DD）</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">regex</span> <span class="operator">=</span> <span class="string">&quot;\\d&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])&quot;</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;2023-10-05&quot;</span>.matches(regex)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
 		</div>
 
 		
@@ -781,7 +776,7 @@
         
             <li>
                 <strong>此记变迁于
-                    :</strong> 2024-11-22 12:07:31
+                    :</strong> 2025-02-20 17:21:16
             </li>
         
         <li>
@@ -898,7 +893,7 @@
 	<div class="post-toc">
 		<div class="toc-title">此页目录</div>
 		<div class="page-title">正则表达式</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-text">对象</span></a></li></ol></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%8B%AC%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">[] 中括号表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-text">\ 转义字符与元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-text">限定符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B"><span class="nav-text">综合案例</span></a></li></ol>
 
 	</div>
 </div>
@@ -931,7 +926,7 @@
                     </span>
                     
                         <span>
-                            共 83.1k 字
+                            共 88k 字
                         </span>
                     
                 </p>

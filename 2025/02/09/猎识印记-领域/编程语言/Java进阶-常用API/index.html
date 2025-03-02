@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/java%E8%BF%9B%E9%98%B6-%E5%B8%B8%E7%94%A8api/file-20250226160910528.jpg">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/java%E8%BF%9B%E9%98%B6-%E5%B8%B8%E7%94%A8api/file-20250228142321052.jpg">
 <meta property="article:published_time" content="2025-02-09T02:27:43.000Z">
-<meta property="article:modified_time" content="2025-02-28T07:46:19.145Z">
+<meta property="article:modified_time" content="2025-03-01T04:21:22.520Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="API">
@@ -524,7 +524,7 @@
         <div class="label text-third-text-color text-sm">影踪域</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">影踪记</div>
     </a>
 </div>
@@ -565,7 +565,7 @@
 				<div class="author flex items-center">
 					<span class="name text-default-text-color text-lg font-semibold">Wreckloud_雲之残骸</span>
 					
-					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
 					
 				</div>
 				<div class="meta-info">
@@ -579,8 +579,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-28 15:46:19</span>
-            <span class="mobile">2025-02-28 15:46:19</span>
+            <span class="desktop">2025-03-01 12:21:22</span>
+            <span class="mobile">2025-03-01 12:21:22</span>
             <span class="hover-info">幽影变迁</span>
         </span>
     
@@ -632,12 +632,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.2k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.8k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>26 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>29 分钟</span>
         </span>
     
     
@@ -1356,56 +1356,210 @@
 <li><p><strong>finally 资源释放</strong></p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    br = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;data.txt&quot;</span>));</span><br><span class="line">    <span class="comment">// 读取操作...</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(br != <span class="literal">null</span>) &#123;</span><br><span class="line">        br.close(); <span class="comment">// 确保文件流关闭</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
 </ol>
-<h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><p>Date 类表示时间上的某个特定时刻, 精度为毫秒.</p>
-<table>
+<h3 id="Date-类（旧版-API，线程不安全）"><a href="#Date-类（旧版-API，线程不安全）" class="headerlink" title="Date 类（旧版 API，线程不安全）"></a>Date 类（旧版 API，线程不安全）</h3><p><strong>作用</strong>：表示时间戳（1970-01-01 00:00:00 GMT 至今的毫秒数），适用于简单时间记录和系统间传输</p>
+<h4 id="构造方法表"><a href="#构造方法表" class="headerlink" title="构造方法表"></a>构造方法表</h4><table>
 <thead>
 <tr>
-<th>构造方法</th>
-<th>描述</th>
+<th>方法签名</th>
+<th>示例代码</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Date()</td>
-<td>创建一个Date对象, 表示创建对象那一刻, 精确到毫秒</td>
+<td><code>Date()</code></td>
+<td><code>Date now = new Date()</code></td>
+<td>创建当前系统时间实例（含毫秒）</td>
 </tr>
 <tr>
-<td>Date(long date)</td>
-<td>创建一个Date对象, 表示从 纪元时间的指定毫秒之后那一刻</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td><code>Date(long milliseconds)</code></td>
+<td><code>Date date = new Date(1672531200000L)</code></td>
+<td>创建指定时间戳实例（对应 2023-01-01 00:00:00 GMT）</td>
 </tr>
 </tbody></table>
-<table>
+<h4 id="常用方法表"><a href="#常用方法表" class="headerlink" title="常用方法表"></a>常用方法表</h4><table>
 <thead>
 <tr>
-<th>返回值</th>
 <th>方法</th>
-<th>描述</th>
+<th>返回值</th>
+<th>应用场景</th>
+<th>典型返回值示例</th>
 </tr>
 </thead>
 <tbody><tr>
+<td><code>after(Date when)</code></td>
 <td>boolean</td>
-<td>after(Date when)</td>
-<td>判断当前日期是否在指定日期之后</td>
+<td>验证票据有效期</td>
+<td><code>true</code>&#x2F;<code>false</code></td>
 </tr>
 <tr>
+<td><code>before(Date when)</code></td>
 <td>boolean</td>
-<td>before(Date when)</td>
-<td>判断当前日期是否在指定日期之前</td>
+<td>判断活动是否已开始</td>
+<td><code>true</code>&#x2F;<code>false</code></td>
 </tr>
 <tr>
+<td><code>compareTo(Date)</code></td>
 <td>int</td>
-<td>conpareTo(Date anotherDate)</td>
-<td>比较当前日期与指定, 返回1, 0, -1 表示大于, 等于和小于</td>
+<td>时间排序（任务调度队列）</td>
+<td><code>1</code>&#x2F;<code>0</code>&#x2F;<code>-1</code></td>
 </tr>
 <tr>
+<td><code>getTime()</code></td>
 <td>long</td>
-<td>getTime()</td>
-<td>获取此Date 对象表示的时间戳, 以毫秒为单位.</td>
+<td>生成唯一 ID（时间戳+随机数）</td>
+<td><code>1690012345678</code></td>
 </tr>
 </tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 场景1：验证订单有效期</span></span><br><span class="line"><span class="type">Date</span> <span class="variable">createTime</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">1690000000000L</span>);</span><br><span class="line"><span class="type">Date</span> <span class="variable">expireTime</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">1690000000000L</span> + <span class="number">3600_000L</span>); <span class="comment">// 1小时后过期</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isValid</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>().before(expireTime); <span class="comment">// 检查当前是否在有效期内</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 场景2：生成唯一ID</span></span><br><span class="line">String <span class="title function_">generateOrderId</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">timestamp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>().getTime();</span><br><span class="line">    <span class="type">int</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>().nextInt(<span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">return</span> timestamp + <span class="string">&quot;-&quot;</span> + random; <span class="comment">// &quot;1690012345678-742&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 场景3：时间排序</span></span><br><span class="line">List&lt;Date&gt; dates = Arrays.asList(</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">1690000000000L</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">1680000000000L</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">1700000000000L</span>)</span><br><span class="line">);</span><br><span class="line">Collections.sort(dates); <span class="comment">// 自然顺序排序</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="LocalDate（日期处理）"><a href="#LocalDate（日期处理）" class="headerlink" title="LocalDate（日期处理）"></a>LocalDate（日期处理）</h3><p><strong>作用</strong>：处理年月日（YYYY-MM-DD），不包含时间及时区</p>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>now()</code></td>
+<td>LocalDate</td>
+<td>获取当前日期</td>
+</tr>
+<tr>
+<td><code>of(year, month, day)</code></td>
+<td>LocalDate</td>
+<td>创建指定日期</td>
+</tr>
+<tr>
+<td><code>parse(String)</code></td>
+<td>LocalDate</td>
+<td>解析标准格式字符串（ISO 8601）</td>
+</tr>
+<tr>
+<td><code>plusDays(long)</code></td>
+<td>LocalDate</td>
+<td>日期加法（天）</td>
+</tr>
+<tr>
+<td><code>minusMonths(long)</code></td>
+<td>LocalDate</td>
+<td>日期减法（月）</td>
+</tr>
+<tr>
+<td><code>isBefore(LocalDate)</code></td>
+<td>boolean</td>
+<td>日期比较</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建示例</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">today</span> <span class="operator">=</span> LocalDate.now();</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">nationalDay</span> <span class="operator">=</span> LocalDate.of(<span class="number">2023</span>, <span class="number">10</span>, <span class="number">1</span>);</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">parsedDate</span> <span class="operator">=</span> LocalDate.parse(<span class="string">&quot;2023-07-20&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 应用场景：计算有效期</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">orderDate</span> <span class="operator">=</span> LocalDate.now();</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">expireDate</span> <span class="operator">=</span> orderDate.plusDays(<span class="number">30</span>);  <span class="comment">// 30天后过期</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="LocalDateTime（日期时间处理）"><a href="#LocalDateTime（日期时间处理）" class="headerlink" title="LocalDateTime（日期时间处理）"></a>LocalDateTime（日期时间处理）</h3><p><strong>作用</strong>：处理年月日时分秒（精确到纳秒），不包含时区</p>
+<h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>now()</code></td>
+<td>LocalDateTime</td>
+<td>获取当前日期时间</td>
+</tr>
+<tr>
+<td><code>of(year, month, day, hour, minute)</code></td>
+<td>LocalDateTime</td>
+<td>创建指定日期时间</td>
+</tr>
+<tr>
+<td><code>plusHours(long)</code></td>
+<td>LocalDateTime</td>
+<td>时间加法（小时）</td>
+</tr>
+<tr>
+<td><code>toLocalDate()</code></td>
+<td>LocalDate</td>
+<td>提取日期部分</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建与操作示例</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">now</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">meetingTime</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2023</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">14</span>, <span class="number">30</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 应用场景：会议提醒</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">nextMeeting</span> <span class="operator">=</span> meetingTime.plusWeeks(<span class="number">1</span>).withHour(<span class="number">15</span>);  <span class="comment">// 下周同时间，改为15点</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="DateTimeFormatter（格式化解析）"><a href="#DateTimeFormatter（格式化解析）" class="headerlink" title="DateTimeFormatter（格式化解析）"></a>DateTimeFormatter（格式化解析）</h4><p><strong>作用</strong>：线程安全的日期格式处理</p>
+<h4 id="常用模式"><a href="#常用模式" class="headerlink" title="常用模式"></a>常用模式</h4><table>
+<thead>
+<tr>
+<th>模式符号</th>
+<th>说明</th>
+<th>示例输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>yyyy</code></td>
+<td>四位年份</td>
+<td>2023</td>
+</tr>
+<tr>
+<td><code>MM</code></td>
+<td>两位月份</td>
+<td>08</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>两位日期</td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>HH</code></td>
+<td>24 小时制小时</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>mm</code></td>
+<td>分钟</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>ss</code></td>
+<td>秒</td>
+<td>45</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 格式化示例</span></span><br><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">formatter</span> <span class="operator">=</span> DateTimeFormatter.ofPattern(<span class="string">&quot;yyyy-MM-dd HH:mm&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">formatted</span> <span class="operator">=</span> now.format(formatter);  <span class="comment">// &quot;2023-07-20 14:30&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 解析示例</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">parsed</span> <span class="operator">=</span> LocalDateTime.parse(<span class="string">&quot;2023-12-31 23:59&quot;</span>, formatter);</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h3 id="Duration（时间间隔）"><a href="#Duration（时间间隔）" class="headerlink" title="Duration（时间间隔）"></a>Duration（时间间隔）</h3><p><strong>作用</strong>：精确计算时间差（支持纳秒级精度）</p>
+<h4 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>between(start, end)</code></td>
+<td>Duration</td>
+<td>计算两个时间的间隔</td>
+</tr>
+<tr>
+<td><code>toHours()</code></td>
+<td>long</td>
+<td>转换为小时总数</td>
+</tr>
+<tr>
+<td><code>plusMinutes(long)</code></td>
+<td>Duration</td>
+<td>增加分钟数</td>
+</tr>
+<tr>
+<td><code>isNegative()</code></td>
+<td>boolean</td>
+<td>判断是否为负时间间隔</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算代码执行时间</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">start</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"><span class="comment">// ...执行操作...</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">end</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"></span><br><span class="line"><span class="type">Duration</span> <span class="variable">duration</span> <span class="operator">=</span> Duration.between(start, end);</span><br><span class="line">System.out.println(<span class="string">&quot;耗时：&quot;</span> + duration.toMillis() + <span class="string">&quot;ms&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 时间增量操作</span></span><br><span class="line"><span class="type">Duration</span> <span class="variable">extended</span> <span class="operator">=</span> duration.plusHours(<span class="number">2</span>).plusMinutes(<span class="number">30</span>);</span><br></pre></td></tr></table></figure></div>
 
 		</div>
 
@@ -1420,7 +1574,7 @@
         
             <li>
                 <strong>此记变迁于
-                    :</strong> 2025-02-28 15:46:19
+                    :</strong> 2025-03-01 12:21:22
             </li>
         
         <li>
@@ -1460,6 +1614,18 @@
 
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/03/01/%E7%8C%8E%E8%AF%86%E5%8D%B0%E8%AE%B0-%E9%A2%86%E5%9F%9F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%88%A0%E5%BA%93%EF%BC%9AMySQL%E7%AC%94%E8%AE%B0/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">从入门到删库：MySQL笔记</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -1529,7 +1695,7 @@
 	<div class="post-toc">
 		<div class="toc-title">此页目录</div>
 		<div class="page-title">Java进阶-常用API</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equals"><span class="nav-text">equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode"><span class="nav-text">hashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toString-NaN"><span class="nav-text">toString</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intern"><span class="nav-text">intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E4%B8%8E%E6%AF%94%E8%BE%83"><span class="nav-text">判断与比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="nav-text">空值检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%BC%80%E6%A3%80%E6%9F%A5"><span class="nav-text">前后缀检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%8C%B9%E9%85%8D"><span class="nav-text">内容匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96"><span class="nav-text">获取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96"><span class="nav-text">基础属性获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E5%89%B2%E4%B8%8E%E6%88%AA%E5%8F%96"><span class="nav-text">切割与截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%9F%A5%E6%89%BE%E5%AE%9A%E4%BD%8D"><span class="nav-text">类型转换与查找定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="nav-text">扩展方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2"><span class="nav-text">转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%9B%BF%E6%8D%A2%E6%93%8D%E4%BD%9C"><span class="nav-text">基础替换操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-text">大小写转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC%E5%A4%84%E7%90%86"><span class="nav-text">空格处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95%E4%B8%8E%E6%A1%88%E4%BE%8B"><span class="nav-text">扩展方法与案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B-2"><span class="nav-text">综合应用案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%BC%E6%8E%A5"><span class="nav-text">拼接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%8B%BC%E6%8E%A5%E6%96%B9%E6%A1%88"><span class="nav-text">静态拼接方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%8B%BC%E6%8E%A5%E5%B7%A5%E5%85%B7%EF%BC%9AStringBuilder"><span class="nav-text">动态拼接工具：StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-text">包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1"><span class="nav-text">自动装箱和拆箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-text">对象缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">典型应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="nav-text">自定义异常</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7"><span class="nav-text">异常捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%8A%9B%E5%87%BA"><span class="nav-text">异常抛出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8-1"><span class="nav-text">自定义异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%97%B4"><span class="nav-text">时间</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equals"><span class="nav-text">equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode"><span class="nav-text">hashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toString-NaN"><span class="nav-text">toString</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intern"><span class="nav-text">intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E4%B8%8E%E6%AF%94%E8%BE%83"><span class="nav-text">判断与比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E5%80%BC%E6%A3%80%E6%9F%A5"><span class="nav-text">空值检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%BC%80%E6%A3%80%E6%9F%A5"><span class="nav-text">前后缀检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%8C%B9%E9%85%8D"><span class="nav-text">内容匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96"><span class="nav-text">获取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96"><span class="nav-text">基础属性获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E5%89%B2%E4%B8%8E%E6%88%AA%E5%8F%96"><span class="nav-text">切割与截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%9F%A5%E6%89%BE%E5%AE%9A%E4%BD%8D"><span class="nav-text">类型转换与查找定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="nav-text">扩展方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2"><span class="nav-text">转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%9B%BF%E6%8D%A2%E6%93%8D%E4%BD%9C"><span class="nav-text">基础替换操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-text">大小写转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC%E5%A4%84%E7%90%86"><span class="nav-text">空格处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95%E4%B8%8E%E6%A1%88%E4%BE%8B"><span class="nav-text">扩展方法与案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B-2"><span class="nav-text">综合应用案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%BC%E6%8E%A5"><span class="nav-text">拼接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%8B%BC%E6%8E%A5%E6%96%B9%E6%A1%88"><span class="nav-text">静态拼接方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%8B%BC%E6%8E%A5%E5%B7%A5%E5%85%B7%EF%BC%9AStringBuilder"><span class="nav-text">动态拼接工具：StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-text">包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1"><span class="nav-text">自动装箱和拆箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-text">对象缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">典型应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="nav-text">自定义异常</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7"><span class="nav-text">异常捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%8A%9B%E5%87%BA"><span class="nav-text">异常抛出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8-1"><span class="nav-text">自定义异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-%E7%B1%BB%EF%BC%88%E6%97%A7%E7%89%88-API%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%EF%BC%89"><span class="nav-text">Date 类（旧版 API，线程不安全）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LocalDate%EF%BC%88%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%EF%BC%89"><span class="nav-text">LocalDate（日期处理）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LocalDateTime%EF%BC%88%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%EF%BC%89"><span class="nav-text">LocalDateTime（日期时间处理）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duration%EF%BC%88%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%EF%BC%89"><span class="nav-text">Duration（时间间隔）</span></a></li></ol></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1558,11 +1724,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 31 篇幽影记
+                        共 32 篇幽影记
                     </span>
                     
                         <span>
-                            共 88k 字
+                            共 88.8k 字
                         </span>
                     
                 </p>

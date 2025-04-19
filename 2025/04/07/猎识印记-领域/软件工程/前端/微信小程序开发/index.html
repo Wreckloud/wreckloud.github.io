@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="个人博客">
+    
+    <meta name="author" content="Wreckloud_雲之残骸">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://www.wreckloud.com/2025/04/07/猎识印记-领域/软件工程/前端/微信小程序开发/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="文章简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序开发">
+<meta property="og:url" content="https://www.wreckloud.com/2025/04/07/%E7%8C%8E%E8%AF%86%E5%8D%B0%E8%AE%B0-%E9%A2%86%E5%9F%9F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="渊痕爪记">
+<meta property="og:description" content="文章简介">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/file-20250408212839001.jpg">
+<meta property="og:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/file-20250408212852000.jpg">
+<meta property="article:published_time" content="2025-04-07T12:19:02.000Z">
+<meta property="article:modified_time" content="2025-04-09T14:07:59.650Z">
+<meta property="article:author" content="Wreckloud">
+<meta property="article:tag" content="个人博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.wreckloud.com/img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/file-20250408212839001.jpg">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png">
+    <meta name="theme-color" content="#3f871e">
+    <link rel="shortcut icon" href="/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            微信小程序开发 | 渊痕爪记
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/css/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+        <link href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" rel="stylesheet">
+    
+    
+    
+        <link href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" rel="stylesheet">
+    
+    
+        <link href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" rel="stylesheet">
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"www.wreckloud.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"3px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#3f871e","secondary":"#233f15","default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":true,"family":"MiSans","url":"https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans"},"english":{"enable":true,"family":"MiSans","url":"https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans"},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":false,"style":"static","image":{"light":"/images/light.png","dark":"/images/dark.jpg"},"title":"世界探索笔记","subtitle":{"text":["一言读取中..."],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":0,"starting_delay":1500,"backing_delay":null,"loop":false,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":"ture","family":"MiSans","url":"https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans"},"social_links":{"enable":true,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":"1677820334@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.8.1","navbar":{"auto_hide":false,"color":{"left":"#0d0e12","right":"#56597b","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"画廊":{"path":"/masonry","icon":"fa-regular fa-chart-bar"},"About":{"icon":"fa-solid fa-feather","path":"/links/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"一只啥也不会又没人要的狼","show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/17 14:00:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        渊痕爪记
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                渊痕爪记
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    狼首领地
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    爪迹年鉴
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories/"
+                                        >
+                                    <i class="fa-solid fa-folder fa-fw"></i>
+                                    影踪域
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/masonry"
+                                        >
+                                    <i class="fa-regular fa-chart-bar fa-fw"></i>
+                                    画廊
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-solid fa-feather fa-fw"></i>
+                                    狼影之源
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                狼首领地
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                爪迹年鉴
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories/"
+                        >
+                            <span>
+                                影踪域
+                            </span>
+                            
+                                <i class="fa-solid fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/masonry"
+                        >
+                            <span>
+                                画廊
+                            </span>
+                            
+                                <i class="fa-regular fa-chart-bar fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
+                                狼影之源
+                            </span>
+                            
+                                <i class="fa-solid fa-feather fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">44</div>
+        <div class="label text-third-text-color text-sm">影踪标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">影踪域</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">41</div>
+        <div class="label text-third-text-color text-sm">影踪记</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/" alt="微信小程序开发" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">微信小程序开发</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/default.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Wreckloud_雲之残骸</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-04-07 20:19:02</span>
+        <span class="mobile">2025-04-07 20:19:02</span>
+        <span class="hover-info">幽影初现</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-09 22:07:59</span>
+            <span class="mobile">2025-04-09 22:07:59</span>
+            <span class="hover-info">幽影变迁</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>12 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="入门简介"><a href="#入门简介" class="headerlink" title="入门简介"></a>入门简介</h1><h3 id="运行环境与开发模式"><a href="#运行环境与开发模式" class="headerlink" title="运行环境与开发模式"></a>运行环境与开发模式</h3><p>小程序与网页开发的核心差异在于执行环境的不同。</p>
+<blockquote>
+<p>网页运行在浏览器沙箱环境，而小程序运行在微信封装的混合环境中。</p>
+</blockquote>
+<p>这种差异导致两个重要特征：</p>
+<ul>
+<li>小程序无法直接操作 DOM&#x2F;BOM API，但可以通过微信提供的原生 API 实现硬件交互能力（如地理定位、扫码支付等）</li>
+<li>开发流程必须遵循微信生态规范，需经历账号申请、开发者工具安装、项目标准化配置等步骤。</li>
+</ul>
+<h3 id="项目结构体系"><a href="#项目结构体系" class="headerlink" title="项目结构体系"></a>项目结构体系</h3><p>微信小程序的项目结构以模块化设计为核心，通过清晰的目录划分实现功能解耦。</p>
+<ol>
+<li><strong><code>pages</code></strong> 存放所有页面，每个页面由四个文件组成（同名目录下）：<br>• **<code>.js</code>**：页面逻辑（数据、事件处理）<br>• **<code>.wxml</code>**：页面结构（类似 HTML）<br>• **<code>.wxss</code>**：页面样式（类似 CSS）<br>• **<code>.json</code>**：页面配置（窗口样式、导航栏等）</li>
+</ol>
+<blockquote>
+<p>新增页面时，直接在<code>app.json</code>的<code>pages</code>列表里添加路径，开发者工具会自动帮你生成文件。<br>小程序会把排在第一位的页面当作项目首页进行渲染。</p>
+</blockquote>
+<ol start="2">
+<li><p>**<code>utils</code>**：存放工具函数（比如时间格式化、网络请求封装），像工具箱里的螺丝刀、剪刀，方便重复使用。</p>
+</li>
+<li><p><strong><code>app.js</code></strong> ：小程序的“入口文件”，相当于 APP 的启动程序，用来初始化全局数据（比如用户登录状态）。</p>
+</li>
+<li><p><strong><code>app.json</code></strong> ：全局配置文件，控制：<br>◦ 页面路径（<code>pages</code>列表）<br>◦ 窗口样式（标题颜色、导航栏背景）<br>◦ 底部导航栏（图标和跳转页面）<br>◦ 组件样式版本（<code>style: &quot;v2&quot;</code>启用新版按钮圆角）</p>
+</li>
+<li><p><strong><code>app.wxss</code></strong> ：全局样式表，定义所有页面通用的样式（比如按钮颜色、字体大小）。</p>
+</li>
+<li><p><strong><code>project.config.json</code></strong> ：记录开发工具的个性化设置（比如是否开启代码检查、项目名称）。</p>
+</li>
+<li><p><strong><code>sitemap.json</code></strong> ：控制微信是否允许爬虫收录页面（默认全允许，敏感页面可手动禁止）。</p>
+</li>
+</ol>
+<h3 id="宿主环境"><a href="#宿主环境" class="headerlink" title="宿主环境"></a>宿主环境</h3><p>在移动开发领域中，<strong>宿主环境</strong>（Host Environment）指应用程序运行所依赖的基础操作系统与容器环境。以微信小程序为例，手机微信客户端即为小程序的宿主环境，提供原生渲染能力、API 接口及安全沙箱等核心支持。</p>
+<p>这一设计使得小程序无需独立安装即可运行，但也带来环境隔离特性：安卓版微信内的小程序无法直接运行于 iOS 微信客户端，充分体现了宿主环境对软件行为的决定性作用。</p>
+<h4 id="通信主体架构"><a href="#通信主体架构" class="headerlink" title="通信主体架构"></a>通信主体架构</h4><p>小程序的运行时架构采用<strong>逻辑层与渲染层分离</strong>的双线程模型，这是现代前端架构中常见的性能与安全优化方案：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../../../img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/file-20250408212839001.jpg"
+                     
+                ></p>
+<ul>
+<li><strong>渲染层</strong>负责视觉呈现，由 WXML 模板引擎与 WXSS 样式解析器构成。其工作方式类似于浏览器渲染进程，但针对移动端性能特点进行轻量化改造。</li>
+<li><strong>逻辑层</strong>作为业务核心，运行独立的 JavaScript 引擎（iOS 使用 JavaScriptCore，安卓采用 V8 内核），处理数据运算、事件响应等非可视化逻辑。</li>
+</ul>
+<p>两层的物理隔离避免了单线程模型中 JS 运算阻塞渲染的问题，但也带来了特殊的通信需求。</p>
+<h4 id="跨线程通信模型"><a href="#跨线程通信模型" class="headerlink" title="跨线程通信模型"></a>跨线程通信模型</h4><p>小程序通过<strong>微信客户端中转</strong>实现跨线程通信，该设计有效平衡了安全性与性能：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../../../../img/%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/file-20250408212852000.jpg"
+                     
+                ></p>
+<ol>
+<li><strong>视图-逻辑通信</strong>：用户交互事件（如点击）由渲染层捕获，经微信原生模块序列化后转发至逻辑层。反向数据更新则通过<code>setData</code>接口传递，其内部采用差分算法优化传输效率。</li>
+<li><strong>服务端通信</strong>：逻辑层发起的网络请求并非直接访问第三方服务器，而是由微信客户端代理转发。这种中间人模式既实现统一权限控制（如自动添加安全头），也便于网络状态的集中监控。</li>
+</ol>
+<p>对比传统 Web 应用直接通信模式，小程序的中转机制虽然引入轻微延迟，但显著提升了代码安全性与跨平台一致性。</p>
+<h3 id="生命周期与运行机制"><a href="#生命周期与运行机制" class="headerlink" title="生命周期与运行机制"></a>生命周期与运行机制</h3><p><strong>冷启动流程</strong>包含以下关键阶段：</p>
+<ol>
+<li><strong>代码包下载</strong>：微信 CDN 分发加密包体，客户端完成签名校验与解密</li>
+<li><strong>配置解析</strong>：读取<code>app.json</code>全局配置，初始化导航栏、窗口样式等基础参数</li>
+<li><strong>实例化应用</strong>：执行<code>app.js</code>入口文件，触发<code>App()</code>构造函数创建应用单例</li>
+<li><strong>首屏渲染</strong>：根据路由配置加载首页资源，完成页面级初始化（详细流程见下文）</li>
+</ol>
+<p><strong>页面渲染周期</strong>则进一步细分为：</p>
+<ol>
+<li><strong>配置加载</strong>：解析页面<code>json</code>配置，确定使用的自定义组件与页面特性</li>
+<li><strong>模板编译</strong>：并行加载 WXML 模板与 WXSS 样式，编译生成虚拟 DOM 树</li>
+<li><strong>逻辑初始化</strong>：执行页面 JS 文件，通过<code>Page()</code>构造函数创建上下文环境</li>
+<li><strong>数据绑定</strong>：将<code>data</code>对象与模板动态关联，触发首次渲染流水线</li>
+</ol>
+<p><strong>开发注意点</strong>：应避免在<code>data</code>初始化阶段执行耗时操作，以防阻塞渲染线程。对于复杂数据结构的传输，建议使用<code>JSON.parse(JSON.stringify())</code>进行深拷贝以避免引用污染。</p>
+<h3 id="微信小程序组件"><a href="#微信小程序组件" class="headerlink" title="微信小程序组件"></a>微信小程序组件</h3><p>小程序组件体系基于 Web Components 思想进行封装，但与 HTML 标准元素存在显著差异：组件功能更场景化、属性配置更声明式。</p>
+<p><code>view</code> - <code>div</code><br>作为基础布局单元，<code>&lt;view&gt;</code> 与 <code>&lt;div&gt;</code> 的异同值得关注：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序 --&gt;</span><br><span class="line">&lt;view class=&quot;container&quot; hover-class=&quot;active&quot;&gt;</span><br><span class="line">  &lt;text&gt;可交互视图容器&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML --&gt;</span><br><span class="line">&lt;div class=&quot;container&quot; onclick=&quot;handleClick()&quot;&gt;</span><br><span class="line">  &lt;span&gt;普通块级容器&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>scroll-view</code> - 原生滚动<br>长列表场景下的实现差异：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序纵向滚动 --&gt;</span><br><span class="line">&lt;scroll-view scroll-y style=&quot;height: 300rpx&quot;&gt;</span><br><span class="line">  &lt;view wx:for=&quot;&#123;&#123;list&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;/scroll-view&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 实现 --&gt;</span><br><span class="line">&lt;div style=&quot;height: 300px; overflow-y: auto&quot;&gt;</span><br><span class="line">  &lt;div v-for=&quot;item in list&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>text</code> - <code>span</code><br>文本处理的核心差异：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序长按选择 --&gt;</span><br><span class="line">&lt;text selectable&gt;&#123;&#123;content&#125;&#125;&lt;/text&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 实现类似功能需添加CSS --&gt;</span><br><span class="line">&lt;span style=&quot;user-select: all&quot;&gt;&#123;&#123;content&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>rich-text</code> - <code>innerHTML</code><br>富文本解析的安全策略对比：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序安全渲染 --&gt;</span><br><span class="line">&lt;rich-text nodes=&quot;&#123;&#123;htmlContent&#125;&#125;&quot;&gt;&lt;/rich-text&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 危险做法 --&gt;</span><br><span class="line">&lt;div v-html=&quot;htmlContent&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 安全做法需配合 sanitize 库 --&gt;</span><br><span class="line">&lt;div id=&quot;safeContainer&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  sanitizeHTML(htmlContent, &#123; allowTags: [&#x27;b&#x27;] &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>button</code> - 表单按钮<br>功能扩展性对比：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序开放能力 --&gt;</span><br><span class="line">&lt;button open-type=&quot;share&quot;&gt;分享&lt;/button&gt;</span><br><span class="line">&lt;button open-type=&quot;getPhoneNumber&quot;&gt;获取手机号&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 需复杂实现 --&gt;</span><br><span class="line">&lt;button onclick=&quot;handleShare()&quot;&gt;调用原生分享接口&lt;/button&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>input</code> - 表单输入<br>数据绑定差异：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序双向绑定 --&gt;</span><br><span class="line">&lt;input value=&quot;&#123;&#123;value&#125;&#125;&quot; bindinput=&quot;onInput&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 现代框架实现 --&gt;</span><br><span class="line">&lt;input :value=&quot;value&quot; @input=&quot;onInput&quot; /&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>image vs img<br>图片处理优化方案对比：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序懒加载 --&gt;</span><br><span class="line">&lt;image src=&quot;url&quot; lazy-load mode=&quot;aspectFit&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 实现需交叉观察器 --&gt;</span><br><span class="line">&lt;img src=&quot;url&quot; loading=&quot;lazy&quot; class=&quot;aspect-fit&quot;&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>navigator</code> - <code>a</code> 标签<br>路由跳转机制差异：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 小程序页面跳转 --&gt;</span><br><span class="line">&lt;navigator url=&quot;/pages/detail?id=1&quot; open-type=&quot;navigate&quot;&gt;</span><br><span class="line">  详情页</span><br><span class="line">&lt;/navigator&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- HTML 传统跳转 --&gt;</span><br><span class="line">&lt;a href=&quot;/detail.html?id=1&quot;&gt;详情页&lt;/a&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="微信小程序-API"><a href="#微信小程序-API" class="headerlink" title="微信小程序 API"></a>微信小程序 API</h3><p><strong>事件监听 API</strong>（Event Listening API）<br>是小程序与原生环境交互的重要通道，其命名规范与调用方式具有显著特征。这类 API <strong>统一以 <code>on</code> 前缀开头</strong>，遵循<strong>发布-订阅模式</strong>实现事件响应。</p>
+<p>以窗口尺寸监听为例，开发者可通过 <code>wx.onWindowResize()</code> 注册全局事件：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册窗口尺寸变化监听</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">resizeHandler</span> = (<span class="params">res</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;窗口新尺寸:&#x27;</span>, res.<span class="property">windowWidth</span>, res.<span class="property">windowHeight</span>)</span><br><span class="line">&#125;</span><br><span class="line">wx.<span class="title function_">onWindowResize</span>(resizeHandler)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 适时移除防止内存泄漏</span></span><br><span class="line">wx.<span class="title function_">offWindowResize</span>(resizeHandler)</span><br></pre></td></tr></table></figure></div>
+
+<p>小程序不存在 <code>window</code> 对象，<code>wx</code> 作为全局命名空间承载核心能力</p>
+<p><strong>同步 API</strong>（Synchronous API）<br>通过阻塞式调用简化流程控制，其命名以 <code>Sync</code> 后缀为标识。这类 API 直接返回执行结果，异常处理需依赖 <code>try...catch</code> 结构：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安全写入本地存储</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  wx.<span class="title function_">setStorageSync</span>(<span class="string">&#x27;sessionKey&#x27;</span>, <span class="string">&#x27;a1b2c3&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> value = wx.<span class="title function_">getStorageSync</span>(<span class="string">&#x27;sessionKey&#x27;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取成功:&#x27;</span>, value)</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;存储操作异常:&#x27;</span>, error)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 反例：未捕获异常导致崩溃</span></span><br><span class="line">wx.<span class="title function_">setStorageSync</span>(<span class="string">&#x27;invalidKey&#x27;</span>, <span class="literal">undefined</span>) <span class="comment">// 抛出 TypeError</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>异步 API</strong>（Asynchronous API）<br>构成小程序非阻塞式编程的核心，采用回调函数处理延迟操作结果。其设计理念与 jQuery 的 <code>$.ajax</code> 相似，但遵循更严格的<strong>成功&#x2F;失败状态分离</strong>原则：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 标准网络请求示例</span></span><br><span class="line">wx.<span class="title function_">request</span>(&#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://api.example.com/data&#x27;</span>,</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">  <span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (res.<span class="property">statusCode</span> === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;数据获取成功:&#x27;</span>, res.<span class="property">data</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">fail</span>: <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败:&#x27;</span>, err.<span class="property">errMsg</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">complete</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;请求流程结束&#x27;</span>) <span class="comment">// 始终执行</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现代实践：结合 async/await 包装</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchData</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">promisify</span>(wx.<span class="property">request</span>)(&#123; <span class="attr">url</span>: <span class="string">&#x27;...&#x27;</span> &#125;)</span><br><span class="line">    <span class="comment">// 数据处理逻辑</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="comment">// 统一错误处理</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h1><p>微信小程序采用 声明式数据绑定（Declarative Data Binding）机制，其实现基于两个核心步骤：</p>
+<p><strong>数据定义</strong>与<strong>模板引用</strong>。</p>
+<p>在页面逻辑层（.js 文件）的 <code>data</code> 对象中定义初始值，这些数据将自动与视图层（.wxml 文件）建立响应式关联。</p>
+<p>数据定义规范需在页面构造函数中明确定义初始状态：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 页面逻辑文件（page.js）</span></span><br><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">info</span>: <span class="string">&#x27;init data&#x27;</span>, <span class="comment">// 字符串类型数据</span></span><br><span class="line">    <span class="attr">msgList</span>: [ <span class="comment">// 数组类型数据</span></span><br><span class="line">      &#123; <span class="attr">msg</span>: <span class="string">&#x27;hello&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">msg</span>: <span class="string">&#x27;world&#x27;</span> &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">isLoading</span>: <span class="literal">false</span> <span class="comment">// 布尔型状态标识</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<p>此处的数据结构设计直接影响渲染性能，建议避免嵌套过深的对象。对于复杂数据类型，可使用 <code>JSON.parse(JSON.stringify())</code> 进行深拷贝来解除引用关系。</p>
+<h3 id="Mustache-语法解析"><a href="#Mustache-语法解析" class="headerlink" title="Mustache 语法解析"></a>Mustache 语法解析</h3><p>通过双大括号 <code>&#123;&#123;&#125;&#125;</code> 实现数据插值，其核心能力是将逻辑层数据动态注入视图层。</p>
+<p><strong>内容动态绑定</strong><br>基础文本绑定直接映射数据字段：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 视图层模板（page.wxml） --&gt;</span><br><span class="line">&lt;view class=&quot;content&quot;&gt;&#123;&#123;info&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>当 <code>info</code> 值变更时，视图层将自动更新。</p>
+<p><strong>属性动态绑定</strong><br>组件属性同样支持响应式数据绑定，适用于动态资源配置场景：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;image</span><br><span class="line">  src=&quot;&#123;&#123;imgSrc&#125;&#125;&quot;</span><br><span class="line">  mode=&quot;aspectFit&quot;</span><br><span class="line">  class=&quot;banner-image&quot;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>对应的数据定义需注意资源路径的完整性：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">imgSrc</span>: <span class="string">&#x27;https://example.com/logo.png&#x27;</span> <span class="comment">// 完整HTTPS地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="数据运算处理"><a href="#数据运算处理" class="headerlink" title="数据运算处理"></a>数据运算处理</h3><p>Mustache 语法支持表达式运算，但需遵循<strong>轻逻辑原则</strong>：仅允许进行数据格式化等简单操作，复杂计算应前置到逻辑层处理。</p>
+<h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><p>通过三元表达式实现动态内容切换：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;status&quot;&gt;</span><br><span class="line">  &#123;&#123;isLoading ? &#x27;加载中...&#x27; : &#x27;数据加载完成&#x27;&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>对应的状态管理：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">isLoading</span>: <span class="literal">true</span> <span class="comment">// 初始加载状态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>最佳实践</strong>：当条件分支超过两个时，应改用 <code>wx:if</code> 和 <code>wx:else</code> 指令集以提高可读性。</p>
+<h5 id="数值处理"><a href="#数值处理" class="headerlink" title="数值处理"></a>数值处理</h5><p>可在模板内执行基础算术运算：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;价格：￥&#123;&#123;(unitPrice * quantity).toFixed(2)&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>但更推荐在逻辑层预先计算：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">unitPrice</span>: <span class="number">12.5</span>,</span><br><span class="line">    <span class="attr">quantity</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">total</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">onLoad</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">      <span class="attr">total</span>: (<span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">unitPrice</span> * <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">quantity</span>).<span class="title function_">toFixed</span>(<span class="number">2</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>性能考量</strong>：模板内频繁运算会触发多余的渲染流程，对于移动端长列表场景需特别注意优化。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 微信小程序开发</li>
+        <li><strong>作者:</strong> Wreckloud_雲之残骸</li>
+        <li><strong>此记初现于
+                :</strong> 2025-04-07 20:19:02</li>
+        
+            <li>
+                <strong>此记变迁于
+                    :</strong> 2025-04-09 22:07:59
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://www.wreckloud.com/2025/04/07/猎识印记-领域/软件工程/前端/微信小程序开发/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本幽影记采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/04/09/Prototype/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item"></span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/04/07/%E6%9C%AA%E5%91%BD%E5%90%8D/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item"></span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        影踪语
+    </div>
+    
+
+        
+            
+    <div class="twikoo-container">
+        <script data-swup-reload-script
+                src='https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.10/twikoo.all.min.js'
+        ></script>
+        <div id="twikoo-comment"></div>
+        <script data-swup-reload-script>
+            function loadTwikoo() {
+                twikoo.init({
+                    el: '#twikoo-comment',
+                    envId: 'https://wreckloud-twikoo.hf.space',
+                });
+            }
+
+            if ('true') {
+                const loadTwikooTimeout = setTimeout(() => {
+                    loadTwikoo();
+                    clearTimeout(loadTwikooTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadTwikoo);
+            }
+        </script>
+    </div>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">此页目录</div>
+		<div class="page-title">微信小程序开发</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B"><span class="nav-text">入门简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="nav-text">运行环境与开发模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BD%93%E7%B3%BB"><span class="nav-text">项目结构体系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%BF%E4%B8%BB%E7%8E%AF%E5%A2%83"><span class="nav-text">宿主环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-text">生命周期与运行机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6"><span class="nav-text">微信小程序组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-API"><span class="nav-text">微信小程序 API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="nav-text">数据绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mustache-%E8%AF%AD%E6%B3%95%E8%A7%A3%E6%9E%90"><span class="nav-text">Mustache 语法解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97%E5%A4%84%E7%90%86"><span class="nav-text">数据运算处理</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">死亡是涅灭,抑或是永恒?</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Wreckloud_雲之残骸</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 41 篇幽影记
+                    </span>
+                    
+                        <span>
+                            共 131.6k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">造访爪迹</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">幽影之力由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 提供</span>
+            <span class="text-sm lg:block">幽影之裳由&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.1</a></span>
+        </div>
+        
+        
+            <div>
+                狼已独自行进 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <style> html * {border-radius:3px!important;}</style>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="寻觅..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/plugins/typed.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/mermaid.min.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/plugins/mermaid.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.1/source/build/js/layouts/essays.js" data-swup-reload-script></script>
+
+
+
+
+	
+</body>
+
+</html>

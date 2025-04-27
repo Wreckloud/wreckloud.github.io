@@ -36,10 +36,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png">
 <meta property="article:published_time" content="2023-09-17T11:02:12.000Z">
-<meta property="article:modified_time" content="2025-04-27T09:19:26.469Z">
+<meta property="article:modified_time" content="2025-04-27T12:18:19.494Z">
 <meta property="article:author" content="Wreckloud">
-<meta property="article:tag" content="web前端">
-<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="入门基础">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.wreckloud.com/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png">
@@ -520,15 +520,15 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">44</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">59</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">39</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">40</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -583,8 +583,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-04-27 17:19:26</span>
-            <span class="mobile">2025-04-27 17:19:26</span>
+            <span class="desktop">2025-04-27 20:18:19</span>
+            <span class="mobile">2025-04-27 20:18:19</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -612,11 +612,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/web%E5%89%8D%E7%AB%AF/">web前端</a>&nbsp;
+                        <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        | <a href="/tags/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">入门基础</a>&nbsp;
                     </li>
                 
                     <li>
@@ -660,8 +660,8 @@
 
 <ul>
 <li><strong>选择器</strong>：定位要修饰的 HTML 元素（如标签名&#x2F;类名&#x2F;#ID）</li>
-<li><strong>属性</strong>：要修改的样式类型（如  <code>color</code>&#x2F;<code>font-size</code>）</li>
-<li><strong>值</strong>：样式的具体设定（如  <code>red</code>&#x2F;<code>16px</code>）</li>
+<li><strong>属性</strong>：要修改的样式类型（如  <code>color</code>&#x2F;<code>font-size</code>）</li>
+<li><strong>值</strong>：样式的具体设定（如  <code>red</code>&#x2F;<code>16px</code>）</li>
 </ul>
 <p>█ 特性：每个样式由<strong>键值对</strong>构成（属性:值），多个样式用分号隔开</p>
 <h3 id="三种引入方式"><a href="#三种引入方式" class="headerlink" title="三种引入方式"></a>三种引入方式</h3><h3 id="1-内部样式表"><a href="#1-内部样式表" class="headerlink" title="1. 内部样式表"></a>1. 内部样式表</h3><p>在 HTML 文件 <code>&lt;head&gt;</code> 内通过 <code>&lt;style&gt;</code> 标签编写</p>
@@ -743,11 +743,11 @@
 <h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>子元素自动继承父元素的<strong>文字相关属性</strong></p>
 <div class="code-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-family</span>: <span class="string">&#x27;微软雅黑&#x27;</span>;  <span class="comment">/* 所有子元素默认继承该字体 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: <span class="number">#333</span>;            <span class="comment">/* 默认文字颜色 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这段文字自动使用body的字体和颜色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<p>⚠️ <strong>注意</strong>：盒模型属性（width&#x2F;margin 等）不可继承，需手动设置</p>
+<p>⚠️ <strong>注意</strong>：盒模型属性（width&#x2F;margin 等）不可继承，需手动设置</p>
 <h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>▌ <strong>核心原则</strong>：</p>
 <ol>
-<li><strong>相同属性</strong> → 后写的覆盖先写的</li>
-<li><strong>不同属性</strong> → 自动合并效果</li>
+<li><strong>相同属性</strong> → 后写的覆盖先写的</li>
+<li><strong>不同属性</strong> → 自动合并效果</li>
 </ol>
 <div class="code-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;    <span class="comment">/* 将被下面的同属性覆盖 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">10px</span>;  <span class="comment">/* 保留生效 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.special</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: blue;   <span class="comment">/* 最终文字颜色 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">20px</span>; <span class="comment">/* 新增属性 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box special&quot;</span>&gt;</span>同时应用两个类的样式<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
@@ -792,7 +792,7 @@
 <div class="code-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="comment">/* 行内转块级 */</span></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">a</span><span class="selector-class">.nav-link</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">display</span>: block;     <span class="comment">/* 让链接独占一行 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">200px</span>;      <span class="comment">/* 此时可设置宽度 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="comment">/* 块级转行内块 */</span></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span><span class="selector-class">.gallery</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">display</span>: inline-block;  <span class="comment">/* 并排显示 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">10px</span>;           <span class="comment">/* 边距生效 */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <h1 id="前端尺寸"><a href="#前端尺寸" class="headerlink" title="前端尺寸"></a>前端尺寸</h1><p>全局用 rem，精准用 px，流动用百分比，视口适配靠 vw&#x2F;vh</p>
-<h4 id="REM：响应式布局核心"><a href="#REM：响应式布局核心" class="headerlink" title="REM：响应式布局核心"></a><strong>REM：响应式布局核心</strong></h4><p>所有与布局相关的尺寸（如容器宽高、内外边距）优先使用 <code>rem</code>。它直接挂钩于 <code>&lt;html&gt;</code> 标签的 <code>font-size</code>（默认 16px），只需通过媒体查询或 JavaScript 动态调整根字体（比如设为视口宽度的 1&#x2F;10），整个页面元素会按比例缩放，实现“一次调整，全局响应”。<br>例如，设置根字体为 <code>10px</code> 时，<code>2rem</code> 即为 <code>20px</code>，避免反复计算。</p>
+<h4 id="REM：响应式布局核心"><a href="#REM：响应式布局核心" class="headerlink" title="REM：响应式布局核心"></a><strong>REM：响应式布局核心</strong></h4><p>所有与布局相关的尺寸（如容器宽高、内外边距）优先使用 <code>rem</code>。它直接挂钩于 <code>&lt;html&gt;</code> 标签的 <code>font-size</code>（默认 16px），只需通过媒体查询或 JavaScript 动态调整根字体（比如设为视口宽度的 1&#x2F;10），整个页面元素会按比例缩放，实现”一次调整，全局响应”。<br>例如，设置根字体为 <code>10px</code> 时，<code>2rem</code> 即为 <code>20px</code>，避免反复计算。</p>
 <h4 id="PX：精确控制"><a href="#PX：精确控制" class="headerlink" title="PX：精确控制"></a>PX：精确控制</h4><p>固定尺寸场景（图标大小、边框粗细）坚持用 <code>px</code>。比如一个「删除」图标设为 <code>24x24px</code>，无论屏幕如何缩放都保持清晰；边框 <code>1px</code> 能精准呈现细线效果。<br>这类需要视觉绝对稳定的元素，用 <code>px</code> 最可靠。</p>
 <h4 id="百分比：流动布局的助手"><a href="#百分比：流动布局的助手" class="headerlink" title="百分比：流动布局的助手"></a><strong>百分比：流动布局的助手</strong></h4><p>希望元素随父级容器变化时（如侧边栏占父容器 20%），使用百分比单位 <code>%</code>。它擅长实现两栏布局、图片容器等比缩放，但需注意：父元素必须有明确尺寸，且 <code>border</code>、<code>margin</code> 等属性不支持百分比，需搭配 <code>px</code> 或 <code>rem</code> 使用。</p>
 <h3 id="VW-VH：视口自适应的利器"><a href="#VW-VH：视口自适应的利器" class="headerlink" title="VW&#x2F;VH：视口自适应的利器"></a><strong>VW&#x2F;VH：视口自适应的利器</strong></h3><p>全屏轮播图的高度设为 <code>50vh</code>（视口高度一半），或标题字体用 <code>3vw</code>（随视口宽度缩放），这类与视口强相关的场景适合 <code>vw/vh</code>。<br>但移动端慎用 <code>vh</code>，因浏览器地址栏可能影响计算，可用 <code>window.innerHeight</code> 的 JS 方案替代。</p>
@@ -1168,10 +1168,10 @@
                 ></p>
 <p>每个元素都是一个矩形盒子，从内到外由四层组成：</p>
 <ol>
-<li><strong>内容区</strong>：通过  <code>width/height</code>  控制尺寸</li>
-<li><strong>内边距</strong>：<code>padding</code>  控制内容与边框间距</li>
-<li><strong>边框</strong>：<code>border</code>  包裹内边距与内容</li>
-<li><strong>外边距</strong>：<code>margin</code>  隔离相邻盒子（不计入盒子总尺寸）</li>
+<li><strong>内容区</strong>：通过  <code>width/height</code>  控制尺寸</li>
+<li><strong>内边距</strong>：<code>padding</code>  控制内容与边框间距</li>
+<li><strong>边框</strong>：<code>border</code>  包裹内边距与内容</li>
+<li><strong>外边距</strong>：<code>margin</code>  隔离相邻盒子（不计入盒子总尺寸）</li>
 </ol>
 <h3 id="尺寸的计算"><a href="#尺寸的计算" class="headerlink" title="尺寸的计算"></a>尺寸的计算</h3><ul>
 <li><strong>默认情况</strong></li>
@@ -1382,7 +1382,7 @@
 <div class="code-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 典型应用场景 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>优先使用 Flex 处理<strong>一维线性布局</strong>（单行或单列）</p>
-<h1 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 <code>position</code></h1><p>通过  <code>position</code>  属性可灵活控制盒子在网页中的位置，其核心逻辑分为两步：<strong>启用定位模式</strong>（设置<code>position</code>属性值）和<strong>使用边偏移属性</strong>（<code>left</code>&#x2F;<code>right</code>&#x2F;<code>top</code>&#x2F;<code>bottom</code>）调整位置。常见的定位模式特性如下：</p>
+<h1 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 <code>position</code></h1><p>通过  <code>position</code>  属性可灵活控制盒子在网页中的位置，其核心逻辑分为两步：<strong>启用定位模式</strong>（设置<code>position</code>属性值）和<strong>使用边偏移属性</strong>（<code>left</code>&#x2F;<code>right</code>&#x2F;<code>top</code>&#x2F;<code>bottom</code>）调整位置。常见的定位模式特性如下：</p>
 <ul>
 <li><strong>相对定位</strong>（<code>relative</code>）：元素相对于自身原位置偏移，<strong>通常用于作为子级绝对定位的参照容器</strong>，不脱离文档流。</li>
 <li><strong>绝对定位</strong>（<code>absolute</code>）：元素相对于最近的定位父级（非<code>static</code>）进行偏移，<strong>脱离文档流</strong>，常用于父级设置<code>relative</code>后精准定位子元素，显示模式具备了行内块的特点。</li>
@@ -1679,7 +1679,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-04-27 17:19:26
+                    :</strong> 2025-04-27 20:18:19
             </li>
         
         <li>
@@ -1705,11 +1705,11 @@
 		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/web%E5%89%8D%E7%AB%AF/">#web前端</a>&nbsp;
+				<a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>&nbsp;
 			</li>
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>&nbsp;
+				<a href="/tags/%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">#入门基础</a>&nbsp;
 			</li>
 			
 			<li class="tag-item mx-0.5">
@@ -1725,12 +1725,12 @@
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
 			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2023/09/17/%E7%8C%8E%E8%AF%86%E5%8D%B0%E8%AE%B0-%E9%A2%86%E5%9F%9F/%E7%BD%91%E9%A1%B5%E4%B9%8B%E9%AA%A8%E6%9E%B6-HTML/">
+				<a class="prev" rel="prev" href="/2023/09/17/%E7%8C%8E%E8%AF%86%E5%8D%B0%E8%AE%B0-%E9%A2%86%E5%9F%9F/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%90%86%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E5%9F%BA%E7%A1%80-c%E8%AF%AD%E8%A8%80/">
 					<span class="left arrow-icon flex justify-center items-center">
 						<i class="fa-solid fa-chevron-left"></i>
 					</span>
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">网页之骨架-HTML</span>
+						<span class="post-nav-title-item">计算机理论-数据结构与基础-c语言</span>
 						<span class="post-nav-item">上一篇</span>
 					</span>
 				</a>
@@ -1738,9 +1738,9 @@
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2023/09/17/%E5%95%B8%E6%9C%88%E5%97%B7%E5%A3%B0-%E6%88%90%E9%95%BF/%E5%8D%9A%E5%AE%A2-hello-websites/">
+				<a class="next" rel="next" href="/2023/09/17/%E7%8C%8E%E8%AF%86%E5%8D%B0%E8%AE%B0-%E9%A2%86%E5%9F%9F/%E7%BD%91%E9%A1%B5%E4%B9%8B%E9%AA%A8%E6%9E%B6-HTML/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">hello websites</span>
+						<span class="post-nav-title-item">网页之骨架-HTML</span>
 						<span class="post-nav-item">下一篇</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -1833,11 +1833,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 39 篇文章
+                        共撰写了 40 篇文章
                     </span>
                     
                         <span>
-                            共 140.7k 字
+                            共 137.6k 字
                         </span>
                     
                 </p>

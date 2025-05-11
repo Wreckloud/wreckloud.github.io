@@ -29,14 +29,14 @@
         
         <meta name="description" content="维克罗德的世界探索笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="后端-Node.js安装配置">
+<meta property="og:title" content="Node-js的安装和配置">
 <meta property="og:url" content="https://www.wreckloud.com/2024/04/29/%E7%8C%8E%E8%AF%86%E5%8D%B0%E8%AE%B0-%E9%A2%86%E5%9F%9F/Node-js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="渊痕爪记">
 <meta property="og:description" content="维克罗德的世界探索笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.wreckloud.com/img/%E7%BD%91%E9%A1%B5%E8%B5%84%E6%BA%90/web.png">
 <meta property="article:published_time" content="2024-04-29T11:32:23.000Z">
-<meta property="article:modified_time" content="2025-04-27T12:34:09.869Z">
+<meta property="article:modified_time" content="2025-05-11T02:26:28.798Z">
 <meta property="article:author" content="Wreckloud">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="开发工具">
@@ -54,7 +54,7 @@
     
     <title>
         
-            后端-Node.js安装配置 | 渊痕爪记
+            Node-js的安装和配置 | 渊痕爪记
         
     </title>
 
@@ -520,15 +520,15 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">54</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">57</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">35</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">37</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -552,10 +552,10 @@
 			
 			
 			
-			<img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/npm.jpg" alt="后端-Node.js安装配置" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			<img src="/img/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/npm.jpg" alt="Node-js的安装和配置" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
 			
 			<div class="w-full flex items-center absolute bottom-0 justify-start">
-				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">后端-Node.js安装配置</h1>
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">Node-js的安装和配置</h1>
 			</div>
 			
 		</div>
@@ -583,8 +583,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-04-27 20:34:09</span>
-            <span class="mobile">2025-04-27 20:34:09</span>
+            <span class="desktop">2025-05-11 10:26:28</span>
+            <span class="mobile">2025-05-11 10:26:28</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -640,12 +640,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>402 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.3k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 分钟</span>
         </span>
     
     
@@ -664,46 +664,91 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h1 id="Node-js-概述"><a href="#Node-js-概述" class="headerlink" title="Node.js 概述"></a>Node.js 概述</h1><p>在 Node.js 出现之前, JavaScript 主要用于网页上浏览器, 处理客户端的交互逻辑.<br>而 Node.js 使得 JavaScript 也能够用于服务器端编程, 处理如数据库操作, 网络请求等后端任务.</p>
-<p>Node.js 附带了 <code>npm</code> (Node Package Manager) 中文意为”Node 包管理器”.<br>它是 JavaScript 编程语言的一个包管理器, 也这是世界上最大的开源库生态系统. 开发者可以轻松地共享和使用他人开发的包, 加速了开发过程. </p>
+			<h1 id="Node-js-的前世今生"><a href="#Node-js-的前世今生" class="headerlink" title="Node.js 的前世今生"></a>Node.js 的前世今生</h1><p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境，它让 JavaScript 能够在浏览器外运行，用于构建服务器端应用程序。这使得开发者可以使用同一种语言编写前后端代码，极大地提高了开发效率。</p>
 <blockquote>
-<p>开源 (Open Source)<br>是一种软件发布模式，其中软件的源代码 (即编写程序的原始代码) 对所有人都是可用的.<br>任何人都可以查看、修改和增强源代码, 并且通常可以在遵守特定许可证的条件下自由地分享和分发软件.</p>
+<p><strong>小知识</strong>：Node.js 诞生于 2009 年，由 Ryan Dahl 创造。他最初的目标是创建一个高性能的 Web 服务器，能够处理大量并发连接而不被阻塞。这个项目很快引起了 JavaScript 社区的广泛关注。</p>
 </blockquote>
-<h1 id="下载并安装-Node-js"><a href="#下载并安装-Node-js" class="headerlink" title="下载并安装 Node.js"></a>下载并安装 Node.js</h1><p><a class="link"   target="_blank" rel="noopener" href="https://nodejs.org/" >Node.js 官网<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p>LTS (Long Term Support) 代表 “长期支持”, 通常比较稳定.</p>
-<p>Current 通常指的是软件的最新版本, 它可能包含最新的功能, 改进和修复.</p>
-<p>点击官网的下载按钮开始下载.</p>
-<p>下载完成后, 无脑下一步–&gt;下一步–&gt;安装即可.</p>
-<p>安装完成后, 在cmd中输入如下指令查看安装版本.</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></div>
+<p>Node.js 的主要特点:</p>
+<ul>
+<li>使用 JavaScript 开发服务器端应用</li>
+<li>非阻塞 I&#x2F;O 模型，处理并发请求高效</li>
+<li>丰富的开源包生态系统</li>
+</ul>
+<h1 id="开源世界的包管理"><a href="#开源世界的包管理" class="headerlink" title="开源世界的包管理"></a>开源世界的包管理</h1><h2 id="npm-的诞生与发展"><a href="#npm-的诞生与发展" class="headerlink" title="npm 的诞生与发展"></a>npm 的诞生与发展</h2><p>npm (Node Package Manager)是 Node.js 默认的包管理工具，随 Node.js 一起安装。它是目前世界上最大的开源代码生态系统，允许开发者轻松共享和重用代码。</p>
+<blockquote>
+<p><strong>开源文化</strong>：开源是一种软件开发模式，其源代码对所有人开放查看、修改和分发。这种模式促进了协作、透明和社区驱动的创新。Node.js 和 npm 的成功很大程度上得益于开源文化的繁荣。</p>
+</blockquote>
+<p>npm 通过<code>package.json</code>文件管理项目依赖，使用<code>package-lock.json</code>确保依赖版本的一致性，保证不同环境下项目的稳定运行。</p>
+<h2 id="Yarn-的创新之处"><a href="#Yarn-的创新之处" class="headerlink" title="Yarn 的创新之处"></a>Yarn 的创新之处</h2><p>Yarn 是由 Facebook 在 2016 年推出的替代 npm 的包管理工具，解决了 npm 早期版本的一些问题。</p>
+<blockquote>
+<p><strong>背景故事</strong>：Facebook 的开发团队在处理大型 JavaScript 项目时，遇到了 npm 的一些限制，尤其是在依赖安装速度和可靠性方面。因此他们决定开发一个新的解决方案，同时保持与 npm 生态系统的兼容性。</p>
+</blockquote>
+<p>Yarn 的主要改进：</p>
+<ul>
+<li>并行安装依赖，速度更快</li>
+<li>更可靠的依赖管理</li>
+<li>更严格的依赖锁定机制</li>
+<li>更好的缓存管理</li>
+</ul>
+<h1 id="环境配置实战"><a href="#环境配置实战" class="headerlink" title="环境配置实战"></a>环境配置实战</h1><h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><ol>
+<li><p>访问<a class="link"   target="_blank" rel="noopener" href="https://nodejs.org/" >Node.js 官网<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+</li>
+<li><p>选择适合的版本：</p>
+<ul>
+<li>LTS 版本：稳定可靠，推荐用于生产环境</li>
+<li>Current 版本：包含最新特性，可能不够稳定</li>
+</ul>
+</li>
+<li><p>下载并按照提示完成安装</p>
+</li>
+<li><p>验证安装是否成功：</p>
+</li>
+</ol>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 显示Node.js版本</span></span><br><span class="line">npm -v   <span class="comment"># 显示npm版本</span></span><br></pre></td></tr></table></figure></div>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Node.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/cmd.jpg"
-                      alt="alt text"
-                ></p>
-<p>如果看到正确的版本号, 即为安装成功!</p>
-<h1 id="配置-Node-js"><a href="#配置-Node-js" class="headerlink" title="配置 Node.js"></a>配置 Node.js</h1><p>更改默认镜像源</p>
-<p>查看当前镜像源</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get registry</span><br></pre></td></tr></table></figure></div>
+<h2 id="优化-npm-配置"><a href="#优化-npm-配置" class="headerlink" title="优化 npm 配置"></a>优化 npm 配置</h2><p>默认情况下，npm 从国外服务器下载包，在国内可能速度较慢。更换为国内镜像源可以显著提升下载速度：</p>
+<blockquote>
+<p><strong>国内网络特殊性</strong>：由于众所周知的原因，国内访问某些国外资源可能会较慢。国内技术社区为此提供了优质的镜像服务，如淘宝 NPM 镜像，帮助开发者克服这些网络障碍。</p>
+</blockquote>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前镜像</span></span><br><span class="line">npm get registry</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置淘宝镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure></div>
 
-<p>修改为淘宝的镜像源  </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Node.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/cmd2.jpg"
-                      alt="alt text"
-                ></p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure></div>
+<h2 id="安装配置-Yarn"><a href="#安装配置-Yarn" class="headerlink" title="安装配置 Yarn"></a>安装配置 Yarn</h2><p>通过 npm 全局安装 Yarn：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证安装</span></span><br><span class="line">yarn --version</span><br></pre></td></tr></table></figure></div>
 
-<p>再次查看当前镜像源, 即为修改成功.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../../img/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Node.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/Wreckloud%2024%E5%B9%B404%E6%9C%8829%E6%97%A5%2022%E6%97%B619%E5%88%8613%E7%A7%92.jpg"
-                      alt="alt text"
-                ></p>
+<p>配置 Yarn 全局路径和镜像：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置全局路径</span></span><br><span class="line">yarn config <span class="built_in">set</span> global-folder <span class="string">&quot;%LOCALAPPDATA%\Yarn\Data\global&quot;</span></span><br><span class="line">yarn config <span class="built_in">set</span> prefix <span class="string">&quot;%LOCALAPPDATA%\Yarn&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置镜像源</span></span><br><span class="line">yarn config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="日常开发的指令对比"><a href="#日常开发的指令对比" class="headerlink" title="日常开发的指令对比"></a>日常开发的指令对比</h1><h2 id="npm-常用命令"><a href="#npm-常用命令" class="headerlink" title="npm 常用命令"></a>npm 常用命令</h2><p>开发中最常用的 npm 命令：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm init              <span class="comment"># 初始化项目</span></span><br><span class="line">npm install           <span class="comment"># 安装所有依赖</span></span><br><span class="line">npm install 包名      <span class="comment"># 安装指定包</span></span><br><span class="line">npm install 包名 --save-dev  <span class="comment"># 安装开发依赖</span></span><br><span class="line">npm install -g 包名   <span class="comment"># 全局安装</span></span><br><span class="line">npm run 脚本名        <span class="comment"># 运行脚本</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="Yarn-等效命令"><a href="#Yarn-等效命令" class="headerlink" title="Yarn 等效命令"></a>Yarn 等效命令</h2><p>对应的 Yarn 命令：</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yarn init             <span class="comment"># 初始化项目</span></span><br><span class="line">yarn                  <span class="comment"># 安装所有依赖</span></span><br><span class="line">yarn add 包名         <span class="comment"># 安装指定包</span></span><br><span class="line">yarn add 包名 --dev   <span class="comment"># 安装开发依赖</span></span><br><span class="line">yarn global add 包名  <span class="comment"># 全局安装</span></span><br><span class="line">yarn 脚本名           <span class="comment"># 运行脚本</span></span><br></pre></td></tr></table></figure></div>
+
+<h1 id="工作流优化建议"><a href="#工作流优化建议" class="headerlink" title="工作流优化建议"></a>工作流优化建议</h1><h2 id="选择合适的包管理器"><a href="#选择合适的包管理器" class="headerlink" title="选择合适的包管理器"></a>选择合适的包管理器</h2><blockquote>
+<p><strong>实践经验</strong>：在前端开发领域，选择哪个包管理器往往不仅是个人偏好问题。团队协作、项目规模和特定需求都会影响这一决策。了解各工具的优缺点能帮助你做出明智的选择。</p>
+</blockquote>
+<p>对于包管理器的选择建议：</p>
+<ul>
+<li>在单个项目中只使用一种包管理器，避免依赖冲突</li>
+<li>新项目可考虑使用 Yarn，其性能和可靠性更好</li>
+<li>参与已有项目时，遵循项目原有的包管理器选择</li>
+</ul>
+<h2 id="平稳过渡的迁移策略"><a href="#平稳过渡的迁移策略" class="headerlink" title="平稳过渡的迁移策略"></a>平稳过渡的迁移策略</h2><p>从 npm 迁移到 Yarn：</p>
+<ol>
+<li>删除<code>package-lock.json</code></li>
+<li>删除<code>node_modules</code>文件夹</li>
+<li>执行<code>yarn install</code></li>
+</ol>
+<p>从 Yarn 迁移到 npm：</p>
+<ol>
+<li>删除<code>yarn.lock</code></li>
+<li>删除<code>node_modules</code>文件夹</li>
+<li>执行<code>npm install</code></li>
+</ol>
+<blockquote>
+<p><strong>小贴士</strong>：项目迁移总是有风险的。在大型项目中切换包管理器前，建议先在非核心项目上测试，确保所有依赖都能正确解析和安装。</p>
+</blockquote>
+<p>通过合理配置和使用这些工具，你可以构建更高效的 JavaScript 开发环境，专注于创造而非解决环境问题。无论是个人项目还是团队协作，掌握这些基础知识都将帮助你在开发道路上走得更远。</p>
 
 		</div>
 
@@ -711,14 +756,14 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 后端-Node.js安装配置</li>
+        <li><strong>标题:</strong> Node-js的安装和配置</li>
         <li><strong>作者:</strong> Wreckloud_雲之残骸</li>
         <li><strong>创建于
                 :</strong> 2024-04-29 19:32:23</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-04-27 20:34:09
+                    :</strong> 2025-05-11 10:26:28
             </li>
         
         <li>
@@ -842,8 +887,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
-		<div class="page-title">后端-Node.js安装配置</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js-%E6%A6%82%E8%BF%B0"><span class="nav-text">Node.js 概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85-Node-js"><span class="nav-text">下载并安装 Node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Node-js"><span class="nav-text">配置 Node.js</span></a></li></ol>
+		<div class="page-title">Node-js的安装和配置</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F"><span class="nav-text">Node.js 的前世今生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E6%BA%90%E4%B8%96%E7%95%8C%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86"><span class="nav-text">开源世界的包管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E7%9A%84%E8%AF%9E%E7%94%9F%E4%B8%8E%E5%8F%91%E5%B1%95"><span class="nav-text">npm 的诞生与发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn-%E7%9A%84%E5%88%9B%E6%96%B0%E4%B9%8B%E5%A4%84"><span class="nav-text">Yarn 的创新之处</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%AE%9E%E6%88%98"><span class="nav-text">环境配置实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Node-js"><span class="nav-text">安装 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96-npm-%E9%85%8D%E7%BD%AE"><span class="nav-text">优化 npm 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-Yarn"><span class="nav-text">安装配置 Yarn</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E7%9A%84%E6%8C%87%E4%BB%A4%E5%AF%B9%E6%AF%94"><span class="nav-text">日常开发的指令对比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">npm 常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn-%E7%AD%89%E6%95%88%E5%91%BD%E4%BB%A4"><span class="nav-text">Yarn 等效命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="nav-text">工作流优化建议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">选择合适的包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E8%BF%87%E6%B8%A1%E7%9A%84%E8%BF%81%E7%A7%BB%E7%AD%96%E7%95%A5"><span class="nav-text">平稳过渡的迁移策略</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -872,11 +917,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 35 篇文章
+                        共撰写了 37 篇文章
                     </span>
                     
                         <span>
-                            共 126.7k 字
+                            共 144.8k 字
                         </span>
                     
                 </p>
